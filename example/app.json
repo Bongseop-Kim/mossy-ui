@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Mossy UI",
+    "slug": "mossy-ui-example",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "mossyui",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "dev.mossyui.example",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "dev.mossyui.example"
+    },
+    "plugins": [
+      "expo-dev-client"
+    ]
+  }
+}

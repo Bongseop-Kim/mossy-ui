@@ -18,21 +18,31 @@
     "design-system",
     "expo-ui",
     "swiftui",
-    "jetpack-compose"
+    "jetpack-compose",
+    "design-tokens"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "build": "npm run clean && npm run build:types && npm run build:js",
+    "build:js": "babel src --extensions .ts,.tsx --out-dir dist",
+    "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "clean": "rm -rf dist",
+    "example:android": "npm --prefix example run android",
+    "example:ios": "npm --prefix example run ios",
+    "example:prebuild": "npm --prefix example run prebuild",
+    "example:start": "npm --prefix example run start",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@expo/ui": ">=56.0.0",
@@ -41,11 +51,22 @@
     "react-native": ">=0.85.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.7",
+    "@babel/plugin-transform-react-jsx": "^7.29.7",
+    "@babel/plugin-transform-typescript": "^7.29.7",
     "@expo/ui": "^56.0.15",
     "@types/react": "^19.0.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "expo": "^56.0.8",
-    "react": "^19.2.0",
-    "react-native": "^0.85.0",
-    "typescript": "^5.9.0"
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "typescript": "~6.0.3"
+  },
+  "dependencies": {
+    "expo": "~56.0.8",
+    "react": "19.2.3",
+    "react-native": "0.85.3"
   }
 }
