@@ -1,0 +1,51 @@
+{
+  "name": "mossy-ui",
+  "version": "0.1.0",
+  "description": "Expo UI 기반의 React Native 디자인 시스템",
+  "license": "Apache-2.0",
+  "author": "Bongseop Kim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bongseop-Kim/mossy-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bongseop-Kim/mossy-ui/issues"
+  },
+  "homepage": "https://github.com/Bongseop-Kim/mossy-ui#readme",
+  "keywords": [
+    "expo",
+    "react-native",
+    "design-system",
+    "expo-ui",
+    "swiftui",
+    "jetpack-compose"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@expo/ui": ">=56.0.0",
+    "expo": ">=56.0.0",
+    "react": ">=19.0.0",
+    "react-native": ">=0.85.0"
+  },
+  "devDependencies": {
+    "@expo/ui": "^56.0.15",
+    "@types/react": "^19.0.0",
+    "expo": "^56.0.8",
+    "react": "^19.2.0",
+    "react-native": "^0.85.0",
+    "typescript": "^5.9.0"
+  }
+}
