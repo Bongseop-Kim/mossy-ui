@@ -1,0 +1,54 @@
+# AGENTS.md
+
+mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업 시 이 문서의 규칙을 따른다.
+
+## Docs 작성
+
+`src/*/docs/*.md` 문서를 작성·수정할 때는 루트의 [`docs.md`](./docs.md) 양식을 먼저 읽고 따른다. 핵심 원칙은 **AI Agent 가독성 최우선**이다.
+
+- **범위는 Expo UI 레이어** — docs는 패키지가 제공하는 Expo UI 레이어 기준으로 작성한다. 소비자 측 RN 사용법은 범위 밖이다.
+
+## 컴포넌트 API 방향
+
+- **네임스페이스 우선순위** — universal(`@expo/ui`)이 1차 타깃이다. universal에 없는 컴포넌트만 `@expo/ui/swift-ui`·`@expo/ui/jetpack-compose`로 플랫폼별 구현한다.
+- **닫힌 pass-through 래퍼** — `ComponentProps<typeof ExpoX>` 형태로 props를 그대로 전달하고 테마 기본값만 주입한다. compound components는 채택하지 않는다 (네이티브 뷰는 내부 파츠 분해 불가).
+- **커스터마이징 통로** — `modifiers` prop 패스스루와 children 중첩.
+- **asChild 지원** — React Native 레이어 조합형 컴포넌트는 `asChild` prop으로 기능 합성을 지원한다.
+- **상호작용 상태** — pressed 토큰은 Expo UI modifier로 주입한다. RN 레이어는 `Pressable`의 `pressed` 상태로 적용한다.
+
+## React 19 / React Compiler 규칙
+
+React Compiler가 `babel.config.cjs`에 활성화되어 있다 (`target: '19'`).
+
+- **수동 메모이제이션 금지** — `React.memo`·`useMemo`·`useCallback`을 새로 쓰지 않는다. 컴파일러가 자동 처리한다. 프로파일링으로 입증된 경우에만 예외.
+- **Rules of React 준수** — 렌더 중 mutation·부수효과 금지. 위반 시 컴파일러가 해당 컴포넌트를 조용히 건너뛴다(`panicThreshold: 'none'`이라 에러도 안 남). 문제 컴포넌트는 `'use no memo'`로 임시 opt-out 후 근본 원인을 고친다.
+- **`forwardRef` 금지** — React 19에서 `ref`는 일반 prop. `ref`를 props로 직접 받는다.
+- **`defaultProps`·`propTypes` 금지** — TS 타입 + 파라미터 기본값 사용.
+- **Context는 `<Ctx value={...}>` 직접 렌더** — `<Ctx.Provider>` 대신.
+
+## 렌더 패턴 규칙
+
+- 파생 상태는 렌더 중 계산한다. `useEffect`로 state를 복제하지 않는다.
+- 조건부 렌더는 삼항(`cond ? <X /> : null`). `&&`는 RN에서 `0`·빈 문자열이 텍스트 노드로 렌더되어 크래시할 수 있다.
+- 컴포넌트 안에서 컴포넌트를 정의하지 않는다 (인라인 컴포넌트 금지).
+- 비싼 `useState` 초기값은 함수형 초기화, 이전 값 의존 setState는 함수형 업데이트.
+- 상호작용 로직은 effect가 아닌 이벤트 핸들러에 둔다.
+
+## 라이브러리 패키징
+
+- `sideEffects: false` 유지 — 모듈 최상위에서 부수효과(전역 등록, 즉시 실행) 금지.
+- 리뷰 시 추측성 memo/deps 지적 금지 — 프로파일링 증거 없으면 제안하지 않는다.
+
+## 검증
+
+- 코드 변경 후 `npm run lint` — `eslint-plugin-react-hooks` recommended-latest(React Compiler 규칙 포함). 컴파일러가 최적화를 건너뛰는 코드는 여기서 잡힌다.
+- React 코드 변경 후 `npx react-doctor@latest --verbose --diff`로 점수 회귀 확인.
+
+## Expo UI Host 규칙
+
+- 페이지당 `Host` 하나. `<Screen>` 래퍼 안에만 둔다.
+- 키트 컴포넌트(Button, Card 등)는 `Host`를 래핑하지 않는다. Host-free·조합 가능.
+- 컴포넌트는 외부 Host 안에서 렌더된다고 가정. `Host` 필수임을 타입/문서에 명시.
+- `<Screen>`은 페이지당 하나만 사용한다. Host 컨텍스트 있으면 중복 skip.
+- 스타일: Expo UI는 modifier, 일반 RN은 StyleSheet.
+- 모션은 reanimated, 네비게이션은 Expo Router. Host로 재구현 안 함.

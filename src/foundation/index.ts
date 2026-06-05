@@ -9,8 +9,6 @@ export {
   type MossyThemeModeOverrides,
   type MossyThemeOverrides,
 } from './theme';
-export { mossyIconography } from './iconography';
-export { mossyState } from './state';
 export type { MossyTextStyleName } from './typography';
 export type {
   MossyGradient,

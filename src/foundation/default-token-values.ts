@@ -31,7 +31,6 @@ export const mossyDefaultScaleValues = {
   "duration-d5": ".25s",
   "duration-d6": ".3s",
   "duration-color-transition": "var(--mossy-duration-d3)",
-  "duration-pressed-scale": "var(--mossy-duration-d3)",
   "font-size-t1": "clamp(calc(var(--mossy-font-size-t1-static) * var(--mossy-font-size-limit-min, .8)), calc(.6875rem * var(--mossy-font-size-multiplier, 1)), calc(var(--mossy-font-size-t1-static) * var(--mossy-font-size-limit-max, 1.5)))",
   "font-size-t2": "clamp(calc(var(--mossy-font-size-t2-static) * var(--mossy-font-size-limit-min, .8)), calc(.75rem * var(--mossy-font-size-multiplier, 1)), calc(var(--mossy-font-size-t2-static) * var(--mossy-font-size-limit-max, 1.5)))",
   "font-size-t3": "clamp(calc(var(--mossy-font-size-t3-static) * var(--mossy-font-size-limit-min, .8)), calc(.8125rem * var(--mossy-font-size-multiplier, 1)), calc(var(--mossy-font-size-t3-static) * var(--mossy-font-size-limit-max, 1.5)))",
@@ -91,8 +90,7 @@ export const mossyDefaultScaleValues = {
   "timing-function-enter": "cubic-bezier(0, 0, .15, 1)",
   "timing-function-exit": "cubic-bezier(.35, 0, 1, 1)",
   "timing-function-enter-expressive": "cubic-bezier(.03, .4, .1, 1)",
-  "timing-function-exit-expressive": "cubic-bezier(.35, 0, .95, .55)",
-  "timing-function-pressed-scale": "cubic-bezier(0, 0, .15, 1)"
+  "timing-function-exit-expressive": "cubic-bezier(.35, 0, .95, .55)"
 } as const;
 
 export const mossyDefaultLightValues = {
