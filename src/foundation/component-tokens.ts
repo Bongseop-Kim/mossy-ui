@@ -21,6 +21,9 @@ type ColorTokenOf<Group extends string> = SemanticKey extends infer Key
 /** 색상 토큰 — `그룹.이름` 표기 (예: `'fg.neutral'`, `'palette.gray900'`). */
 export type MossyColorToken = ColorTokenOf<'fg'> | ColorTokenOf<'palette'>;
 
+/** 배경 색상 토큰 — `그룹.이름` 표기 (예: `'bg.layerDefault'`). */
+export type MossyBackgroundColorToken = ColorTokenOf<'bg'> | ColorTokenOf<'palette'>;
+
 /** 구분선·테두리 색상 토큰 — `그룹.이름` 표기 (예: `'stroke.neutralMuted'`). */
 export type MossyStrokeColorToken = ColorTokenOf<'stroke'> | ColorTokenOf<'palette'>;
 

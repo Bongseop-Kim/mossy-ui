@@ -31,6 +31,9 @@ export { HStack, type MossyHStackProps } from './components/Layout/HStack';
 export { Spacer, type MossySpacerProps } from './components/Layout/Spacer';
 export type { MossyAlignment } from './components/Layout/types';
 export { VStack, type MossyVStackProps } from './components/Layout/VStack';
+export { List, type MossyListProps } from './components/List';
+export { ListHeader, type MossyListHeaderProps } from './components/ListHeader';
+export { ListItem, type MossyListItemProps } from './components/ListItem';
 export {
   LoadingIndicator,
   type MossyLoadingIndicatorProps,
@@ -39,6 +42,8 @@ export {
   ProgressCircle,
   type MossyProgressCircleProps,
 } from './components/ProgressCircle';
+export { ScrollFog, type MossyScrollFogProps } from './components/ScrollFog';
+export { ScrollView, type MossyScrollViewProps } from './components/ScrollView';
 export {
   SegmentedControl,
   type MossySegmentedControlProps,
@@ -46,7 +51,9 @@ export {
 export { Slider, type MossySliderProps } from './components/Slider';
 export { Switch, type MossySwitchProps } from './components/Switch';
 export { Text, type MossyTextProps } from './components/Typography/Text';
+export { TextInput, type MossyTextInputProps } from './components/TextInput';
 export type {
+  MossyBackgroundColorToken,
   MossyColorToken,
   MossyDimensionToken,
   MossyFontSizeToken,
