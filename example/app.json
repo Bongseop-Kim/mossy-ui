@@ -14,7 +14,8 @@
       "package": "dev.mossyui.example"
     },
     "plugins": [
-      "expo-dev-client"
+      "expo-dev-client",
+      "expo-router"
     ]
   }
 }
