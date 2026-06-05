@@ -18,6 +18,14 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 | [`src/foundation/docs/writing.md`](./src/foundation/docs/writing.md) | UI 텍스트(레이블·메시지 등) 문장 작성·수정 시 — 화법·톤 방향은 voice-and-tone.md |
 | [`src/foundation/docs/international-design.md`](./src/foundation/docs/international-design.md) | 다국어 지원, 로케일별 시간·날짜·숫자·통화·괄호·강조 표기, 번역 텍스트 확장 대응 시 |
 
+## AI 참조 리소스
+
+외부 디자인 시스템 코드를 참조해야 할 때는 가능하면 원격 GitHub를 매번 열지 말고 로컬 참조본을 먼저 사용한다.
+
+- `daangn/seed-design` React 패키지: `.ai/refs/seed-design/packages/react`
+- 위 경로는 git에서 제외된 AI 참조용 clone이다.
+- 경로가 없거나 오래된 경우 `.ai/README.md`의 명령으로 다시 받거나 갱신한다.
+
 ## Docs 작성
 
 `src/*/docs/*.md` 문서를 작성·수정할 때는 루트의 [`docs.md`](./docs.md) 양식을 먼저 읽고 따른다. 핵심 원칙은 **AI Agent 가독성 최우선**이다.

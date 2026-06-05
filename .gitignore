@@ -5,6 +5,7 @@ dist
 .agents/
 .omc/
 .omx/
+.ai/refs/
 
 # Expo prebuild output
 /android/
