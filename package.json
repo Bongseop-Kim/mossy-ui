@@ -30,6 +30,7 @@
   },
   "files": [
     "dist",
+    "snippets",
     "README.md",
     "LICENSE"
   ],

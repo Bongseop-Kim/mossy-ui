@@ -51,7 +51,23 @@ export {
 export { Slider, type MossySliderProps } from './components/Slider';
 export { Switch, type MossySwitchProps } from './components/Switch';
 export { Text, type MossyTextProps } from './components/Typography/Text';
-export { TextInput, type MossyTextInputProps } from './components/TextInput';
+export {
+  TextField,
+  TextFieldInput,
+  TextFieldPrefixIcon,
+  TextFieldPrefixText,
+  TextFieldRoot,
+  TextFieldSuffixIcon,
+  TextFieldSuffixText,
+  TextFieldTextarea,
+  type MossyTextFieldInputProps,
+  type MossyTextFieldPrefixIconProps,
+  type MossyTextFieldPrefixTextProps,
+  type MossyTextFieldRootProps,
+  type MossyTextFieldSuffixIconProps,
+  type MossyTextFieldSuffixTextProps,
+  type MossyTextFieldTextareaProps,
+} from './components/TextField';
 export type {
   MossyBackgroundColorToken,
   MossyColorToken,

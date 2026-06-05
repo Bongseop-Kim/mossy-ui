@@ -18,6 +18,11 @@ import {
 } from 'mossy-ui';
 
 import { segmentedOptions } from '../data';
+import {
+  TextField as SnippetTextField,
+  TextFieldInput,
+  TextFieldTextarea,
+} from '../snippets/text-field';
 import { styles } from '../styles';
 import type { ComponentPreviewKey } from '../types';
 
@@ -112,6 +117,8 @@ export function ComponentPreview({
       );
     case 'text':
       return <TextPreview />;
+    case 'text-field':
+      return <TextFieldSnippetPreview />;
     case 'vstack':
       return (
         <VStack spacing="x2">
@@ -224,6 +231,43 @@ function TextPreview() {
       <Text textStyle="t4Regular" color="fg.neutralMuted">
         설명 문장은 짧고 이해하기 쉽게 씁니다.
       </Text>
+    </VStack>
+  );
+}
+
+function TextFieldSnippetPreview() {
+  return (
+    <VStack spacing="x4">
+      <HStack spacing="x3">
+        <SnippetTextField label="라벨" description="설명을 써주세요">
+          <TextFieldInput placeholder="플레이스홀더" />
+        </SnippetTextField>
+        <SnippetTextField
+          label="라벨"
+          invalid
+          errorMessage="오류가 발생한 이유를 써주세요">
+          <TextFieldInput placeholder="플레이스홀더" />
+        </SnippetTextField>
+      </HStack>
+      <HStack spacing="x3">
+        <SnippetTextField
+          description="설명을 써주세요"
+          backgroundColor="bg.transparent"
+          paddingHorizontal={0}
+          borderWidth={0}
+          radius={0}>
+          <TextFieldInput placeholder="플레이스홀더" />
+        </SnippetTextField>
+        <SnippetTextField
+          invalid
+          errorMessage="오류가 발생한 이유를 써주세요"
+          backgroundColor="bg.transparent"
+          paddingHorizontal={0}
+          borderWidth={0}
+          radius={0}>
+          <TextFieldTextarea placeholder="여러 줄 입력" autoresize={false} />
+        </SnippetTextField>
+      </HStack>
     </VStack>
   );
 }

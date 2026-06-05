@@ -16,6 +16,7 @@ export type ComponentPreviewKey =
   | 'spacer'
   | 'switch'
   | 'text'
+  | 'text-field'
   | 'vstack';
 
 export type ShowcaseComponent = {
