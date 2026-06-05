@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seed Component Parity</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ee;
+      --ink: #1e2422;
+      --muted: #66706c;
+      --line: #d8d3c7;
+      --panel: #fffdf8;
+      --panel-2: #ebe7dc;
+      --accent: #1b7f6b;
+      --accent-ink: #0d4036;
+      --done-bg: #dff2e8;
+      --done-ink: #14543c;
+      --partial-bg: #e8e2f6;
+      --partial-ink: #4d3c7a;
+      --missing-bg: #f6dfdc;
+      --missing-ink: #87372f;
+      --blocked-bg: #f3e6c6;
+      --blocked-ink: #705116;
+      --mossy-only-bg: #dfe9f7;
+      --mossy-only-ink: #254b7a;
+      --shadow: 0 18px 48px rgba(52, 45, 31, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(30, 36, 34, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(30, 36, 34, 0.045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 28px 28px;
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    .shell {
+      width: min(1580px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 34px 0 54px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 4.6vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+      max-width: 920px;
+    }
+
+    .intro {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    .counts {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(96px, 1fr));
+      gap: 10px;
+      min-width: min(600px, 100%);
+    }
+
+    .count {
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.82);
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .count strong {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .count span {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 14px;
+      margin: 22px 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(246, 244, 238, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    input[type="search"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 12px 14px;
+      font: 0.95rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      outline: none;
+    }
+
+    input[type="search"]:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(27, 127, 107, 0.16);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 10px 12px;
+      cursor: pointer;
+      font: 0.82rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .filter[aria-pressed="true"] {
+      border-color: var(--accent-ink);
+      background: var(--accent-ink);
+      color: white;
+    }
+
+    .filter:hover {
+      border-color: var(--accent);
+    }
+
+    .filter:focus-visible {
+      outline: 3px solid rgba(27, 127, 107, 0.28);
+      outline-offset: 2px;
+    }
+
+    section { margin-top: 24px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin: 26px 0 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    .result-count {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: min(760px, calc(100vh - 180px));
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overscroll-behavior: contain;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 1540px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th:last-child, td:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #242a28;
+      color: #fffdf8;
+      border-bottom: 2px solid #242a28;
+      font: 0.82rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .th-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .column-hide-button,
+    .column-show-button {
+      border: 1px solid currentColor;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font: 0.72rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      line-height: 1;
+    }
+
+    .column-hide-button {
+      flex: 0 0 auto;
+      border-color: rgba(255, 253, 248, 0.5);
+      padding: 5px 7px;
+    }
+
+    .column-hide-button:hover {
+      background: rgba(255, 253, 248, 0.14);
+    }
+
+    .column-hide-button:focus-visible,
+    .column-show-button:focus-visible {
+      outline: 3px solid rgba(255, 253, 248, 0.32);
+      outline-offset: 2px;
+    }
+
+    .column-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      min-height: 36px;
+      margin: 0 0 10px;
+      color: var(--muted);
+      font: 0.78rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .column-show-button {
+      border-color: var(--line);
+      background: var(--panel);
+      color: var(--accent-ink);
+      padding: 8px 10px;
+    }
+
+    .column-show-button:hover {
+      border-color: var(--accent);
+    }
+
+    td {
+      font-size: 0.94rem;
+    }
+
+    code {
+      background: rgba(30, 36, 34, 0.07);
+      border: 1px solid rgba(30, 36, 34, 0.09);
+      padding: 0.05rem 0.28rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+    }
+
+    .component {
+      min-width: 190px;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .seed-props { min-width: 420px; }
+    .mossy { min-width: 170px; }
+    .mossy-props { min-width: 360px; }
+    .next-action { min-width: 360px; }
+    .note { min-width: 320px; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      max-width: 230px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font: 0.76rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: normal;
+    }
+
+    .status.done { background: var(--done-bg); color: var(--done-ink); }
+    .status.partial { background: var(--partial-bg); color: var(--partial-ink); }
+    .status.missing { background: var(--missing-bg); color: var(--missing-ink); }
+    .status.blocked { background: var(--blocked-bg); color: var(--blocked-ink); }
+    .status.mossy-only { background: var(--mossy-only-bg); color: var(--mossy-only-ink); }
+
+    .api-table { min-width: 900px; }
+    .api-table .component { width: 190px; }
+
+    @media (max-width: 900px) {
+      .shell { width: min(100vw - 24px, 1580px); padding-top: 22px; }
+      header { grid-template-columns: 1fr; }
+      .counts { grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; }
+      .toolbar { grid-template-columns: 1fr; }
+      .filters { justify-content: flex-start; }
+      .table-wrap { max-height: calc(100vh - 220px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <h1>Seed Component Parity</h1>
+        <p class="intro">Source: <code>src/components/docs/seed-component-parity.md</code> · Seed Implementation Checklist is the source of truth. Mossy-only APIs are rendered separately.</p>
+      </div>
+      <div class="counts" aria-label="상태 요약">
+        <div class="count"><strong>69</strong><span>total</span></div>
+        <div class="count"><strong>0</strong><span>완료</span></div>
+        <div class="count"><strong>16</strong><span>부분완료</span></div>
+        <div class="count"><strong>41</strong><span>미구현</span></div>
+        <div class="count"><strong>12</strong><span>제약</span></div>
+        <div class="count"><strong>2</strong><span>Mossy only</span></div>
+      </div>
+    </header>
+
+    <div class="toolbar" aria-label="표 필터">
+      <input id="search" name="component-search" type="search" aria-label="컴포넌트, props, 메모 검색" placeholder="컴포넌트, props, 메모 검색" autocomplete="off">
+      <div class="filters" role="group" aria-label="상태 필터">
+        <button class="filter" type="button" data-status="all" aria-pressed="true">전체</button>
+        <button class="filter" type="button" data-status="완료" aria-pressed="false">완료</button>
+        <button class="filter" type="button" data-status="부분완료" aria-pressed="false">부분완료</button>
+        <button class="filter" type="button" data-status="미구현" aria-pressed="false">미구현</button>
+        <button class="filter" type="button" data-status="제약" aria-pressed="false">제약</button>
+      </div>
+    </div>
+
+    <section aria-labelledby="checklist-title">
+      <div class="section-head">
+        <h2 id="checklist-title">Seed Implementation Checklist</h2>
+        <span class="result-count"><span id="visible-count">69</span> / 69</span>
+      </div>
+      <div class="table-wrap">
+        <table id="checklist-table">
+          <thead>
+            <tr>
+              <th>Seed 컴포넌트</th>
+              <th>Seed props 요약</th>
+              <th>Seed 대응</th>
+              <th>Mossy props</th>
+              <th>상태</th>
+              <th>다음 액션</th>
+              <th>메모</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="미구현" data-search="`actionbutton` `actionbuttonprops`: `color?`, `fontweight?`; 상속 `actionbuttonvariantprops`, `usependingbuttonprops`, `primitiveprops`, `styleprops.flexgrow/bleedx/bleedy`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 버튼 계열 토큰 api 설계 필요.">
+              <td class="component"><code>ActionButton</code></td>
+              <td class="seed-props"><code>ActionButtonProps</code>: <code>color?</code>, <code>fontWeight?</code>; 상속 <code>ActionButtonVariantProps</code>, <code>UsePendingButtonProps</code>, <code>PrimitiveProps</code>, <code>StyleProps.flexGrow/bleedX/bleedY</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">버튼 계열 토큰 API 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`actionchip` `actionchipprops`: 상속 `actionchipvariantprops`, `primitiveprops`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. chip 계열 미구현.">
+              <td class="component"><code>ActionChip</code></td>
+              <td class="seed-props"><code>ActionChipProps</code>: 상속 <code>ActionChipVariantProps</code>, <code>PrimitiveProps</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Chip 계열 미구현.</td>
+            </tr>
+            <tr data-status="제약" data-search="`actionsheet` `root`: `lazymount?`, `unmountonexit?`; `backdrop`, `closebutton`, `content`, `description`, `header`, `item`, `list`, `positioner`, `title`, `trigger` 상속 dialog/html props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. seed는 ark dialog 기반 compound web api다. expo ui 네이티브 sheet와 1:1 파트 매핑이 없다.">
+              <td class="component"><code>ActionSheet</code></td>
+              <td class="seed-props"><code>Root</code>: <code>lazyMount?</code>, <code>unmountOnExit?</code>; <code>Backdrop</code>, <code>CloseButton</code>, <code>Content</code>, <code>Description</code>, <code>Header</code>, <code>Item</code>, <code>List</code>, <code>Positioner</code>, <code>Title</code>, <code>Trigger</code> 상속 Dialog/HTML props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Seed는 Ark Dialog 기반 compound web API다. Expo UI 네이티브 sheet와 1:1 파트 매핑이 없다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`article` `articleprops`: 상속 `boxprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 웹 semantic wrapper. rn에서는 별도 의미가 약하다.">
+              <td class="component"><code>Article</code></td>
+              <td class="seed-props"><code>ArticleProps</code>: 상속 <code>BoxProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">웹 semantic wrapper. RN에서는 별도 의미가 약하다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`aspectratio` `aspectratioprops`: `ratio?`, `position?`, `overflowx?`, `overflowy?`; 상속 `boxprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. rn `aspectratio` 기반 구현 가능 여부 확인 필요.">
+              <td class="component"><code>AspectRatio</code></td>
+              <td class="seed-props"><code>AspectRatioProps</code>: <code>ratio?</code>, <code>position?</code>, <code>overflowX?</code>, <code>overflowY?</code>; 상속 <code>BoxProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RN <code>aspectRatio</code> 기반 구현 가능 여부 확인 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`avatar` `root`, `image`, `fallback`, `badge`, `stack`; 상속 `avatarvariantprops`, `avatarstackvariantprops`, ark image props, `primitiveprops`, html attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. image/fallback/badge 조합 api 설계 필요.">
+              <td class="component"><code>Avatar</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Image</code>, <code>Fallback</code>, <code>Badge</code>, <code>Stack</code>; 상속 <code>AvatarVariantProps</code>, <code>AvatarStackVariantProps</code>, Ark image props, <code>PrimitiveProps</code>, HTML attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Image/Fallback/Badge 조합 API 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`badge` `badgeprops`: 상속 `badgevariantprops`, `primitiveprops`, span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 토큰 variant 래퍼 설계 필요.">
+              <td class="component"><code>Badge</code></td>
+              <td class="seed-props"><code>BadgeProps</code>: 상속 <code>BadgeVariantProps</code>, <code>PrimitiveProps</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">토큰 variant 래퍼 설계 필요.</td>
+            </tr>
+            <tr data-status="제약" data-search="`bottomsheet` `root`, `trigger`, `positioner`, `backdrop`, `content`, `header`, `title`, `description`, `body`, `footer`, `closebutton`; `body`는 `paddingx`, `height`, `maxheight`, `minheight`, `justifycontent`, `alignitems` 상속 - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. seed는 ark drawer 기반 compound web api다. expo ui bottomsheet는 플랫폼별 네이티브 api 제약이 있다.">
+              <td class="component"><code>BottomSheet</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Trigger</code>, <code>Positioner</code>, <code>Backdrop</code>, <code>Content</code>, <code>Header</code>, <code>Title</code>, <code>Description</code>, <code>Body</code>, <code>Footer</code>, <code>CloseButton</code>; <code>Body</code>는 <code>paddingX</code>, <code>height</code>, <code>maxHeight</code>, <code>minHeight</code>, <code>justifyContent</code>, <code>alignItems</code> 상속</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Seed는 Ark Drawer 기반 compound web API다. Expo UI BottomSheet는 플랫폼별 네이티브 API 제약이 있다.</td>
+            </tr>
+            <tr data-status="제약" data-search="`bottomsheethandle` `bottomsheethandleprops`: 상속 `primitiveprops`, div attrs - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. bottomsheet 내부 파트로만 의미가 있다.">
+              <td class="component"><code>BottomSheetHandle</code></td>
+              <td class="seed-props"><code>BottomSheetHandleProps</code>: 상속 <code>PrimitiveProps</code>, div attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">BottomSheet 내부 파트로만 의미가 있다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`box` `boxprops`: `as?`, `aschild?`; 상속 `styleprops`, div attrs `box` `box`: `children?`, `alignment?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui modifier 중심으로 `alignment`, `modifiers`만 공개한다. dom `as`, html attrs는 제공하지 않는다.">
+              <td class="component"><code>Box</code></td>
+              <td class="seed-props"><code>BoxProps</code>: <code>as?</code>, <code>asChild?</code>; 상속 <code>StyleProps</code>, div attrs</td>
+              <td class="mossy"><code>Box</code></td>
+              <td class="mossy-props"><code>Box</code>: <code>children?</code>, <code>alignment?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 Expo UI modifier 중심으로 <code>alignment</code>, <code>modifiers</code>만 공개한다. DOM <code>as</code>, HTML attrs는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`callout` `root`, `content`, `title`, `description`, `link`, `closebutton`; 상속 `calloutvariantprops`, `dismissiblerootprops`, `primitiveprops`, html/button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 배너/알림 계열 토큰 api 설계 필요.">
+              <td class="component"><code>Callout</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Content</code>, <code>Title</code>, <code>Description</code>, <code>Link</code>, <code>CloseButton</code>; 상속 <code>CalloutVariantProps</code>, <code>DismissibleRootProps</code>, <code>PrimitiveProps</code>, HTML/button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">배너/알림 계열 토큰 API 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`celsius` `celsiusprops`: `value` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 도메인 특화 표시 컴포넌트.">
+              <td class="component"><code>Celsius</code></td>
+              <td class="seed-props"><code>CelsiusProps</code>: <code>value</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">도메인 특화 표시 컴포넌트.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`checkbox` `root`: `weight?`; `indicator`: `unchecked?`, `checked`, `indeterminate?`; `group`, `control`, `hiddeninput`, `label`; 상속 `checkboxvariantprops`, `checkmarkvariantprops`, ark checkbox props `checkbox` `checkbox`: `componentprops&lt;typeof expocheckbox&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 universal `expocheckbox` pass-through다. seed의 파트 분해 api는 제공하지 않는다.">
+              <td class="component"><code>Checkbox</code></td>
+              <td class="seed-props"><code>Root</code>: <code>weight?</code>; <code>Indicator</code>: <code>unchecked?</code>, <code>checked</code>, <code>indeterminate?</code>; <code>Group</code>, <code>Control</code>, <code>HiddenInput</code>, <code>Label</code>; 상속 <code>CheckboxVariantProps</code>, <code>CheckmarkVariantProps</code>, Ark checkbox props</td>
+              <td class="mossy"><code>Checkbox</code></td>
+              <td class="mossy-props"><code>Checkbox</code>: <code>ComponentProps&lt;typeof ExpoCheckbox&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 universal <code>ExpoCheckbox</code> pass-through다. Seed의 파트 분해 API는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`chip` `root`, `label`, `prefixicon`, `prefixavatar`, `suffixicon`; 상속 `chipvariantprops`, `primitiveprops`, button/span/div attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. compound 파트 대신 닫힌 props/children 구조 필요.">
+              <td class="component"><code>Chip</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Label</code>, <code>PrefixIcon</code>, <code>PrefixAvatar</code>, <code>SuffixIcon</code>; 상속 <code>ChipVariantProps</code>, <code>PrimitiveProps</code>, button/span/div attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">compound 파트 대신 닫힌 props/children 구조 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`chiptabs` `root`, `list`, `trigger`, `content`, `carousel`, `carouselcamera`; 상속 `chiptabsvariantprops`, tabs primitive props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. segmentedcontrol과 별개로 탭 상태/콘텐츠 api 필요.">
+              <td class="component"><code>ChipTabs</code></td>
+              <td class="seed-props"><code>Root</code>, <code>List</code>, <code>Trigger</code>, <code>Content</code>, <code>Carousel</code>, <code>CarouselCamera</code>; 상속 <code>ChipTabsVariantProps</code>, tabs primitive props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">SegmentedControl과 별개로 탭 상태/콘텐츠 API 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`columns` `columnsprops`: 상속 `boxprops`; `columnprops`: `width?` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. rn flex/grid 대응 정책 확인 필요.">
+              <td class="component"><code>Columns</code></td>
+              <td class="seed-props"><code>ColumnsProps</code>: 상속 <code>BoxProps</code>; <code>ColumnProps</code>: <code>width?</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RN flex/grid 대응 정책 확인 필요.</td>
+            </tr>
+            <tr data-status="제약" data-search="`consistentwidth` `consistentwidthprops`: `children`; 상속 `primitiveprops`, span attrs - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. 웹 텍스트 측정/hidden span 기반 유틸 성격이다.">
+              <td class="component"><code>ConsistentWidth</code></td>
+              <td class="seed-props"><code>ConsistentWidthProps</code>: <code>children</code>; 상속 <code>PrimitiveProps</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">웹 텍스트 측정/hidden span 기반 유틸 성격이다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`contentplaceholder` `root`: 상속 `contentplaceholdervariantprops`, `primitiveprops`, div attrs; `asset`: html attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. placeholder/skeleton 계열 설계 필요.">
+              <td class="component"><code>ContentPlaceholder</code></td>
+              <td class="seed-props"><code>Root</code>: 상속 <code>ContentPlaceholderVariantProps</code>, <code>PrimitiveProps</code>, div attrs; <code>Asset</code>: HTML attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Placeholder/Skeleton 계열 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`contextualfloatingbutton` `contextualfloatingbuttonprops`: 상속 `contextualfloatingbuttonvariantprops`, `usependingbuttonprops`, `primitiveprops`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. fab 계열과 함께 검토.">
+              <td class="component"><code>ContextualFloatingButton</code></td>
+              <td class="seed-props"><code>ContextualFloatingButtonProps</code>: 상속 <code>ContextualFloatingButtonVariantProps</code>, <code>UsePendingButtonProps</code>, <code>PrimitiveProps</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">FAB 계열과 함께 검토.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`controlchip` `controlchipprops`, `controlchipbaseprops`: 상속 `controlchipvariantprops`, `primitiveprops`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 선택형 chip api 필요.">
+              <td class="component"><code>ControlChip</code></td>
+              <td class="seed-props"><code>ControlChipProps</code>, <code>ControlChipBaseProps</code>: 상속 <code>ControlChipVariantProps</code>, <code>PrimitiveProps</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">선택형 chip API 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`count` `countprops`: 상속 span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 숫자 표시 토큰 컴포넌트.">
+              <td class="component"><code>Count</code></td>
+              <td class="seed-props"><code>CountProps</code>: 상속 span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">숫자 표시 토큰 컴포넌트.</td>
+            </tr>
+            <tr data-status="제약" data-search="`dialog` `root`: `lazymount?`, `unmountonexit?`; `trigger`, `positioner`, `backdrop`, `content`, `header`, `title`, `description`, `footer`, `action`; 상속 dialog primitive/html props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. seed는 web dialog primitive다. rn/expo ui에서 동일한 dom focus/portal contract를 제공하지 않는다.">
+              <td class="component"><code>Dialog</code></td>
+              <td class="seed-props"><code>Root</code>: <code>lazyMount?</code>, <code>unmountOnExit?</code>; <code>Trigger</code>, <code>Positioner</code>, <code>Backdrop</code>, <code>Content</code>, <code>Header</code>, <code>Title</code>, <code>Description</code>, <code>Footer</code>, <code>Action</code>; 상속 Dialog primitive/HTML props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Seed는 web dialog primitive다. RN/Expo UI에서 동일한 DOM focus/portal contract를 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`divider` `dividerprops`: `as?`, `color?`, `thickness?`, `orientation?`, `inset?`; 상속 hr attrs `divider` `divider`: `orientation?`, `thickness?`, `color?`, `inset?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `orientation`, `thickness`, `color`, `inset` 토큰/값 중심이다. dom `as`는 제공하지 않는다.">
+              <td class="component"><code>Divider</code></td>
+              <td class="seed-props"><code>DividerProps</code>: <code>as?</code>, <code>color?</code>, <code>thickness?</code>, <code>orientation?</code>, <code>inset?</code>; 상속 hr attrs</td>
+              <td class="mossy"><code>Divider</code></td>
+              <td class="mossy-props"><code>Divider</code>: <code>orientation?</code>, <code>thickness?</code>, <code>color?</code>, <code>inset?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>orientation</code>, <code>thickness</code>, <code>color</code>, <code>inset</code> 토큰/값 중심이다. DOM <code>as</code>는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="제약" data-search="`extendedactionsheet` `root`: `lazymount?`, `unmountonexit?`; `backdrop`, `closebutton`, `content`, `footer`, `group`, `header`, `item`, `list`, `positioner`, `title`, `trigger`; 상속 dialog/html props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. seed web compound action sheet api다.">
+              <td class="component"><code>ExtendedActionSheet</code></td>
+              <td class="seed-props"><code>Root</code>: <code>lazyMount?</code>, <code>unmountOnExit?</code>; <code>Backdrop</code>, <code>CloseButton</code>, <code>Content</code>, <code>Footer</code>, <code>Group</code>, <code>Header</code>, <code>Item</code>, <code>List</code>, <code>Positioner</code>, <code>Title</code>, <code>Trigger</code>; 상속 Dialog/HTML props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Seed web compound action sheet API다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`extendedfab` `extendedfabprops`: 상속 `extendedfabvariantprops`, `primitiveprops`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui platform fab 가능성 확인 필요.">
+              <td class="component"><code>ExtendedFab</code></td>
+              <td class="seed-props"><code>ExtendedFabProps</code>: 상속 <code>ExtendedFabVariantProps</code>, <code>PrimitiveProps</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Expo UI platform FAB 가능성 확인 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`fab` `fabprops`: 상속 `fabvariantprops`, `primitiveprops`, button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui platform fab 가능성 확인 필요.">
+              <td class="component"><code>Fab</code></td>
+              <td class="seed-props"><code>FabProps</code>: 상속 <code>FabVariantProps</code>, <code>PrimitiveProps</code>, button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Expo UI platform FAB 가능성 확인 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`field` `root`, `header`, `label`, `indicatortext`, `requiredindicator`, `description`, `errormessage`, `footer`, `charactercount`; `charactercount`: `current`, `max`; 상속 field primitive/label variant props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 입력 필드 공통 래퍼 설계 필요.">
+              <td class="component"><code>Field</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Header</code>, <code>Label</code>, <code>IndicatorText</code>, <code>RequiredIndicator</code>, <code>Description</code>, <code>ErrorMessage</code>, <code>Footer</code>, <code>CharacterCount</code>; <code>CharacterCount</code>: <code>current</code>, <code>max</code>; 상속 field primitive/label variant props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">입력 필드 공통 래퍼 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`fieldbutton` `root`, `header`, `label`, `indicatortext`, `requiredindicator`, `prefixicon`, `prefixtext`, `suffixicon`, `suffixtext`, `footer`, `description`, `errormessage`, `hiddeninput`, `button`, `control`, `clearbutton`, `value`, `placeholder`; 상속 field button primitive props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. textfield/picker 계열과 함께 검토.">
+              <td class="component"><code>FieldButton</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Header</code>, <code>Label</code>, <code>IndicatorText</code>, <code>RequiredIndicator</code>, <code>PrefixIcon</code>, <code>PrefixText</code>, <code>SuffixIcon</code>, <code>SuffixText</code>, <code>Footer</code>, <code>Description</code>, <code>ErrorMessage</code>, <code>HiddenInput</code>, <code>Button</code>, <code>Control</code>, <code>ClearButton</code>, <code>Value</code>, <code>Placeholder</code>; 상속 field button primitive props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">TextField/Picker 계열과 함께 검토.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`fieldset` `root`, `header`, `label`, `indicatortext`, `requiredindicator`, `description`, `errormessage`, `footer`; 상속 fieldset primitive/label variant props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 그룹 입력 api 필요.">
+              <td class="component"><code>Fieldset</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Header</code>, <code>Label</code>, <code>IndicatorText</code>, <code>RequiredIndicator</code>, <code>Description</code>, <code>ErrorMessage</code>, <code>Footer</code>; 상속 fieldset primitive/label variant props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">그룹 입력 API 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`flex` `flexprops`: `display?`, `direction?`, `wrap?`, `align?`, `justify?`, `grow?`, `shrink?`; 상속 `boxprops` `flex`, `hstack`, `vstack` `flex`: `direction?`, `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `hstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `vstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof column&gt;, &#39;spacing&#39;&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui `row`/`column` 기반 `direction`, `spacing` 중심이다.">
+              <td class="component"><code>Flex</code></td>
+              <td class="seed-props"><code>FlexProps</code>: <code>display?</code>, <code>direction?</code>, <code>wrap?</code>, <code>align?</code>, <code>justify?</code>, <code>grow?</code>, <code>shrink?</code>; 상속 <code>BoxProps</code></td>
+              <td class="mossy"><code>Flex</code>, <code>HStack</code>, <code>VStack</code></td>
+              <td class="mossy-props"><code>Flex</code>: <code>direction?</code>, <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>HStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>VStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Column&gt;, &#39;spacing&#39;&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 Expo UI <code>Row</code>/<code>Column</code> 기반 <code>direction</code>, <code>spacing</code> 중심이다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`float` `floatprops`: `as?`, `placement`, `offsetx?`, `offsety?`, `zindex?`; 상속 div attrs `float` `float`: `children?`, `placement`, `offsetx?`, `offsety?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `placement`, `offsetx`, `offsety`, `modifiers` 중심이다. dom `as`는 제공하지 않는다.">
+              <td class="component"><code>Float</code></td>
+              <td class="seed-props"><code>FloatProps</code>: <code>as?</code>, <code>placement</code>, <code>offsetX?</code>, <code>offsetY?</code>, <code>zIndex?</code>; 상속 div attrs</td>
+              <td class="mossy"><code>Float</code></td>
+              <td class="mossy-props"><code>Float</code>: <code>children?</code>, <code>placement</code>, <code>offsetX?</code>, <code>offsetY?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>placement</code>, <code>offsetX</code>, <code>offsetY</code>, <code>modifiers</code> 중심이다. DOM <code>as</code>는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`floatingactionbutton` `root`, `icon`, `label`; 상속 `floatingactionbuttonvariantprops`, `primitiveprops`, button/span attrs, `internaliconprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui platform fab 가능성 확인 필요.">
+              <td class="component"><code>FloatingActionButton</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Icon</code>, <code>Label</code>; 상속 <code>FloatingActionButtonVariantProps</code>, <code>PrimitiveProps</code>, button/span attrs, <code>InternalIconProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Expo UI platform FAB 가능성 확인 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`grid` `gridprops`: `display?`, `align?`, `justify?`, `justifyitems?`, `columns?`, `rows?`, `autoflow?`, `autocolumns?`, `autorows?`; 상속 `boxprops` `grid` `grid`: `children?`, `columns`, `horizontalspacing?`, `verticalspacing?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `columns`, `horizontalspacing`, `verticalspacing` 중심이다. css grid 세부 props는 제공하지 않는다.">
+              <td class="component"><code>Grid</code></td>
+              <td class="seed-props"><code>GridProps</code>: <code>display?</code>, <code>align?</code>, <code>justify?</code>, <code>justifyItems?</code>, <code>columns?</code>, <code>rows?</code>, <code>autoFlow?</code>, <code>autoColumns?</code>, <code>autoRows?</code>; 상속 <code>BoxProps</code></td>
+              <td class="mossy"><code>Grid</code></td>
+              <td class="mossy-props"><code>Grid</code>: <code>children?</code>, <code>columns</code>, <code>horizontalSpacing?</code>, <code>verticalSpacing?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>columns</code>, <code>horizontalSpacing</code>, <code>verticalSpacing</code> 중심이다. CSS grid 세부 props는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`griditem` `griditemprops`: `aschild?`, `colspan?`, `rowspan?`, `colstart?`, `colend?`, `rowstart?`, `rowend?`; 상속 `boxprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. mossy grid item span api 추가 여부 확인 필요.">
+              <td class="component"><code>GridItem</code></td>
+              <td class="seed-props"><code>GridItemProps</code>: <code>asChild?</code>, <code>colSpan?</code>, <code>rowSpan?</code>, <code>colStart?</code>, <code>colEnd?</code>, <code>rowStart?</code>, <code>rowEnd?</code>; 상속 <code>BoxProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Mossy Grid item span API 추가 여부 확인 필요.</td>
+            </tr>
+            <tr data-status="제약" data-search="`helpbubble` `root`: `placement?`, `gutter?`, `overflowpadding?`, `arrowpadding?`; `anchor`, `arrow`, `arrowtip`, `body`, `closebutton`, `content`, `description`, `positionerportal`, `positioner`, `title`, `trigger`; 상속 popover primitive/html props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. web popover/portal/positioner contract가 rn/expo ui와 다르다.">
+              <td class="component"><code>HelpBubble</code></td>
+              <td class="seed-props"><code>Root</code>: <code>placement?</code>, <code>gutter?</code>, <code>overflowPadding?</code>, <code>arrowPadding?</code>; <code>Anchor</code>, <code>Arrow</code>, <code>ArrowTip</code>, <code>Body</code>, <code>CloseButton</code>, <code>Content</code>, <code>Description</code>, <code>PositionerPortal</code>, <code>Positioner</code>, <code>Title</code>, <code>Trigger</code>; 상속 Popover primitive/HTML props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Web popover/portal/positioner contract가 RN/Expo UI와 다르다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`icon` `iconprops`: `svg`, `size?`, `color?`; `prefixiconprops`: `svg`; `suffixiconprops`: `svg` `icon` `icon`: `color?`, `size?`, 상속 `omit&lt;componentprops&lt;typeof expoicon&gt;, &#39;color&#39; | &#39;size&#39;&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui icon pass-through에 `color`, `size` 토큰 prop을 주입한다.">
+              <td class="component"><code>Icon</code></td>
+              <td class="seed-props"><code>IconProps</code>: <code>svg</code>, <code>size?</code>, <code>color?</code>; <code>PrefixIconProps</code>: <code>svg</code>; <code>SuffixIconProps</code>: <code>svg</code></td>
+              <td class="mossy"><code>Icon</code></td>
+              <td class="mossy-props"><code>Icon</code>: <code>color?</code>, <code>size?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof ExpoIcon&gt;, &#39;color&#39; | &#39;size&#39;&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 Expo UI Icon pass-through에 <code>color</code>, <code>size</code> 토큰 prop을 주입한다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`identityplaceholder` `root`: 상속 `identityplaceholdervariantprops`, `primitiveprops`, div attrs; `image`: svg props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. avatar/placeholder 계열과 함께 검토.">
+              <td class="component"><code>IdentityPlaceholder</code></td>
+              <td class="seed-props"><code>Root</code>: 상속 <code>IdentityPlaceholderVariantProps</code>, <code>PrimitiveProps</code>, div attrs; <code>Image</code>: SVG props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Avatar/Placeholder 계열과 함께 검토.</td>
+            </tr>
+            <tr data-status="제약" data-search="`imageframe` `imageframeprops`: `rounded?`, `src`, `alt`, `fallback?`, `loading?`, `decoding?`, `crossorigin?`, `referrerpolicy?`, `sizes?`, `srcset?`, `onload?`, `onerror?`, `children?`; `floater`, `badge`, `icon`, `indicator`, `reactionbutton` - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. web image attributes와 responsive image props가 rn image api와 다르다.">
+              <td class="component"><code>ImageFrame</code></td>
+              <td class="seed-props"><code>ImageFrameProps</code>: <code>rounded?</code>, <code>src</code>, <code>alt</code>, <code>fallback?</code>, <code>loading?</code>, <code>decoding?</code>, <code>crossOrigin?</code>, <code>referrerPolicy?</code>, <code>sizes?</code>, <code>srcSet?</code>, <code>onLoad?</code>, <code>onError?</code>, <code>children?</code>; <code>Floater</code>, <code>Badge</code>, <code>Icon</code>, <code>Indicator</code>, <code>ReactionButton</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Web image attributes와 responsive image props가 RN Image API와 다르다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`inline` `inlineprops`: 상속 `boxprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. hstack/flex로 대응 가능하나 별도 공개 api 없음.">
+              <td class="component"><code>Inline</code></td>
+              <td class="seed-props"><code>InlineProps</code>: 상속 <code>BoxProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">HStack/Flex로 대응 가능하나 별도 공개 API 없음.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`inlinebanner` `root`, `content`, `title`, `description`, `link`, `closebutton`; 상속 `inlinebannervariantprops`, `dismissiblerootprops`, `primitiveprops`, html/button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. banner/callout 계열 설계 필요.">
+              <td class="component"><code>InlineBanner</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Content</code>, <code>Title</code>, <code>Description</code>, <code>Link</code>, <code>CloseButton</code>; 상속 <code>InlineBannerVariantProps</code>, <code>DismissibleRootProps</code>, <code>PrimitiveProps</code>, HTML/button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Banner/Callout 계열 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`linkcontent` `linkcontentprops`: 상속 `linkcontentvariantprops`, `primitiveprops`, `styleprops.color`, span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. link/pressable 텍스트 api 필요.">
+              <td class="component"><code>LinkContent</code></td>
+              <td class="seed-props"><code>LinkContentProps</code>: 상속 <code>LinkContentVariantProps</code>, <code>PrimitiveProps</code>, <code>StyleProps.color</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Link/pressable 텍스트 API 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`list` `root`: `itemborderradius?`; `header`: `as?`; `item`, `content`, `title`, `detail`, `prefix`, `suffix`; 상속 `vstackprops`, `listheadervariantprops`, `listitemvariantprops`, `styleprops`, html attrs `list`, `listheader`, `listitem` `list`: `componentprops&lt;typeof expolist&gt;`; `listheader`: `title`, `variant?`, `children?`, `testid?`, `modifiers?`; `listitem`: `title?`, `detail?`, 상속 `componentprops&lt;typeof expolistitem&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui `list`/`listitem`과 별도 `listheader`를 제공한다. seed의 compound slots는 그대로 재노출하지 않는다.">
+              <td class="component"><code>List</code></td>
+              <td class="seed-props"><code>Root</code>: <code>itemBorderRadius?</code>; <code>Header</code>: <code>as?</code>; <code>Item</code>, <code>Content</code>, <code>Title</code>, <code>Detail</code>, <code>Prefix</code>, <code>Suffix</code>; 상속 <code>VStackProps</code>, <code>ListHeaderVariantProps</code>, <code>ListItemVariantProps</code>, <code>StyleProps</code>, HTML attrs</td>
+              <td class="mossy"><code>List</code>, <code>ListHeader</code>, <code>ListItem</code></td>
+              <td class="mossy-props"><code>List</code>: <code>ComponentProps&lt;typeof ExpoList&gt;</code>; <code>ListHeader</code>: <code>title</code>, <code>variant?</code>, <code>children?</code>, <code>testID?</code>, <code>modifiers?</code>; <code>ListItem</code>: <code>title?</code>, <code>detail?</code>, 상속 <code>ComponentProps&lt;typeof ExpoListItem&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 Expo UI <code>List</code>/<code>ListItem</code>과 별도 <code>ListHeader</code>를 제공한다. Seed의 compound slots는 그대로 재노출하지 않는다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`loadingindicator` `loadingindicatorprops`: `indicator`; 상속 span attrs `loadingindicator` `loadingindicator`: 상속 `omit&lt;mossyprogresscircleprops, &#39;value&#39;&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `progresscircle` 기반 indeterminate 래퍼다.">
+              <td class="component"><code>LoadingIndicator</code></td>
+              <td class="seed-props"><code>LoadingIndicatorProps</code>: <code>indicator</code>; 상속 span attrs</td>
+              <td class="mossy"><code>LoadingIndicator</code></td>
+              <td class="mossy-props"><code>LoadingIndicator</code>: 상속 <code>Omit&lt;MossyProgressCircleProps, &#39;value&#39;&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>ProgressCircle</code> 기반 indeterminate 래퍼다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`mannertemp` `mannertempprops`: 상속 `mannertempvariantprops`, `primitiveprops`, span attrs; `mannertempemoteprops`: `level?` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 도메인 특화 표시 컴포넌트.">
+              <td class="component"><code>MannerTemp</code></td>
+              <td class="seed-props"><code>MannerTempProps</code>: 상속 <code>MannerTempVariantProps</code>, <code>PrimitiveProps</code>, span attrs; <code>MannerTempEmoteProps</code>: <code>level?</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">도메인 특화 표시 컴포넌트.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`mannertempbadge` `mannertempbadgeprops`: 상속 `mannertempbadgevariantprops`, `primitiveprops`, span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 도메인 특화 표시 컴포넌트.">
+              <td class="component"><code>MannerTempBadge</code></td>
+              <td class="seed-props"><code>MannerTempBadgeProps</code>: 상속 <code>MannerTempBadgeVariantProps</code>, <code>PrimitiveProps</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">도메인 특화 표시 컴포넌트.</td>
+            </tr>
+            <tr data-status="제약" data-search="`menusheet` `root`: `lazymount?`, `unmountonexit?`; `backdrop`, `closebutton`, `content`, `description`, `footer`, `group`, `header`, `item`, `itemcontent`, `itemdescription`, `itemlabel`, `list`, `positioner`, `title`, `trigger`; 상속 dialog primitive/html props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. seed web dialog/menu sheet compound api다.">
+              <td class="component"><code>MenuSheet</code></td>
+              <td class="seed-props"><code>Root</code>: <code>lazyMount?</code>, <code>unmountOnExit?</code>; <code>Backdrop</code>, <code>CloseButton</code>, <code>Content</code>, <code>Description</code>, <code>Footer</code>, <code>Group</code>, <code>Header</code>, <code>Item</code>, <code>ItemContent</code>, <code>ItemDescription</code>, <code>ItemLabel</code>, <code>List</code>, <code>Positioner</code>, <code>Title</code>, <code>Trigger</code>; 상속 Dialog primitive/HTML props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Seed web dialog/menu sheet compound API다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`notificationbadge` `notificationbadgeprops`, `notificationbadgepositionerprops`: 상속 notification badge variant props, `primitiveprops`, span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. badge 계열과 함께 검토.">
+              <td class="component"><code>NotificationBadge</code></td>
+              <td class="seed-props"><code>NotificationBadgeProps</code>, <code>NotificationBadgePositionerProps</code>: 상속 notification badge variant props, <code>PrimitiveProps</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Badge 계열과 함께 검토.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`pagebanner` `root`, `content`, `body`, `title`, `description`, `button`, `closebutton`; 상속 `pagebannervariantprops`, `dismissiblerootprops`, `primitiveprops`, html/button attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. banner/callout 계열 설계 필요.">
+              <td class="component"><code>PageBanner</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Content</code>, <code>Body</code>, <code>Title</code>, <code>Description</code>, <code>Button</code>, <code>CloseButton</code>; 상속 <code>PageBannerVariantProps</code>, <code>DismissibleRootProps</code>, <code>PrimitiveProps</code>, HTML/button attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Banner/Callout 계열 설계 필요.</td>
+            </tr>
+            <tr data-status="제약" data-search="`portal` `portalprops`: `@seed-design/react-portal`에서 재노출 - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. web portal api다. expo ui host/네이티브 modal 계층과 동일하게 제공하지 않는다.">
+              <td class="component"><code>Portal</code></td>
+              <td class="seed-props"><code>PortalProps</code>: <code>@seed-design/react-portal</code>에서 재노출</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Web portal API다. Expo UI Host/네이티브 modal 계층과 동일하게 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`progresscircle` `root`, `track`, `range`; 상속 `progresscircleprimitive.*props`, `progresscirclevariantprops` `progresscircle` `progresscircle`: `value?`, `color?`, `trackcolor?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `value`, `color`, `trackcolor`, `modifiers` 중심 단일 컴포넌트다.">
+              <td class="component"><code>ProgressCircle</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Track</code>, <code>Range</code>; 상속 <code>ProgressCirclePrimitive.*Props</code>, <code>ProgressCircleVariantProps</code></td>
+              <td class="mossy"><code>ProgressCircle</code></td>
+              <td class="mossy-props"><code>ProgressCircle</code>: <code>value?</code>, <code>color?</code>, <code>trackColor?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>value</code>, <code>color</code>, <code>trackColor</code>, <code>modifiers</code> 중심 단일 컴포넌트다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`pulltorefresh` `root`, `content`, `indicator`; 상속 pull-to-refresh primitive props, `pulltorefreshvariantprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. rn refreshcontrol/scrollview 조합 검토 필요.">
+              <td class="component"><code>PullToRefresh</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Content</code>, <code>Indicator</code>; 상속 pull-to-refresh primitive props, <code>PullToRefreshVariantProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RN RefreshControl/ScrollView 조합 검토 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`radiogroup` `root`, `item`, `itemcontrol`, `itemhiddeninput`, `itemindicator`, `itemlabel`; `itemindicator`: `unchecked?`, `checked?`; 상속 radio group primitive/variant props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui 대응 컴포넌트 확인 필요.">
+              <td class="component"><code>RadioGroup</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Item</code>, <code>ItemControl</code>, <code>ItemHiddenInput</code>, <code>ItemIndicator</code>, <code>ItemLabel</code>; <code>ItemIndicator</code>: <code>unchecked?</code>, <code>checked?</code>; 상속 radio group primitive/variant props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Expo UI 대응 컴포넌트 확인 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`radiogroupfield` `root`, `header`, `label`, `indicatortext`, `requiredindicator`, `description`, `errormessage`, `footer`; 상속 field/radio primitive props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. radiogroup과 field 조합 설계 필요.">
+              <td class="component"><code>RadioGroupField</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Header</code>, <code>Label</code>, <code>IndicatorText</code>, <code>RequiredIndicator</code>, <code>Description</code>, <code>ErrorMessage</code>, <code>Footer</code>; 상속 field/radio primitive props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RadioGroup과 Field 조합 설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`reactionbutton` `reactionbuttonprops`: 상속 `reactionbuttonvariantprops`, `usependingbuttonprops`, toggle primitive props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. togglebutton/fab 계열과 함께 검토.">
+              <td class="component"><code>ReactionButton</code></td>
+              <td class="seed-props"><code>ReactionButtonProps</code>: 상속 <code>ReactionButtonVariantProps</code>, <code>UsePendingButtonProps</code>, toggle primitive props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">ToggleButton/FAB 계열과 함께 검토.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`responsivepair` `responsivepairprops`: `wrap?`, `children`; 상속 `flexprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. rn 반응형 기준과 breakpoint 정책 필요.">
+              <td class="component"><code>ResponsivePair</code></td>
+              <td class="seed-props"><code>ResponsivePairProps</code>: <code>wrap?</code>, <code>children</code>; 상속 <code>FlexProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RN 반응형 기준과 breakpoint 정책 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`scrollfog` `scrollfogprops`: `placement?`, `size?`, `sizes?`; 상속 `scrollfogvariantprops`, div attrs `scrollfog` `scrollfog`: `children?`, `placement?`, `size?`, `sizes?`, 상속 `viewprops` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 rn `viewprops`와 토큰 size를 사용한다.">
+              <td class="component"><code>ScrollFog</code></td>
+              <td class="seed-props"><code>ScrollFogProps</code>: <code>placement?</code>, <code>size?</code>, <code>sizes?</code>; 상속 <code>ScrollFogVariantProps</code>, div attrs</td>
+              <td class="mossy"><code>ScrollFog</code></td>
+              <td class="mossy-props"><code>ScrollFog</code>: <code>children?</code>, <code>placement?</code>, <code>size?</code>, <code>sizes?</code>, 상속 <code>ViewProps</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 RN <code>ViewProps</code>와 토큰 size를 사용한다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`segmentedcontrol` `root`, `item`, `itemhiddeninput`, `indicator`; 상속 segmented control primitive/variant props `segmentedcontrol` `segmentedcontrol`: `options`, `selectedindex`, `onselectedindexchange`, `disabled?`, `testid?`, `modifiers?` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `options`, `selectedindex`, `onselectedindexchange`의 닫힌 데이터 props를 사용한다.">
+              <td class="component"><code>SegmentedControl</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Item</code>, <code>ItemHiddenInput</code>, <code>Indicator</code>; 상속 segmented control primitive/variant props</td>
+              <td class="mossy"><code>SegmentedControl</code></td>
+              <td class="mossy-props"><code>SegmentedControl</code>: <code>options</code>, <code>selectedIndex</code>, <code>onSelectedIndexChange</code>, <code>disabled?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>options</code>, <code>selectedIndex</code>, <code>onSelectedIndexChange</code>의 닫힌 데이터 props를 사용한다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`selectbox` `checkselectbox*`, `radioselectbox*`; `group`: `columns?`; `root`: `footervisibility?`; 상속 checkbox/radio primitive props, select box variant props, `internaliconprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. rn 선택 카드 api로 재설계 필요.">
+              <td class="component"><code>SelectBox</code></td>
+              <td class="seed-props"><code>CheckSelectBox*</code>, <code>RadioSelectBox*</code>; <code>Group</code>: <code>columns?</code>; <code>Root</code>: <code>footerVisibility?</code>; 상속 checkbox/radio primitive props, select box variant props, <code>InternalIconProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">RN 선택 카드 API로 재설계 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`skeleton` `skeletonprops`: 상속 `skeletonvariantprops`, `primitiveprops`, `styleprops.height/width`, div attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. loading 문서 기준으로 구현 가능성 확인 필요.">
+              <td class="component"><code>Skeleton</code></td>
+              <td class="seed-props"><code>SkeletonProps</code>: 상속 <code>SkeletonVariantProps</code>, <code>PrimitiveProps</code>, <code>StyleProps.height/width</code>, div attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Loading 문서 기준으로 구현 가능성 확인 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`slider` `root`, `control`, `track`, `range`, `thumb`, `hiddeninput`, `markers`, `marker`, `tick`, `valueindicatorroot`, `valueindicatorlabel`, `valueindicatorarrow`, `valueindicatorarrowtip`; `arrowtip`: `tipradius?`; 상속 slider primitive/variant props `slider` `slider`: `componentprops&lt;typeof exposlider&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 universal `exposlider` pass-through다. seed의 marker/value indicator 파트는 제공하지 않는다.">
+              <td class="component"><code>Slider</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Control</code>, <code>Track</code>, <code>Range</code>, <code>Thumb</code>, <code>HiddenInput</code>, <code>Markers</code>, <code>Marker</code>, <code>Tick</code>, <code>ValueIndicatorRoot</code>, <code>ValueIndicatorLabel</code>, <code>ValueIndicatorArrow</code>, <code>ValueIndicatorArrowTip</code>; <code>ArrowTip</code>: <code>tipRadius?</code>; 상속 slider primitive/variant props</td>
+              <td class="mossy"><code>Slider</code></td>
+              <td class="mossy-props"><code>Slider</code>: <code>ComponentProps&lt;typeof ExpoSlider&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 universal <code>ExpoSlider</code> pass-through다. Seed의 marker/value indicator 파트는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="제약" data-search="`snackbar` `region`, `rootprovider`, `root`, `renderer`, `avoidoverlap`, `content`, `message`, `prefixicon`, `actionbutton`, `hiddenclosebutton`; 상속 snackbar primitive/variant props - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. web toast/snackbar portal region contract가 rn/expo ui와 다르다.">
+              <td class="component"><code>Snackbar</code></td>
+              <td class="seed-props"><code>Region</code>, <code>RootProvider</code>, <code>Root</code>, <code>Renderer</code>, <code>AvoidOverlap</code>, <code>Content</code>, <code>Message</code>, <code>PrefixIcon</code>, <code>ActionButton</code>, <code>HiddenCloseButton</code>; 상속 snackbar primitive/variant props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Web toast/snackbar portal region contract가 RN/Expo UI와 다르다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`stack` `stackprops`, `hstackprops`, `vstackprops`: 상속 `omit&lt;flexprops, &#39;flexdirection&#39;&gt;` `hstack`, `vstack`, `flex` `hstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `vstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof column&gt;, &#39;spacing&#39;&gt;`; `flex`: `direction?`, `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `stack` 이름 없이 `hstack`/`vstack`을 공개한다.">
+              <td class="component"><code>Stack</code></td>
+              <td class="seed-props"><code>StackProps</code>, <code>HStackProps</code>, <code>VStackProps</code>: 상속 <code>Omit&lt;FlexProps, &#39;flexDirection&#39;&gt;</code></td>
+              <td class="mossy"><code>HStack</code>, <code>VStack</code>, <code>Flex</code></td>
+              <td class="mossy-props"><code>HStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>VStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Column&gt;, &#39;spacing&#39;&gt;</code>; <code>Flex</code>: <code>direction?</code>, <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>Stack</code> 이름 없이 <code>HStack</code>/<code>VStack</code>을 공개한다.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`switch` `root`: `size?`; `control`, `hiddeninput`, `label`, `thumb`; 상속 switch primitive/variant props `switch` `switch`: `componentprops&lt;typeof exposwitch&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 universal `exposwitch` pass-through다. seed의 파트 분해 api는 제공하지 않는다.">
+              <td class="component"><code>Switch</code></td>
+              <td class="seed-props"><code>Root</code>: <code>size?</code>; <code>Control</code>, <code>HiddenInput</code>, <code>Label</code>, <code>Thumb</code>; 상속 switch primitive/variant props</td>
+              <td class="mossy"><code>Switch</code></td>
+              <td class="mossy-props"><code>Switch</code>: <code>ComponentProps&lt;typeof ExpoSwitch&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 universal <code>ExpoSwitch</code> pass-through다. Seed의 파트 분해 API는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`tabs` `root`, `list`, `trigger`, `indicator`, `content`, `carousel`, `carouselcamera`; 상속 tabs primitive props, `tabsvariantprops` - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. segmentedcontrol과 다른 콘텐츠 탭 api 필요.">
+              <td class="component"><code>Tabs</code></td>
+              <td class="seed-props"><code>Root</code>, <code>List</code>, <code>Trigger</code>, <code>Indicator</code>, <code>Content</code>, <code>Carousel</code>, <code>CarouselCamera</code>; 상속 tabs primitive props, <code>TabsVariantProps</code></td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">SegmentedControl과 다른 콘텐츠 탭 API 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`taggroup` `root`: `separator?`; `item`, `itemlabel`; 상속 tag group variant props, `primitiveprops`, `styleprops.flexshrink`, span attrs - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. 텍스트 태그 그룹 api 필요.">
+              <td class="component"><code>TagGroup</code></td>
+              <td class="seed-props"><code>Root</code>: <code>separator?</code>; <code>Item</code>, <code>ItemLabel</code>; 상속 tag group variant props, <code>PrimitiveProps</code>, <code>StyleProps.flexShrink</code>, span attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">텍스트 태그 그룹 API 필요.</td>
+            </tr>
+            <tr data-status="부분완료" data-search="`text` `textprops`: `as?`, `color?`, `fontsize?`, `lineheight?`, `fontweight?`, `maxlines?`, `align?`, `userselect?`, `whitespace?`; 상속 `textvariantprops`, span attrs `text` `text`: `textstyle?`, `color?`, `fontsize?`, `lineheight?`, `fontweight?`, `align?`, `fontfamily?`, `letterspacing?`, 상속 `omit&lt;componentprops&lt;typeof expotext&gt;, &#39;textstyle&#39;&gt;` 부분완료 seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `textstyle`, tokenized color/typography props를 제공한다. dom `as`, `userselect`, `whitespace`는 제공하지 않는다.">
+              <td class="component"><code>Text</code></td>
+              <td class="seed-props"><code>TextProps</code>: <code>as?</code>, <code>color?</code>, <code>fontSize?</code>, <code>lineHeight?</code>, <code>fontWeight?</code>, <code>maxLines?</code>, <code>align?</code>, <code>userSelect?</code>, <code>whiteSpace?</code>; 상속 <code>TextVariantProps</code>, span attrs</td>
+              <td class="mossy"><code>Text</code></td>
+              <td class="mossy-props"><code>Text</code>: <code>textStyle?</code>, <code>color?</code>, <code>fontSize?</code>, <code>lineHeight?</code>, <code>fontWeight?</code>, <code>align?</code>, <code>fontFamily?</code>, <code>letterSpacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof ExpoText&gt;, &#39;textStyle&#39;&gt;</code></td>
+              <td><span class="status partial">부분완료</span></td>
+              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="note">Mossy는 <code>textStyle</code>, tokenized color/typography props를 제공한다. DOM <code>as</code>, <code>userSelect</code>, <code>whiteSpace</code>는 제공하지 않는다.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`textfield` `root`, `input`, `textarea`, `prefixicon`, `prefixtext`, `suffixicon`, `suffixtext`; `textarea`: `autoresize?`; 상속 text field primitive/variant props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui textfield platform 대응과 field 조합 정책 확인 필요.">
+              <td class="component"><code>TextField</code></td>
+              <td class="seed-props"><code>Root</code>, <code>Input</code>, <code>Textarea</code>, <code>PrefixIcon</code>, <code>PrefixText</code>, <code>SuffixIcon</code>, <code>SuffixText</code>; <code>Textarea</code>: <code>autoresize?</code>; 상속 text field primitive/variant props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Expo UI TextField platform 대응과 Field 조합 정책 확인 필요.</td>
+            </tr>
+            <tr data-status="미구현" data-search="`togglebutton` `togglebuttonprops`: 상속 `togglebuttonvariantprops`, `usependingbuttonprops`, toggle primitive props - - 미구현 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. toggle/pressed 상태 토큰 정책 확인 필요.">
+              <td class="component"><code>ToggleButton</code></td>
+              <td class="seed-props"><code>ToggleButtonProps</code>: 상속 <code>ToggleButtonVariantProps</code>, <code>UsePendingButtonProps</code>, toggle primitive props</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status missing">미구현</span></td>
+              <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
+              <td class="note">Toggle/pressed 상태 토큰 정책 확인 필요.</td>
+            </tr>
+            <tr data-status="제약" data-search="`visuallyhidden` `visuallyhiddenprops`: 상속 `primitiveprops`, div attrs - - 제약 seed api를 그대로 구현하지 않고 rn/expo ui 대체 패턴을 문서화한다. web accessibility utility다. rn 접근성 props로 별도 처리한다.">
+              <td class="component"><code>VisuallyHidden</code></td>
+              <td class="seed-props"><code>VisuallyHiddenProps</code>: 상속 <code>PrimitiveProps</code>, div attrs</td>
+              <td class="mossy">-</td>
+              <td class="mossy-props">-</td>
+              <td><span class="status blocked">제약</span></td>
+              <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
+              <td class="note">Web accessibility utility다. RN 접근성 props로 별도 처리한다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="mossy-only-title">
+      <div class="section-head">
+        <h2 id="mossy-only-title">Mossy Only</h2>
+        <span class="result-count">2 components</span>
+      </div>
+      <div class="table-wrap">
+        <table class="api-table" id="mossy-only-table">
+          <thead>
+            <tr>
+              <th>Mossy 컴포넌트</th>
+              <th>Mossy props</th>
+              <th>이유</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="component"><code>ScrollView</code></td>
+              <td class="mossy-props"><code>style?</code>, <code>padding?</code>, <code>paddingHorizontal?</code>, <code>paddingVertical?</code>, <code>paddingTop?</code>, <code>paddingBottom?</code>, <code>paddingLeft?</code>, <code>paddingRight?</code>, 상속 <code>Omit&lt;ExpoScrollViewProps, &#39;style&#39;&gt;</code></td>
+              <td class="note">Seed React에는 직접 대응 컴포넌트가 없다. Mossy는 RN ScrollView padding 토큰화를 위해 제공한다.</td>
+            </tr>
+            <tr>
+              <td class="component"><code>Spacer</code></td>
+              <td class="mossy-props"><code>size?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof ExpoSpacer&gt;, &#39;size&#39;&gt;</code></td>
+              <td class="note">Seed React에는 직접 대응 컴포넌트가 없다. Mossy는 Expo UI Spacer 크기를 토큰화해 제공한다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const rows = Array.from(document.querySelectorAll('#checklist-table tbody tr'));
+    const search = document.querySelector('#search');
+    const visibleCount = document.querySelector('#visible-count');
+    const filters = Array.from(document.querySelectorAll('.filter'));
+    let activeStatus = 'all';
+
+    function setColumnVisibility(table, columnIndex, visible) {
+      const rowsInTable = Array.from(table.querySelectorAll('tr'));
+
+      for (const row of rowsInTable) {
+        const cell = row.children[columnIndex];
+        if (cell) {
+          cell.hidden = !visible;
+        }
+      }
+    }
+
+    function renderColumnControls(table, controls, hiddenColumns) {
+      controls.innerHTML = '';
+
+      if (hiddenColumns.size === 0) {
+        controls.textContent = '숨긴 칼럼 없음';
+        return;
+      }
+
+      controls.textContent = '숨긴 칼럼:';
+
+      for (const [columnIndex, label] of hiddenColumns) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'column-show-button';
+        button.textContent = label + ' 보이기';
+        button.setAttribute('aria-label', label + ' 칼럼 보이기');
+        button.addEventListener('click', () => {
+          hiddenColumns.delete(columnIndex);
+          setColumnVisibility(table, columnIndex, true);
+          renderColumnControls(table, controls, hiddenColumns);
+        });
+        controls.appendChild(button);
+      }
+    }
+
+    function setupColumnHiding(table) {
+      const headerCells = Array.from(table.querySelectorAll('thead th'));
+      const controls = document.createElement('div');
+      const hiddenColumns = new Map();
+      controls.className = 'column-controls';
+      controls.setAttribute('aria-live', 'polite');
+      table.parentElement.before(controls);
+
+      headerCells.forEach((headerCell, columnIndex) => {
+        const label = headerCell.textContent.trim();
+        const labelSpan = document.createElement('span');
+        const hideButton = document.createElement('button');
+        const wrapper = document.createElement('span');
+
+        labelSpan.textContent = label;
+        hideButton.type = 'button';
+        hideButton.className = 'column-hide-button';
+        hideButton.textContent = '숨김';
+        hideButton.setAttribute('aria-label', label + ' 칼럼 숨기기');
+        wrapper.className = 'th-content';
+        wrapper.append(labelSpan, hideButton);
+
+        headerCell.textContent = '';
+        headerCell.appendChild(wrapper);
+
+        hideButton.addEventListener('click', () => {
+          hiddenColumns.set(columnIndex, label);
+          setColumnVisibility(table, columnIndex, false);
+          renderColumnControls(table, controls, hiddenColumns);
+        });
+      });
+
+      renderColumnControls(table, controls, hiddenColumns);
+    }
+
+    function applyFilters() {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+
+      for (const row of rows) {
+        const statusMatch = activeStatus === 'all' || row.dataset.status === activeStatus;
+        const searchMatch = query.length === 0 || row.dataset.search.includes(query);
+        const show = statusMatch && searchMatch;
+        row.hidden = !show;
+        if (show) visible += 1;
+      }
+
+      visibleCount.textContent = visible;
+    }
+
+    search.addEventListener('input', applyFilters);
+    for (const filter of filters) {
+      filter.addEventListener('click', () => {
+        activeStatus = filter.dataset.status;
+        for (const item of filters) {
+          item.setAttribute('aria-pressed', String(item === filter));
+        }
+        applyFilters();
+      });
+    }
+
+    for (const table of document.querySelectorAll('table')) {
+      setupColumnHiding(table);
+    }
+  </script>
+</body>
+</html>

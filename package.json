@@ -38,6 +38,7 @@
     "build:js": "babel src --extensions .ts,.tsx --out-dir dist",
     "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "clean": "rm -rf dist",
+    "docs:seed-parity-html": "node scripts/generate-seed-parity-html.mjs",
     "example:android": "npm --prefix example run android",
     "example:ios": "npm --prefix example run ios",
     "example:prebuild": "npm --prefix example run prebuild",

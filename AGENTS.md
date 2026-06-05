@@ -10,6 +10,7 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 | --- | --- |
 | [`src/components/docs/composition.md`](./src/components/docs/composition.md) | 컴포넌트 합성·children 중첩·pass-through 래퍼 작성 시 |
 | [`src/components/docs/interaction-states.md`](./src/components/docs/interaction-states.md) | pressed 등 상호작용 피드백 구현 시 |
+| [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md) | Seed React 컴포넌트와 mossy-ui 구현 상태·props 대응을 확인하거나 갱신할 때 |
 | [`src/foundation/docs/state.md`](./src/foundation/docs/state.md) | Pressed·Focused·Disabled 등 컴포넌트 상태 표현 시 |
 | [`src/foundation/docs/elevation.md`](./src/foundation/docs/elevation.md) | 레이어 고도·쌓임 순서(zIndex·모달)·그림자·표면 색상 결정 시 |
 | [`src/foundation/docs/iconography.md`](./src/foundation/docs/iconography.md) | 아이콘 크기·터치 영역·색상·`Icon.select` 사용 시 |
@@ -35,10 +36,12 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 
 ## 컴포넌트 API 방향
 
+- **Seed parity 상태 점검** — 컴포넌트를 추가·수정하기 전에 [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md)에서 Seed React 컴포넌트 props와 mossy-ui 대응 상태를 확인한다. 작업 후 공개 props나 구현 상태가 바뀌면 같은 문서의 `Mossy Current API`와 `Seed Parity` 상태를 갱신한다.
 - **네임스페이스 우선순위** — 컴포넌트 구현 시 반드시 아래 순서로 검토한다.
   1. **`@expo/ui` (universal)** — 1순위. 항상 universal에 해당 컴포넌트가 있는지 먼저 확인하고, 있으면 universal을 사용한다.
   2. **`@expo/ui/swift-ui` · `@expo/ui/jetpack-compose`** — universal에 없는 컴포넌트에 한해서만 플랫폼별로 구현한다.
-- **닫힌 pass-through 래퍼** — `ComponentProps<typeof ExpoX>` 형태로 props를 그대로 전달하고 테마 기본값만 주입한다. compound components는 채택하지 않는다 (네이티브 뷰는 내부 파츠 분해 불가).
+- **닫힌 pass-through 래퍼** — `ComponentProps<typeof ExpoX>` 형태로 props를 그대로 전달하고 테마 기본값만 주입한다. 슬롯·확장은 [`src/components/AGENTS.md`](./src/components/AGENTS.md)의 선택 기준(children 중첩 · 데이터 선언형 마커 · 닫힌 데이터 prop)을 따른다 (컨텍스트 결합 파츠 분해형 compound는 네이티브 뷰에서 불가).
+- **토큰 prop 강제** — 순수 패스스루로 끝나는 래퍼는 만들지 않는다. 디자인 속성(간격·크기·색상 등)을 받는 prop은 반드시 Mossy 토큰을 받는 prop으로 교체해 노출한다 (간격·크기는 `number | MossyDimensionToken` 유니언, 색상은 색상 토큰). 토큰 주입점이 없는 컴포넌트는 디자인 시스템 컴포넌트로서 의미가 없다.
 - **커스터마이징 통로** — `modifiers` prop 패스스루와 children 중첩.
 - **asChild 지원** — React Native 레이어 조합형 컴포넌트는 `asChild` prop으로 기능 합성을 지원한다.
 - **상호작용 상태** — 눌림 시각 피드백은 시스템 기본 press 피드백(iOS highlight, Android ripple)을 사용한다. pressed 토큰은 색상 스펙 정의다 (Expo UI modifier는 정적 색만 받으므로 상태 조건부 주입에 쓰지 않는다).
