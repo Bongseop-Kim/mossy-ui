@@ -187,7 +187,7 @@ export default function App() {
             style={[
               styles.host,
               {
-                backgroundColor: theme.color.bg.layerFill,
+                backgroundColor: theme.color.bg.neutralWeak,
                 borderRadius: theme.radius.r2,
               },
             ]}

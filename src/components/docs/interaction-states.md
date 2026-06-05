@@ -40,9 +40,9 @@ magic 그라데이션을 사용하는 요소의 pressed 상태에는 그라데�
 
 ## 구현 방식
 
-pressed 스타일은 별도 설정 없이 Mossy 컴포넌트에 포함된다.
+pressed 피드백은 별도 설정 없이 Mossy 컴포넌트에 포함된다.
 
-universal 컴포넌트는 `onPress`로 누름을 처리한다. Mossy 래퍼가 pressed 색상 토큰을 `modifiers`로 주입하며, 눌림 모션은 시스템 기본 press 피드백(iOS highlight, Android ripple)을 그대로 사용한다.
+universal 컴포넌트는 `onPress`로 누름을 처리하고, 눌림 시각 효과는 시스템 기본 press 피드백(iOS highlight, Android ripple)을 그대로 사용한다. pressed 색상 토큰은 컴포넌트 스펙의 색상 정의다 — Expo UI modifier는 정적 색만 받으므로 상태 조건부 색상 주입에 쓰지 않는다.
 
 ```tsx
 import { Button } from "@expo/ui";

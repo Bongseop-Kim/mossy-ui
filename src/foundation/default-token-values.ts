@@ -220,7 +220,6 @@ export const mossyDefaultLightValues = {
   "color-bg-layer-basement": "var(--mossy-color-palette-gray-200)",
   "color-bg-layer-default": "var(--mossy-color-palette-gray-00)",
   "color-bg-layer-default-pressed": "var(--mossy-color-palette-gray-100)",
-  "color-bg-layer-fill": "var(--mossy-color-palette-gray-100)",
   "color-bg-layer-floating": "var(--mossy-color-palette-gray-00)",
   "color-bg-layer-floating-pressed": "var(--mossy-color-palette-gray-100)",
   "color-bg-magic-weak": "#f9f2ee",
@@ -431,7 +430,6 @@ export const mossyDefaultDarkValues = {
   "color-bg-layer-basement": "var(--mossy-color-palette-gray-00)",
   "color-bg-layer-default": "var(--mossy-color-palette-gray-100)",
   "color-bg-layer-default-pressed": "var(--mossy-color-palette-gray-300)",
-  "color-bg-layer-fill": "var(--mossy-color-palette-gray-200)",
   "color-bg-layer-floating": "var(--mossy-color-palette-gray-200)",
   "color-bg-layer-floating-pressed": "var(--mossy-color-palette-gray-300)",
   "color-bg-magic-weak": "#201f1f",
@@ -512,7 +510,7 @@ export const mossyDefaultDarkValues = {
   "gradient-shimmer-neutral": "#fff0 0%, #ffffff1a 46%, #ffffff1a 54%, #fff0 100%",
   "shadow-s1": "0px 1px 4px 0px #00000080",
   "shadow-s2": "0px 2px 10px 0px #000000ad",
-  "shadow-s3": "0px 4px 16px 0px #000c"
+  "shadow-s3": "0px 4px 16px 0px #000000cc"
 } as const;
 
 export const mossyDefaultTextStyleDefinitions = {

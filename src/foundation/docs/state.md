@@ -14,14 +14,15 @@
 | 상태 | 유형 | 표현 |
 | --- | --- | --- |
 | Enabled | 기본 | 상호작용이 없을 때의 기본 상태. 기본 시맨틱 토큰을 그대로 사용한다 |
-| Pressed | 상호작용 | 터치·펜 등으로 요소를 누르고 있는 상태. `*-pressed` 색상·그라데이션 토큰으로 표현하며, 눌림 모션은 시스템 기본 press 피드백을 사용한다 |
+| Pressed | 상호작용 | 터치·펜 등으로 요소를 누르고 있는 상태. 시스템 기본 press 피드백으로 표현하며, `*-pressed` 색상·그라데이션 토큰이 색상 스펙을 정의한다 |
 | Focused | 상호작용 | 포커스 기반 탐색 환경(외부 키보드, TV 등)에서 포커스된 상태. `$color.stroke.focus-ring` 토큰으로 표현한다 |
 | Disabled | 옵션 | 비활성화 상태. disabled 토큰으로 표현하며 사용자의 상호작용을 받지 않는다 |
 
 ## 조합 규칙
 
 - **Pressed** — Enabled 스타일 위에 덮어쓴다.
-- **Disabled** — 상호작용을 차단하므로 Pressed 등 상호작용 상태와 조합하지 않는다.
+- **Focused** — 스트로크(`$color.stroke.focus-ring`)로 표현되어 색상으로 표현되는 다른 상태와 레이어가 다르다. Pressed와 동시 발생 시 focus ring을 유지한 채 press 피드백을 함께 표시한다.
+- **Disabled** — 상호작용을 차단하므로 Pressed·Focused 등 상호작용 상태와 조합하지 않는다. 포커스 탐색에서 disabled 요소는 포커스 대상에서 제외한다.
 
 ## Disabled 토큰
 

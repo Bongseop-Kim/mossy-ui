@@ -11,10 +11,12 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 | [`src/components/docs/composition.md`](./src/components/docs/composition.md) | 컴포넌트 합성·children 중첩·pass-through 래퍼 작성 시 |
 | [`src/components/docs/interaction-states.md`](./src/components/docs/interaction-states.md) | pressed 등 상호작용 피드백 구현 시 |
 | [`src/foundation/docs/state.md`](./src/foundation/docs/state.md) | Pressed·Focused·Disabled 등 컴포넌트 상태 표현 시 |
+| [`src/foundation/docs/elevation.md`](./src/foundation/docs/elevation.md) | 레이어 고도·쌓임 순서(zIndex·모달)·그림자·표면 색상 결정 시 |
 | [`src/foundation/docs/iconography.md`](./src/foundation/docs/iconography.md) | 아이콘 크기·터치 영역·색상·`Icon.select` 사용 시 |
 | [`src/foundation/docs/loading.md`](./src/foundation/docs/loading.md) | Progress Circle·Bar·Skeleton 등 로딩 UI 선택 시 |
-| [`src/foundation/docs/voice-and-tone.md`](./src/foundation/docs/voice-and-tone.md) | UI 문구의 화법·톤 결정 시 |
-| [`src/foundation/docs/writing.md`](./src/foundation/docs/writing.md) | UI 텍스트(레이블·메시지 등) 작성 시 |
+| [`src/foundation/docs/voice-and-tone.md`](./src/foundation/docs/voice-and-tone.md) | UI 문구의 화법·톤 방향(원칙) 결정 시 — 문장 단위 실행 규칙은 writing.md |
+| [`src/foundation/docs/writing.md`](./src/foundation/docs/writing.md) | UI 텍스트(레이블·메시지 등) 문장 작성·수정 시 — 화법·톤 방향은 voice-and-tone.md |
+| [`src/foundation/docs/international-design.md`](./src/foundation/docs/international-design.md) | 다국어 지원, 로케일별 시간·날짜·숫자·통화·괄호·강조 표기, 번역 텍스트 확장 대응 시 |
 
 ## Docs 작성
 
@@ -31,7 +33,7 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 - **닫힌 pass-through 래퍼** — `ComponentProps<typeof ExpoX>` 형태로 props를 그대로 전달하고 테마 기본값만 주입한다. compound components는 채택하지 않는다 (네이티브 뷰는 내부 파츠 분해 불가).
 - **커스터마이징 통로** — `modifiers` prop 패스스루와 children 중첩.
 - **asChild 지원** — React Native 레이어 조합형 컴포넌트는 `asChild` prop으로 기능 합성을 지원한다.
-- **상호작용 상태** — pressed 토큰은 Expo UI modifier로 주입한다. RN 레이어는 `Pressable`의 `pressed` 상태로 적용한다.
+- **상호작용 상태** — 눌림 시각 피드백은 시스템 기본 press 피드백(iOS highlight, Android ripple)을 사용한다. pressed 토큰은 색상 스펙 정의다 (Expo UI modifier는 정적 색만 받으므로 상태 조건부 주입에 쓰지 않는다).
 
 ## React 19 / React Compiler 규칙
 

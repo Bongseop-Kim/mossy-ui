@@ -13,9 +13,9 @@
 | 구분 | Progress Circle | Progress Bar | Skeleton |
 | --- | --- | --- | --- |
 | 형태 | 원형 인디케이터 | 선형 막대 | 콘텐츠 구조를 회색 톤으로 추상화 |
-| 용도 | 짧은 프로세스, 레이아웃 미리보기 불필요 시 | 시작/끝이 명확한 설치·업로드·다운로드 | 길거나 복잡한 데이터 로딩 시 레이아웃 예고 |
+| 용도 | 짧은 프로세스(Indeterminate)·진행률 표시(Determinate), 레이아웃 미리보기 불필요 시 | 시작/끝이 명확한 설치·업로드·다운로드 | 길거나 복잡한 데이터 로딩 시 레이아웃 예고 |
 | 장점 | 공간 차지 적음, 범용적 | 남은 시간 파악 가능 | 콘텐츠 배치 예측으로 불확실성 감소 |
-| 적합 시간 | 1~4초 | 1~10초, 10초 이상도 가능 | 1~10초 |
+| 적합 시간 | Indeterminate 1~10초, Determinate 10초 이상 | 4초 이상 | 1~10초 |
 
 ### Progress Circle 유형
 
@@ -32,7 +32,7 @@
 | 첫 진입 | Progress Circle(Indeterminate), Skeleton |
 | 페이지 전환 (보통 전체 화면 표시) | Progress Circle(Indeterminate), Skeleton, Progress Bar |
 | 추가 정보 로드 (무한 스크롤, 지연 로딩) | Progress Circle(Indeterminate) |
-| 데이터 재요청 (PTR 등) | Progress Circle(Determinate) |
+| 데이터 재요청 (PTR 등) | Progress Circle(Indeterminate) |
 | 입력 데이터 저장/제출 (로그인, 인증) | Progress Circle(Indeterminate), Loading Animation |
 | 상태 전환 (데이터/리소스 재로드) | Progress Circle(Indeterminate), Skeleton |
 
