@@ -3,6 +3,6 @@ module.exports = function babelConfig(api) {
 
   return {
     presets: ['babel-preset-expo'],
-    plugins: ['@expo/ui/babel-plugin'],
+    plugins: ['@expo/ui/babel-plugin', 'react-native-worklets/plugin'],
   };
 };

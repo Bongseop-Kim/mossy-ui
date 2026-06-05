@@ -42,6 +42,7 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 - **커스터마이징 통로** — `modifiers` prop 패스스루와 children 중첩.
 - **asChild 지원** — React Native 레이어 조합형 컴포넌트는 `asChild` prop으로 기능 합성을 지원한다.
 - **상호작용 상태** — 눌림 시각 피드백은 시스템 기본 press 피드백(iOS highlight, Android ripple)을 사용한다. pressed 토큰은 색상 스펙 정의다 (Expo UI modifier는 정적 색만 받으므로 상태 조건부 주입에 쓰지 않는다).
+- **컴포넌트 파일 구조·작성 규칙** — [`src/components/AGENTS.md`](./src/components/AGENTS.md)를 따른다 (foundation 컴포넌트 포함).
 
 ## React 19 / React Compiler 규칙
 
