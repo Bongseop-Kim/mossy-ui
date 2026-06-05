@@ -3,6 +3,8 @@ dist
 .expo
 .serena/
 .agents/
+.omc/
+.omx/
 
 # Expo prebuild output
 /android/
