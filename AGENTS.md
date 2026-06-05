@@ -2,15 +2,32 @@
 
 mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업 시 이 문서의 규칙을 따른다.
 
+## Docs 참조
+
+디자인 시스템 가이드 문서는 `src/foundation/docs/`와 `src/components/docs/`에 있다. 관련 작업 전에 해당 문서를 먼저 읽고 따른다.
+
+| 문서 | 읽어야 할 때 |
+| --- | --- |
+| [`src/components/docs/composition.md`](./src/components/docs/composition.md) | 컴포넌트 합성·children 중첩·pass-through 래퍼 작성 시 |
+| [`src/components/docs/interaction-states.md`](./src/components/docs/interaction-states.md) | pressed 등 상호작용 피드백 구현 시 |
+| [`src/foundation/docs/state.md`](./src/foundation/docs/state.md) | Pressed·Focused·Disabled 등 컴포넌트 상태 표현 시 |
+| [`src/foundation/docs/iconography.md`](./src/foundation/docs/iconography.md) | 아이콘 크기·터치 영역·색상·`Icon.select` 사용 시 |
+| [`src/foundation/docs/loading.md`](./src/foundation/docs/loading.md) | Progress Circle·Bar·Skeleton 등 로딩 UI 선택 시 |
+| [`src/foundation/docs/voice-and-tone.md`](./src/foundation/docs/voice-and-tone.md) | UI 문구의 화법·톤 결정 시 |
+| [`src/foundation/docs/writing.md`](./src/foundation/docs/writing.md) | UI 텍스트(레이블·메시지 등) 작성 시 |
+
 ## Docs 작성
 
 `src/*/docs/*.md` 문서를 작성·수정할 때는 루트의 [`docs.md`](./docs.md) 양식을 먼저 읽고 따른다. 핵심 원칙은 **AI Agent 가독성 최우선**이다.
 
 - **범위는 Expo UI 레이어** — docs는 패키지가 제공하는 Expo UI 레이어 기준으로 작성한다. 소비자 측 RN 사용법은 범위 밖이다.
+- **한글로 작성** — 국내 대상이므로 문서는 항상 한글로 작성한다.
 
 ## 컴포넌트 API 방향
 
-- **네임스페이스 우선순위** — universal(`@expo/ui`)이 1차 타깃이다. universal에 없는 컴포넌트만 `@expo/ui/swift-ui`·`@expo/ui/jetpack-compose`로 플랫폼별 구현한다.
+- **네임스페이스 우선순위** — 컴포넌트 구현 시 반드시 아래 순서로 검토한다.
+  1. **`@expo/ui` (universal)** — 1순위. 항상 universal에 해당 컴포넌트가 있는지 먼저 확인하고, 있으면 universal을 사용한다.
+  2. **`@expo/ui/swift-ui` · `@expo/ui/jetpack-compose`** — universal에 없는 컴포넌트에 한해서만 플랫폼별로 구현한다.
 - **닫힌 pass-through 래퍼** — `ComponentProps<typeof ExpoX>` 형태로 props를 그대로 전달하고 테마 기본값만 주입한다. compound components는 채택하지 않는다 (네이티브 뷰는 내부 파츠 분해 불가).
 - **커스터마이징 통로** — `modifiers` prop 패스스루와 children 중첩.
 - **asChild 지원** — React Native 레이어 조합형 컴포넌트는 `asChild` prop으로 기능 합성을 지원한다.
