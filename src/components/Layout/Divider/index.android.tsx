@@ -17,6 +17,7 @@ export function Divider({
   const theme = useMossyTheme();
   const resolvedColor = resolveMossyColor(theme, color) ?? color;
   const resolvedInset = resolveMossyDimension(theme, inset);
+  const resolvedThickness = resolveMossyDimension(theme, thickness) ?? 1;
 
   const composedModifiers = [
     ...(resolvedInset == null
@@ -31,9 +32,17 @@ export function Divider({
   ];
 
   return orientation === 'horizontal' ? (
-    <HorizontalDivider thickness={thickness} color={resolvedColor} modifiers={composedModifiers} />
+    <HorizontalDivider
+      thickness={resolvedThickness}
+      color={resolvedColor}
+      modifiers={composedModifiers}
+    />
   ) : (
-    <VerticalDivider thickness={thickness} color={resolvedColor} modifiers={composedModifiers} />
+    <VerticalDivider
+      thickness={resolvedThickness}
+      color={resolvedColor}
+      modifiers={composedModifiers}
+    />
   );
 }
 

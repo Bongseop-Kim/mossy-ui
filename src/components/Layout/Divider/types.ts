@@ -8,10 +8,10 @@ export interface MossyDividerProps {
    */
   orientation?: 'horizontal' | 'vertical';
   /**
-   * 선 두께(pt/dp).
+   * 선 두께 — dimension 토큰(`'x0_5'`) 또는 숫자(pt/dp).
    * @default 1
    */
-  thickness?: number;
+  thickness?: number | MossyDimensionToken;
   /**
    * 선 색상 — 토큰(`stroke.*` · `palette.*`) 또는 원시 색상 문자열.
    * @default 'stroke.neutralMuted'

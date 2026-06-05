@@ -20,13 +20,18 @@ export function Divider({
   const theme = useMossyTheme();
   const resolvedColor = resolveMossyColor(theme, color) ?? color;
   const resolvedInset = resolveMossyDimension(theme, inset);
+  const resolvedThickness = resolveMossyDimension(theme, thickness) ?? 1;
 
   return (
     <Rectangle
       testID={testID}
       modifiers={[
         foregroundStyle(resolvedColor),
-        frame(orientation === 'horizontal' ? { height: thickness } : { width: thickness }),
+        frame(
+          orientation === 'horizontal'
+            ? { height: resolvedThickness }
+            : { width: resolvedThickness },
+        ),
         ...(resolvedInset == null
           ? []
           : [
