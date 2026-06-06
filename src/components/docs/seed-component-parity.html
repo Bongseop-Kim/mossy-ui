@@ -6835,13 +6835,11 @@
               <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
               <td class="note">Link/pressable 텍스트 API 필요.</td>
             </tr>
-            <tr class="compound-parent-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="List" data-parent="" data-row-kind="compound-parent" data-depth="0" data-search="`list` `root`: `itemborderradius?`; `header`: `as?`; `item`, `content`, `title`, `detail`, `prefix`, `suffix`; 상속 `vstackprops`, `listheadervariantprops`, `listitemvariantprops`, `styleprops`, html attrs `list`, `listheader`, `listitem` `list`: `componentprops&lt;typeof expolist&gt;`; `listheader`: `title`, `variant?`, `children?`, `testid?`, `modifiers?`; `listitem`: `title?`, `detail?`, 상속 `componentprops&lt;typeof expolistitem&gt;` 부분완료 `content`: 미구현 — list.content 행에서 props를 별도 관리한다. / `detail`: 부분완료 — list.detail 행에서 props를 별도 관리한다. / `item`: 부분완료 — list.item 행에서 props를 별도 관리한다. / `prefix`: 미구현 — list.prefix 행에서 props를 별도 관리한다. / `root`: 부분완료 — list.root 행에서 props를 별도 관리한다. / `suffix`: 미구현 — list.suffix 행에서 props를 별도 관리한다. / `title`: 부분완료 — list.title 행에서 props를 별도 관리한다. 하위 part별 행에서 실제 props parity를 관리한다. compound namespace 자체는 props를 갖지 않는 공개 api 묶음이다.">
-              <td class="component"><span class="component-name component-parent-row">
-                <code>`List`</code>
-              </span></td>
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="List" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`list` `root`: `itemborderradius?`; `header`: `as?`; `item`, `content`, `title`, `detail`, `prefix`, `suffix`; 상속 `vstackprops`, `listheadervariantprops`, `listitemvariantprops`, `styleprops`, html attrs `list`, `listheader`, `listitem` `list`: `children?`, `onrefresh?`, `testid?`, ios `modifiers?`; `listheader`: `title`, `variant?`, `children?`, `testid?`, `modifiers?`; `listitem`: `title?`, `detail?`, `children?`, `leading?`, `trailing?`, `supportingtext?`, `onpress?`, `testid?`, `leading`, `trailing`, `supporting` 부분완료 `content`: 미구현 — list.content 행에서 props를 별도 관리한다. / `detail`: 부분완료 — list.detail 행에서 props를 별도 관리한다. / `item`: 부분완료 — list.item 행에서 props를 별도 관리한다. / `prefix`: 미구현 — list.prefix 행에서 props를 별도 관리한다. / `root`: 부분완료 — list.root 행에서 props를 별도 관리한다. / `suffix`: 미구현 — list.suffix 행에서 props를 별도 관리한다. / `title`: 부분완료 — list.title 행에서 props를 별도 관리한다. 하위 part별 행에서 실제 props parity를 관리한다. ios `list`는 swiftui `liststyle(&#39;plain&#39;)`, `scrollcontentbackground(&#39;hidden&#39;)`, near-zero `listrowinsets`를 기본 적용한다 (`@expo/ui` ios 구현은 모든 inset 값이 0이면 modifier를 적용하지 않는다). android `list`는 `lazycolumn` contentpadding 0을 기본 적용한다. `listitem`은 플랫폼 기본 row/content inset 없이 mossy 레이아웃으로 렌더한다.">
+              <td class="component"><code>List</code></td>
               <td class="seed-props"><code>Root</code>: <code>itemBorderRadius?</code>; <code>Header</code>: <code>as?</code>; <code>Item</code>, <code>Content</code>, <code>Title</code>, <code>Detail</code>, <code>Prefix</code>, <code>Suffix</code>; 상속 <code>VStackProps</code>, <code>ListHeaderVariantProps</code>, <code>ListItemVariantProps</code>, <code>StyleProps</code>, HTML attrs</td>
               <td class="mossy"><code>List</code>, <code>ListHeader</code>, <code>ListItem</code></td>
-              <td class="mossy-props"><code>List</code>: <code>ComponentProps&lt;typeof ExpoList&gt;</code>; <code>ListHeader</code>: <code>title</code>, <code>variant?</code>, <code>children?</code>, <code>testID?</code>, <code>modifiers?</code>; <code>ListItem</code>: <code>title?</code>, <code>detail?</code>, 상속 <code>ComponentProps&lt;typeof ExpoListItem&gt;</code></td>
+              <td class="mossy-props"><code>List</code>: <code>children?</code>, <code>onRefresh?</code>, <code>testID?</code>, iOS <code>modifiers?</code>; <code>ListHeader</code>: <code>title</code>, <code>variant?</code>, <code>children?</code>, <code>testID?</code>, <code>modifiers?</code>; <code>ListItem</code>: <code>title?</code>, <code>detail?</code>, <code>children?</code>, <code>leading?</code>, <code>trailing?</code>, <code>supportingText?</code>, <code>onPress?</code>, <code>testID?</code>, <code>Leading</code>, <code>Trailing</code>, <code>Supporting</code></td>
               <td><span class="status partial">부분완료<span class="prop-count">완료 0/7</span></span></td>
               <td class="props-status"><details class="prop-status-details">
                 <summary>완료 0/7 · 미구현 3 · 부분 4</summary>
@@ -6893,7 +6891,7 @@
                 </table>
               </details></td>
               <td class="next-action">하위 part별 행에서 실제 props parity를 관리한다.</td>
-              <td class="note">compound namespace 자체는 props를 갖지 않는 공개 API 묶음이다.</td>
+              <td class="note">iOS <code>List</code>는 SwiftUI <code>listStyle(&#39;plain&#39;)</code>, <code>scrollContentBackground(&#39;hidden&#39;)</code>, near-zero <code>listRowInsets</code>를 기본 적용한다 (<code>@expo/ui</code> iOS 구현은 모든 inset 값이 0이면 modifier를 적용하지 않는다). Android <code>List</code>는 <code>LazyColumn</code> contentPadding 0을 기본 적용한다. <code>ListItem</code>은 플랫폼 기본 row/content inset 없이 Mossy 레이아웃으로 렌더한다.</td>
             </tr>
             <tr class="compound-part-row" data-status="미구현" data-compound="true" data-mossy-match="false" data-component="List.Content" data-parent="List" data-row-kind="compound-part" data-depth="1" data-search="`list.content` `listcontentprops`: 상속 `primitiveprops`, `pick&lt;styleprops, &quot;gap&quot; \| &quot;pr&quot; \| &quot;paddingright&quot;&gt;`, `div attrs` - - 미구현 `contentprops`: 미구현 — mossy 공개 api에 대응 part가 없다. 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. mossy 공개 api에 대응 part가 없다.">
               <td class="component"><span class="component-name component-part" style="--part-depth: 1">
@@ -6957,14 +6955,14 @@
               <td class="next-action">Seed part props와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
               <td class="note"><code>ListItem.detail</code> 데이터 prop으로 대응한다.</td>
             </tr>
-            <tr class="compound-part-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="List.Item" data-parent="List" data-row-kind="compound-part" data-depth="1" data-search="`list.item` `listitemprops`: 상속 `primitiveprops`, `pick&lt;styleprops, &quot;alignitems&quot;&gt;`, `li attrs`, `listitemvariantprops` `listitem` `title?`, `detail?`, 상속 `componentprops&lt;typeof expolistitem&gt;` 부분완료 `itemprops`: 부분완료 — expo ui `listitem`과 닫힌 데이터 props로 대응한다. seed part props와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. expo ui `listitem`과 닫힌 데이터 props로 대응한다.">
+            <tr class="compound-part-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="List.Item" data-parent="List" data-row-kind="compound-part" data-depth="1" data-search="`list.item` `listitemprops`: 상속 `primitiveprops`, `pick&lt;styleprops, &quot;alignitems&quot;&gt;`, `li attrs`, `listitemvariantprops` `listitem` `title?`, `detail?`, `children?`, `leading?`, `trailing?`, `supportingtext?`, `onpress?`, `testid?`, `leading`, `trailing`, `supporting` 부분완료 `itemprops`: 부분완료 — 닫힌 데이터 props와 mossy 레이아웃 row로 대응한다. seed part props와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. ios는 near-zero `listrowinsets`, transparent `listrowbackground`, full-width frame으로 swiftui row 기본 inset/background를 제거한다. android는 material 3 content padding을 사용하지 않는다.">
               <td class="component"><span class="component-name component-part" style="--part-depth: 1">
                 <span class="part-parent">List</span>
                 <code>Item</code>
               </span></td>
               <td class="seed-props"><code>ListItemProps</code>: 상속 <code>PrimitiveProps</code>, <code>Pick&lt;StyleProps, &quot;alignItems&quot;&gt;</code>, <code>li attrs</code>, <code>ListItemVariantProps</code></td>
               <td class="mossy"><code>ListItem</code></td>
-              <td class="mossy-props"><code>title?</code>, <code>detail?</code>, 상속 <code>ComponentProps&lt;typeof ExpoListItem&gt;</code></td>
+              <td class="mossy-props"><code>title?</code>, <code>detail?</code>, <code>children?</code>, <code>leading?</code>, <code>trailing?</code>, <code>supportingText?</code>, <code>onPress?</code>, <code>testID?</code>, <code>Leading</code>, <code>Trailing</code>, <code>Supporting</code></td>
               <td><span class="status partial">부분완료<span class="prop-count">완료 0/1</span></span></td>
               <td class="props-status"><details class="prop-status-details">
                 <summary>완료 0/1 · 부분 1</summary>
@@ -6980,13 +6978,13 @@
                     <tr>
                       <td><code>ItemProps</code></td>
                       <td><span class="status partial">부분완료</span></td>
-                      <td>Expo UI <code>ListItem</code>과 닫힌 데이터 props로 대응한다.</td>
+                      <td>닫힌 데이터 props와 Mossy 레이아웃 row로 대응한다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
               <td class="next-action">Seed part props와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
-              <td class="note">Expo UI <code>ListItem</code>과 닫힌 데이터 props로 대응한다.</td>
+              <td class="note">iOS는 near-zero <code>listRowInsets</code>, transparent <code>listRowBackground</code>, full-width frame으로 SwiftUI row 기본 inset/background를 제거한다. Android는 Material 3 content padding을 사용하지 않는다.</td>
             </tr>
             <tr class="compound-part-row" data-status="미구현" data-compound="true" data-mossy-match="false" data-component="List.Prefix" data-parent="List" data-row-kind="compound-part" data-depth="1" data-search="`list.prefix` `listprefixprops`: 상속 `primitiveprops`, `pick&lt;styleprops, &quot;pr&quot; \| &quot;paddingright&quot;&gt;`, `div attrs` - - 미구현 `prefixprops`: 미구현 — mossy 공개 api에 대응 part가 없다. 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. mossy 공개 api에 대응 part가 없다.">
               <td class="component"><span class="component-name component-part" style="--part-depth: 1">

@@ -8,11 +8,8 @@ import {
 } from './ListItem.shared';
 
 /**
- * 탭 가능한 목록 행. 기본 row inset 없이 Mossy 레이아웃으로 렌더한다.
- *
- * 텍스트 행은 `title`·`detail` prop으로 토큰 스타일을 적용하고, 커스텀 노드는
- * children 중첩 또는 `leading`·`trailing`·`supportingText` prop,
- * `<ListItem.Leading>` 등 데이터 선언형 마커로 지정한다.
+ * 탭 가능한 목록 행. Android Material 3 `ListItem`의 기본 content padding을
+ * 사용하지 않고 Mossy 레이아웃으로 렌더한다.
  */
 export const ListItem = Object.assign(
   function ListItem(props: MossyListItemProps) {

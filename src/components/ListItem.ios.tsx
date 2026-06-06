@@ -1,3 +1,9 @@
+import {
+  frame,
+  listRowBackground,
+  listRowInsets,
+} from '@expo/ui/swift-ui/modifiers';
+
 import { HStack } from './Layout/HStack';
 import { Spacer } from './Layout/Spacer';
 import { VStack } from './Layout/VStack';
@@ -7,12 +13,20 @@ import {
   type MossyListItemProps,
 } from './ListItem.shared';
 
+const zeroListInset = 0.01;
+
+const flushListRowInsets = listRowInsets({
+  top: zeroListInset,
+  leading: zeroListInset,
+  bottom: zeroListInset,
+  trailing: zeroListInset,
+});
+const transparentListRowBackground = listRowBackground('clear');
+const fullWidthFrame = frame({ maxWidth: 100000, alignment: 'leading' });
+
 /**
- * 탭 가능한 목록 행. 기본 row inset 없이 Mossy 레이아웃으로 렌더한다.
- *
- * 텍스트 행은 `title`·`detail` prop으로 토큰 스타일을 적용하고, 커스텀 노드는
- * children 중첩 또는 `leading`·`trailing`·`supportingText` prop,
- * `<ListItem.Leading>` 등 데이터 선언형 마커로 지정한다.
+ * 탭 가능한 목록 행. SwiftUI `List`의 기본 row inset을 제거해 Seed List처럼
+ * 외곽 여백 없이 렌더한다.
  */
 export const ListItem = Object.assign(
   function ListItem(props: MossyListItemProps) {
@@ -23,6 +37,11 @@ export const ListItem = Object.assign(
       <HStack
         alignment="center"
         spacing="x3"
+        modifiers={[
+          flushListRowInsets,
+          transparentListRowBackground,
+          fullWidthFrame,
+        ]}
         onPress={onPress}
         testID={testID}
         style={{ width: '100%' }}
