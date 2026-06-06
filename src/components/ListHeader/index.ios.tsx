@@ -1,11 +1,11 @@
 import { listRowSeparator } from '@expo/ui/swift-ui/modifiers';
 
-import { resolveMossyDimension } from '../../foundation/component-tokens';
-import { useMossyTheme } from '../../theme';
 import { HStack } from '../Layout/HStack';
 import { Spacer } from '../Layout/Spacer';
 import { Text } from '../Typography/Text';
 import { listHeaderVariants, type MossyListHeaderProps } from './types';
+
+const EMPTY_MODIFIERS: NonNullable<MossyListHeaderProps['modifiers']> = [];
 
 /**
  * 목록 섹션 헤더 (seed `list-header` 스펙). `List` 안에서 행으로 렌더되므로 행
@@ -16,16 +16,15 @@ export function ListHeader({
   variant = 'mediumWeak',
   children,
   testID,
-  modifiers = [],
+  modifiers = EMPTY_MODIFIERS,
 }: MossyListHeaderProps) {
-  const theme = useMossyTheme();
   const { textStyle, color } = listHeaderVariants[variant];
 
   return (
     <HStack
       alignment="center"
       spacing="x2_5"
-      style={{ paddingVertical: resolveMossyDimension(theme, 'x2') }}
+      paddingVertical="x2"
       testID={testID}
       modifiers={[listRowSeparator('hidden'), ...modifiers]}
     >
@@ -42,4 +41,4 @@ export function ListHeader({
   );
 }
 
-export * from './types';
+export type { MossyListHeaderProps } from './types';

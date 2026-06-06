@@ -1,4 +1,3 @@
-import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
 import { HStack } from '../Layout/HStack';
 import { Spacer } from '../Layout/Spacer';
@@ -23,10 +22,8 @@ export function ListHeader({
     <HStack
       alignment="center"
       spacing="x2_5"
-      style={{
-        paddingVertical: resolveMossyDimension(theme, 'x2'),
-        paddingHorizontal: theme.dimension.spacingX.globalGutter,
-      }}
+      paddingVertical="x2"
+      paddingHorizontal={theme.dimension.spacingX.globalGutter}
       testID={testID}
       modifiers={modifiers}
     >
@@ -43,4 +40,4 @@ export function ListHeader({
   );
 }
 
-export * from './types';
+export type { MossyListHeaderProps } from './types';

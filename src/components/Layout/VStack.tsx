@@ -1,17 +1,58 @@
-import { Column } from '@expo/ui';
-import type { ComponentProps } from 'react';
+import { Column, type UniversalAlignment } from '@expo/ui';
+import type { ReactNode } from 'react';
 
-import { resolveMossyDimension, type MossyDimensionToken } from '../../foundation/component-tokens';
+import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
+import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface, type MossyLayoutSurfaceProps } from './surface.shared';
+import {
+  JustifiedStackChildren,
+  resolveAlignment,
+  type MossyStackBaseProps,
+} from './stack';
 
-export type MossyVStackProps = Omit<ComponentProps<typeof Column>, 'spacing'> & {
-  /** 자식 사이 간격 — dimension 토큰(`'x2'`) 또는 숫자(pt/dp). */
-  spacing?: number | MossyDimensionToken;
-};
+export type MossyVStackProps = MossyLayoutSurfaceProps &
+  MossyStackBaseProps & {
+    /** 세로로 쌓을 콘텐츠. */
+    children?: ReactNode;
+    /** cross-axis 정렬. Expo UI `Column`의 기존 `alignment` prop도 유지한다. */
+    alignment?: UniversalAlignment;
+  };
 
 /** 세로로 쌓이는 레이아웃 컨테이너. universal `Column`의 래퍼. */
-export function VStack({ spacing, ...props }: MossyVStackProps) {
+export function VStack({
+  display,
+  align,
+  alignment,
+  justify,
+  grow: _grow,
+  spacing,
+  children,
+  modifiers,
+  onPress,
+  onAppear,
+  onDisappear,
+  disabled,
+  hidden,
+  testID,
+  ...surfaceProps
+}: MossyVStackProps) {
   const theme = useMossyTheme();
 
-  return <Column spacing={resolveMossyDimension(theme, spacing)} {...props} />;
+  if (!shouldRenderLayoutSurface(display)) return null;
+
+  return (
+    <Column
+      alignment={resolveAlignment(align, alignment)}
+      spacing={resolveMossyDimension(theme, spacing)}
+      style={resolveMossyLayoutSurfaceStyle(theme, surfaceProps)}
+      onPress={disabled ? undefined : onPress}
+      onAppear={onAppear}
+      onDisappear={onDisappear}
+      disabled={disabled}
+      hidden={hidden}
+      testID={testID}
+      modifiers={modifiers}>
+      <JustifiedStackChildren justify={justify}>{children}</JustifiedStackChildren>
+    </Column>
+  );
 }

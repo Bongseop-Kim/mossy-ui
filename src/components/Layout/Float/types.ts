@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
 import type { MossyDimensionToken } from '../../../foundation/component-tokens';
-import type { MossyModifier } from '../../../foundation/modifier';
 import type { MossyAlignment } from '../types';
+import type { MossyLayoutSurfaceProps } from '../surface.shared';
 
-export interface MossyFloatProps {
+export interface MossyFloatProps extends MossyLayoutSurfaceProps {
   /** 고정 위치에 띄울 콘텐츠. */
   children?: ReactNode;
   /** 부모 기준 고정 위치. 크기가 정해진 `Box` 안에서 사용한다. */
@@ -21,8 +21,4 @@ export interface MossyFloatProps {
    * @default 0
    */
   offsetY?: number | MossyDimensionToken;
-  /** E2E 테스트에서 컴포넌트를 찾기 위한 식별자. */
-  testID?: string;
-  /** 플랫폼 모디파이어 패스스루 (`@expo/ui/swift-ui/modifiers` · `@expo/ui/jetpack-compose/modifiers`). */
-  modifiers?: MossyModifier[];
 }

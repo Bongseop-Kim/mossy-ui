@@ -5,4 +5,4 @@ export function Float(_props: MossyFloatProps) {
   return null;
 }
 
-export * from './types';
+export type { MossyFloatProps } from './types';

@@ -11,7 +11,7 @@ import type {
 import type { MossyModifier } from '../../foundation/modifier';
 import type { MossyTheme } from '../../foundation/theme';
 import type { MossyIconProps } from '../Iconography/Icon';
-import type { MossyHStackProps } from '../Layout/HStack';
+import type { MossyStackAlignment } from '../Layout/stack';
 import type { MossyTextProps } from '../Typography/Text';
 
 type TextInputProps = ComponentProps<typeof TextInput>;
@@ -36,8 +36,7 @@ export interface MossyTextFieldRootProps {
   radius?: number | MossyTextFieldRadiusToken;
   borderWidth?: number | MossyDimensionToken;
   spacing?: number | MossyDimensionToken;
-  alignment?: MossyHStackProps['alignment'];
-  style?: MossyHStackProps['style'];
+  alignment?: MossyStackAlignment;
   testID?: string;
   modifiers?: MossyModifier[];
 }

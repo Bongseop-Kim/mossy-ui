@@ -474,9 +474,9 @@
         <p class="intro">Source: <code>src/components/docs/seed-component-parity.md</code> · Seed Implementation Checklist is the source of truth. Mossy-only APIs are rendered separately.</p>
       </div>
       <div class="counts" aria-label="상태 요약 필터">
-        <button class="count status-filter" type="button" data-status="all" aria-pressed="true"><strong>318</strong><span>Checklist total</span></button>
+        <button class="count status-filter" type="button" data-status="all" aria-pressed="true"><strong>319</strong><span>Checklist total</span></button>
         <button class="count status-filter" type="button" data-status="완료" aria-pressed="false"><strong>0</strong><span>완료</span></button>
-        <button class="count status-filter" type="button" data-status="부분완료" aria-pressed="false"><strong>36</strong><span>부분완료</span></button>
+        <button class="count status-filter" type="button" data-status="부분완료" aria-pressed="false"><strong>37</strong><span>부분완료</span></button>
         <button class="count status-filter" type="button" data-status="미구현" aria-pressed="false"><strong>180</strong><span>미구현</span></button>
         <button class="count status-filter" type="button" data-status="제약" aria-pressed="false"><strong>102</strong><span>제약</span></button>
         <div class="count" aria-label="Mossy only 2개"><strong>2</strong><span>Mossy only</span></div>
@@ -495,7 +495,7 @@
     <section aria-labelledby="checklist-title">
       <div class="section-head">
         <h2 id="checklist-title">Seed Implementation Checklist</h2>
-        <span class="result-count" aria-live="polite"><span id="visible-count">318</span> / 318</span>
+        <span class="result-count" aria-live="polite"><span id="visible-count">319</span> / 319</span>
       </div>
       <div class="table-wrap">
         <table class="parity-table" id="checklist-table">
@@ -1806,14 +1806,14 @@
               <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
               <td class="note">RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.</td>
             </tr>
-            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Box" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`box` `boxprops`: `as?`, `aschild?`; 상속 `styleprops`, div attrs `box` `box`: `children?`, `alignment?`, `testid?`, `modifiers?` 부분완료 `as?`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `aschild?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `styleprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `boxprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `children?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `alignment?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `testid?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `modifiers?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui modifier 중심으로 `alignment`, `modifiers`만 공개한다. dom `as`, html attrs는 제공하지 않는다.">
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Box" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`box` `boxprops`: `as?`, `aschild?`; 상속 `styleprops`(`bg/background`, gradient, color, border, radius, shadow, size, inset, padding/bleed, display/position/overflow/zindex, flex, gap, grid, transform, `_active`), `omit&lt;htmlattributes&lt;htmldivelement&gt;, &#39;color&#39;&gt;` `box` `box`: `children?`, `display?`, `alignment?`, `width?`, `height?`, `padding?`, `paddinghorizontal?`, `paddingvertical?`, `paddingtop?`, `paddingbottom?`, `paddingstart?`, `paddingend?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `as?`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `aschild?`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `styleprops.bg/background`: 부분완료 — seed 배경색 prop을 mossy `backgroundcolor?` 토큰/원시 색상으로 대응한다. / `styleprops.bggradient/backgroundgradient`: 미구현 — swiftui `foregroundstyle` gradient는 foreground 전용이고 compose modifier에는 배경 gradient contract가 없어 seed background gradient를 공통 대응하지 않는다. / `styleprops.color`: 제약 — rn/expo ui `box`는 dom text color inheritance contract를 제공하지 않는다. / `styleprops.bordercolor/borderwidth`: 부분완료 — mossy `bordercolor?`, `borderwidth?`로 단일 border를 대응하고 방향별 border width는 제공하지 않는다. / `styleprops.borderradius*`: 부분완료 — mossy `radius?`로 단일 radius를 대응하고 corner별 radius는 제공하지 않는다. / `styleprops.boxshadow`: 부분완료 — ios `shadow`, android `shadow`/`graphicslayer.shadowelevation` modifier가 있으나 seed shadow token prop은 없다. / `styleprops.width/height`: 부분완료 — mossy `width?`, `height?`를 제공하고, min/max는 ios `frame(min/max*)`, android `defaultminsize(min*)` 수준까지만 modifier로 보완 가능하다. / `styleprops.padding*`: 부분완료 — mossy padding props로 기본 padding을 대응하고 seed shorthand, `safearea`, `bleed*`는 제공하지 않는다. / `styleprops.display`: 부분완료 — mossy는 `flex`와 `none`만 제공한다. / `styleprops.position`: 제약 — ios/android 모두 `offset` translation은 있으나 css `relative/absolute/fixed/sticky` layout contract와 다르다. / `styleprops.overflowx/overflowy`: 제약 — clip/scroll 관련 modifier는 있으나 box의 css `visible/hidden/scroll/auto` overflow contract와 다르며 scrolling은 scrollview 계열로 처리한다. / `styleprops.zindex`: 부분완료 — ios/android 모두 `zindex` modifier가 있으나 mossy token prop은 없다. / `styleprops.flex*`: 부분완료 — ios `layoutpriority`, android `weight`/`align` modifier로 일부 flex-grow/align 성격만 보완 가능하고 css flexbox 전체 contract는 제공하지 않는다. / `styleprops.gap`: 제약 — box modifier가 아니라 stack/grid spacing contract에서 처리한다. / `styleprops.grid*`: 제약 — swiftui grid cell modifiers는 있으나 android box modifier에 대응 grid contract가 없고 mossy `grid` 컴포넌트 경계에서 처리한다. / `styleprops.unstable_transform`: 부분완료 — ios scale/rotation/offset과 android `graphicslayer`가 있으나 seed css transform string contract와 다르다. / `styleprops._active`: 미구현 — expo ui modifier escape hatch만으로 seed active style prop을 선언형 상태 prop으로 대응하지 않는다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 dom attrs contract를 제공하지 않는다./ `children?`: 부분완료 — seed div children과 mossy children 모두 지원하지만 mossy는 native stacking container로 렌더한다. / `hidden?`: 부분완료 — seed hidden attr 의도를 native 숨김 modifier로 대응한다. / `alignment?`: mossy only — native stacking children 정렬 prop이다. / `opacity?`: mossy only — expo ui modifier로 제공한다. / `onpress?`: 부분완료 — dom event attrs 중 탭 상호작용만 native press/tap handler로 대응한다. / `onappear?`: mossy only — ios lifecycle modifier로 제공한다. / `ondisappear?`: mossy only — ios lifecycle modifier로 제공한다. / `disabled?`: mossy only — press 비활성화와 ios disabled modifier로 제공한다. / `testid?`: mossy only — rn 테스트 식별자다. / `modifiers?`: mossy only — expo ui modifier escape hatch다. seed `styleprops`에서 온 props와 mossy 전용 native props를 구분해 관리한다. modifier로 보완 가능한 shadow, min size 일부, zindex, 일부 flex/transform은 token prop 설계 여부를 별도로 판단한다. gradient, css position/overflow, gap, grid, active state는 box 공통 modifier contract로 직접 복제하지 않는다. seed `box`는 web style-prop primitive이고 mossy `box`는 native stacking container다. `width`, `height`, `padding`, `backgroundcolor`, `bordercolor`, `borderwidth`, `radius`, `display`, `hidden`은 mossy only가 아니라 seed style/dom surface의 부분 대응이다.">
               <td class="component"><code>Box</code></td>
-              <td class="seed-props"><code>BoxProps</code>: <code>as?</code>, <code>asChild?</code>; 상속 <code>StyleProps</code>, div attrs</td>
+              <td class="seed-props"><code>BoxProps</code>: <code>as?</code>, <code>asChild?</code>; 상속 <code>StyleProps</code>(<code>bg/background</code>, gradient, color, border, radius, shadow, size, inset, padding/bleed, display/position/overflow/zIndex, flex, gap, grid, transform, <code>_active</code>), <code>Omit&lt;HTMLAttributes&lt;HTMLDivElement&gt;, &#39;color&#39;&gt;</code></td>
               <td class="mossy"><code>Box</code></td>
-              <td class="mossy-props"><code>Box</code>: <code>children?</code>, <code>alignment?</code>, <code>testID?</code>, <code>modifiers?</code></td>
-              <td><span class="status partial">부분완료<span class="prop-count">완료 0/5</span></span></td>
+              <td class="mossy-props"><code>Box</code>: <code>children?</code>, <code>display?</code>, <code>alignment?</code>, <code>width?</code>, <code>height?</code>, <code>padding?</code>, <code>paddingHorizontal?</code>, <code>paddingVertical?</code>, <code>paddingTop?</code>, <code>paddingBottom?</code>, <code>paddingStart?</code>, <code>paddingEnd?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 0/22</span></span></td>
               <td class="props-status"><details class="prop-status-details">
-                <summary>완료 0/5 · 미구현 1 · 제약 2 · 부분 2</summary>
+                <summary>완료 0/22 · 미구현 2 · 제약 8 · 부분 12</summary>
                 <table class="prop-status-table">
                   <thead>
                     <tr>
@@ -1830,49 +1830,149 @@
                     </tr>
                     <tr>
                       <td><code>asChild?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>StyleProps</code></td>
-                      <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>div attrs</code></td>
                       <td><span class="status blocked">제약</span></td>
                       <td>RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.</td>
                     </tr>
                     <tr>
-                      <td><code>BoxProps</code></td>
+                      <td><code>StyleProps.bg/background</code></td>
                       <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
+                      <td>Seed 배경색 prop을 Mossy <code>backgroundColor?</code> 토큰/원시 색상으로 대응한다.</td>
                     </tr>
                     <tr>
-                      <td><code>children?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td><code>StyleProps.bgGradient/backgroundGradient</code></td>
+                      <td><span class="status missing">미구현</span></td>
+                      <td>SwiftUI <code>foregroundStyle</code> gradient는 foreground 전용이고 Compose modifier에는 배경 gradient contract가 없어 Seed background gradient를 공통 대응하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.color</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>RN/Expo UI <code>Box</code>는 DOM text color inheritance contract를 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.borderColor/borderWidth</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Mossy <code>borderColor?</code>, <code>borderWidth?</code>로 단일 border를 대응하고 방향별 border width는 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.borderRadius*</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Mossy <code>radius?</code>로 단일 radius를 대응하고 corner별 radius는 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.boxShadow</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>iOS <code>shadow</code>, Android <code>shadow</code>/<code>graphicsLayer.shadowElevation</code> modifier가 있으나 Seed shadow token prop은 없다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.width/height</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Mossy <code>width?</code>, <code>height?</code>를 제공하고, min/max는 iOS <code>frame(min/max*)</code>, Android <code>defaultMinSize(min*)</code> 수준까지만 modifier로 보완 가능하다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.padding*</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Mossy padding props로 기본 padding을 대응하고 Seed shorthand, <code>safeArea</code>, <code>bleed*</code>는 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.display</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Mossy는 <code>flex</code>와 <code>none</code>만 제공한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.position</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>iOS/Android 모두 <code>offset</code> translation은 있으나 CSS <code>relative/absolute/fixed/sticky</code> layout contract와 다르다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.overflowX/overflowY</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>clip/scroll 관련 modifier는 있으나 Box의 CSS <code>visible/hidden/scroll/auto</code> overflow contract와 다르며 scrolling은 ScrollView 계열로 처리한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.zIndex</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>iOS/Android 모두 <code>zIndex</code> modifier가 있으나 Mossy token prop은 없다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.flex*</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>iOS <code>layoutPriority</code>, Android <code>weight</code>/<code>align</code> modifier로 일부 flex-grow/align 성격만 보완 가능하고 CSS flexbox 전체 contract는 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.gap</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>Box modifier가 아니라 Stack/Grid spacing contract에서 처리한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.grid*</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>SwiftUI grid cell modifiers는 있으나 Android Box modifier에 대응 grid contract가 없고 Mossy <code>Grid</code> 컴포넌트 경계에서 처리한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps.unstable_transform</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>iOS scale/rotation/offset과 Android <code>graphicsLayer</code>가 있으나 Seed CSS transform string contract와 다르다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>StyleProps._active</code></td>
+                      <td><span class="status missing">미구현</span></td>
+                      <td>Expo UI modifier escape hatch만으로 Seed active style prop을 선언형 상태 prop으로 대응하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>div attrs</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>RN/Expo UI 레이어에서 동일 DOM attrs contract를 제공하지 않는다./ <code>children?</code>: 부분완료 — Seed div children과 Mossy children 모두 지원하지만 Mossy는 native stacking container로 렌더한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>hidden?</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Seed hidden attr 의도를 native 숨김 modifier로 대응한다.</td>
                     </tr>
                     <tr>
                       <td><code>alignment?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td>native stacking children 정렬 prop이다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>opacity?</code></td>
+                      <td><span class="status mossy-only">Mossy only</span></td>
+                      <td>Expo UI modifier로 제공한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>onPress?</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>DOM event attrs 중 탭 상호작용만 native press/tap handler로 대응한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>onAppear?</code></td>
+                      <td><span class="status mossy-only">Mossy only</span></td>
+                      <td>iOS lifecycle modifier로 제공한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>onDisappear?</code></td>
+                      <td><span class="status mossy-only">Mossy only</span></td>
+                      <td>iOS lifecycle modifier로 제공한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>disabled?</code></td>
+                      <td><span class="status mossy-only">Mossy only</span></td>
+                      <td>press 비활성화와 iOS disabled modifier로 제공한다.</td>
                     </tr>
                     <tr>
                       <td><code>testID?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td>RN 테스트 식별자다.</td>
                     </tr>
                     <tr>
                       <td><code>modifiers?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td>Expo UI modifier escape hatch다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
-              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
-              <td class="note">Mossy는 Expo UI modifier 중심으로 <code>alignment</code>, <code>modifiers</code>만 공개한다. DOM <code>as</code>, HTML attrs는 제공하지 않는다.</td>
+              <td class="next-action">Seed <code>StyleProps</code>에서 온 props와 Mossy 전용 native props를 구분해 관리한다. modifier로 보완 가능한 shadow, min size 일부, zIndex, 일부 flex/transform은 token prop 설계 여부를 별도로 판단한다. gradient, CSS position/overflow, gap, grid, active state는 Box 공통 modifier contract로 직접 복제하지 않는다.</td>
+              <td class="note">Seed <code>Box</code>는 web style-prop primitive이고 Mossy <code>Box</code>는 native stacking container다. <code>width</code>, <code>height</code>, <code>padding</code>, <code>backgroundColor</code>, <code>borderColor</code>, <code>borderWidth</code>, <code>radius</code>, <code>display</code>, <code>hidden</code>은 Mossy only가 아니라 Seed style/DOM surface의 부분 대응이다.</td>
             </tr>
             <tr class="compound-parent-row" data-status="미구현" data-compound="true" data-mossy-match="false" data-component="Callout" data-parent="" data-row-kind="compound-parent" data-depth="0" data-search="`callout` `root`, `content`, `title`, `description`, `link`, `closebutton`; 상속 `calloutvariantprops`, `dismissiblerootprops`, `primitiveprops`, html/button attrs - - 미구현 `closebutton`: 미구현 — callout.closebutton 행에서 props를 별도 관리한다. / `content`: 미구현 — callout.content 행에서 props를 별도 관리한다. / `description`: 미구현 — callout.description 행에서 props를 별도 관리한다. / `link`: 미구현 — callout.link 행에서 props를 별도 관리한다. / `root`: 미구현 — callout.root 행에서 props를 별도 관리한다. / `title`: 미구현 — callout.title 행에서 props를 별도 관리한다. 하위 part별 행에서 실제 props parity를 관리한다. compound namespace 자체는 props를 갖지 않는 공개 api 묶음이다.">
               <td class="component"><span class="component-name component-parent-row">
@@ -5438,14 +5538,14 @@
               <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
               <td class="note">Mossy 공개 API에 대응 part가 없다.</td>
             </tr>
-            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Flex" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`flex` `flexprops`: `display?`, `direction?`, `wrap?`, `align?`, `justify?`, `grow?`, `shrink?`; 상속 `boxprops` `flex`, `hstack`, `vstack` `flex`: `direction?`, `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `hstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `vstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof column&gt;, &#39;spacing&#39;&gt;` 부분완료 `display?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `direction?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `wrap?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `align?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `justify?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `grow?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `shrink?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `boxprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `flexprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `spacing?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `hstack`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `vstack`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 expo ui `row`/`column` 기반 `direction`, `spacing` 중심이다.">
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Flex" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`flex` `flexprops`: `display?`, `direction?`, `wrap?`, `align?`, `justify?`, `grow?`, `shrink?`; 상속 `boxprops` `flex` `display?`, `direction?`, `align?`, `justify?`, `grow?`, `spacing?`, `alignment?`, `width?`, `height?`, `padding*?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `display?`: 완료 — `none`은 네이티브 뷰를 렌더하지 않고 `flex`는 기본 stack 렌더로 대응한다. / `direction?`: 완료 — mossy `flex`에서 `row`, `column`, reverse deprecated 값을 제공한다. / `wrap?`: 제약 — expo ui swiftui/compose 공통 stack contract가 줄바꿈 배치를 제공하지 않는다. / `align?`: 완료 — seed `align` shorthand를 expo ui cross-axis `alignment`로 매핑한다. / `justify?`: 완료 — seed `justify` shorthand를 flexible `spacer` 배치로 매핑한다. / `grow?`: 완료 — ios `layoutpriority`, android compose `weight` modifier로 매핑한다. / `shrink?`: 제약 — swiftui/compose stack에서 css `flex-shrink`와 동일한 축소 우선순위 contract를 제공하지 않는다. / `boxprops`: 부분완료 — seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 mossy token surface props로 대응한다./ `flexprops`: 부분완료 — 웹 전용/dom 전용과 공통 contract 없는 `wrap`, `shrink`를 제외하고 seed shorthand를 제공한다. / `spacing?`·`alignment?`: mossy only — expo ui stack contract를 mossy 토큰 api로 제공한다. 웹 전용/dom 전용 props를 제외하고 seed shorthand와 box surface를 mossy flex api에 맞춰 유지한다. mossy는 `wrap`, `shrink`, dom attrs, `as`, `aschild`를 제공하지 않는다.">
               <td class="component"><code>Flex</code></td>
               <td class="seed-props"><code>FlexProps</code>: <code>display?</code>, <code>direction?</code>, <code>wrap?</code>, <code>align?</code>, <code>justify?</code>, <code>grow?</code>, <code>shrink?</code>; 상속 <code>BoxProps</code></td>
-              <td class="mossy"><code>Flex</code>, <code>HStack</code>, <code>VStack</code></td>
-              <td class="mossy-props"><code>Flex</code>: <code>direction?</code>, <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>HStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>VStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Column&gt;, &#39;spacing&#39;&gt;</code></td>
-              <td><span class="status partial">부분완료<span class="prop-count">완료 1/9</span></span></td>
+              <td class="mossy"><code>Flex</code></td>
+              <td class="mossy-props"><code>display?</code>, <code>direction?</code>, <code>align?</code>, <code>justify?</code>, <code>grow?</code>, <code>spacing?</code>, <code>alignment?</code>, <code>width?</code>, <code>height?</code>, <code>padding*?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 5/8</span></span></td>
               <td class="props-status"><details class="prop-status-details">
-                <summary>완료 1/9 · 미구현 6 · 부분 2</summary>
+                <summary>완료 5/8 · 제약 2 · 부분 1</summary>
                 <table class="prop-status-table">
                   <thead>
                     <tr>
@@ -5457,78 +5557,63 @@
                   <tbody>
                     <tr>
                       <td><code>display?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>none</code>은 네이티브 뷰를 렌더하지 않고 <code>flex</code>는 기본 Stack 렌더로 대응한다.</td>
                     </tr>
                     <tr>
                       <td><code>direction?</code></td>
                       <td><span class="status done">완료</span></td>
-                      <td>Mossy 공개 props에서 동일 이름으로 제공한다.</td>
+                      <td>Mossy <code>Flex</code>에서 <code>row</code>, <code>column</code>, reverse deprecated 값을 제공한다.</td>
                     </tr>
                     <tr>
                       <td><code>wrap?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>Expo UI SwiftUI/Compose 공통 Stack contract가 줄바꿈 배치를 제공하지 않는다.</td>
                     </tr>
                     <tr>
                       <td><code>align?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>align</code> shorthand를 Expo UI cross-axis <code>alignment</code>로 매핑한다.</td>
                     </tr>
                     <tr>
                       <td><code>justify?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>justify</code> shorthand를 flexible <code>Spacer</code> 배치로 매핑한다.</td>
                     </tr>
                     <tr>
                       <td><code>grow?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td>iOS <code>layoutPriority</code>, Android Compose <code>weight</code> modifier로 매핑한다.</td>
                     </tr>
                     <tr>
                       <td><code>shrink?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>SwiftUI/Compose Stack에서 CSS <code>flex-shrink</code>와 동일한 축소 우선순위 contract를 제공하지 않는다.</td>
                     </tr>
                     <tr>
                       <td><code>BoxProps</code></td>
                       <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
+                      <td>Seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 Mossy token surface props로 대응한다./ <code>FlexProps</code>: 부분완료 — 웹 전용/DOM 전용과 공통 contract 없는 <code>wrap</code>, <code>shrink</code>를 제외하고 Seed shorthand를 제공한다.</td>
                     </tr>
                     <tr>
-                      <td><code>FlexProps</code></td>
-                      <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>spacing?</code></td>
+                      <td><code>spacing?</code>·<code>alignment?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>HStack</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>VStack</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td>Expo UI Stack contract를 Mossy 토큰 API로 제공한다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
-              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
-              <td class="note">Mossy는 Expo UI <code>Row</code>/<code>Column</code> 기반 <code>direction</code>, <code>spacing</code> 중심이다.</td>
+              <td class="next-action">웹 전용/DOM 전용 props를 제외하고 Seed shorthand와 Box surface를 Mossy Flex API에 맞춰 유지한다.</td>
+              <td class="note">Mossy는 <code>wrap</code>, <code>shrink</code>, DOM attrs, <code>as</code>, <code>asChild</code>를 제공하지 않는다.</td>
             </tr>
-            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Float" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`float` `floatprops`: `as?`, `placement`, `offsetx?`, `offsety?`, `zindex?`; 상속 div attrs `float` `float`: `children?`, `placement`, `offsetx?`, `offsety?`, `testid?`, `modifiers?` 부분완료 `as?`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `placement`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `offsetx?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `offsety?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `zindex?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `testid?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `modifiers?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `placement`, `offsetx`, `offsety`, `modifiers` 중심이다. dom `as`는 제공하지 않는다.">
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Float" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`float` `floatprops`: `as?`, `placement`, `offsetx?`, `offsety?`, `zindex?`; 상속 div attrs `float` `float`: `children?`, `display?`, `placement`, `offsetx?`, `offsety?`, `width?`, `height?`, `padding*?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `as?`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `placement`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `offsetx?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `offsety?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `zindex?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `boxprops`: 부분완료 — 위치 고정 modifier 뒤에 mossy token surface props를 적용한다./ `children?`·`testid?`·`modifiers?`: mossy only — expo ui 조합을 위해 별도 제공한다. seed `float`의 배치 props는 유지하고, container 표면은 box와 같은 mossy token surface로 제공한다. mossy는 dom `as`를 제공하지 않는다. `zindex`는 별도 elevation/z-order 정책 검토 전까지 제외한다.">
               <td class="component"><code>Float</code></td>
               <td class="seed-props"><code>FloatProps</code>: <code>as?</code>, <code>placement</code>, <code>offsetX?</code>, <code>offsetY?</code>, <code>zIndex?</code>; 상속 div attrs</td>
               <td class="mossy"><code>Float</code></td>
-              <td class="mossy-props"><code>Float</code>: <code>children?</code>, <code>placement</code>, <code>offsetX?</code>, <code>offsetY?</code>, <code>testID?</code>, <code>modifiers?</code></td>
-              <td><span class="status partial">부분완료<span class="prop-count">완료 3/6</span></span></td>
+              <td class="mossy-props"><code>Float</code>: <code>children?</code>, <code>display?</code>, <code>placement</code>, <code>offsetX?</code>, <code>offsetY?</code>, <code>width?</code>, <code>height?</code>, <code>padding*?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 3/7</span></span></td>
               <td class="props-status"><details class="prop-status-details">
-                <summary>완료 3/6 · 미구현 1 · 제약 2</summary>
+                <summary>완료 3/7 · 미구현 1 · 제약 2 · 부분 1</summary>
                 <table class="prop-status-table">
                   <thead>
                     <tr>
@@ -5569,25 +5654,15 @@
                       <td>RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.</td>
                     </tr>
                     <tr>
-                      <td><code>children?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>testID?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>modifiers?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td><code>BoxProps</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>위치 고정 modifier 뒤에 Mossy token surface props를 적용한다./ <code>children?</code>·<code>testID?</code>·<code>modifiers?</code>: Mossy only — Expo UI 조합을 위해 별도 제공한다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
-              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
-              <td class="note">Mossy는 <code>placement</code>, <code>offsetX</code>, <code>offsetY</code>, <code>modifiers</code> 중심이다. DOM <code>as</code>는 제공하지 않는다.</td>
+              <td class="next-action">Seed <code>Float</code>의 배치 props는 유지하고, container 표면은 Box와 같은 Mossy token surface로 제공한다.</td>
+              <td class="note">Mossy는 DOM <code>as</code>를 제공하지 않는다. <code>zIndex</code>는 별도 elevation/z-order 정책 검토 전까지 제외한다.</td>
             </tr>
             <tr class="leaf-row" data-status="미구현" data-compound="false" data-mossy-match="false" data-component="FloatingActionButton" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`floatingactionbutton` `root`, `icon`, `label`; 상속 `floatingactionbuttonvariantprops`, `primitiveprops`, button/span attrs, `internaliconprops` - - 미구현 `root`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `icon`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `label`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `floatingactionbuttonvariantprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `primitiveprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `internaliconprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `span attrs`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. expo ui platform fab 가능성 확인 필요.">
               <td class="component"><code>FloatingActionButton</code></td>
@@ -5647,14 +5722,14 @@
               <td class="next-action">구현 필요성과 <code>@expo/ui</code> 대응 가능성을 확인한 뒤 Mossy API를 설계한다.</td>
               <td class="note">Expo UI platform FAB 가능성 확인 필요.</td>
             </tr>
-            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Grid" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`grid` `gridprops`: `display?`, `align?`, `justify?`, `justifyitems?`, `columns?`, `rows?`, `autoflow?`, `autocolumns?`, `autorows?`; 상속 `boxprops` `grid` `grid`: `children?`, `columns`, `horizontalspacing?`, `verticalspacing?`, `testid?`, `modifiers?` 부분완료 `display?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `align?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `justify?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `justifyitems?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `columns?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `rows?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `autoflow?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `autocolumns?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `autorows?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `boxprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `children?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `horizontalspacing?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `verticalspacing?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `testid?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `modifiers?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `columns`, `horizontalspacing`, `verticalspacing` 중심이다. css grid 세부 props는 제공하지 않는다.">
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Grid" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`grid` `gridprops`: `display?`, `align?`, `justify?`, `justifyitems?`, `columns?`, `rows?`, `autoflow?`, `autocolumns?`, `autorows?`; 상속 `boxprops` `grid` `grid`: `children?`, `display?`, `columns`, `horizontalspacing?`, `verticalspacing?`, `width?`, `height?`, `padding*?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `display?`: 완료 — `none`은 네이티브 grid를 렌더하지 않는다. / `align?`·`justify?`·`justifyitems?`: 미구현 — css grid alignment contract와 동일하지 않아 보류한다. / `columns?`: 완료 — mossy 공개 props에서 동일 이름으로 제공한다. / `rows?`·`autoflow?`·`autocolumns?`·`autorows?`: 미구현 — rn/expo ui 공통 grid contract가 없어 보류한다. / `boxprops`: 부분완료 — seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 mossy token surface props로 대응한다./ `horizontalspacing?`·`verticalspacing?`: mossy only — dimension 토큰 또는 숫자로 제공한다. / `testid?`·`modifiers?`: mossy only — expo ui modifier 경계에서 제공한다. 고정 열 grid에 box surface를 적용하고 css grid 세부 props는 별도 griditem/flow 설계 전까지 제외한다. mossy는 `columns`, `horizontalspacing`, `verticalspacing` 중심이다. css grid 세부 props는 제공하지 않는다.">
               <td class="component"><code>Grid</code></td>
               <td class="seed-props"><code>GridProps</code>: <code>display?</code>, <code>align?</code>, <code>justify?</code>, <code>justifyItems?</code>, <code>columns?</code>, <code>rows?</code>, <code>autoFlow?</code>, <code>autoColumns?</code>, <code>autoRows?</code>; 상속 <code>BoxProps</code></td>
               <td class="mossy"><code>Grid</code></td>
-              <td class="mossy-props"><code>Grid</code>: <code>children?</code>, <code>columns</code>, <code>horizontalSpacing?</code>, <code>verticalSpacing?</code>, <code>testID?</code>, <code>modifiers?</code></td>
-              <td><span class="status partial">부분완료<span class="prop-count">완료 1/10</span></span></td>
+              <td class="mossy-props"><code>Grid</code>: <code>children?</code>, <code>display?</code>, <code>columns</code>, <code>horizontalSpacing?</code>, <code>verticalSpacing?</code>, <code>width?</code>, <code>height?</code>, <code>padding*?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 2/5</span></span></td>
               <td class="props-status"><details class="prop-status-details">
-                <summary>완료 1/10 · 미구현 8 · 부분 1</summary>
+                <summary>완료 2/5 · 미구현 2 · 부분 1</summary>
                 <table class="prop-status-table">
                   <thead>
                     <tr>
@@ -5666,23 +5741,13 @@
                   <tbody>
                     <tr>
                       <td><code>display?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>none</code>은 네이티브 Grid를 렌더하지 않는다.</td>
                     </tr>
                     <tr>
-                      <td><code>align?</code></td>
+                      <td><code>align?</code>·<code>justify?</code>·<code>justifyItems?</code></td>
                       <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>justify?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>justifyItems?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td>CSS grid alignment contract와 동일하지 않아 보류한다.</td>
                     </tr>
                     <tr>
                       <td><code>columns?</code></td>
@@ -5690,59 +5755,24 @@
                       <td>Mossy 공개 props에서 동일 이름으로 제공한다.</td>
                     </tr>
                     <tr>
-                      <td><code>rows?</code></td>
+                      <td><code>rows?</code>·<code>autoFlow?</code>·<code>autoColumns?</code>·<code>autoRows?</code></td>
                       <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>autoFlow?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>autoColumns?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>autoRows?</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
+                      <td>RN/Expo UI 공통 grid contract가 없어 보류한다.</td>
                     </tr>
                     <tr>
                       <td><code>BoxProps</code></td>
                       <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
+                      <td>Seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 Mossy token surface props로 대응한다./ <code>horizontalSpacing?</code>·<code>verticalSpacing?</code>: Mossy only — dimension 토큰 또는 숫자로 제공한다.</td>
                     </tr>
                     <tr>
-                      <td><code>children?</code></td>
+                      <td><code>testID?</code>·<code>modifiers?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>horizontalSpacing?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>verticalSpacing?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>testID?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>modifiers?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td>Expo UI modifier 경계에서 제공한다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
-              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
+              <td class="next-action">고정 열 Grid에 Box surface를 적용하고 CSS grid 세부 props는 별도 GridItem/flow 설계 전까지 제외한다.</td>
               <td class="note">Mossy는 <code>columns</code>, <code>horizontalSpacing</code>, <code>verticalSpacing</code> 중심이다. CSS grid 세부 props는 제공하지 않는다.</td>
             </tr>
             <tr class="leaf-row" data-status="미구현" data-compound="false" data-mossy-match="false" data-component="GridItem" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`griditem` `griditemprops`: `aschild?`, `colspan?`, `rowspan?`, `colstart?`, `colend?`, `rowstart?`, `rowend?`; 상속 `boxprops` - - 미구현 `aschild?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `colspan?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `rowspan?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `colstart?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `colend?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `rowstart?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `rowend?`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `boxprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. 구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 mossy api를 설계한다. mossy grid item span api 추가 여부 확인 필요.">
@@ -10987,14 +11017,14 @@
               <td class="next-action">Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.</td>
               <td class="note">RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.</td>
             </tr>
-            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="Stack" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`stack` `stackprops`, `hstackprops`, `vstackprops`: 상속 `omit&lt;flexprops, &#39;flexdirection&#39;&gt;` `hstack`, `vstack`, `flex` `hstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;`; `vstack`: `spacing?`, 상속 `omit&lt;componentprops&lt;typeof column&gt;, &#39;spacing&#39;&gt;`; `flex`: `direction?`, `spacing?`, 상속 `omit&lt;componentprops&lt;typeof row&gt;, &#39;spacing&#39;&gt;` 부분완료 `stackprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `hstackprops`: 미구현 — mossy 공개 api에 대응 prop/part가 없다. / `vstackprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `flexprops`: 부분완료 — mossy modifier 또는 일부 layout props로만 대응한다. / `spacing?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `vstack`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `flex`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. / `direction?`: mossy only — mossy 토큰화 또는 expo ui 조합을 위해 별도 제공한다. seed props/parts와 mossy api 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다. mossy는 `stack` 이름 없이 `hstack`/`vstack`을 공개한다.">
-              <td class="component"><code>Stack</code></td>
-              <td class="seed-props"><code>StackProps</code>, <code>HStackProps</code>, <code>VStackProps</code>: 상속 <code>Omit&lt;FlexProps, &#39;flexDirection&#39;&gt;</code></td>
-              <td class="mossy"><code>HStack</code>, <code>VStack</code>, <code>Flex</code></td>
-              <td class="mossy-props"><code>HStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code>; <code>VStack</code>: <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Column&gt;, &#39;spacing&#39;&gt;</code>; <code>Flex</code>: <code>direction?</code>, <code>spacing?</code>, 상속 <code>Omit&lt;ComponentProps&lt;typeof Row&gt;, &#39;spacing&#39;&gt;</code></td>
-              <td><span class="status partial">부분완료<span class="prop-count">완료 0/4</span></span></td>
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="HStack" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`hstack` `hstackprops`: 상속 `omit&lt;flexprops, &#39;flexdirection&#39;&gt;` `hstack` `display?`, `align?`, `justify?`, `grow?`, `spacing?`, `alignment?`, `width?`, `height?`, `padding*?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `display?`: 완료 — `none`은 네이티브 뷰를 렌더하지 않고 `flex`는 기본 stack 렌더로 대응한다. / `direction?`: 완료 — `hstack`은 `row` 방향으로 고정한다. / `wrap?`: 제약 — expo ui swiftui/compose 공통 stack contract가 줄바꿈 배치를 제공하지 않는다. / `align?`: 완료 — seed `align` shorthand를 expo ui cross-axis `alignment`로 매핑한다. / `justify?`: 완료 — seed `justify` shorthand를 flexible `spacer` 배치로 매핑한다. / `grow?`: 완료 — ios `layoutpriority`, android compose `weight` modifier로 매핑한다. / `shrink?`: 제약 — swiftui/compose stack에서 css `flex-shrink`와 동일한 축소 우선순위 contract를 제공하지 않는다. / `boxprops`: 부분완료 — seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 mossy token surface props로 대응한다./ `spacing?`·`alignment?`: mossy only — expo ui stack contract를 mossy 토큰 api로 제공한다. 웹 전용/dom 전용 props를 제외하고 seed hstack shorthand와 box surface를 mossy api에 맞춰 유지한다. deprecated `stack` alias는 parity 기준에서 제외한다.">
+              <td class="component"><code>HStack</code></td>
+              <td class="seed-props"><code>HStackProps</code>: 상속 <code>Omit&lt;FlexProps, &#39;flexDirection&#39;&gt;</code></td>
+              <td class="mossy"><code>HStack</code></td>
+              <td class="mossy-props"><code>display?</code>, <code>align?</code>, <code>justify?</code>, <code>grow?</code>, <code>spacing?</code>, <code>alignment?</code>, <code>width?</code>, <code>height?</code>, <code>padding*?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 5/8</span></span></td>
               <td class="props-status"><details class="prop-status-details">
-                <summary>완료 0/4 · 미구현 2 · 부분 2</summary>
+                <summary>완료 5/8 · 제약 2 · 부분 1</summary>
                 <table class="prop-status-table">
                   <thead>
                     <tr>
@@ -11005,50 +11035,113 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><code>StackProps</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>HStackProps</code></td>
-                      <td><span class="status missing">미구현</span></td>
-                      <td>Mossy 공개 API에 대응 prop/part가 없다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>VStackProps</code></td>
-                      <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>FlexProps</code></td>
-                      <td><span class="status partial">부분완료</span></td>
-                      <td>Mossy modifier 또는 일부 layout props로만 대응한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>spacing?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>VStack</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>Flex</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td><code>display?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>none</code>은 네이티브 뷰를 렌더하지 않고 <code>flex</code>는 기본 Stack 렌더로 대응한다.</td>
                     </tr>
                     <tr>
                       <td><code>direction?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.</td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>HStack</code>은 <code>row</code> 방향으로 고정한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>wrap?</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>Expo UI SwiftUI/Compose 공통 Stack contract가 줄바꿈 배치를 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>align?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>align</code> shorthand를 Expo UI cross-axis <code>alignment</code>로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>justify?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>justify</code> shorthand를 flexible <code>Spacer</code> 배치로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>grow?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>iOS <code>layoutPriority</code>, Android Compose <code>weight</code> modifier로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>shrink?</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>SwiftUI/Compose Stack에서 CSS <code>flex-shrink</code>와 동일한 축소 우선순위 contract를 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>BoxProps</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 Mossy token surface props로 대응한다./ <code>spacing?</code>·<code>alignment?</code>: Mossy only — Expo UI Stack contract를 Mossy 토큰 API로 제공한다.</td>
                     </tr>
                   </tbody>
                 </table>
               </details></td>
-              <td class="next-action">Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.</td>
-              <td class="note">Mossy는 <code>Stack</code> 이름 없이 <code>HStack</code>/<code>VStack</code>을 공개한다.</td>
+              <td class="next-action">웹 전용/DOM 전용 props를 제외하고 Seed HStack shorthand와 Box surface를 Mossy API에 맞춰 유지한다.</td>
+              <td class="note">deprecated <code>Stack</code> alias는 parity 기준에서 제외한다.</td>
+            </tr>
+            <tr class="leaf-row" data-status="부분완료" data-compound="false" data-mossy-match="true" data-component="VStack" data-parent="" data-row-kind="leaf" data-depth="0" data-search="`vstack` `vstackprops`: 상속 `omit&lt;flexprops, &#39;flexdirection&#39;&gt;` `vstack` `display?`, `align?`, `justify?`, `grow?`, `spacing?`, `alignment?`, `width?`, `height?`, `padding*?`, `backgroundcolor?`, `bordercolor?`, `borderwidth?`, `radius?`, `opacity?`, `onpress?`, `onappear?`, `ondisappear?`, `disabled?`, `hidden?`, `testid?`, `modifiers?` 부분완료 `display?`: 완료 — `none`은 네이티브 뷰를 렌더하지 않고 `flex`는 기본 stack 렌더로 대응한다. / `direction?`: 완료 — `vstack`은 `column` 방향으로 고정한다. / `wrap?`: 제약 — expo ui swiftui/compose 공통 stack contract가 줄바꿈 배치를 제공하지 않는다. / `align?`: 완료 — seed `align` shorthand를 expo ui cross-axis `alignment`로 매핑한다. / `justify?`: 완료 — seed `justify` shorthand를 flexible `spacer` 배치로 매핑한다. / `grow?`: 완료 — ios `layoutpriority`, android compose `weight` modifier로 매핑한다. / `shrink?`: 제약 — swiftui/compose stack에서 css `flex-shrink`와 동일한 축소 우선순위 contract를 제공하지 않는다. / `boxprops`: 부분완료 — seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 mossy token surface props로 대응한다./ `spacing?`·`alignment?`: mossy only — expo ui stack contract를 mossy 토큰 api로 제공한다. 웹 전용/dom 전용 props를 제외하고 seed vstack shorthand와 box surface를 mossy api에 맞춰 유지한다. deprecated `stack` alias는 parity 기준에서 제외한다.">
+              <td class="component"><code>VStack</code></td>
+              <td class="seed-props"><code>VStackProps</code>: 상속 <code>Omit&lt;FlexProps, &#39;flexDirection&#39;&gt;</code></td>
+              <td class="mossy"><code>VStack</code></td>
+              <td class="mossy-props"><code>display?</code>, <code>align?</code>, <code>justify?</code>, <code>grow?</code>, <code>spacing?</code>, <code>alignment?</code>, <code>width?</code>, <code>height?</code>, <code>padding*?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>borderWidth?</code>, <code>radius?</code>, <code>opacity?</code>, <code>onPress?</code>, <code>onAppear?</code>, <code>onDisappear?</code>, <code>disabled?</code>, <code>hidden?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td><span class="status partial">부분완료<span class="prop-count">완료 5/8</span></span></td>
+              <td class="props-status"><details class="prop-status-details">
+                <summary>완료 5/8 · 제약 2 · 부분 1</summary>
+                <table class="prop-status-table">
+                  <thead>
+                    <tr>
+                      <th>Prop/Part</th>
+                      <th>상태</th>
+                      <th>메모</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>display?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>none</code>은 네이티브 뷰를 렌더하지 않고 <code>flex</code>는 기본 Stack 렌더로 대응한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>direction?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td><code>VStack</code>은 <code>column</code> 방향으로 고정한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>wrap?</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>Expo UI SwiftUI/Compose 공통 Stack contract가 줄바꿈 배치를 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>align?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>align</code> shorthand를 Expo UI cross-axis <code>alignment</code>로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>justify?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>Seed <code>justify</code> shorthand를 flexible <code>Spacer</code> 배치로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>grow?</code></td>
+                      <td><span class="status done">완료</span></td>
+                      <td>iOS <code>layoutPriority</code>, Android Compose <code>weight</code> modifier로 매핑한다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>shrink?</code></td>
+                      <td><span class="status blocked">제약</span></td>
+                      <td>SwiftUI/Compose Stack에서 CSS <code>flex-shrink</code>와 동일한 축소 우선순위 contract를 제공하지 않는다.</td>
+                    </tr>
+                    <tr>
+                      <td><code>BoxProps</code></td>
+                      <td><span class="status partial">부분완료</span></td>
+                      <td>Seed style surface 중 크기·padding·색·border·radius·opacity·event·lifecycle·visibility를 Mossy token surface props로 대응한다./ <code>spacing?</code>·<code>alignment?</code>: Mossy only — Expo UI Stack contract를 Mossy 토큰 API로 제공한다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details></td>
+              <td class="next-action">웹 전용/DOM 전용 props를 제외하고 Seed VStack shorthand와 Box surface를 Mossy API에 맞춰 유지한다.</td>
+              <td class="note">deprecated <code>Stack</code> alias는 parity 기준에서 제외한다.</td>
             </tr>
             <tr class="compound-parent-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="Switch" data-parent="" data-row-kind="compound-parent" data-depth="0" data-search="`switch` `root`: `size?`; `control`, `hiddeninput`, `label`, `thumb`; 상속 switch primitive/variant props `switch` `switch`: `componentprops&lt;typeof exposwitch&gt;` 부분완료 `control`: 미구현 — switch.control 행에서 props를 별도 관리한다. / `hiddeninput`: 제약 — switch.hiddeninput 행에서 props를 별도 관리한다. / `label`: 미구현 — switch.label 행에서 props를 별도 관리한다. / `root`: 부분완료 — switch.root 행에서 props를 별도 관리한다. / `thumb`: 미구현 — switch.thumb 행에서 props를 별도 관리한다. 하위 part별 행에서 실제 props parity를 관리한다. compound namespace 자체는 props를 갖지 않는 공개 api 묶음이다.">
               <td class="component"><span class="component-name component-parent-row">
@@ -11823,14 +11916,14 @@
               <td class="next-action">하위 part별 행에서 실제 props parity를 관리하고, Seed snippet 대응은 snippet 문서에서 관리한다.</td>
               <td class="note">compound namespace 자체는 props를 갖지 않는 공개 API 묶음이다. Seed snippet과 같은 DX wrapper는 패키지 export가 아니라 복사용 snippet이다.</td>
             </tr>
-            <tr class="compound-part-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="TextField.Root" data-parent="TextField" data-row-kind="compound-part" data-depth="1" data-search="`textfield.root` `textfieldrootprops`: 상속 `textinputvariantprops`, `textfield.rootprops`; div attrs `textfield.root`, `textfieldroot` `children?`, `value?`, `defaultvalue?`, `onvaluechange?`, `disabled?`, `invalid?`, `readonly?`, `textstyle?`, `color?`, `placeholdercolor?`, `backgroundcolor?`, `bordercolor?`, `height?`, `paddinghorizontal?`, `paddingvertical?`, `radius?`, `borderwidth?`, `spacing?`, `alignment?`, `style?`, `testid?`, `modifiers?` 부분완료 `value?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `defaultvalue?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `onvaluechange?`: 완료 — mossy root context에서 `onchangetext`로 주입한다. / `disabled?`: 완료 — mossy root context와 hstack disabled로 주입한다. / `invalid?`: 완료 — mossy root context와 기본 bordercolor 결정에 사용한다. / `readonly?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `textinputvariantprops`: 부분완료 — seed css recipe variant를 mossy 토큰 props(`textstyle`, `color`, `backgroundcolor`, `bordercolor`, spacing 계열)로 재해석한다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: mossy only — compound children 배치를 위해 제공한다. / `textstyle?`: mossy only — mossy typography token을 root context로 주입한다. / `color?`: mossy only — 입력·affix 기본 색상 토큰을 root context로 주입한다. / `placeholdercolor?`: mossy only — placeholder 색상 토큰을 root context로 주입한다. / `backgroundcolor?`: mossy only — hstack 배경 토큰을 제공한다. / `bordercolor?`: mossy only — hstack border 토큰을 제공한다. / `height?`: mossy only — hstack 높이 토큰/값을 제공한다. / `paddinghorizontal?`: mossy only — hstack 가로 padding 토큰/값을 제공한다. / `paddingvertical?`: mossy only — hstack 세로 padding 토큰/값을 제공한다. / `radius?`: mossy only — hstack radius 토큰/값을 제공한다. / `borderwidth?`: mossy only — hstack border width 토큰/값을 제공한다. / `spacing?`: mossy only — affix와 input 간격 토큰/값을 제공한다. / `alignment?`: mossy only — hstack 정렬을 제공한다. / `style?`: mossy only — hstack style escape hatch다. / `testid?`: mossy only — rn 테스트 식별자다. / `modifiers?`: mossy only — expo ui modifier escape hatch다. seed css variant와 dom attrs를 그대로 복제하지 않고 mossy token props를 기준으로 유지한다. seed root는 css recipe provider와 web textfield state provider다. mossy root는 hstack 컨테이너와 rn input state context다.">
+            <tr class="compound-part-row" data-status="부분완료" data-compound="true" data-mossy-match="true" data-component="TextField.Root" data-parent="TextField" data-row-kind="compound-part" data-depth="1" data-search="`textfield.root` `textfieldrootprops`: 상속 `textinputvariantprops`, `textfield.rootprops`; div attrs `textfield.root`, `textfieldroot` `children?`, `value?`, `defaultvalue?`, `onvaluechange?`, `disabled?`, `invalid?`, `readonly?`, `textstyle?`, `color?`, `placeholdercolor?`, `backgroundcolor?`, `bordercolor?`, `height?`, `paddinghorizontal?`, `paddingvertical?`, `radius?`, `borderwidth?`, `spacing?`, `alignment?`, `testid?`, `modifiers?` 부분완료 `value?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `defaultvalue?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `onvaluechange?`: 완료 — mossy root context에서 `onchangetext`로 주입한다. / `disabled?`: 완료 — mossy root context와 hstack disabled로 주입한다. / `invalid?`: 완료 — mossy root context와 기본 bordercolor 결정에 사용한다. / `readonly?`: 완료 — mossy root context에서 input/textarea로 주입한다. / `textinputvariantprops`: 부분완료 — seed css recipe variant를 mossy 토큰 props(`textstyle`, `color`, `backgroundcolor`, `bordercolor`, spacing 계열)로 재해석한다. / `div attrs`: 제약 — rn/expo ui 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: mossy only — compound children 배치를 위해 제공한다. / `textstyle?`: mossy only — mossy typography token을 root context로 주입한다. / `color?`: mossy only — 입력·affix 기본 색상 토큰을 root context로 주입한다. / `placeholdercolor?`: mossy only — placeholder 색상 토큰을 root context로 주입한다. / `backgroundcolor?`: mossy only — hstack 배경 토큰을 제공한다. / `bordercolor?`: mossy only — hstack border 토큰을 제공한다. / `height?`: mossy only — hstack 높이 토큰/값을 제공한다. / `paddinghorizontal?`: mossy only — hstack 가로 padding 토큰/값을 제공한다. / `paddingvertical?`: mossy only — hstack 세로 padding 토큰/값을 제공한다. / `radius?`: mossy only — hstack radius 토큰/값을 제공한다. / `borderwidth?`: mossy only — hstack border width 토큰/값을 제공한다. / `spacing?`: mossy only — affix와 input 간격 토큰/값을 제공한다. / `alignment?`: mossy only — hstack 정렬을 제공한다./ `testid?`: mossy only — rn 테스트 식별자다. / `modifiers?`: mossy only — expo ui modifier escape hatch다. seed css variant와 dom attrs를 그대로 복제하지 않고 mossy token props를 기준으로 유지한다. seed root는 css recipe provider와 web textfield state provider다. mossy root는 hstack 컨테이너와 rn input state context다.">
               <td class="component"><span class="component-name component-part" style="--part-depth: 1">
                 <span class="part-parent">TextField</span>
                 <code>Root</code>
               </span></td>
               <td class="seed-props"><code>TextFieldRootProps</code>: 상속 <code>TextInputVariantProps</code>, <code>TextField.RootProps</code>; div attrs</td>
               <td class="mossy"><code>TextField.Root</code>, <code>TextFieldRoot</code></td>
-              <td class="mossy-props"><code>children?</code>, <code>value?</code>, <code>defaultValue?</code>, <code>onValueChange?</code>, <code>disabled?</code>, <code>invalid?</code>, <code>readOnly?</code>, <code>textStyle?</code>, <code>color?</code>, <code>placeholderColor?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>height?</code>, <code>paddingHorizontal?</code>, <code>paddingVertical?</code>, <code>radius?</code>, <code>borderWidth?</code>, <code>spacing?</code>, <code>alignment?</code>, <code>style?</code>, <code>testID?</code>, <code>modifiers?</code></td>
+              <td class="mossy-props"><code>children?</code>, <code>value?</code>, <code>defaultValue?</code>, <code>onValueChange?</code>, <code>disabled?</code>, <code>invalid?</code>, <code>readOnly?</code>, <code>textStyle?</code>, <code>color?</code>, <code>placeholderColor?</code>, <code>backgroundColor?</code>, <code>borderColor?</code>, <code>height?</code>, <code>paddingHorizontal?</code>, <code>paddingVertical?</code>, <code>radius?</code>, <code>borderWidth?</code>, <code>spacing?</code>, <code>alignment?</code>, <code>testID?</code>, <code>modifiers?</code></td>
               <td><span class="status partial">부분완료<span class="prop-count">완료 6/8</span></span></td>
               <td class="props-status"><details class="prop-status-details">
                 <summary>완료 6/8 · 제약 1 · 부분 1</summary>
@@ -11946,17 +12039,7 @@
                     <tr>
                       <td><code>alignment?</code></td>
                       <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>HStack 정렬을 제공한다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>style?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>HStack style escape hatch다.</td>
-                    </tr>
-                    <tr>
-                      <td><code>testID?</code></td>
-                      <td><span class="status mossy-only">Mossy only</span></td>
-                      <td>RN 테스트 식별자다.</td>
+                      <td>HStack 정렬을 제공한다./ <code>testID?</code>: Mossy only — RN 테스트 식별자다.</td>
                     </tr>
                     <tr>
                       <td><code>modifiers?</code></td>

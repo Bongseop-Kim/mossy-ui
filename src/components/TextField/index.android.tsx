@@ -1,20 +1,19 @@
-import { fillMaxWidth, weight } from '@expo/ui/jetpack-compose/modifiers';
-
-import { createTextField } from './shared';
-
-const textField = createTextField({
-  inputModifiers: [weight(1), fillMaxWidth()],
-});
-
-export const {
-  TextField,
-  TextFieldRoot,
-  TextFieldInput,
-  TextFieldTextarea,
-  TextFieldPrefixIcon,
-  TextFieldPrefixText,
-  TextFieldSuffixIcon,
-  TextFieldSuffixText,
-} = textField;
-
-export * from './types';
+export { TextField } from './TextFieldNamespace';
+export { TextFieldInput } from './Input';
+export { TextFieldPrefixIcon } from './PrefixIcon';
+export { TextFieldPrefixText } from './PrefixText';
+export { TextFieldRoot } from './Root';
+export { TextFieldSuffixIcon } from './SuffixIcon';
+export { TextFieldSuffixText } from './SuffixText';
+export { TextFieldTextarea } from './Textarea';
+export type {
+  MossyTextFieldContextValue,
+  MossyTextFieldInputProps,
+  MossyTextFieldPrefixIconProps,
+  MossyTextFieldPrefixTextProps,
+  MossyTextFieldRadiusToken,
+  MossyTextFieldRootProps,
+  MossyTextFieldSuffixIconProps,
+  MossyTextFieldSuffixTextProps,
+  MossyTextFieldTextareaProps,
+} from './types';

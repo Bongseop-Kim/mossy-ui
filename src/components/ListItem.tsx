@@ -25,7 +25,6 @@ export const ListItem = Object.assign(
         spacing="x3"
         onPress={onPress}
         testID={testID}
-        style={{ width: '100%' }}
       >
         {slots.leading}
         <VStack spacing={2}>

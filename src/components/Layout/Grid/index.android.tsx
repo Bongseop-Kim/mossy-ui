@@ -1,31 +1,27 @@
 import { Box as ComposeBox, Column as ComposeColumn, Row as ComposeRow } from '@expo/ui/jetpack-compose';
-import { testID as testIDModifier, weight } from '@expo/ui/jetpack-compose/modifiers';
+import { weight } from '@expo/ui/jetpack-compose/modifiers';
 
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
+import { useMossyTheme } from '../../../theme';
+import { createMossyLayoutSurfaceModifiers } from '../surface.android';
+import { shouldRenderLayoutSurface } from '../surface.shared';
 import { chunkCells } from './chunk';
 import type { MossyGridProps } from './types';
-import { useMossyTheme } from '../../../theme';
 
 /** 고정 열 개수 그리드. Compose `Column`/`Row`와 `weight`로 균등 셀을 만든다. */
-export function Grid({
-  columns,
-  horizontalSpacing,
-  verticalSpacing,
-  children,
-  modifiers,
-  testID,
-}: MossyGridProps) {
+export function Grid(props: MossyGridProps) {
+  const { columns, horizontalSpacing, verticalSpacing, children, display } = props;
   const theme = useMossyTheme();
   const { rows, columnCount } = chunkCells(children, columns);
   const resolvedHorizontal = resolveMossyDimension(theme, horizontalSpacing);
   const resolvedVertical = resolveMossyDimension(theme, verticalSpacing);
-  const composedModifiers =
-    testID == null ? modifiers : [...(modifiers ?? []), testIDModifier(testID)];
+
+  if (!shouldRenderLayoutSurface(display)) return null;
 
   return (
     <ComposeColumn
       verticalArrangement={resolvedVertical != null ? { spacedBy: resolvedVertical } : undefined}
-      modifiers={composedModifiers}>
+      modifiers={createMossyLayoutSurfaceModifiers(theme, props)}>
       {rows.map((cells, rowIndex) => (
         <ComposeRow
           key={rowIndex}
@@ -44,4 +40,4 @@ export function Grid({
   );
 }
 
-export * from './types';
+export type { MossyGridProps } from './types';

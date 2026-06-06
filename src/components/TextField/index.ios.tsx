@@ -1,22 +1,19 @@
-import { frame } from '@expo/ui/swift-ui/modifiers';
-
-import { createTextField } from './shared';
-
-const FILL = 1_000_000;
-
-const textField = createTextField({
-  inputModifiers: [frame({ maxWidth: FILL, alignment: 'leading' })],
-});
-
-export const {
-  TextField,
-  TextFieldRoot,
-  TextFieldInput,
-  TextFieldTextarea,
-  TextFieldPrefixIcon,
-  TextFieldPrefixText,
-  TextFieldSuffixIcon,
-  TextFieldSuffixText,
-} = textField;
-
-export * from './types';
+export { TextField } from './TextFieldNamespace';
+export { TextFieldInput } from './Input';
+export { TextFieldPrefixIcon } from './PrefixIcon';
+export { TextFieldPrefixText } from './PrefixText';
+export { TextFieldRoot } from './Root';
+export { TextFieldSuffixIcon } from './SuffixIcon';
+export { TextFieldSuffixText } from './SuffixText';
+export { TextFieldTextarea } from './Textarea';
+export type {
+  MossyTextFieldContextValue,
+  MossyTextFieldInputProps,
+  MossyTextFieldPrefixIconProps,
+  MossyTextFieldPrefixTextProps,
+  MossyTextFieldRadiusToken,
+  MossyTextFieldRootProps,
+  MossyTextFieldSuffixIconProps,
+  MossyTextFieldSuffixTextProps,
+  MossyTextFieldTextareaProps,
+} from './types';

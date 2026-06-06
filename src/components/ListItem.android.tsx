@@ -1,3 +1,5 @@
+import { fillMaxWidth } from '@expo/ui/jetpack-compose/modifiers';
+
 import { HStack } from './Layout/HStack';
 import { Spacer } from './Layout/Spacer';
 import { VStack } from './Layout/VStack';
@@ -22,7 +24,7 @@ export const ListItem = Object.assign(
         spacing="x3"
         onPress={onPress}
         testID={testID}
-        style={{ width: '100%' }}
+        modifiers={[fillMaxWidth()]}
       >
         {slots.leading}
         <VStack spacing={2}>

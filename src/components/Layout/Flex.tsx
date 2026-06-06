@@ -1,27 +1,48 @@
-import { Column, Row } from '@expo/ui';
-import type { ComponentProps } from 'react';
+import { Children, type ReactNode } from 'react';
 
-import { resolveMossyDimension, type MossyDimensionToken } from '../../foundation/component-tokens';
-import { useMossyTheme } from '../../theme';
+import { HStack, type MossyHStackProps } from './HStack';
+import { VStack, type MossyVStackProps } from './VStack';
 
-export type MossyFlexProps = Omit<ComponentProps<typeof Row>, 'spacing'> & {
+export type MossyFlexDirection =
+  | 'row'
+  | 'column'
+  | 'row-reverse'
+  | 'column-reverse'
+  | 'rowReverse'
+  | 'columnReverse';
+
+export type MossyFlexProps = MossyHStackProps & {
   /**
-   * 주축 방향.
+   * 주축 방향. Seed `direction` shorthand와 동일하다.
    * @default 'row'
    */
-  direction?: 'row' | 'column';
-  /** 자식 사이 간격 — dimension 토큰(`'x2'`) 또는 숫자(pt/dp). */
-  spacing?: number | MossyDimensionToken;
+  direction?: MossyFlexDirection;
 };
 
-/** 주축 방향을 선택할 수 있는 flex 컨테이너. universal `Row` 또는 `Column`으로 렌더된다. */
-export function Flex({ direction = 'row', spacing, ...props }: MossyFlexProps) {
-  const theme = useMossyTheme();
-  const resolvedSpacing = resolveMossyDimension(theme, spacing);
+function normalizeDirection(direction: MossyFlexDirection) {
+  if (direction === 'rowReverse') return 'row-reverse';
+  if (direction === 'columnReverse') return 'column-reverse';
+  return direction;
+}
 
-  return direction === 'row' ? (
-    <Row spacing={resolvedSpacing} {...props} />
+function maybeReverseChildren(children: ReactNode, shouldReverse: boolean) {
+  if (!shouldReverse) return children;
+  return Children.toArray(children).reverse();
+}
+
+function isReverseDirection(direction: MossyFlexDirection) {
+  return direction === 'row-reverse' || direction === 'column-reverse';
+}
+
+/** 주축 방향을 선택할 수 있는 flex 컨테이너. `HStack` 또는 `VStack`으로 렌더된다. */
+export function Flex({ direction = 'row', children, ...props }: MossyFlexProps) {
+  const normalizedDirection = normalizeDirection(direction);
+  const isColumn = normalizedDirection === 'column' || normalizedDirection === 'column-reverse';
+  const reversedChildren = maybeReverseChildren(children, isReverseDirection(normalizedDirection));
+
+  return isColumn ? (
+    <VStack {...(props as MossyVStackProps)}>{reversedChildren}</VStack>
   ) : (
-    <Column spacing={resolvedSpacing} {...props} />
+    <HStack {...props}>{reversedChildren}</HStack>
   );
 }

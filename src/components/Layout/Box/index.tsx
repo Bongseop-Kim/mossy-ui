@@ -5,4 +5,4 @@ export function Box(_props: MossyBoxProps) {
   return null;
 }
 
-export * from './types';
+export type { MossyBoxProps, MossyBoxRadiusToken } from './types';
