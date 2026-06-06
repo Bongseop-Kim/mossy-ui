@@ -10,7 +10,7 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 | --- | --- |
 | [`src/components/docs/composition.md`](./src/components/docs/composition.md) | 컴포넌트 합성·children 중첩·pass-through 래퍼 작성 시 |
 | [`src/components/docs/interaction-states.md`](./src/components/docs/interaction-states.md) | pressed 등 상호작용 피드백 구현 시 |
-| [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md) | Seed React 컴포넌트와 mossy-ui 구현 상태·props 대응을 확인하거나 갱신할 때 |
+| [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md) | Seed Design 참고 구현과 mossy-ui 구현 상태·props 대응 규칙을 확인할 때 |
 | [`src/foundation/docs/state.md`](./src/foundation/docs/state.md) | Pressed·Focused·Disabled 등 컴포넌트 상태 표현 시 |
 | [`src/foundation/docs/elevation.md`](./src/foundation/docs/elevation.md) | 레이어 고도·쌓임 순서(zIndex·모달)·그림자·표면 색상 결정 시 |
 | [`src/foundation/docs/iconography.md`](./src/foundation/docs/iconography.md) | 아이콘 크기·터치 영역·색상·`Icon.select` 사용 시 |
@@ -36,7 +36,7 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 
 ## 컴포넌트 API 방향
 
-- **Seed parity 상태 점검** — 컴포넌트를 추가·수정하기 전에 [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md)에서 Seed React 컴포넌트 props와 mossy-ui 대응 상태를 확인한다. 작업 후 공개 props나 구현 상태가 바뀌면 같은 문서의 `Mossy Current API`와 `Seed Parity` 상태를 갱신한다.
+- **Seed parity 상태 점검** — 컴포넌트를 추가·수정하기 전에 [`src/components/docs/seed-component-parity.md`](./src/components/docs/seed-component-parity.md)에서 기준과 데이터 원천을 확인한 뒤 `docs-site/src/data/seed-parity.json`에서 Seed Design 참고 구현 props와 mossy-ui 대응 상태를 확인한다. 작업 후 공개 props나 구현 상태가 바뀌면 같은 JSON의 Mossy 대응·Mossy props·상태·Props별 상태·다음 액션·메모를 갱신하고 `npm run docs:validate`를 실행한다.
 - **네임스페이스 우선순위** — 컴포넌트 구현 시 반드시 아래 순서로 검토한다.
   1. **`@expo/ui` (universal)** — 1순위. 항상 universal에 해당 컴포넌트가 있는지 먼저 확인하고, 있으면 universal을 사용한다.
   2. **`@expo/ui/swift-ui` · `@expo/ui/jetpack-compose`** — universal에 없는 컴포넌트에 한해서만 플랫폼별로 구현한다.

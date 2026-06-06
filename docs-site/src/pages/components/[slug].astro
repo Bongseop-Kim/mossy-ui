@@ -1,0 +1,80 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+import PropsTable from '../../components/PropsTable.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import {
+  componentPages,
+  componentSidebar,
+  hasMossyMatch,
+  markdownInlineToHtml,
+  type ComponentPage,
+} from '../../data/seed-parity';
+
+export function getStaticPaths() {
+  return componentPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: ComponentPage;
+}
+
+const { page } = Astro.props;
+const mossyRows = page.rows.filter(hasMossyMatch).length;
+const frontmatter = {
+  title: page.name,
+  description: `${page.name} Seed Design 참고 구현 대비 mossy-ui Props parity.`,
+};
+---
+
+<StarlightPage
+  frontmatter={frontmatter}
+  sidebar={componentSidebar}
+  headings={[
+    { depth: 2, slug: 'props', text: 'Props' },
+    { depth: 2, slug: 'next-action', text: 'Next Action' },
+    { depth: 2, slug: 'memo', text: 'Memo' },
+  ]}
+>
+  <div class="component-hero">
+    <div>
+      <p class="eyebrow">Expo UI component parity</p>
+      <h1>{page.name}</h1>
+      <p>
+        {page.rows.length}개 checklist row · Mossy 대응 {mossyRows}/{page.rows.length} · props 완료{' '}
+        {page.progress.done}/{page.progress.total}
+      </p>
+    </div>
+    <StatusBadge status={page.status} />
+  </div>
+
+  <AnchorHeading level="2" id="props">Props</AnchorHeading>
+  <PropsTable rows={page.rows} />
+
+  <AnchorHeading level="2" id="next-action">Next Action</AnchorHeading>
+  <div class="note-stack">
+    {
+      page.rows.map((row) => (
+        <section class="note-panel">
+          <strong set:html={markdownInlineToHtml(row.seed)} />
+          <p set:html={markdownInlineToHtml(row.next)} />
+        </section>
+      ))
+    }
+  </div>
+
+  <AnchorHeading level="2" id="memo">Memo</AnchorHeading>
+  <div class="note-stack">
+    {
+      page.rows.map((row) => (
+        <section class="note-panel">
+          <strong set:html={markdownInlineToHtml(row.seed)} />
+          <p set:html={markdownInlineToHtml(row.note)} />
+        </section>
+      ))
+    }
+  </div>
+</StarlightPage>

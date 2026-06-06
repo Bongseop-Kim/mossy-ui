@@ -1,0 +1,79 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import {
+  componentPages,
+  componentSidebar,
+  markdownInlineToHtml,
+  mossyOnlyRows,
+  statusCounts,
+} from '../../data/seed-parity';
+
+const counts = statusCounts(componentPages.map((page) => ({ status: page.status })));
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Components',
+    description: 'Expo UI 기반 mossy-ui 컴포넌트 Props parity.',
+  }}
+  sidebar={componentSidebar}
+  headings={[
+    { depth: 2, slug: 'component-pages', text: 'Component Pages' },
+    { depth: 2, slug: 'mossy-only', text: 'Mossy Only' },
+  ]}
+>
+  <p class="lede">
+    각 컴포넌트 페이지는 Seed Design 참고 구현의 props와 mossy-ui의 현재 Expo UI 기반 공개 API 대응 상태를 Props 표로 보여준다.
+  </p>
+
+  <div class="status-row" aria-label="컴포넌트 페이지 상태 요약">
+    <StatusBadge status="완료" count={counts['완료']} />
+    <StatusBadge status="부분완료" count={counts['부분완료']} />
+    <StatusBadge status="미구현" count={counts['미구현']} />
+    <StatusBadge status="제약" count={counts['제약']} />
+  </div>
+
+  <AnchorHeading level="2" id="component-pages">Component Pages</AnchorHeading>
+  <div class="component-list">
+    {
+      componentPages.map((page) => (
+        <a class="component-link" href={`/components/${page.slug}/`}>
+          <span>
+            <strong>{page.name}</strong>
+            <small>
+              {page.rows.length} row{page.rows.length === 1 ? '' : 's'} · props 완료{' '}
+              {page.progress.done}/{page.progress.total}
+            </small>
+          </span>
+          <StatusBadge status={page.status} />
+        </a>
+      ))
+    }
+  </div>
+
+  <AnchorHeading level="2" id="mossy-only">Mossy Only</AnchorHeading>
+  <div class="props-table-wrap">
+    <table class="props-table mossy-only-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Props</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          mossyOnlyRows.map((row) => (
+            <tr>
+              <td set:html={markdownInlineToHtml(row.component)} />
+              <td set:html={markdownInlineToHtml(row.props)} />
+              <td set:html={markdownInlineToHtml(row.reason)} />
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</StarlightPage>

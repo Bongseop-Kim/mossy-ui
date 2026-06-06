@@ -1,0 +1,224 @@
+:root {
+  --mossy-ink: #1e252b;
+  --mossy-muted: #62707d;
+  --mossy-line: #d8dde4;
+  --mossy-panel: #ffffff;
+  --mossy-panel-alt: #f5f7f8;
+  --mossy-accent: #13735f;
+  --mossy-accent-ink: #08483d;
+  --status-done-bg: #dff4e6;
+  --status-done-ink: #11613d;
+  --status-partial-bg: #ece7ff;
+  --status-partial-ink: #5940a5;
+  --status-missing-bg: #ffe4df;
+  --status-missing-ink: #9a3328;
+  --status-blocked-bg: #f8e7be;
+  --status-blocked-ink: #765313;
+  --status-mossy-bg: #e2edff;
+  --status-mossy-ink: #23518c;
+}
+
+.lede {
+  color: var(--mossy-muted);
+  font-size: 1.02rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--mossy-accent);
+  font: 0.76rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.metric-card,
+.component-link,
+.note-panel {
+  border: 1px solid var(--mossy-line);
+  border-radius: 6px;
+  background: var(--mossy-panel);
+}
+
+.metric-card {
+  display: grid;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.metric-card strong {
+  color: var(--mossy-ink);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.metric-card span,
+.component-link small {
+  color: var(--mossy-muted);
+  font: 0.78rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  font: 0.74rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: nowrap;
+}
+
+.status-badge span {
+  border-left: 1px solid currentColor;
+  padding-left: 0.45rem;
+  opacity: 0.78;
+}
+
+.status-done {
+  background: var(--status-done-bg);
+  color: var(--status-done-ink);
+}
+
+.status-partial {
+  background: var(--status-partial-bg);
+  color: var(--status-partial-ink);
+}
+
+.status-missing {
+  background: var(--status-missing-bg);
+  color: var(--status-missing-ink);
+}
+
+.status-blocked {
+  background: var(--status-blocked-bg);
+  color: var(--status-blocked-ink);
+}
+
+.status-mossy-only {
+  background: var(--status-mossy-bg);
+  color: var(--status-mossy-ink);
+}
+
+.component-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.component-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.component-link:hover {
+  border-color: var(--mossy-accent);
+}
+
+.component-link strong,
+.component-link small {
+  display: block;
+}
+
+.component-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 2px solid var(--mossy-ink);
+  padding-bottom: 1.25rem;
+}
+
+.component-hero h1 {
+  margin: 0;
+}
+
+.props-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--mossy-line);
+  border-radius: 6px;
+  background: var(--mossy-panel);
+}
+
+.props-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.props-table th,
+.props-table td {
+  border-bottom: 1px solid var(--mossy-line);
+  border-right: 1px solid var(--mossy-line);
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.props-table th {
+  background: #25313c;
+  color: #fff;
+  font: 0.76rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.props-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.props-table th:last-child,
+.props-table td:last-child {
+  border-right: 0;
+}
+
+.props-table code {
+  overflow-wrap: anywhere;
+}
+
+.part-cell {
+  width: 8.5rem;
+  background: var(--mossy-panel-alt);
+  color: var(--mossy-accent-ink);
+  font: 0.78rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.note-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.note-panel {
+  padding: 0.9rem 1rem;
+}
+
+.note-panel p {
+  margin: 0.4rem 0 0;
+  color: var(--mossy-muted);
+}
+
+@media (max-width: 760px) {
+  .component-hero,
+  .component-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

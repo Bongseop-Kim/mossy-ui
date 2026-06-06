@@ -1,0 +1,22 @@
+---
+import type { ParityStatus } from '../data/seed-parity';
+
+interface Props {
+  status: ParityStatus;
+  count?: string | number;
+}
+
+const { status, count } = Astro.props;
+const statusClass = {
+  완료: 'status-done',
+  부분완료: 'status-partial',
+  미구현: 'status-missing',
+  제약: 'status-blocked',
+  'Mossy only': 'status-mossy-only',
+}[status];
+---
+
+<span class:list={['status-badge', statusClass]}>
+  {status}
+  {count !== undefined ? <span>{count}</span> : null}
+</span>

@@ -1,0 +1,17 @@
+{
+  "name": "@mossy-ui/docs-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run validate:seed-parity && astro build",
+    "preview": "astro preview",
+    "validate:seed-parity": "node scripts/validate-seed-parity.mjs"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.39.3",
+    "astro": "^6.4.4",
+    "typescript": "^6.0.3"
+  }
+}
