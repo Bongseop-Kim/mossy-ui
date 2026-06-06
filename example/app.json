@@ -8,7 +8,12 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "bundleIdentifier": "dev.mossyui.example",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
     },
     "android": {
       "package": "dev.mossyui.example"
