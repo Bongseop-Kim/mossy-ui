@@ -24,6 +24,8 @@ mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업
 외부 디자인 시스템 코드를 참조해야 할 때는 가능하면 원격 GitHub를 매번 열지 말고 로컬 참조본을 먼저 사용한다.
 
 - `daangn/seed-design` React 패키지: `.ai/refs/seed-design/packages/react`
+- `daangn/seed-design` CSS vars 타입 원본: `.ai/refs/seed-design/packages/css/vars`
+- `daangn/seed-design` design-token 원본: `.ai/refs/seed-design/packages/design-token`
 - 위 경로는 git에서 제외된 AI 참조용 clone이다.
 - 경로가 없거나 오래된 경우 `.ai/README.md`의 명령으로 다시 받거나 갱신한다.
 

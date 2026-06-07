@@ -6,6 +6,9 @@ export interface PropTableItem extends PropStatusItem {
   type: string;
 }
 
+// Type is shown only when Mossy has a meaningful matching surface.
+const typeVisibleStatuses = new Set<PropStatusItem['status']>(['완료', '부분완료', 'Mossy only']);
+
 const componentPropTypes: Record<string, Record<string, string>> = {
   Box: {
     as: 'React.ElementType<any, keyof React.JSX.IntrinsicElements> | undefined',
@@ -193,7 +196,7 @@ export function propTableItems(row: ChecklistRow, item: PropStatusItem): PropTab
     return expansion.map((propName) => ({
       ...item,
       prop: `${propName}?`,
-      type: stylePropTypes[propName] ?? '-',
+      type: visiblePropType(item, stylePropTypes[propName]),
     }));
   }
 
@@ -203,9 +206,14 @@ export function propTableItems(row: ChecklistRow, item: PropStatusItem): PropTab
     {
       ...item,
       prop: propName,
-      type: propType(row, propName),
+      type: visiblePropType(item, propType(row, propName)),
     },
   ];
+}
+
+function visiblePropType(item: PropStatusItem, type: string | undefined) {
+  if (!typeVisibleStatuses.has(item.status)) return '-';
+  return type ?? '-';
 }
 
 function propType(row: ChecklistRow, propName: string) {
