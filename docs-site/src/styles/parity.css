@@ -18,6 +18,10 @@
   --status-mossy-ink: #23518c;
 }
 
+main:has(:is(.component-hero, .component-list)) {
+  --sl-content-width: 60rem;
+}
+
 .lede {
   color: var(--mossy-muted);
   font-size: 1.02rem;
