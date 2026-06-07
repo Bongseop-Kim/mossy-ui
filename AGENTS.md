@@ -2,6 +2,12 @@
 
 mossy-ui — Expo UI(`@expo/ui`) 기반 React Native 디자인 시스템. 작업 시 이 문서의 규칙을 따른다.
 
+## 지원 범위
+
+- **웹 런타임은 지원 범위 밖** — mossy-ui 컴포넌트 API와 구현은 iOS/Android React Native + Expo UI 레이어를 기준으로 결정한다. `@expo/ui` universal 컴포넌트를 쓰더라도 web 지원 여부를 API 채택·parity 판단의 근거로 삼지 않는다.
+- **웹 전용 contract 금지** — DOM attrs, CSS layout/position/overflow, web pseudo-state, web-only Slot/asChild contract처럼 RN/Expo UI 네이티브 트리에 대응되지 않는 기능은 구현하지 않고 제약으로 문서화한다.
+- **문서 사이트는 예외적 도구** — `docs-site/`는 parity와 가이드를 보여주는 문서 도구일 뿐, 패키지의 web 런타임 지원을 의미하지 않는다.
+
 ## Docs 참조
 
 디자인 시스템 가이드 문서는 `src/foundation/docs/`와 `src/components/docs/`에 있다. 관련 작업 전에 해당 문서를 먼저 읽고 따른다.
