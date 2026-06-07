@@ -97,22 +97,6 @@ export function propStatusProgress(value: string) {
   };
 }
 
-export function rowKind(row: ChecklistRow) {
-  const name = componentName(row);
-  const isCompoundParent =
-    row.seedProps.includes('namespace:') || row.note.includes('compound namespace');
-  const isPart = !isCompoundParent && name.includes('.');
-
-  return isCompoundParent ? 'compound-parent' : isPart ? 'compound-part' : 'leaf';
-}
-
-export function rowPartName(row: ChecklistRow) {
-  const name = componentName(row);
-  const parts = name.split('.');
-
-  return parts.length > 1 ? parts.slice(1).join('.') : 'Root';
-}
-
 export function hasMossyMatch(row: ChecklistRow) {
   return row.mossy.trim() !== '' && row.mossy.trim() !== '-';
 }

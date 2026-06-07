@@ -201,7 +201,7 @@
 
 .props-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 760px;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.9rem;
@@ -233,13 +233,6 @@
 
 .props-table code {
   overflow-wrap: anywhere;
-}
-
-.part-cell {
-  width: 8.5rem;
-  background: var(--mossy-panel-alt);
-  color: var(--mossy-accent-ink);
-  font: 0.78rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .note-stack {

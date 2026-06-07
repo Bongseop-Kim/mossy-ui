@@ -1,13 +1,11 @@
 ---
 import StatusBadge from './StatusBadge.astro';
 import {
-  hasMossyMatch,
   markdownInlineToHtml,
-  rowKind,
-  rowPartName,
   splitPropStatus,
   type ChecklistRow,
 } from '../data/seed-parity';
+import { propTableItems } from '../data/seed-prop-types';
 
 interface Props {
   rows: ChecklistRow[];
@@ -20,10 +18,8 @@ const { rows } = Astro.props;
   <table class="props-table">
     <thead>
       <tr>
-        <th>Part</th>
         <th>Prop</th>
-        <th>Seed Type</th>
-        <th>Mossy API</th>
+        <th>Type</th>
         <th>Status</th>
         <th>Note</th>
       </tr>
@@ -32,22 +28,11 @@ const { rows } = Astro.props;
       {
         rows.flatMap((row) => {
           const items = splitPropStatus(row.propStatus);
-          const part = rowPartName(row);
-          const partKind = rowKind(row);
-          const mossyApi = hasMossyMatch(row)
-            ? `${row.mossy}${row.mossyProps === '-' ? '' : ` / ${row.mossyProps}`}`
-            : '-';
 
-          return items.map((item, index) => (
-            <tr class:list={[partKind, hasMossyMatch(row) ? 'has-mossy' : 'missing-mossy']}>
-              {index === 0 ? (
-                <td class="part-cell" rowspan={items.length}>
-                  <span>{part}</span>
-                </td>
-              ) : null}
-              <td set:html={markdownInlineToHtml(item.target)} />
-              <td set:html={markdownInlineToHtml(row.seedProps)} />
-              <td set:html={markdownInlineToHtml(mossyApi)} />
+          return items.flatMap((item) => propTableItems(row, item)).map((item) => (
+            <tr>
+              <td set:html={markdownInlineToHtml(item.prop)} />
+              <td>{item.type === '-' ? '-' : <code>{item.type}</code>}</td>
               <td>
                 {item.status ? <StatusBadge status={item.status} /> : '-'}
               </td>
