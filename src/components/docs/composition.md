@@ -11,7 +11,7 @@
 import { Host, VStack, Text, Button } from "@expo/ui/swift-ui";
 
 <Host matchContents>
-  <VStack spacing={8}>
+  <VStack gap="x2">
     <Text>제목</Text>
     <Button label="확인" onPress={handlePress} />
   </VStack>

@@ -1,6 +1,9 @@
+import { Row } from '@expo/ui';
+
+import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { HStack } from '../Layout/HStack';
 import { Spacer } from '../Layout/Spacer';
+import { createMossyLayoutSurfaceModifiers } from '../Layout/surface.android';
 import { Text } from '../Typography/Text';
 import { listHeaderVariants, type MossyListHeaderProps } from './types';
 
@@ -19,14 +22,16 @@ export function ListHeader({
   const { textStyle, color } = listHeaderVariants[variant];
 
   return (
-    <HStack
+    <Row
       alignment="center"
-      spacing="x2_5"
-      paddingVertical="x2"
-      paddingHorizontal={theme.dimension.spacingX.globalGutter}
+      spacing={resolveMossyDimension(theme, 'x2_5')}
       testID={testID}
-      modifiers={modifiers}
-    >
+      modifiers={createMossyLayoutSurfaceModifiers(theme, {
+        paddingVertical: 'x2',
+        paddingHorizontal: theme.dimension.spacingX.globalGutter,
+      }, {
+        afterSurface: modifiers,
+      })}>
       <Text textStyle={textStyle} color={color}>
         {title}
       </Text>
@@ -36,7 +41,7 @@ export function ListHeader({
           {children}
         </>
       ) : null}
-    </HStack>
+    </Row>
   );
 }
 

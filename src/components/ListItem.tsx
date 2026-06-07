@@ -1,4 +1,7 @@
-import { HStack } from './Layout/HStack';
+import { Row } from '@expo/ui';
+
+import { resolveMossyDimension } from '../foundation/component-tokens';
+import { useMossyTheme } from '../theme';
 import { Spacer } from './Layout/Spacer';
 import { VStack } from './Layout/VStack';
 import {
@@ -17,23 +20,23 @@ import {
 export const ListItem = Object.assign(
   function ListItem(props: MossyListItemProps) {
     const { onPress, testID } = props;
+    const theme = useMossyTheme();
     const slots = extractMossyListItemSlots(props);
 
     return (
-      <HStack
+      <Row
         alignment="center"
-        spacing="x3"
+        spacing={resolveMossyDimension(theme, 'x3')}
         onPress={onPress}
-        testID={testID}
-      >
+        testID={testID}>
         {slots.leading}
-        <VStack spacing={2}>
+        <VStack gap="x0_5">
           {slots.headline}
           {slots.supporting}
         </VStack>
         <Spacer flexible />
         {slots.trailing}
-      </HStack>
+      </Row>
     );
   },
   listItemMarkers,

@@ -1,9 +1,13 @@
-import { Spacer } from '@expo/ui';
-import { Children, type ReactNode } from 'react';
+import type {
+  MossyBoxBackground,
+  MossyBoxBorderColor,
+  MossyBoxBorderWidth,
+  MossyBoxLength,
+  MossyBoxPadding,
+  MossyBoxRadiusToken,
+} from './Box/types';
 
-import type { MossyLayoutSurfaceDimension, MossyLayoutSurfaceProps } from './surface.shared';
-
-export type MossyStackDisplay = NonNullable<MossyLayoutSurfaceProps['display']>;
+export type MossyStackDisplay = 'flex' | 'none';
 
 export type MossyStackAlign =
   | 'flex-start'
@@ -25,16 +29,48 @@ export type MossyStackJustify =
 
 export type MossyStackGrow = 0 | 1 | (number & {}) | true;
 
-export type MossyStackBaseProps = Pick<MossyLayoutSurfaceProps, 'display'> & {
+export interface MossyStackBaseProps {
+  /**
+   * 렌더 여부. Seed Stack은 `flex`와 `none`만 제공한다.
+   * @default 'flex'
+   */
+  display?: MossyStackDisplay;
   /** cross-axis 정렬. Seed `align` shorthand와 동일하다. */
   align?: MossyStackAlign;
+  /** Seed Box `alignItems` prop. `align`과 같은 native alignment로 정규화한다. */
+  alignItems?: MossyStackAlign;
   /** main-axis 배치. Seed `justify` shorthand와 동일하다. */
   justify?: MossyStackJustify;
+  /** Seed Box `justifyContent` prop. `justify`와 같은 native Spacer 배치로 정규화한다. */
+  justifyContent?: MossyStackJustify;
   /** 부모 Stack 안에서 남는 공간을 차지하는 우선순위. */
   grow?: MossyStackGrow;
-  /** 자식 사이 간격 — dimension 토큰(`'x2'`) 또는 숫자(pt/dp). */
-  spacing?: MossyLayoutSurfaceDimension;
-};
+  /** Seed Box `flexGrow` prop. `grow`와 같은 native grow modifier로 정규화한다. */
+  flexGrow?: MossyStackGrow;
+  /** 자식 사이 간격. Seed `gap` prop과 동일하다. */
+  gap?: MossyBoxPadding;
+  bg?: MossyBoxBackground;
+  background?: MossyBoxBackground;
+  borderColor?: MossyBoxBorderColor;
+  borderWidth?: MossyBoxBorderWidth;
+  borderRadius?: MossyBoxRadiusToken | 0;
+  width?: MossyBoxLength;
+  height?: MossyBoxLength;
+  padding?: MossyBoxPadding;
+  p?: MossyBoxPadding;
+  paddingX?: MossyBoxPadding;
+  px?: MossyBoxPadding;
+  paddingY?: MossyBoxPadding;
+  py?: MossyBoxPadding;
+  paddingTop?: MossyBoxPadding;
+  pt?: MossyBoxPadding;
+  paddingRight?: MossyBoxPadding;
+  pr?: MossyBoxPadding;
+  paddingBottom?: MossyBoxPadding;
+  pb?: MossyBoxPadding;
+  paddingLeft?: MossyBoxPadding;
+  pl?: MossyBoxPadding;
+}
 
 export type MossyStackAlignment = 'start' | 'center' | 'end';
 
@@ -74,48 +110,4 @@ export function normalizeJustify(justify: MossyStackJustify | undefined) {
     default:
       return justify;
   }
-}
-
-export function renderJustifiedChildren(children: ReactNode, justify: MossyStackJustify | undefined) {
-  const normalized = normalizeJustify(justify);
-  if (normalized == null || normalized === 'flex-start') return children;
-
-  const childArray = Children.toArray(children);
-  if (childArray.length === 0) return children;
-
-  if (normalized === 'flex-end') {
-    return [<Spacer key="mossy-justify-start" flexible />, ...childArray];
-  }
-
-  if (normalized === 'center') {
-    return [
-      <Spacer key="mossy-justify-start" flexible />,
-      ...childArray,
-      <Spacer key="mossy-justify-end" flexible />,
-    ];
-  }
-
-  if (normalized === 'space-around') {
-    return childArray.flatMap((child, index) => [
-      <Spacer key={`mossy-justify-before-${index}`} flexible />,
-      child,
-      <Spacer key={`mossy-justify-after-${index}`} flexible />,
-    ]);
-  }
-
-  return childArray.flatMap((child, index) =>
-    index === childArray.length - 1
-      ? [child]
-      : [child, <Spacer key={`mossy-justify-between-${index}`} flexible />],
-  );
-}
-
-export function JustifiedStackChildren({
-  children,
-  justify,
-}: {
-  children: ReactNode;
-  justify?: MossyStackJustify;
-}) {
-  return renderJustifiedChildren(children, justify);
 }

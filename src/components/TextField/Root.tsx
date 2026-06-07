@@ -1,5 +1,8 @@
+import { Row } from '@expo/ui';
+
+import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { HStack } from '../Layout/HStack';
+import { resolveMossyLayoutSurfaceStyle } from '../Layout/surface.shared';
 import { TextFieldContext } from './context';
 import type { MossyTextFieldContextValue, MossyTextFieldRootProps } from './types';
 
@@ -26,6 +29,7 @@ export function TextFieldRoot({
   testID,
   modifiers,
 }: MossyTextFieldRootProps) {
+  const theme = useMossyTheme();
   const context: MossyTextFieldContextValue = {
     value,
     defaultValue,
@@ -41,21 +45,23 @@ export function TextFieldRoot({
 
   return (
     <TextFieldContext value={context}>
-      <HStack
+      <Row
         alignment={alignment}
-        spacing={spacing}
+        spacing={resolveMossyDimension(theme, spacing)}
         disabled={disabled}
         testID={testID}
         modifiers={modifiers}
-        height={height}
-        paddingHorizontal={paddingHorizontal}
-        paddingVertical={paddingVertical}
-        backgroundColor={backgroundColor}
-        borderColor={resolvedBorderColor}
-        radius={radius}
-        borderWidth={borderWidth}>
+        style={resolveMossyLayoutSurfaceStyle(theme, {
+          height,
+          paddingHorizontal,
+          paddingVertical,
+          backgroundColor,
+          borderColor: resolvedBorderColor,
+          radius,
+          borderWidth,
+        })}>
         {children}
-      </HStack>
+      </Row>
     </TextFieldContext>
   );
 }

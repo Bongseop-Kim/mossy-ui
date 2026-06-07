@@ -18,21 +18,33 @@ type ColorTokenOf<Group extends string> = SemanticKey extends infer Key
     : never
   : never;
 
+type DimensionTokenOf<Group extends string, Prefix extends string> = ScaleKey extends infer Key
+  ? Key extends `dimension-${Group}-${infer Name}`
+    ? `${Prefix}.${KebabToCamel<Name>}`
+    : never
+  : never;
+
 /** 색상 토큰 — `그룹.이름` 표기 (예: `'fg.neutral'`, `'palette.gray900'`). */
 export type MossyColorToken = ColorTokenOf<'fg'> | ColorTokenOf<'palette'>;
 
 /** 배경 색상 토큰 — `그룹.이름` 표기 (예: `'bg.layerDefault'`). */
 export type MossyBackgroundColorToken = ColorTokenOf<'bg'> | ColorTokenOf<'palette'>;
 
+/** 배너 배경 색상 토큰 — `그룹.이름` 표기 (예: `'banner.blue'`). */
+export type MossyBannerColorToken = ColorTokenOf<'banner'>;
+
 /** 구분선·테두리 색상 토큰 — `그룹.이름` 표기 (예: `'stroke.neutralMuted'`). */
 export type MossyStrokeColorToken = ColorTokenOf<'stroke'> | ColorTokenOf<'palette'>;
 
-/** 간격·크기 토큰 — 공용 `$dimension` x 스케일 (예: `'x2'` = 8). */
-export type MossyDimensionToken = ScaleKey extends infer Key
-  ? Key extends `dimension-x${infer Name}`
-    ? `x${Name}`
-    : never
-  : never;
+/** 간격·크기 토큰 — 공용 `$dimension` 스케일 (예: `'x2'`, `'spacingX.globalGutter'`). */
+export type MossyDimensionToken =
+  | (ScaleKey extends infer Key
+      ? Key extends `dimension-x${infer Name}`
+        ? `x${Name}`
+        : never
+      : never)
+  | DimensionTokenOf<'spacing-x', 'spacingX'>
+  | DimensionTokenOf<'spacing-y', 'spacingY'>;
 
 /** 글꼴 크기·줄 간격 토큰 — t 스케일 (예: `'t5'`). RN에서는 모두 static 값으로 해석된다. */
 export type MossyFontSizeToken = ScaleKey extends infer Key
@@ -74,12 +86,22 @@ export function resolveMossyColor(theme: MossyTheme, token: string): string | un
   return theme.color[group]?.[name];
 }
 
-/** dimension 토큰(`'x2'`) 또는 숫자를 pt/dp 숫자로 해석한다. */
+/** dimension 토큰(`'x2'`, `'spacingX.globalGutter'`) 또는 숫자를 pt/dp 숫자로 해석한다. */
 export function resolveMossyDimension(
   theme: MossyTheme,
   value: number | MossyDimensionToken | undefined,
 ): number | undefined {
   if (value == null || typeof value === 'number') return value;
+
+  if (value.startsWith('spacingX.')) {
+    const name = value.slice('spacingX.'.length);
+    return theme.dimension.spacingX[name];
+  }
+
+  if (value.startsWith('spacingY.')) {
+    const name = value.slice('spacingY.'.length);
+    return theme.dimension.spacingY[name];
+  }
 
   return theme.dimension.x[value.slice(1)];
 }

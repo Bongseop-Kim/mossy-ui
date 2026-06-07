@@ -3,8 +3,8 @@ import { frame } from '@expo/ui/swift-ui/modifiers';
 
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
 import { useMossyTheme } from '../../../theme';
+import { toMossyBoxSurfaceProps } from '../Box/types';
 import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
-import { shouldRenderLayoutSurface } from '../surface.shared';
 import { chunkCells } from './chunk';
 import type { MossyGridProps } from './types';
 
@@ -13,19 +13,19 @@ const FILL = 1_000_000;
 
 /** 고정 열 개수 그리드. SwiftUI `Grid`/`Grid.Row`로 렌더된다. */
 export function Grid(props: MossyGridProps) {
-  const { columns, horizontalSpacing, verticalSpacing, children, display, testID } = props;
+  const { columns = 1, gap, children, display } = props;
   const theme = useMossyTheme();
   const { rows, columnCount } = chunkCells(children, columns);
+  const resolvedGap = resolveMossyDimension(theme, gap) ?? 0;
 
-  if (!shouldRenderLayoutSurface(display)) return null;
+  if (display === 'none') return null;
 
   return (
     <SwiftUIGrid
       alignment="topLeading"
-      horizontalSpacing={resolveMossyDimension(theme, horizontalSpacing) ?? 0}
-      verticalSpacing={resolveMossyDimension(theme, verticalSpacing) ?? 0}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, props)}
-      testID={testID}>
+      horizontalSpacing={resolvedGap}
+      verticalSpacing={resolvedGap}
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props))}>
       {rows.map((cells, rowIndex) => (
         <SwiftUIGrid.Row key={rowIndex}>
           {Array.from({ length: columnCount }, (_, cellIndex) => (

@@ -1,58 +1,34 @@
-import { Column, type UniversalAlignment } from '@expo/ui';
+import { Column } from '@expo/ui';
 import type { ReactNode } from 'react';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface, type MossyLayoutSurfaceProps } from './surface.shared';
+import { toMossyBoxSurfaceProps } from './Box/types';
+import { StackChildren } from './StackChildren';
+import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface } from './surface.shared';
 import {
-  JustifiedStackChildren,
   resolveAlignment,
   type MossyStackBaseProps,
 } from './stack';
 
-export type MossyVStackProps = MossyLayoutSurfaceProps &
-  MossyStackBaseProps & {
-    /** 세로로 쌓을 콘텐츠. */
-    children?: ReactNode;
-    /** cross-axis 정렬. Expo UI `Column`의 기존 `alignment` prop도 유지한다. */
-    alignment?: UniversalAlignment;
-  };
+export interface MossyVStackProps extends MossyStackBaseProps {
+  /** 세로로 쌓을 콘텐츠. */
+  children?: ReactNode;
+}
 
 /** 세로로 쌓이는 레이아웃 컨테이너. universal `Column`의 래퍼. */
-export function VStack({
-  display,
-  align,
-  alignment,
-  justify,
-  grow: _grow,
-  spacing,
-  children,
-  modifiers,
-  onPress,
-  onAppear,
-  onDisappear,
-  disabled,
-  hidden,
-  testID,
-  ...surfaceProps
-}: MossyVStackProps) {
+export function VStack(props: MossyVStackProps) {
+  const { display, align, alignItems, justify, justifyContent, gap, children } = props;
   const theme = useMossyTheme();
 
   if (!shouldRenderLayoutSurface(display)) return null;
 
   return (
     <Column
-      alignment={resolveAlignment(align, alignment)}
-      spacing={resolveMossyDimension(theme, spacing)}
-      style={resolveMossyLayoutSurfaceStyle(theme, surfaceProps)}
-      onPress={disabled ? undefined : onPress}
-      onAppear={onAppear}
-      onDisappear={onDisappear}
-      disabled={disabled}
-      hidden={hidden}
-      testID={testID}
-      modifiers={modifiers}>
-      <JustifiedStackChildren justify={justify}>{children}</JustifiedStackChildren>
+      alignment={resolveAlignment(align ?? alignItems, undefined)}
+      spacing={resolveMossyDimension(theme, gap)}
+      style={resolveMossyLayoutSurfaceStyle(theme, toMossyBoxSurfaceProps(props))}>
+      <StackChildren justify={justify ?? justifyContent}>{children}</StackChildren>
     </Column>
   );
 }

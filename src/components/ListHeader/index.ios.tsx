@@ -1,7 +1,10 @@
+import { Row } from '@expo/ui';
 import { listRowSeparator } from '@expo/ui/swift-ui/modifiers';
 
-import { HStack } from '../Layout/HStack';
+import { resolveMossyDimension } from '../../foundation/component-tokens';
+import { useMossyTheme } from '../../theme';
 import { Spacer } from '../Layout/Spacer';
+import { createMossyLayoutSurfaceModifiers } from '../Layout/surface.ios';
 import { Text } from '../Typography/Text';
 import { listHeaderVariants, type MossyListHeaderProps } from './types';
 
@@ -18,16 +21,18 @@ export function ListHeader({
   testID,
   modifiers = EMPTY_MODIFIERS,
 }: MossyListHeaderProps) {
+  const theme = useMossyTheme();
   const { textStyle, color } = listHeaderVariants[variant];
 
   return (
-    <HStack
+    <Row
       alignment="center"
-      spacing="x2_5"
-      paddingVertical="x2"
+      spacing={resolveMossyDimension(theme, 'x2_5')}
       testID={testID}
-      modifiers={[listRowSeparator('hidden'), ...modifiers]}
-    >
+      modifiers={createMossyLayoutSurfaceModifiers(theme, { paddingVertical: 'x2' }, {
+        beforeSurface: [listRowSeparator('hidden')],
+        afterSurface: modifiers,
+      })}>
       <Text textStyle={textStyle} color={color}>
         {title}
       </Text>
@@ -37,7 +42,7 @@ export function ListHeader({
           {children}
         </>
       ) : null}
-    </HStack>
+    </Row>
   );
 }
 
