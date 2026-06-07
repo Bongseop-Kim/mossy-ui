@@ -26,7 +26,14 @@ export { Box, type MossyBoxProps } from './components/Layout/Box';
 export { Divider, type MossyDividerProps } from './components/Layout/Divider';
 export { Flex, type MossyFlexProps } from './components/Layout/Flex';
 export { Float, type MossyFloatProps } from './components/Layout/Float';
-export { Grid, type MossyGridProps } from './components/Layout/Grid';
+export {
+  Grid,
+  type MossyGridAutoFlow,
+  type MossyGridDisplay,
+  type MossyGridProps,
+  type MossyGridSizeConstraint,
+  type MossyGridTrackCount,
+} from './components/Layout/Grid';
 export {
   HStack,
   type MossyHStackProps,

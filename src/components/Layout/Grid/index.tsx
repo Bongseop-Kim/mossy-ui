@@ -5,4 +5,4 @@ export function Grid(_props: MossyGridProps) {
   return null;
 }
 
-export type { MossyGridProps } from './types';
+export type { MossyGridAutoFlow, MossyGridDisplay, MossyGridProps, MossyGridSizeConstraint, MossyGridTrackCount } from './types';

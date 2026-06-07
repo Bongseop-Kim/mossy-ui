@@ -174,7 +174,7 @@ function FloatPreview() {
 
 function GridPreview() {
   return (
-    <Grid columns={2} horizontalSpacing="x2" verticalSpacing="x2">
+    <Grid columns={2} gap="x2">
       <PreviewToken label="1" />
       <PreviewToken label="2" />
       <PreviewToken label="3" />

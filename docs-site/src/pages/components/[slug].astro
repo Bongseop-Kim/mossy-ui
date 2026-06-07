@@ -167,6 +167,12 @@ const tokenMappings =
           ? { ...item, mossyType: '`MossyHStackSizeConstraint`' }
           : item,
       )
+    : page.name === 'Grid'
+    ? vStackTokenMappings.map((item) =>
+        item.prop === 'min/max size props'
+          ? { ...item, mossyType: '`MossyGridSizeConstraint`' }
+          : item,
+      )
     : [];
 const frontmatter = {
   title: page.name,

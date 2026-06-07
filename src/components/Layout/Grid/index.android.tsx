@@ -1,18 +1,30 @@
 import { Box as ComposeBox, Column as ComposeColumn, Row as ComposeRow } from '@expo/ui/jetpack-compose';
-import { weight } from '@expo/ui/jetpack-compose/modifiers';
+import {
+  fillMaxHeight,
+  fillMaxWidth,
+  shadow,
+  weight,
+  zIndex,
+} from '@expo/ui/jetpack-compose/modifiers';
 
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
+import type { MossyModifier } from '../../../foundation/modifier';
 import { useMossyTheme } from '../../../theme';
-import { toMossyBoxSurfaceProps } from '../Box/types';
+import {
+  isFullBoxLength,
+  normalizeBoxFlexGrow,
+  resolveBoxZIndex,
+} from '../Box/types';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
 import { chunkCells } from './chunk';
+import { toMossyGridSurfaceProps } from './shared';
 import type { MossyGridProps } from './types';
 
-/** 고정 열 개수 그리드. Compose `Column`/`Row`와 `weight`로 균등 셀을 만든다. */
+/** 고정 열·행 개수 그리드. Compose `Column`/`Row`와 `weight`로 균등 셀을 만든다. */
 export function Grid(props: MossyGridProps) {
-  const { columns = 1, gap, children, display } = props;
+  const { columns, rows: rowCount, autoFlow, gap, children, display } = props;
   const theme = useMossyTheme();
-  const { rows, columnCount } = chunkCells(children, columns);
+  const { rows, columnCount } = chunkCells(children, columns, rowCount, autoFlow);
   const resolvedGap = resolveMossyDimension(theme, gap);
 
   if (display === 'none') return null;
@@ -20,12 +32,15 @@ export function Grid(props: MossyGridProps) {
   return (
     <ComposeColumn
       verticalArrangement={resolvedGap != null ? { spacedBy: resolvedGap } : undefined}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props))}>
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyGridSurfaceProps(props), {
+        beforeSurface: createGridSizeModifiers(props),
+        afterSurface: createGridEffectModifiers(theme, props),
+      })}>
       {rows.map((cells, rowIndex) => (
         <ComposeRow
           key={rowIndex}
           horizontalArrangement={resolvedGap != null ? { spacedBy: resolvedGap } : undefined}>
-          {Array.from({ length: columnCount }, (_, cellIndex) => (
+          {Array.from({ length: columnCount }, (_unused, cellIndex) => (
             // 마지막 행이 모자라도 빈 셀로 채워 열 너비를 일정하게 유지한다.
             <ComposeBox key={cellIndex} modifiers={[weight(1)]}>
               {cells[cellIndex] ?? null}
@@ -37,4 +52,29 @@ export function Grid(props: MossyGridProps) {
   );
 }
 
-export type { MossyGridProps } from './types';
+export type { MossyGridAutoFlow, MossyGridDisplay, MossyGridProps, MossyGridSizeConstraint, MossyGridTrackCount } from './types';
+
+function createGridSizeModifiers(props: MossyGridProps): MossyModifier[] {
+  const modifiers: MossyModifier[] = [];
+
+  if (isFullBoxLength(props.width)) modifiers.push(fillMaxWidth());
+  if (isFullBoxLength(props.height)) modifiers.push(fillMaxHeight());
+
+  return modifiers;
+}
+
+function createGridEffectModifiers(
+  theme: ReturnType<typeof useMossyTheme>,
+  props: MossyGridProps,
+): MossyModifier[] {
+  const modifiers: MossyModifier[] = [];
+  const flexGrow = normalizeBoxFlexGrow(props.flexGrow);
+  const shadowValue = props.boxShadow == null ? undefined : theme.shadow[props.boxShadow];
+  const zIndexValue = resolveBoxZIndex(props.zIndex);
+
+  if (flexGrow != null) modifiers.push(weight(flexGrow));
+  if (shadowValue?.elevation != null) modifiers.push(shadow(shadowValue.elevation));
+  if (zIndexValue != null) modifiers.push(zIndex(zIndexValue));
+
+  return modifiers;
+}
