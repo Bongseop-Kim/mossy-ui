@@ -27,7 +27,11 @@ export { Divider, type MossyDividerProps } from './components/Layout/Divider';
 export { Flex, type MossyFlexProps } from './components/Layout/Flex';
 export { Float, type MossyFloatProps } from './components/Layout/Float';
 export { Grid, type MossyGridProps } from './components/Layout/Grid';
-export { HStack, type MossyHStackProps } from './components/Layout/HStack';
+export {
+  HStack,
+  type MossyHStackProps,
+  type MossyHStackSizeConstraint,
+} from './components/Layout/HStack';
 export { Spacer, type MossySpacerProps } from './components/Layout/Spacer';
 export type { MossyAlignment } from './components/Layout/types';
 export {

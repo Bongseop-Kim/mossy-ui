@@ -161,6 +161,12 @@ const tokenMappings =
       ]
     : page.name === 'VStack'
     ? vStackTokenMappings
+    : page.name === 'HStack'
+    ? vStackTokenMappings.map((item) =>
+        item.prop === 'min/max size props'
+          ? { ...item, mossyType: '`MossyHStackSizeConstraint`' }
+          : item,
+      )
     : [];
 const frontmatter = {
   title: page.name,
