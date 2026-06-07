@@ -9,8 +9,6 @@ dist
 .ai/refs/
 
 # Expo prebuild output
-/android/
-/ios/
 /example/android/
 /example/ios/
 

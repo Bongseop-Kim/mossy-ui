@@ -29,7 +29,10 @@
     "node": ">=22.13.0"
   },
   "files": [
+    "android",
     "dist",
+    "expo-module.config.json",
+    "ios",
     "snippets",
     "README.md",
     "LICENSE"

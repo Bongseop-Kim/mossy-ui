@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["MossyUiModule"]
+  },
+  "android": {
+    "modules": ["com.mossyui.MossyUiModule"]
+  }
+}

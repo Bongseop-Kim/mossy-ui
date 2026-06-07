@@ -16,6 +16,13 @@ import {
 import type { MossyModifier } from '../../foundation/modifier';
 import type { MossyTheme } from '../../foundation/theme';
 import { EMPTY_MODIFIERS, resolveMossyLayoutSurfaceStyle, type MossyLayoutSurfaceProps } from './surface.shared';
+import {
+  mossyDirectionalBorder,
+  mossyLinearGradientBackground,
+  mossySizeConstraints,
+  mossyUnevenCornerRadius,
+} from './surfaceModifiers.android';
+import { createMossyLinearGradientConfig } from './surfaceModifiers.shared';
 
 export function createMossyLayoutSurfaceModifiers(
   theme: MossyTheme,
@@ -37,21 +44,86 @@ export function createMossyLayoutSurfaceModifiers(
       modifiers.push(height(style.height as number));
     }
 
-    const hasBorder = style.borderWidth != null && style.borderColor != null;
-    const hasRadius = style.borderRadius != null;
+    if (
+      style.minWidth != null ||
+      style.maxWidth != null ||
+      style.minHeight != null ||
+      style.maxHeight != null
+    ) {
+      modifiers.push(
+        mossySizeConstraints({
+          minWidth: style.minWidth,
+          maxWidth: style.maxWidth,
+          minHeight: style.minHeight,
+          maxHeight: style.maxHeight,
+        }),
+      );
+    }
 
-    if (hasBorder && hasRadius) {
+    const hasBorder = style.borderWidth != null && style.borderColor != null;
+    const hasDirectionalBorder =
+      style.borderColor != null &&
+      (style.borderTopWidth != null ||
+        style.borderRightWidth != null ||
+        style.borderBottomWidth != null ||
+        style.borderLeftWidth != null);
+    const hasRadius = style.borderRadius != null;
+    const hasUnevenRadius =
+      style.borderTopLeftRadius != null ||
+      style.borderTopRightRadius != null ||
+      style.borderBottomRightRadius != null ||
+      style.borderBottomLeftRadius != null;
+
+    if (hasBorder && hasRadius && !hasDirectionalBorder && !hasUnevenRadius) {
       const radius = style.borderRadius as number;
       const borderWidth = style.borderWidth as number;
       modifiers.push(clip(Shapes.RoundedCorner(radius)));
       modifiers.push(background(String(style.borderColor)));
       modifiers.push(paddingAll(borderWidth));
       modifiers.push(clip(Shapes.RoundedCorner(Math.max(0, radius - borderWidth))));
-      if (style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
+      if (style.backgroundGradient != null && style.backgroundGradientDirection != null) {
+        modifiers.push(
+          mossyLinearGradientBackground(
+            createMossyLinearGradientConfig(style.backgroundGradient, style.backgroundGradientDirection),
+          ),
+        );
+      } else if (style.backgroundColor != null) {
+        modifiers.push(background(String(style.backgroundColor)));
+      }
     } else {
-      if (hasBorder) modifiers.push(border(style.borderWidth as number, String(style.borderColor)));
-      if (hasRadius) modifiers.push(clip(Shapes.RoundedCorner(style.borderRadius as number)));
-      if (style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
+      if (hasBorder && !hasDirectionalBorder) modifiers.push(border(style.borderWidth as number, String(style.borderColor)));
+      if (hasRadius && !hasUnevenRadius) modifiers.push(clip(Shapes.RoundedCorner(style.borderRadius as number)));
+      if (hasUnevenRadius) {
+        const radius = style.borderRadius as number | undefined;
+        modifiers.push(
+          mossyUnevenCornerRadius({
+            topLeft: style.borderTopLeftRadius ?? radius,
+            topRight: style.borderTopRightRadius ?? radius,
+            bottomRight: style.borderBottomRightRadius ?? radius,
+            bottomLeft: style.borderBottomLeftRadius ?? radius,
+          }),
+        );
+      }
+      const gradient =
+        style.backgroundGradient != null && style.backgroundGradientDirection != null
+          ? createMossyLinearGradientConfig(style.backgroundGradient, style.backgroundGradientDirection)
+          : undefined;
+
+      if (gradient != null) {
+        modifiers.push(mossyLinearGradientBackground(gradient));
+      }
+      if (gradient == null && style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
+      if (hasDirectionalBorder) {
+        modifiers.push(
+          mossyDirectionalBorder({
+            color: String(style.borderColor),
+            top: style.borderTopWidth ?? style.borderWidth,
+            right: style.borderRightWidth ?? style.borderWidth,
+            bottom: style.borderBottomWidth ?? style.borderWidth,
+            left: style.borderLeftWidth ?? style.borderWidth,
+          }),
+        );
+      }
     }
 
     const all = (style.padding as number | undefined) ?? 0;

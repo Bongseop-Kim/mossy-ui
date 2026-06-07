@@ -15,6 +15,13 @@ import {
 import type { MossyModifier } from '../../foundation/modifier';
 import type { MossyTheme } from '../../foundation/theme';
 import { EMPTY_MODIFIERS, resolveMossyLayoutSurfaceStyle, type MossyLayoutSurfaceProps } from './surface.shared';
+import {
+  mossyDirectionalBorder,
+  mossyLinearGradientBackground,
+  mossySizeConstraints,
+  mossyUnevenCornerRadius,
+} from './surfaceModifiers.ios';
+import { createMossyLinearGradientConfig } from './surfaceModifiers.shared';
 
 export function createMossyLayoutSurfaceModifiers(
   theme: MossyTheme,
@@ -60,11 +67,71 @@ export function createMossyLayoutSurfaceModifiers(
       );
     }
 
-    if (style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
-    if (style.borderWidth != null && style.borderColor != null) {
+    if (
+      style.minWidth != null ||
+      style.maxWidth != null ||
+      style.minHeight != null ||
+      style.maxHeight != null
+    ) {
+      modifiers.push(
+        mossySizeConstraints({
+          minWidth: style.minWidth,
+          maxWidth: style.maxWidth,
+          minHeight: style.minHeight,
+          maxHeight: style.maxHeight,
+        }),
+      );
+    }
+
+    const gradient =
+      style.backgroundGradient != null && style.backgroundGradientDirection != null
+        ? createMossyLinearGradientConfig(style.backgroundGradient, style.backgroundGradientDirection)
+        : undefined;
+    const hasDirectionalBorder =
+      style.borderColor != null &&
+      (style.borderTopWidth != null ||
+        style.borderRightWidth != null ||
+        style.borderBottomWidth != null ||
+        style.borderLeftWidth != null);
+    const hasUnevenRadius =
+      style.borderTopLeftRadius != null ||
+      style.borderTopRightRadius != null ||
+      style.borderBottomRightRadius != null ||
+      style.borderBottomLeftRadius != null;
+
+    if (gradient != null) {
+      modifiers.push(mossyLinearGradientBackground(gradient));
+    } else if (style.backgroundColor != null) {
+      modifiers.push(background(String(style.backgroundColor)));
+    }
+
+    if (style.borderWidth != null && style.borderColor != null && !hasDirectionalBorder) {
       modifiers.push(border({ color: String(style.borderColor), width: style.borderWidth as number }));
     }
-    if (style.borderRadius != null) modifiers.push(clipShape('roundedRectangle', style.borderRadius as number));
+    if (hasUnevenRadius) {
+      const radius = style.borderRadius as number | undefined;
+      modifiers.push(
+        mossyUnevenCornerRadius({
+          topLeft: style.borderTopLeftRadius ?? radius,
+          topRight: style.borderTopRightRadius ?? radius,
+          bottomRight: style.borderBottomRightRadius ?? radius,
+          bottomLeft: style.borderBottomLeftRadius ?? radius,
+        }),
+      );
+    } else if (style.borderRadius != null) {
+      modifiers.push(clipShape('roundedRectangle', style.borderRadius as number));
+    }
+    if (hasDirectionalBorder) {
+      modifiers.push(
+        mossyDirectionalBorder({
+          color: String(style.borderColor),
+          top: style.borderTopWidth ?? style.borderWidth,
+          right: style.borderRightWidth ?? style.borderWidth,
+          bottom: style.borderBottomWidth ?? style.borderWidth,
+          left: style.borderLeftWidth ?? style.borderWidth,
+        }),
+      );
+    }
     if (style.opacity != null) modifiers.push(opacityModifier(style.opacity as number));
   }
 
