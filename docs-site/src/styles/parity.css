@@ -16,6 +16,15 @@
   --status-blocked-ink: #765313;
   --status-mossy-bg: #e2edff;
   --status-mossy-ink: #23518c;
+  --mossy-sidebar-current-bg: color-mix(in srgb, var(--sl-color-gray-5) 42%, transparent);
+  --mossy-sidebar-current-ink: var(--sl-color-gray-1);
+  --mossy-sidebar-current-focus: color-mix(in srgb, var(--sl-color-gray-3) 72%, transparent);
+}
+
+:root[data-theme='light'] {
+  --mossy-sidebar-current-bg: var(--sl-color-gray-6);
+  --mossy-sidebar-current-ink: var(--sl-color-gray-2);
+  --mossy-sidebar-current-focus: var(--sl-color-gray-5);
 }
 
 main:has(:is(.component-hero, .component-list)) {
@@ -147,6 +156,18 @@ main:has(:is(.component-hero, .component-list)) {
   --sl-color-bg-badge: var(--status-mossy-bg);
   --sl-color-border-badge: color-mix(in srgb, var(--status-mossy-ink) 34%, transparent);
   --sl-color-text-badge: var(--status-mossy-ink);
+}
+
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+  color: var(--mossy-sidebar-current-ink);
+  background-color: var(--mossy-sidebar-current-bg);
+}
+
+.sidebar-content a[aria-current='page']:focus-visible {
+  outline: 2px solid var(--mossy-sidebar-current-focus);
+  outline-offset: 2px;
 }
 
 .sidebar-content a[aria-current='page'] > .sl-badge.status-done,

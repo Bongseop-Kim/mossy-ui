@@ -24,52 +24,143 @@ interface Props {
 
 const { page } = Astro.props;
 const mossyRows = page.rows.filter(hasMossyMatch).length;
+const boxTokenMappings = [
+  {
+    prop: '`bg`, `background`',
+    seedType: '`ScopedColorPalette | ScopedColorBg | ScopedColorBanner | (string & {})`',
+    mossyType: '`MossyBoxBackground`',
+    mapping: 'Mossy `bg.*` / `banner.*` / raw string background token scope',
+    docs: '/design-tokens/#color-token-scopes',
+  },
+  {
+    prop: '`borderColor`',
+    seedType: '`ScopedColorPalette | ScopedColorStroke | (string & {})`',
+    mossyType: '`MossyBoxBorderColor`',
+    mapping: 'Mossy `stroke.*` / raw string border token scope',
+    docs: '/design-tokens/#color-token-scopes',
+  },
+  {
+    prop: '`borderRadius`, corner radius props',
+    seedType: '`Radius | 0 | (string & {})`',
+    mossyType: '`MossyBoxRadiusToken | 0`',
+    mapping: 'Mossy `r*` / `full` radius tokens',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`boxShadow`',
+    seedType: '`Shadow | (string & {})`',
+    mossyType: '`MossyBoxShadow`',
+    mapping: 'Mossy `s*` shadow/elevation tokens',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`width`, `height`, min/max size props',
+    seedType: '`Dimension | spacingX.* | spacingY.* | "full" | (string & {})`',
+    mossyType: '`MossyBoxLength`',
+    mapping: 'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens + `full`',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`padding*`, `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `gap`',
+    seedType: '`Dimension | spacingX.* | spacingY.* | 0 | (string & {})`',
+    mossyType: '`MossyBoxPadding`',
+    mapping: 'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`bgGradient`, `backgroundGradient`',
+    seedType: '`Gradient`',
+    mossyType: '`MossyBoxGradient`',
+    mapping: 'Mossy gradient tokens (`fadeLayerFloating`, `glowMagic`, etc.)',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`bgGradientDirection`, `backgroundGradientDirection`',
+    seedType: 'CSS gradient direction keywords / angle string',
+    mossyType: '`MossyBoxGradientDirection`',
+    mapping: 'CSS direction keywords and `${number}deg` converted to native gradient points',
+    docs: '/design-tokens/#scale-tokens',
+  },
+];
+const vStackTokenMappings = [
+  {
+    prop: '`bg`, `background`',
+    seedType: '`ScopedColorPalette | ScopedColorBg | ScopedColorBanner | (string & {})`',
+    mossyType: '`MossyBoxBackground`',
+    mapping: 'Mossy `bg.*` / `banner.*` / raw string background token scope',
+    docs: '/design-tokens/#color-token-scopes',
+  },
+  {
+    prop: '`borderColor`',
+    seedType: '`ScopedColorPalette | ScopedColorStroke | (string & {})`',
+    mossyType: '`MossyBoxBorderColor`',
+    mapping: 'Mossy `stroke.*` / raw string border token scope',
+    docs: '/design-tokens/#color-token-scopes',
+  },
+  {
+    prop: '`borderWidth`, directional border width props',
+    seedType: '`0 | 1 | (string & {})`',
+    mossyType: '`MossyBoxBorderWidth`',
+    mapping: 'Mossy number dp / numeric string border width; arbitrary CSS length strings are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`borderRadius`, corner radius props',
+    seedType: '`Radius | 0 | (string & {})`',
+    mossyType: '`MossyBoxRadiusToken | 0`',
+    mapping: 'Mossy `r*` / `full` radius tokens; arbitrary CSS radius strings are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`boxShadow`',
+    seedType: '`Shadow | (string & {})`',
+    mossyType: '`MossyBoxShadow`',
+    mapping: 'Mossy `s*` shadow/elevation tokens; arbitrary CSS shadow strings are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`width`, `height`',
+    seedType: '`Dimension | spacingX.* | spacingY.* | "full" | (string & {})`',
+    mossyType: '`MossyBoxLength`',
+    mapping: 'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens + `full`; arbitrary CSS length strings are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: 'min/max size props',
+    seedType: '`Dimension | spacingX.* | spacingY.* | "full" | (string & {})`',
+    mossyType: '`MossyVStackSizeConstraint`',
+    mapping: 'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens; arbitrary CSS length strings and min/max `full` are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`padding*`, `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `gap`',
+    seedType: '`Dimension | spacingX.* | spacingY.* | 0 | (string & {})`',
+    mossyType: '`MossyBoxPadding`',
+    mapping: 'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens; arbitrary CSS length strings and `safeArea` are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`bgGradient`, `backgroundGradient`',
+    seedType: '`Gradient`',
+    mossyType: '`MossyBoxGradient`',
+    mapping: 'Mossy gradient tokens (`fadeLayerFloating`, `glowMagic`, etc.)',
+    docs: '/design-tokens/#scale-tokens',
+  },
+  {
+    prop: '`bgGradientDirection`, `backgroundGradientDirection`',
+    seedType: 'CSS gradient direction keywords / angle string',
+    mossyType: '`MossyBoxGradientDirection`',
+    mapping: 'CSS direction keywords and `${number}deg` converted to native gradient points',
+    docs: '/design-tokens/#scale-tokens',
+  },
+];
 const tokenMappings =
   page.name === 'Box'
     ? [
-        {
-          prop: '`bg`, `background`',
-          seedType: '`ScopedColorPalette | ScopedColorBg | ScopedColorBanner | (string & {})`',
-          mossyType: '`MossyBoxBackground`',
-          mapping: 'Mossy background/palette/banner color token',
-          docs: '/design-tokens/#color-token-scopes',
-        },
-        {
-          prop: '`borderColor`',
-          seedType: '`ScopedColorPalette | ScopedColorStroke | (string & {})`',
-          mossyType: '`MossyBoxBorderColor`',
-          mapping: 'Mossy stroke/palette color token',
-          docs: '/design-tokens/#color-token-scopes',
-        },
-        {
-          prop: '`borderRadius`',
-          seedType: '`Radius | 0 | (string & {})`',
-          mossyType: '`MossyBoxRadiusToken | 0`',
-          mapping: 'Mossy radius token',
-          docs: '/design-tokens/#scale-tokens',
-        },
-        {
-          prop: '`boxShadow`',
-          seedType: '`Shadow | (string & {})`',
-          mossyType: '`MossyBoxShadow`',
-          mapping: 'Mossy shadow/elevation token',
-          docs: '/design-tokens/#scale-tokens',
-        },
-        {
-          prop: '`width`, `height`',
-          seedType: '`Dimension | spacingX.* | spacingY.* | "full" | (string & {})`',
-          mossyType: '`MossyBoxLength`',
-          mapping: 'Mossy dimension/spacing token + `full`',
-          docs: '/design-tokens/#scale-tokens',
-        },
-        {
-          prop: '`padding*`, `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`',
-          seedType: '`Dimension | spacingX.* | spacingY.* | 0 | (string & {})`',
-          mossyType: '`MossyBoxPadding`',
-          mapping: 'Mossy dimension/spacing token',
-          docs: '/design-tokens/#scale-tokens',
-        },
+        ...boxTokenMappings,
       ]
+    : page.name === 'VStack'
+    ? vStackTokenMappings
     : [];
 const frontmatter = {
   title: page.name,

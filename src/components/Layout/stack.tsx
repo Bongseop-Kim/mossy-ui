@@ -1,3 +1,5 @@
+import { Children, type ReactNode } from 'react';
+
 import type {
   MossyBoxBackground,
   MossyBoxBorderColor,
@@ -28,6 +30,14 @@ export type MossyStackJustify =
   | 'spaceAround';
 
 export type MossyStackGrow = 0 | 1 | (number & {}) | true;
+
+export type MossyStackDirection =
+  | 'row'
+  | 'column'
+  | 'row-reverse'
+  | 'column-reverse'
+  | 'rowReverse'
+  | 'columnReverse';
 
 export interface MossyStackBaseProps {
   /**
@@ -109,5 +119,44 @@ export function normalizeJustify(justify: MossyStackJustify | undefined) {
       return 'space-around';
     default:
       return justify;
+  }
+}
+
+export function normalizeDirection(direction: MossyStackDirection) {
+  if (direction === 'rowReverse') return 'row-reverse';
+  if (direction === 'columnReverse') return 'column-reverse';
+  return direction;
+}
+
+export function isColumnDirection(direction: MossyStackDirection) {
+  const normalized = normalizeDirection(direction);
+  return normalized === 'column' || normalized === 'column-reverse';
+}
+
+export function isReverseDirection(direction: MossyStackDirection) {
+  const normalized = normalizeDirection(direction);
+  return normalized === 'row-reverse' || normalized === 'column-reverse';
+}
+
+export function maybeReverseChildren(children: ReactNode, shouldReverse: boolean) {
+  if (!shouldReverse) return children;
+  return Children.toArray(children).reverse();
+}
+
+export function resolveDirectedJustify(
+  justify: MossyStackJustify | undefined,
+  isReverse: boolean,
+) {
+  const normalized = normalizeJustify(justify);
+
+  if (!isReverse) return normalized;
+
+  switch (normalized ?? 'flex-start') {
+    case 'flex-start':
+      return 'flex-end';
+    case 'flex-end':
+      return 'flex-start';
+    default:
+      return normalized;
   }
 }

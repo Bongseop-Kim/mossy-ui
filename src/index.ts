@@ -30,7 +30,11 @@ export { Grid, type MossyGridProps } from './components/Layout/Grid';
 export { HStack, type MossyHStackProps } from './components/Layout/HStack';
 export { Spacer, type MossySpacerProps } from './components/Layout/Spacer';
 export type { MossyAlignment } from './components/Layout/types';
-export { VStack, type MossyVStackProps } from './components/Layout/VStack';
+export {
+  VStack,
+  type MossyVStackProps,
+  type MossyVStackSizeConstraint,
+} from './components/Layout/VStack';
 export { List, type MossyListProps } from './components/List';
 export { ListHeader, type MossyListHeaderProps } from './components/ListHeader';
 export { ListItem, type MossyListItemProps } from './components/ListItem';
