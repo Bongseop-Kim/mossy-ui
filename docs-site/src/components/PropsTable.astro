@@ -12,6 +12,42 @@ interface Props {
 }
 
 const { rows } = Astro.props;
+
+const typeLinks: Record<string, string> = {
+  ScopedColorPalette: '/design-tokens/#color-palette',
+  ScopedColorBg: '/design-tokens/#color-token-scopes',
+  ScopedColorFg: '/design-tokens/#color-token-scopes',
+  ScopedColorStroke: '/design-tokens/#color-token-scopes',
+  ScopedColorBanner: '/design-tokens/#color-token-scopes',
+  Dimension: '/design-tokens/#scale-tokens',
+  Radius: '/design-tokens/#scale-tokens',
+  Shadow: '/design-tokens/#scale-tokens',
+  FontSize: '/design-tokens/#scale-tokens',
+  FontWeight: '/design-tokens/#scale-tokens',
+  LineHeight: '/design-tokens/#scale-tokens',
+};
+
+function typeToHtml(value: string) {
+  let html = escapeHtml(value);
+
+  for (const [typeName, href] of Object.entries(typeLinks)) {
+    html = html.replace(
+      new RegExp(`\\b${typeName}\\b`, 'g'),
+      `<a href="${href}">${typeName}</a>`
+    );
+  }
+
+  return html;
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
 ---
 
 <div class="props-table-wrap">
@@ -32,7 +68,7 @@ const { rows } = Astro.props;
           return items.flatMap((item) => propTableItems(row, item)).map((item) => (
             <tr>
               <td set:html={markdownInlineToHtml(item.prop)} />
-              <td>{item.type === '-' ? '-' : <code>{item.type}</code>}</td>
+              <td>{item.type === '-' ? '-' : <code set:html={typeToHtml(item.type)} />}</td>
               <td>
                 {item.status ? <StatusBadge status={item.status} /> : '-'}
               </td>

@@ -180,6 +180,7 @@ export const componentPages: ComponentPage[] = Array.from(groupedRows.entries())
 
 export const componentSidebar = [
   { label: 'Home', link: '/' },
+  { label: 'Design Tokens', link: '/design-tokens/' },
   { label: 'Components', link: '/components/' },
   {
     label: 'Component Pages',

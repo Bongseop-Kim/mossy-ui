@@ -9,6 +9,7 @@ export default defineConfig({
       customCss: ['./src/styles/parity.css'],
       sidebar: [
         { label: 'Home', link: '/' },
+        { label: 'Design Tokens', link: '/design-tokens/' },
         { label: 'Components', link: '/components/' },
       ],
     }),

@@ -235,6 +235,48 @@
   overflow-wrap: anywhere;
 }
 
+.props-table code a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.18em;
+}
+
+.token-color {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.token-swatch {
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--mossy-line);
+  border-radius: 4px;
+  background:
+    linear-gradient(var(--token-color), var(--token-color)),
+    linear-gradient(45deg, #d9dde3 25%, transparent 25%),
+    linear-gradient(-45deg, #d9dde3 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #d9dde3 75%),
+    linear-gradient(-45deg, transparent 75%, #d9dde3 75%);
+  background-color: #fff;
+  background-position:
+    0 0,
+    0 0,
+    0 6px,
+    6px -6px,
+    -6px 0;
+  background-size:
+    auto,
+    12px 12px,
+    12px 12px,
+    12px 12px,
+    12px 12px;
+}
+
 .note-stack {
   display: grid;
   gap: 0.65rem;

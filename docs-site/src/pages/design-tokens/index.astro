@@ -1,0 +1,176 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+import TokenPaletteTable from '../../components/TokenPaletteTable.astro';
+import { componentSidebar } from '../../data/seed-parity';
+
+const headings = [
+  { depth: 2, slug: 'principles', text: '원칙' },
+  { depth: 2, slug: 'color-token-scopes', text: 'Color Token Scopes' },
+  { depth: 2, slug: 'color-palette', text: 'Color Palette' },
+  { depth: 3, slug: 'gray', text: 'Gray' },
+  { depth: 3, slug: 'mossy', text: 'Mossy' },
+  { depth: 3, slug: 'chromatic', text: 'Chromatic' },
+  { depth: 3, slug: 'static', text: 'Static' },
+  { depth: 2, slug: 'color-props', text: 'Color Props' },
+  { depth: 2, slug: 'scale-tokens', text: 'Scale Tokens' },
+  { depth: 2, slug: 'name-conversion', text: 'Name Conversion' },
+  { depth: 2, slug: 'source', text: 'Source' },
+];
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Design Tokens',
+    description: 'Mossy 디자인 토큰 표기와 Props 타입 scope 가이드.',
+  }}
+  sidebar={componentSidebar}
+  headings={headings}
+>
+  <p class="lede">Mossy 컴포넌트 Props에서 사용하는 디자인 토큰 표기 가이드.</p>
+
+  <AnchorHeading level="2" id="principles">원칙</AnchorHeading>
+  <ul>
+    <li><strong>토큰 우선</strong> — 색상·간격·radius·shadow 값은 Mossy 토큰을 우선 사용한다.</li>
+    <li><strong>Scope 제한</strong> — 색상 prop은 역할에 맞는 scope만 받는다. 배경은 <code>bg.*</code>, 텍스트와 아이콘은 <code>fg.*</code>, 테두리는 <code>stroke.*</code>를 사용한다.</li>
+    <li><strong>Palette 허용</strong> — 색상 prop은 필요한 경우 <code>palette.*</code> 값을 직접 받을 수 있다.</li>
+    <li><strong>문자열 fallback</strong> — <code>{'(string & {})'}</code>는 토큰 외 원시 문자열을 허용하면서 TypeScript 자동완성을 유지하는 타입 표기다.</li>
+    <li><strong>Seed parity 표기</strong> — Props 표의 <code>ScopedColor*</code> 이름은 Seed Design React 타입 표기와 맞춘 scope 이름이다. Mossy에서는 아래 Mossy 토큰 scope로 읽는다.</li>
+  </ul>
+
+  <AnchorHeading level="2" id="color-token-scopes">Color Token Scopes</AnchorHeading>
+  <div class="props-table-wrap">
+    <table class="props-table">
+      <thead>
+        <tr>
+          <th>Props 표 타입</th>
+          <th>Mossy 토큰 scope</th>
+          <th>사용 위치</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>ScopedColorPalette</code></td>
+          <td><code>palette.*</code></td>
+          <td>모든 색상 prop의 직접 palette 값</td>
+          <td><code>palette.gray900</code>, <code>palette.mossy600</code>, <code>palette.staticWhite</code></td>
+        </tr>
+        <tr>
+          <td><code>ScopedColorBg</code></td>
+          <td><code>bg.*</code></td>
+          <td>배경색</td>
+          <td><code>bg.layerDefault</code>, <code>bg.neutralWeak</code>, <code>bg.brandSolid</code></td>
+        </tr>
+        <tr>
+          <td><code>ScopedColorFg</code></td>
+          <td><code>fg.*</code></td>
+          <td>텍스트·아이콘 색상</td>
+          <td><code>fg.neutral</code>, <code>fg.neutralMuted</code>, <code>fg.brand</code></td>
+        </tr>
+        <tr>
+          <td><code>ScopedColorStroke</code></td>
+          <td><code>stroke.*</code></td>
+          <td>테두리·구분선 색상</td>
+          <td><code>stroke.neutralMuted</code>, <code>stroke.brandWeak</code>, <code>stroke.focusRing</code></td>
+        </tr>
+        <tr>
+          <td><code>ScopedColorBanner</code></td>
+          <td><code>banner.*</code></td>
+          <td>배너 전용 색상 scope</td>
+          <td><code>banner.blue</code>, <code>banner.green</code>, <code>banner.yellow</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <TokenPaletteTable />
+
+  <AnchorHeading level="2" id="color-props">Color Props</AnchorHeading>
+  <div class="props-table-wrap">
+    <table class="props-table">
+      <thead>
+        <tr>
+          <th>Prop 용도</th>
+          <th>허용 scope</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>배경색</td>
+          <td><code>bg.*</code>, <code>palette.*</code>, 원시 색상 문자열</td>
+          <td><code>backgroundColor=&quot;bg.layerDefault&quot;</code></td>
+        </tr>
+        <tr>
+          <td>텍스트 색상</td>
+          <td><code>fg.*</code>, <code>palette.*</code>, 원시 색상 문자열</td>
+          <td><code>color=&quot;fg.neutral&quot;</code></td>
+        </tr>
+        <tr>
+          <td>아이콘 색상</td>
+          <td><code>fg.*</code>, <code>palette.*</code>, 원시 색상 문자열</td>
+          <td><code>color=&quot;fg.neutralMuted&quot;</code></td>
+        </tr>
+        <tr>
+          <td>테두리 색상</td>
+          <td><code>stroke.*</code>, <code>palette.*</code>, 원시 색상 문자열</td>
+          <td><code>borderColor=&quot;stroke.neutralMuted&quot;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pre><code>{`<Box backgroundColor="bg.layerDefault" borderColor="stroke.neutralMuted">
+  <Text color="fg.neutral">Mossy token example</Text>
+</Box>`}</code></pre>
+
+  <AnchorHeading level="2" id="scale-tokens">Scale Tokens</AnchorHeading>
+  <div class="props-table-wrap">
+    <table class="props-table">
+      <thead>
+        <tr>
+          <th>Scope</th>
+          <th>Props 표 타입</th>
+          <th>Mossy 표기</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>간격·크기</td><td><code>Dimension</code></td><td><code>x*</code>, <code>spacingX.*</code>, <code>spacingY.*</code></td><td><code>x2</code>, <code>x4</code>, <code>spacingX.globalGutter</code></td></tr>
+        <tr><td>Radius</td><td><code>Radius</code></td><td><code>r*</code>, <code>full</code></td><td><code>r1</code>, <code>r2</code>, <code>full</code></td></tr>
+        <tr><td>Shadow</td><td><code>Shadow</code></td><td><code>s*</code></td><td><code>s1</code>, <code>s2</code>, <code>s3</code></td></tr>
+        <tr><td>Font size</td><td><code>FontSize</code></td><td><code>t*</code></td><td><code>t3</code>, <code>t5</code>, <code>t7</code></td></tr>
+        <tr><td>Font weight</td><td><code>FontWeight</code></td><td>굵기 이름</td><td><code>regular</code>, <code>medium</code>, <code>bold</code></td></tr>
+        <tr><td>Line height</td><td><code>LineHeight</code></td><td><code>t*</code></td><td><code>t3</code>, <code>t5</code>, <code>t7</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <AnchorHeading level="2" id="name-conversion">Name Conversion</AnchorHeading>
+  <div class="props-table-wrap">
+    <table class="props-table">
+      <thead>
+        <tr>
+          <th>원본 토큰 키</th>
+          <th>Props 값</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>$color.bg.layer-default</code></td><td><code>bg.layerDefault</code></td></tr>
+        <tr><td><code>$color.fg.neutral-muted</code></td><td><code>fg.neutralMuted</code></td></tr>
+        <tr><td><code>$color.stroke.focus-ring</code></td><td><code>stroke.focusRing</code></td></tr>
+        <tr><td><code>$color.palette.static-white</code></td><td><code>palette.staticWhite</code></td></tr>
+        <tr><td><code>$dimension.x2</code></td><td><code>x2</code></td></tr>
+        <tr><td><code>$radius.r2</code></td><td><code>r2</code></td></tr>
+        <tr><td><code>$shadow.s2</code></td><td><code>s2</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <AnchorHeading level="2" id="source">Source</AnchorHeading>
+  <ul>
+    <li><strong>토큰 값</strong> — <code>src/foundation/default-token-values.ts</code></li>
+    <li><strong>컴포넌트 prop 토큰 타입</strong> — <code>src/foundation/component-tokens.ts</code></li>
+  </ul>
+</StarlightPage>

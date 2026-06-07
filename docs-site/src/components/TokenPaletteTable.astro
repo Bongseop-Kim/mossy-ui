@@ -1,0 +1,82 @@
+---
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+import {
+  mossyDefaultDarkValues,
+  mossyDefaultLightValues,
+} from '../../../src/foundation/default-token-values';
+
+const paletteGroups = [
+  { id: 'gray', title: 'Gray', prefixes: ['gray'] },
+  { id: 'mossy', title: 'Mossy', prefixes: ['mossy'] },
+  { id: 'chromatic', title: 'Chromatic', prefixes: ['blue', 'red', 'green', 'yellow', 'purple'] },
+  { id: 'static', title: 'Static', prefixes: ['static'] },
+];
+
+const paletteEntries = Object.keys(mossyDefaultLightValues)
+  .filter((key) => key.startsWith('color-palette-'))
+  .map((key) => ({
+    key,
+    name: key.replace('color-palette-', ''),
+    prop: `palette.${kebabToCamel(key.replace('color-palette-', ''))}`,
+    light: mossyDefaultLightValues[key as keyof typeof mossyDefaultLightValues],
+    dark: mossyDefaultDarkValues[key as keyof typeof mossyDefaultDarkValues],
+  }));
+
+function entriesFor(prefixes: string[]) {
+  return paletteEntries.filter((entry) =>
+    prefixes.some((prefix) => entry.name === prefix || entry.name.startsWith(`${prefix}-`))
+  );
+}
+
+function kebabToCamel(value: string) {
+  const [head, ...tail] = value.split('-');
+  return `${head}${tail.map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join('')}`;
+}
+---
+
+<AnchorHeading level="2" id="color-palette">Color Palette</AnchorHeading>
+<p>
+  <code>ScopedColorPalette</code>는 <code>palette.*</code> 값을 의미한다. Light와 Dark 값은
+  <code>src/foundation/default-token-values.ts</code>의 <code>mossyDefaultLightValues</code>와
+  <code>mossyDefaultDarkValues</code>에서 build-time에 가져온 실제 색상값이다.
+</p>
+
+{
+  paletteGroups.map((group) => (
+    <>
+      <AnchorHeading level="3" id={group.id}>{group.title}</AnchorHeading>
+      <div class="props-table-wrap">
+        <table class="props-table token-table">
+          <thead>
+            <tr>
+              <th>Props 값</th>
+              <th>Light</th>
+              <th>Dark</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              entriesFor(group.prefixes).map((entry) => (
+                <tr>
+                  <td><code>{entry.prop}</code></td>
+                  <td>
+                    <span class="token-color">
+                      <span class="token-swatch" style={`--token-color: ${entry.light}`} />
+                      <code>{entry.light}</code>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="token-color">
+                      <span class="token-swatch" style={`--token-color: ${entry.dark}`} />
+                      <code>{entry.dark}</code>
+                    </span>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </>
+  ))
+}
