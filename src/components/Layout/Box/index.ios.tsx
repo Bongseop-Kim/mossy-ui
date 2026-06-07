@@ -1,13 +1,13 @@
 import { ZStack } from '@expo/ui/swift-ui';
-import { frame, shadow, zIndex } from '@expo/ui/swift-ui/modifiers';
+import { frame, layoutPriority, shadow, zIndex } from '@expo/ui/swift-ui/modifiers';
 
 import { useMossyTheme } from '../../../theme';
 import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
 import type { MossyModifier } from '../../../foundation/modifier';
 import {
   isFullBoxLength,
+  normalizeBoxFlexGrow,
   resolveBoxZIndex,
-  shouldRenderBox,
   toMossyBoxSurfaceProps,
   type MossyBoxProps,
 } from './types';
@@ -16,10 +16,8 @@ const FILL = 1_000_000;
 
 /** 자식을 겹쳐 쌓는 기초 레이아웃 컨테이너. SwiftUI `ZStack`으로 렌더된다. */
 export function Box(props: MossyBoxProps) {
-  const { children, display } = props;
+  const { children } = props;
   const theme = useMossyTheme();
-
-  if (!shouldRenderBox(display)) return null;
 
   return (
     <ZStack
@@ -44,8 +42,11 @@ function createBoxFrameModifiers(props: MossyBoxProps): MossyModifier[] {
 
 function createBoxEffectModifiers(theme: ReturnType<typeof useMossyTheme>, props: MossyBoxProps): MossyModifier[] {
   const modifiers: MossyModifier[] = [];
+  const flexGrow = normalizeBoxFlexGrow(props.flexGrow);
   const shadowValue = props.boxShadow == null ? undefined : theme.shadow[props.boxShadow];
   const zIndexValue = resolveBoxZIndex(props.zIndex);
+
+  if (flexGrow != null) modifiers.push(layoutPriority(flexGrow));
 
   if (shadowValue != null) {
     modifiers.push(

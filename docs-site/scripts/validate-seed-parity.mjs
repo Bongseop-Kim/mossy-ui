@@ -2,6 +2,7 @@ import data from '../src/data/seed-parity.json' with { type: 'json' };
 
 const statuses = new Set(['완료', '부분완료', '미구현', '제약', 'Mossy only']);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const statusesRequiringNote = new Set(['부분완료', '미구현', '제약', 'Mossy only']);
 
 function fail(message) {
   console.error(message);
@@ -15,6 +16,12 @@ for (const row of data.checklist) {
 
   if (!row.seed || !row.seedProps || !row.propStatus) {
     fail(`Missing required checklist data for ${row.seed || '(unknown)'}`);
+  }
+
+  for (const item of splitPropStatus(row.propStatus)) {
+    if (statusesRequiringNote.has(item.status) && !item.note) {
+      fail(`Missing note for ${item.status} prop status: ${row.seed} -> ${item.target}`);
+    }
   }
 }
 
@@ -50,3 +57,27 @@ if (process.exitCode) {
 console.log(
   `seed parity data valid: ${data.checklist.length} checklist rows, ${data.mossyOnly.length} Mossy-only rows`
 );
+
+function splitPropStatus(value) {
+  return value
+    .split(' / ')
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((item) => {
+      const match = item.match(/^(.+?):\s*([^—]+?)(?:\s*—\s*(.+))?$/);
+
+      if (!match) {
+        return {
+          target: item,
+          status: '',
+          note: '',
+        };
+      }
+
+      return {
+        target: match[1].trim(),
+        status: match[2].trim(),
+        note: match[3]?.trim() ?? '',
+      };
+    });
+}

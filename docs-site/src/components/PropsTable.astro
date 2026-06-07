@@ -19,6 +19,16 @@ const typeLinks: Record<string, string> = {
   ScopedColorFg: '/design-tokens/#color-token-scopes',
   ScopedColorStroke: '/design-tokens/#color-token-scopes',
   ScopedColorBanner: '/design-tokens/#color-token-scopes',
+  MossyBoxBackground: '/design-tokens/#color-token-scopes',
+  MossyBoxBorderColor: '/design-tokens/#color-token-scopes',
+  MossyBoxRadiusToken: '/design-tokens/#scale-tokens',
+  MossyBoxShadow: '/design-tokens/#scale-tokens',
+  MossyBoxLength: '/design-tokens/#scale-tokens',
+  MossyBoxPadding: '/design-tokens/#scale-tokens',
+  MossyBackgroundColorToken: '/design-tokens/#color-token-scopes',
+  MossyBannerColorToken: '/design-tokens/#color-token-scopes',
+  MossyStrokeColorToken: '/design-tokens/#color-token-scopes',
+  MossyDimensionToken: '/design-tokens/#scale-tokens',
   Dimension: '/design-tokens/#scale-tokens',
   Radius: '/design-tokens/#scale-tokens',
   Shadow: '/design-tokens/#scale-tokens',
@@ -52,6 +62,12 @@ function escapeHtml(value: string) {
 
 <div class="props-table-wrap">
   <table class="props-table">
+    <colgroup>
+      <col class="props-table-prop" />
+      <col class="props-table-type" />
+      <col class="props-table-status" />
+      <col class="props-table-note" />
+    </colgroup>
     <thead>
       <tr>
         <th>Prop</th>

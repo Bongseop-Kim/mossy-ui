@@ -68,7 +68,7 @@ export function splitPropStatus(value: string): PropStatusItem[] {
     .map((item) => item.trim())
     .filter(Boolean)
     .map((item) => {
-      const match = item.match(/^(.+?):\s*([^—]+?)\s*—\s*(.+)$/);
+      const match = item.match(/^(.+?):\s*([^—]+?)(?:\s*—\s*(.+))?$/);
 
       if (!match) {
         return {
@@ -83,7 +83,7 @@ export function splitPropStatus(value: string): PropStatusItem[] {
       return {
         target: match[1].trim(),
         status: statusValues.includes(status as ParityStatus) ? (status as ParityStatus) : '',
-        note: match[3].trim(),
+        note: match[3]?.trim() ?? '',
       };
     });
 }

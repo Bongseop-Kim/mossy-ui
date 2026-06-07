@@ -209,6 +209,19 @@ main:has(:is(.component-hero, .component-list)) {
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.9rem;
+  table-layout: fixed;
+}
+
+.props-table-prop {
+  width: 11rem;
+}
+
+.props-table-type {
+  width: 22rem;
+}
+
+.props-table-status {
+  width: 8rem;
 }
 
 .props-table th,

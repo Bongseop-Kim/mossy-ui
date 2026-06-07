@@ -3,6 +3,7 @@ import {
   fillMaxHeight,
   fillMaxWidth,
   shadow,
+  weight,
   zIndex,
 } from '@expo/ui/jetpack-compose/modifiers';
 
@@ -11,18 +12,16 @@ import { useMossyTheme } from '../../../theme';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
 import {
   isFullBoxLength,
+  normalizeBoxFlexGrow,
   resolveBoxZIndex,
-  shouldRenderBox,
   toMossyBoxSurfaceProps,
   type MossyBoxProps,
 } from './types';
 
 /** 자식을 겹쳐 쌓는 기초 레이아웃 컨테이너. Compose `Box`로 렌더된다. */
 export function Box(props: MossyBoxProps) {
-  const { children, display } = props;
+  const { children } = props;
   const theme = useMossyTheme();
-
-  if (!shouldRenderBox(display)) return null;
 
   return (
     <ComposeBox
@@ -49,9 +48,11 @@ function createBoxSizeModifiers(props: MossyBoxProps): MossyModifier[] {
 
 function createBoxEffectModifiers(theme: ReturnType<typeof useMossyTheme>, props: MossyBoxProps): MossyModifier[] {
   const modifiers: MossyModifier[] = [];
+  const flexGrow = normalizeBoxFlexGrow(props.flexGrow);
   const shadowValue = props.boxShadow == null ? undefined : theme.shadow[props.boxShadow];
   const zIndexValue = resolveBoxZIndex(props.zIndex);
 
+  if (flexGrow != null) modifiers.push(weight(flexGrow));
   if (shadowValue?.elevation != null) modifiers.push(shadow(shadowValue.elevation));
   if (zIndexValue != null) modifiers.push(zIndex(zIndexValue));
 

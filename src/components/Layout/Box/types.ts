@@ -20,6 +20,7 @@ export type MossyBoxPadding = MossyDimensionToken | 0;
 export type MossyBoxBorderWidth = 0 | 1 | number | `${number}`;
 export type MossyBoxShadow = keyof MossyTheme['shadow'];
 export type MossyBoxZIndex = number | `${number}`;
+export type MossyBoxFlexGrow = 0 | 1 | (number & {}) | true;
 
 export interface MossyBoxSurfaceInput {
   display?: string;
@@ -70,12 +71,8 @@ export interface MossyBoxProps {
   pb?: MossyBoxPadding;
   paddingLeft?: MossyBoxPadding;
   pl?: MossyBoxPadding;
-  display?: 'block' | 'flex' | 'inline-flex' | 'inline' | 'inline-block' | 'none' | 'inlineFlex' | 'inlineBlock';
+  flexGrow?: MossyBoxFlexGrow;
   zIndex?: MossyBoxZIndex;
-}
-
-export function shouldRenderBox(display: MossyBoxProps['display']) {
-  return display !== 'none';
 }
 
 export function isFullBoxLength(value: MossyBoxLength | undefined) {
@@ -106,6 +103,12 @@ export function resolveBoxZIndex(value: MossyBoxZIndex | undefined) {
 
   const resolved = Number(value);
   return Number.isNaN(resolved) ? undefined : resolved;
+}
+
+export function normalizeBoxFlexGrow(value: MossyBoxFlexGrow | undefined) {
+  if (value === true) return 1;
+  if (value == null || value <= 0 || !Number.isFinite(value)) return undefined;
+  return value;
 }
 
 function resolveBoxBorderWidth(value: MossyBoxBorderWidth | undefined) {
