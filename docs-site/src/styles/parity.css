@@ -81,6 +81,7 @@
   padding: 0.3rem 0.55rem;
   font: 0.74rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   white-space: nowrap;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
 }
 
 .status-badge span {
@@ -112,6 +113,46 @@
 .status-mossy-only {
   background: var(--status-mossy-bg);
   color: var(--status-mossy-ink);
+}
+
+.sl-badge.status-done {
+  --sl-color-bg-badge: var(--status-done-bg);
+  --sl-color-border-badge: color-mix(in srgb, var(--status-done-ink) 34%, transparent);
+  --sl-color-text-badge: var(--status-done-ink);
+}
+
+.sl-badge.status-partial {
+  --sl-color-bg-badge: var(--status-partial-bg);
+  --sl-color-border-badge: color-mix(in srgb, var(--status-partial-ink) 34%, transparent);
+  --sl-color-text-badge: var(--status-partial-ink);
+}
+
+.sl-badge.status-missing {
+  --sl-color-bg-badge: var(--status-missing-bg);
+  --sl-color-border-badge: color-mix(in srgb, var(--status-missing-ink) 34%, transparent);
+  --sl-color-text-badge: var(--status-missing-ink);
+}
+
+.sl-badge.status-blocked {
+  --sl-color-bg-badge: var(--status-blocked-bg);
+  --sl-color-border-badge: color-mix(in srgb, var(--status-blocked-ink) 34%, transparent);
+  --sl-color-text-badge: var(--status-blocked-ink);
+}
+
+.sl-badge.status-mossy-only {
+  --sl-color-bg-badge: var(--status-mossy-bg);
+  --sl-color-border-badge: color-mix(in srgb, var(--status-mossy-ink) 34%, transparent);
+  --sl-color-text-badge: var(--status-mossy-ink);
+}
+
+.sidebar-content a[aria-current='page'] > .sl-badge.status-done,
+.sidebar-content a[aria-current='page'] > .sl-badge.status-partial,
+.sidebar-content a[aria-current='page'] > .sl-badge.status-missing,
+.sidebar-content a[aria-current='page'] > .sl-badge.status-blocked,
+.sidebar-content a[aria-current='page'] > .sl-badge.status-mossy-only {
+  color: var(--sl-color-text-badge);
+  border-color: var(--sl-color-border-badge);
+  background-color: transparent;
 }
 
 .component-list {

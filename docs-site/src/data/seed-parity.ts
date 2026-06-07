@@ -129,6 +129,26 @@ export function statusCounts(rows: Array<{ status: ParityStatus }>) {
   ) as Record<ParityStatus, number>;
 }
 
+export function statusBadge(status: ParityStatus) {
+  return {
+    text: status,
+    variant: {
+      완료: 'success',
+      부분완료: 'tip',
+      미구현: 'danger',
+      제약: 'caution',
+      'Mossy only': 'note',
+    }[status],
+    class: {
+      완료: 'status-done',
+      부분완료: 'status-partial',
+      미구현: 'status-missing',
+      제약: 'status-blocked',
+      'Mossy only': 'status-mossy-only',
+    }[status],
+  } as const;
+}
+
 function escapeHtml(value: string) {
   return value
     .replaceAll('&', '&amp;')
@@ -183,7 +203,7 @@ export const componentSidebar = [
     items: componentPages.map((page) => ({
       label: page.name,
       link: `/components/${page.slug}/`,
-      badge: page.status,
+      badge: statusBadge(page.status),
     })),
   },
 ];
