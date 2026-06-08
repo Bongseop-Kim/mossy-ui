@@ -7,7 +7,7 @@ import { resolveLayoutZIndex } from '../surfaceProps.shared';
 import { floatPlacementAlignment, resolveFloatOffset } from './shared';
 import type { MossyFloatProps } from './types';
 
-/** 부모 `Box` 크기에 맞춘 뒤 placement 위치에 자식을 고정 배치한다. `Box` 안에서 사용한다. */
+/** 부모 `ZStack` 크기에 맞춘 뒤 placement 위치에 자식을 고정 배치한다. `ZStack` 안에서 사용한다. */
 export function Float(props: MossyFloatProps) {
   const {
     placement,

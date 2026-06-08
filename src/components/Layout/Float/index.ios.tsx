@@ -9,7 +9,7 @@ import { swiftUIAlignment } from '../types';
 import { floatPlacementAlignment, resolveFloatOffset } from './shared';
 import type { MossyFloatProps } from './types';
 
-/** 부모 영역을 채운 뒤 placement 위치에 자식을 고정 배치한다. 크기가 정해진 `Box` 안에서 사용한다. */
+/** 부모 영역을 채운 뒤 placement 위치에 자식을 고정 배치한다. 크기가 정해진 `ZStack` 안에서 사용한다. */
 export function Float(props: MossyFloatProps) {
   const {
     placement,

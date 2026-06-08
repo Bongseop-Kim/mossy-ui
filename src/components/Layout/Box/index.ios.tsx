@@ -1,4 +1,4 @@
-import { ZStack } from '@expo/ui/swift-ui';
+import { Column } from '@expo/ui';
 
 import { useMossyTheme } from '../../../theme';
 import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
@@ -14,14 +14,14 @@ import {
 } from '../surfaceProps.shared';
 import type { MossyBoxProps } from './types';
 
-/** 자식을 겹쳐 쌓는 기초 레이아웃 컨테이너. SwiftUI `ZStack`으로 렌더된다. */
+/** 일반 children을 세로 flow로 배치하는 기초 surface 컨테이너. */
 export function Box(props: MossyBoxProps) {
   const { children, testID } = props;
   const theme = useMossyTheme();
 
   return (
-    <ZStack
-      alignment="topLeading"
+    <Column
+      alignment="start"
       testID={testID}
       modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
         beforeSurface: createMossyFillFrameModifiers({
@@ -35,7 +35,7 @@ export function Box(props: MossyBoxProps) {
         }),
       })}>
       {children}
-    </ZStack>
+    </Column>
   );
 }
 

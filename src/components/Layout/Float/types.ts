@@ -19,7 +19,7 @@ export type MossyFloatOffset = number | MossyDimensionToken;
 export interface MossyFloatProps extends MossyLayoutCustomizationProps {
   /** 고정 위치에 띄울 콘텐츠. */
   children?: ReactNode;
-  /** 부모 기준 고정 위치. 크기가 정해진 `Box` 안에서 사용한다. */
+  /** 부모 기준 고정 위치. 크기가 정해진 `ZStack` 안에서 사용한다. */
   placement: MossyFloatPlacement;
   /**
    * 가로 오프셋.

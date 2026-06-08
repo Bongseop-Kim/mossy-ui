@@ -13,7 +13,7 @@ mossy-ui 컴포넌트 작성 가이드. `src/components/`의 모든 컴포넌트
 컴포넌트는 universal 가용성에 따라 아래 세 패턴 중 하나를 따른다. 신규 컴포넌트는 먼저 어느 패턴인지 정한다.
 
 - **단일 구현 컴포넌트** — 플랫폼 분기가 전혀 없는 순수 래퍼/위임 컴포넌트는 `{Name}.tsx` 한 파일 (예: `Layout/Spacer.tsx`, `Layout/Flex.tsx` — `HStack`/`VStack`에 위임만 한다).
-- **OS 분기 컴포넌트(폴더형)** — universal(`@expo/ui`)에 대응 컴포넌트가 없어 swift-ui/jetpack-compose로 직접 분기하는 네이티브 전용 컴포넌트는 `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`, `Layout/Box/`(ZStack), `Layout/Float/`, `Layout/Grid/`).
+- **OS 분기 컴포넌트(폴더형)** — universal(`@expo/ui`)에 대응 컴포넌트가 없어 swift-ui/jetpack-compose로 직접 분기하는 네이티브 전용 컴포넌트는 `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`, `Layout/ZStack/`, `Layout/Float/`, `Layout/Grid/`).
   - `types.ts` — 공유 props 인터페이스 `Mossy{Name}Props`
   - `index.tsx` — 웹/기타 폴백. 렌더하지 않고(`return null`) 공개 타입 선언의 기준이 된다
   - `index.ios.tsx` — swift-ui 구현

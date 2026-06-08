@@ -14,10 +14,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@expo/ui": "^56.0.15",
-    "expo": "^56.0.8",
-    "expo-dev-client": "^56.0.18",
-    "expo-router": "~56.2.8",
+    "@expo/ui": "~56.0.16",
+    "expo": "~56.0.9",
+    "expo-dev-client": "~56.0.19",
+    "expo-router": "~56.2.9",
     "mossy-ui": "file:..",
     "react": "19.2.3",
     "react-dom": "19.2.3",

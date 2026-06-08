@@ -1,29 +1,30 @@
-import { Column } from '@expo/ui';
+import { ZStack as SwiftUIZStack } from '@expo/ui/swift-ui';
 
 import { useMossyTheme } from '../../../theme';
-import { createMossyLayoutSurfaceModifiers } from '../surface.android';
+import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
 import {
   createMossyEffectModifiers,
-  createMossyFillSizeModifiers,
-} from '../surfaceModifiers.android';
+  createMossyFillFrameModifiers,
+} from '../surfaceModifiers.ios';
 import {
   isFullLayoutLength,
   normalizeLayoutFlexGrow,
   resolveLayoutZIndex,
   toMossyLayoutSurfaceProps,
 } from '../surfaceProps.shared';
-import type { MossyBoxProps } from './types';
+import type { MossyZStackProps } from './types';
 
-/** 일반 children을 세로 flow로 배치하는 기초 surface 컨테이너. */
-export function Box(props: MossyBoxProps) {
-  const { children } = props;
+/** 자식을 겹쳐 쌓는 레이아웃 컨테이너. SwiftUI `ZStack`으로 렌더된다. */
+export function ZStack(props: MossyZStackProps) {
+  const { children, testID } = props;
   const theme = useMossyTheme();
 
   return (
-    <Column
-      alignment="start"
+    <SwiftUIZStack
+      alignment="topLeading"
+      testID={testID}
       modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
-        beforeSurface: createMossyFillSizeModifiers({
+        beforeSurface: createMossyFillFrameModifiers({
           fillWidth: isFullLayoutLength(props.width),
           fillHeight: isFullLayoutLength(props.height),
         }),
@@ -34,9 +35,9 @@ export function Box(props: MossyBoxProps) {
         }),
       })}>
       {children}
-    </Column>
+    </SwiftUIZStack>
   );
 }
 
-export type { MossyBoxProps } from './types';
+export type { MossyZStackProps } from './types';
 export type { MossyLayoutRadiusToken } from '../surfaceProps.shared';

@@ -58,6 +58,7 @@ export {
   type MossyVStackProps,
   type MossyVStackSizeConstraint,
 } from './components/Layout/VStack';
+export { ZStack, type MossyZStackProps } from './components/Layout/ZStack';
 export { List, type MossyListProps } from './components/List';
 export { ListHeader, type MossyListHeaderProps } from './components/ListHeader';
 export { ListItem, type MossyListItemProps } from './components/ListItem';
