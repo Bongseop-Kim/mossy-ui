@@ -81,14 +81,15 @@ export function createMossyLayoutSurfaceModifiers(
       modifiers.push(background(String(style.borderColor)));
       modifiers.push(paddingAll(borderWidth));
       modifiers.push(clip(Shapes.RoundedCorner(Math.max(0, radius - borderWidth))));
+      if (style.backgroundColor != null) {
+        modifiers.push(background(String(style.backgroundColor)));
+      }
       if (style.backgroundGradient != null && style.backgroundGradientDirection != null) {
         modifiers.push(
           mossyLinearGradientBackground(
             createMossyLinearGradientConfig(style.backgroundGradient, style.backgroundGradientDirection),
           ),
         );
-      } else if (style.backgroundColor != null) {
-        modifiers.push(background(String(style.backgroundColor)));
       }
     } else {
       if (hasBorder && !hasDirectionalBorder) modifiers.push(border(style.borderWidth as number, String(style.borderColor)));
@@ -109,10 +110,8 @@ export function createMossyLayoutSurfaceModifiers(
           ? createMossyLinearGradientConfig(style.backgroundGradient, style.backgroundGradientDirection)
           : undefined;
 
-      if (gradient != null) {
-        modifiers.push(mossyLinearGradientBackground(gradient));
-      }
-      if (gradient == null && style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
+      if (style.backgroundColor != null) modifiers.push(background(String(style.backgroundColor)));
+      if (gradient != null) modifiers.push(mossyLinearGradientBackground(gradient));
       if (hasDirectionalBorder) {
         modifiers.push(
           mossyDirectionalBorder({

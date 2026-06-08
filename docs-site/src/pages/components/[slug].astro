@@ -1,6 +1,7 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+import DeviceQR from '../../components/DeviceQR.astro';
 import PropsTable from '../../components/PropsTable.astro';
 import StatusBadge from '../../components/StatusBadge.astro';
 import {
@@ -24,6 +25,14 @@ interface Props {
 
 const { page } = Astro.props;
 const mossyRows = page.rows.filter(hasMossyMatch).length;
+const exampleSources = import.meta.glob('../../../../example/src/examples/*.tsx', {
+  eager: true,
+  import: 'default',
+  query: '?raw',
+});
+const exampleSource =
+  exampleSources[`../../../../example/src/examples/${page.slug}.tsx`] as string | undefined;
+const showDeviceQr = page.slug === 'box';
 const boxTokenMappings = [
   {
     prop: '`bg`, `background`',
@@ -237,6 +246,7 @@ const frontmatter = {
   frontmatter={frontmatter}
   sidebar={componentSidebar}
   headings={[
+    ...(exampleSource != null ? [{ depth: 2 as const, slug: 'code', text: '코드' }] : []),
     { depth: 2, slug: 'props', text: 'Props' },
     ...(tokenMappingGroups.length > 0
       ? [{ depth: 2 as const, slug: 'seed-mossy-token-mapping', text: 'Seed ↔ Mossy token mapping' }]
@@ -256,6 +266,17 @@ const frontmatter = {
     </div>
     <StatusBadge status={page.status} />
   </div>
+
+  {showDeviceQr ? <DeviceQR slug={page.slug} /> : null}
+
+  {
+    exampleSource != null ? (
+      <>
+        <AnchorHeading level="2" id="code">코드</AnchorHeading>
+        <pre class="astro-code"><code>{exampleSource}</code></pre>
+      </>
+    ) : null
+  }
 
   <AnchorHeading level="2" id="props">Props</AnchorHeading>
   <PropsTable rows={page.rows} />

@@ -99,10 +99,11 @@ export function createMossyLayoutSurfaceModifiers(
       style.borderBottomRightRadius != null ||
       style.borderBottomLeftRadius != null;
 
+    if (style.backgroundColor != null) {
+      modifiers.push(background(String(style.backgroundColor)));
+    }
     if (gradient != null) {
       modifiers.push(mossyLinearGradientBackground(gradient));
-    } else if (style.backgroundColor != null) {
-      modifiers.push(background(String(style.backgroundColor)));
     }
 
     if (style.borderWidth != null && style.borderColor != null && !hasDirectionalBorder) {

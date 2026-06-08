@@ -17,6 +17,10 @@ version = '0.1.0'
 android {
   namespace "com.mossyui"
 
+  defaultConfig {
+    versionName project.version
+  }
+
   buildFeatures {
     compose true
   }

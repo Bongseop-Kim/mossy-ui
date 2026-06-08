@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams } from 'expo-router';
@@ -13,10 +12,6 @@ export default function ComponentDetailScreen() {
   const theme = useMossyTheme();
   const { mode } = useShowcaseMode();
   const { slug } = useLocalSearchParams<{ slug?: string }>();
-  const [isLocalOnly, setIsLocalOnly] = useState(true);
-  const [allowsNotice, setAllowsNotice] = useState(false);
-  const [priceRange, setPriceRange] = useState(42);
-  const [segmentIndex, setSegmentIndex] = useState(0);
   const component =
     showcaseComponents.find((item) => item.slug === slug) ?? showcaseComponents[0];
 
@@ -35,18 +30,7 @@ export default function ComponentDetailScreen() {
           { padding: theme.dimension.spacingX.globalGutter },
         ]}
       >
-        <PreviewPanel
-          mode={mode}
-          component={component}
-          allowsNotice={allowsNotice}
-          isLocalOnly={isLocalOnly}
-          priceRange={priceRange}
-          segmentIndex={segmentIndex}
-          onAllowsNoticeChange={setAllowsNotice}
-          onIsLocalOnlyChange={setIsLocalOnly}
-          onPriceRangeChange={setPriceRange}
-          onSegmentIndexChange={setSegmentIndex}
-        />
+        <PreviewPanel mode={mode} preview={component.preview} />
       </ScrollView>
     </SafeAreaView>
   );

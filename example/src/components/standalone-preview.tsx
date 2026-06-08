@@ -73,7 +73,7 @@ function ScrollFogPreview({ mode }: { mode: MossyThemeMode }) {
     <ScrollFog placement={['top', 'bottom']} size="x6" style={styles.fog}>
       <Host colorScheme={mode} style={styles.fogHost}>
         <ScrollView padding="x4">
-          <VStack spacing="x3">
+          <VStack gap="x3">
             {FOG_ROWS.map((label) => (
               <Text key={label} textStyle="t4Regular" color="fg.neutral">
                 {label}

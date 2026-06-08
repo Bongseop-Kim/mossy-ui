@@ -1,0 +1,82 @@
+---
+import { toQR } from 'toqr';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const deepLink = `mossyui://components/${slug}`;
+const encodedDeepLink = encodeURIComponent(deepLink);
+const matrix = toQR(deepLink);
+const matrixSize = Math.sqrt(matrix.length);
+const cellSize = 4;
+const quietZone = 4;
+const svgSize = (matrixSize + quietZone * 2) * cellSize;
+const modules = Array.from(matrix);
+---
+
+<aside class="device-qr" aria-labelledby={`device-qr-${slug}`}>
+  <div class="device-qr__code" aria-label={`${deepLink} QR`}>
+    <svg viewBox={`0 0 ${svgSize} ${svgSize}`} role="img">
+      <title>{deepLink}</title>
+      <rect width={svgSize} height={svgSize} fill="white" />
+      {
+        modules.map((value, index) =>
+          value === 1 ? (
+            <rect
+              x={(quietZone + (index % matrixSize)) * cellSize}
+              y={(quietZone + Math.floor(index / matrixSize)) * cellSize}
+              width={cellSize}
+              height={cellSize}
+              fill="black"
+            />
+          ) : null,
+        )
+      }
+    </svg>
+  </div>
+  <div>
+    <p id={`device-qr-${slug}`} class="device-qr__title">example 앱(dev 빌드)에서 열기</p>
+    <p class="device-qr__description">
+      이 QR은 example dev 빌드가 설치된 기기에서만 열린다.
+    </p>
+    <a href={deepLink}>{deepLink}</a>
+    {/* TODO(qr): mossyui://components/<slug> */}
+  </div>
+</aside>
+
+<style>
+  .device-qr {
+    align-items: center;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem;
+  }
+
+  .device-qr__code {
+    background: white;
+    border-radius: 8px;
+    flex: 0 0 auto;
+    padding: 0.5rem;
+  }
+
+  .device-qr__code svg {
+    display: block;
+    height: 132px;
+    width: 132px;
+  }
+
+  .device-qr__title {
+    color: var(--sl-color-white);
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+  }
+
+  .device-qr__description {
+    margin: 0 0 0.5rem;
+  }
+</style>

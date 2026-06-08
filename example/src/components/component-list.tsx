@@ -42,7 +42,7 @@ function ComponentRow({ component }: ComponentRowProps) {
         </Text>
       }
     >
-      <VStack spacing={2}>
+      <VStack gap={2}>
         <Text textStyle="t4Bold" color="fg.neutral">
           {component.name}
         </Text>

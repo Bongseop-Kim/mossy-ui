@@ -32,7 +32,7 @@ export function TextField({
   const supportingColor = hasErrorMessage ? 'fg.critical' : 'fg.neutralMuted';
 
   return (
-    <VStack spacing="x2">
+    <VStack gap="x2">
       {label != null ? (
         <Text textStyle="t3Bold" color={invalid ? 'fg.critical' : 'fg.neutral'}>
           {label}

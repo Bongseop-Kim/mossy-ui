@@ -1,7 +1,5 @@
 import type { ShowcaseComponent } from './types';
 
-export const segmentedOptions = ['추천', '인기', '최신'];
-
 export const showcaseComponents: ShowcaseComponent[] = [
   { name: 'ActionButton', slug: 'action-button', group: '미구현' },
   { name: 'ActionChip', slug: 'action-chip', group: '미구현' },
