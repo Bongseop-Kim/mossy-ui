@@ -2,12 +2,11 @@ import { Row } from '@expo/ui';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { isFullBoxLength, resolveBoxZIndex } from './Box/types';
+import { isFullBoxLength, resolveBoxZIndex, toMossyBoxSurfaceProps } from './Box/types';
 import {
   resolveHStackAlign,
   resolveHStackGrow,
   resolveHStackJustify,
-  toMossyHStackSurfaceProps,
 } from './HStack.shared';
 import { StackChildren } from './StackChildren';
 import { createMossyLayoutSurfaceModifiers } from './surface.ios';
@@ -31,7 +30,7 @@ export function HStack(props: MossyHStackProps) {
       alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
       spacing={resolveMossyDimension(theme, gap)}
       testID={testID}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyHStackSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
         beforeSurface: createMossyFillFrameModifiers({
           fillWidth: isFullBoxLength(props.width),
           fillHeight: isFullBoxLength(props.height),

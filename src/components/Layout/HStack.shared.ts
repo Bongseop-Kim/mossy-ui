@@ -1,4 +1,3 @@
-import { toMossyBoxSurfaceProps } from './Box/types';
 import type { MossyHStackProps } from './HStack';
 import { resolveStackGrow } from './stack';
 
@@ -14,11 +13,3 @@ export function resolveHStackGrow(props: MossyHStackProps) {
   return resolveStackGrow(props);
 }
 
-export function toMossyHStackSurfaceProps(props: MossyHStackProps) {
-  return toMossyBoxSurfaceProps({
-    ...props,
-    backgroundGradient: props.bgGradient ?? props.backgroundGradient,
-    backgroundGradientDirection:
-      props.bgGradientDirection ?? props.backgroundGradientDirection,
-  });
-}

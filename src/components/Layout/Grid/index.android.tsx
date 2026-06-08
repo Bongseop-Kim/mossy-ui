@@ -7,6 +7,7 @@ import {
   isFullBoxLength,
   normalizeBoxFlexGrow,
   resolveBoxZIndex,
+  toMossyBoxSurfaceProps,
 } from '../Box/types';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
 import { shouldRenderLayoutSurface } from '../surface.shared';
@@ -16,7 +17,6 @@ import {
 } from '../surfaceModifiers.android';
 import { chunkCells } from './chunk';
 import { GridItem } from './Item';
-import { toMossyGridSurfaceProps } from './shared';
 import type { MossyGridProps } from './types';
 
 /** 고정 열·행 개수 그리드. Compose `Column`/`Row`와 `weight`로 균등 셀을 만든다. */
@@ -31,7 +31,7 @@ export function Grid(props: MossyGridProps) {
   return (
     <ComposeColumn
       verticalArrangement={resolvedGap != null ? { spacedBy: resolvedGap } : undefined}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyGridSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
         beforeSurface: createMossyFillSizeModifiers({
           fillWidth: isFullBoxLength(props.width),
           fillHeight: isFullBoxLength(props.height),

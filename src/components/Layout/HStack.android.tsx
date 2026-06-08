@@ -2,12 +2,11 @@ import { Row } from '@expo/ui';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { isFullBoxLength, resolveBoxZIndex } from './Box/types';
+import { isFullBoxLength, resolveBoxZIndex, toMossyBoxSurfaceProps } from './Box/types';
 import {
   resolveHStackAlign,
   resolveHStackGrow,
   resolveHStackJustify,
-  toMossyHStackSurfaceProps,
 } from './HStack.shared';
 import { StackChildren } from './StackChildren';
 import { createMossyLayoutSurfaceModifiers } from './surface.android';
@@ -30,7 +29,7 @@ export function HStack(props: MossyHStackProps) {
     <Row
       alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
       spacing={resolveMossyDimension(theme, gap)}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyHStackSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
         beforeSurface: createMossyFillSizeModifiers({
           fillWidth: isFullBoxLength(props.width),
           fillHeight: isFullBoxLength(props.height),

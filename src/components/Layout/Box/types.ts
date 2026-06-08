@@ -126,9 +126,10 @@ export function toMossyBoxSurfaceProps(props: MossyBoxSurfaceInput): MossyLayout
     paddingStart: props.paddingLeft ?? props.pl,
     paddingEnd: props.paddingRight ?? props.pr,
     backgroundColor: props.background ?? props.bg,
-    backgroundGradient: props.backgroundGradient ?? props.bgGradient,
+    // Seed useStyleProps와 동일하게 bg- 단축형이 long-form보다 우선한다.
+    backgroundGradient: props.bgGradient ?? props.backgroundGradient,
     backgroundGradientDirection:
-      props.backgroundGradientDirection ?? props.bgGradientDirection,
+      props.bgGradientDirection ?? props.backgroundGradientDirection,
     borderColor: props.borderColor,
     borderWidth: resolveBoxBorderWidth(props.borderWidth),
     borderTopWidth: resolveBoxBorderWidth(props.borderTopWidth),
