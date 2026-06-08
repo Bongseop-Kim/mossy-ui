@@ -13,7 +13,8 @@
         "NSAppTransportSecurity": {
           "NSAllowsArbitraryLoads": true
         }
-      }
+      },
+      "appleTeamId": "Z995BAAVG5"
     },
     "android": {
       "package": "dev.mossyui.example"

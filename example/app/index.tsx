@@ -1,4 +1,4 @@
-import { Host } from "@expo/ui";
+import { Host, Icon as ExpoIcon } from "@expo/ui";
 import { Stack } from "expo-router";
 import { useState } from "react";
 
@@ -8,6 +8,17 @@ import { useShowcaseMode } from "./_layout";
 import { ComponentList } from "../src/components/component-list";
 import { SearchField } from "../src/components/search-field";
 import { showcaseComponents } from "../src/data";
+
+const themeModeIcons = {
+  dark: ExpoIcon.select({
+    ios: "moon",
+    android: require("../src/assets/icons/moon.xml"),
+  }),
+  light: ExpoIcon.select({
+    ios: "sun.max",
+    android: require("../src/assets/icons/sun.xml"),
+  }),
+} as const;
 
 export default function ComponentsIndexScreen() {
   const theme = useMossyTheme();
@@ -30,7 +41,7 @@ export default function ComponentsIndexScreen() {
           accessibilityLabel={
             mode === "light" ? "다크 모드로 전환" : "라이트 모드로 전환"
           }
-          icon={mode === "light" ? "moon" : "sun.max"}
+          icon={mode === "light" ? themeModeIcons.dark : themeModeIcons.light}
           onPress={() => setMode(nextMode)}
         />
       </Stack.Toolbar>
