@@ -2,7 +2,7 @@ import { Row } from '@expo/ui';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { isFullBoxLength, resolveBoxZIndex, toMossyBoxSurfaceProps } from './Box/types';
+import { isFullLayoutLength, resolveLayoutZIndex, toMossyLayoutSurfaceProps } from './surfaceProps.shared';
 import {
   resolveHStackAlign,
   resolveHStackGrow,
@@ -30,15 +30,15 @@ export function HStack(props: MossyHStackProps) {
       alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
       spacing={resolveMossyDimension(theme, gap)}
       testID={testID}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
         beforeSurface: createMossyFillFrameModifiers({
-          fillWidth: isFullBoxLength(props.width),
-          fillHeight: isFullBoxLength(props.height),
+          fillWidth: isFullLayoutLength(props.width),
+          fillHeight: isFullLayoutLength(props.height),
         }),
         afterSurface: createMossyEffectModifiers({
           grow: normalizeGrow(resolveHStackGrow(props)),
           shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
-          zIndexValue: resolveBoxZIndex(props.zIndex),
+          zIndexValue: resolveLayoutZIndex(props.zIndex),
         }),
       })}>
       <StackChildren justify={resolveHStackJustify(props)}>{children}</StackChildren>

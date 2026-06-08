@@ -3,10 +3,10 @@ import { Column, Row } from '@expo/ui';
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
 import {
-  isFullBoxLength,
-  resolveBoxZIndex,
-  toMossyBoxSurfaceProps,
-} from './Box/types';
+  isFullLayoutLength,
+  resolveLayoutZIndex,
+  toMossyLayoutSurfaceProps,
+} from './surfaceProps.shared';
 import { StackChildren } from './StackChildren';
 import { createMossyLayoutSurfaceModifiers } from './surface.android';
 import { shouldRenderLayoutSurface } from './surface.shared';
@@ -46,15 +46,15 @@ export function VStack(props: MossyVStackProps) {
   const stackProps = {
     alignment: resolveAlignment(align ?? alignItems, undefined),
     spacing: resolveMossyDimension(theme, gap),
-    modifiers: createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
+    modifiers: createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
       beforeSurface: createMossyFillSizeModifiers({
-        fillWidth: isFullBoxLength(props.width),
-        fillHeight: isFullBoxLength(props.height),
+        fillWidth: isFullLayoutLength(props.width),
+        fillHeight: isFullLayoutLength(props.height),
       }),
       afterSurface: createMossyEffectModifiers({
         grow: normalizeGrow(resolveStackGrow(props)),
         shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
-        zIndexValue: resolveBoxZIndex(props.zIndex),
+        zIndexValue: resolveLayoutZIndex(props.zIndex),
       }),
     }),
   };

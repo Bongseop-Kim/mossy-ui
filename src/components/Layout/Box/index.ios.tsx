@@ -7,12 +7,12 @@ import {
   createMossyFillFrameModifiers,
 } from '../surfaceModifiers.ios';
 import {
-  isFullBoxLength,
-  normalizeBoxFlexGrow,
-  resolveBoxZIndex,
-  toMossyBoxSurfaceProps,
-  type MossyBoxProps,
-} from './types';
+  isFullLayoutLength,
+  normalizeLayoutFlexGrow,
+  resolveLayoutZIndex,
+  toMossyLayoutSurfaceProps,
+} from '../surfaceProps.shared';
+import type { MossyBoxProps } from './types';
 
 /** 자식을 겹쳐 쌓는 기초 레이아웃 컨테이너. SwiftUI `ZStack`으로 렌더된다. */
 export function Box(props: MossyBoxProps) {
@@ -23,15 +23,15 @@ export function Box(props: MossyBoxProps) {
     <ZStack
       alignment="topLeading"
       testID={testID}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
         beforeSurface: createMossyFillFrameModifiers({
-          fillWidth: isFullBoxLength(props.width),
-          fillHeight: isFullBoxLength(props.height),
+          fillWidth: isFullLayoutLength(props.width),
+          fillHeight: isFullLayoutLength(props.height),
         }),
         afterSurface: createMossyEffectModifiers({
-          grow: normalizeBoxFlexGrow(props.flexGrow),
+          grow: normalizeLayoutFlexGrow(props.flexGrow),
           shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
-          zIndexValue: resolveBoxZIndex(props.zIndex),
+          zIndexValue: resolveLayoutZIndex(props.zIndex),
         }),
       })}>
       {children}
@@ -39,4 +39,5 @@ export function Box(props: MossyBoxProps) {
   );
 }
 
-export type { MossyBoxProps, MossyBoxRadiusToken } from './types';
+export type { MossyBoxProps } from './types';
+export type { MossyLayoutRadiusToken } from '../surfaceProps.shared';

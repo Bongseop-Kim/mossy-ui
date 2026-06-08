@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { toMossyBoxSurfaceProps } from './Box/types';
+import { toMossyLayoutSurfaceProps } from './surfaceProps.shared';
 import { StackChildren } from './StackChildren';
 import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface } from './surface.shared';
 import {
@@ -39,7 +39,7 @@ export function VStack(props: MossyVStackProps) {
   const stackProps = {
     alignment: resolveAlignment(align ?? alignItems, undefined),
     spacing: resolveMossyDimension(theme, gap),
-    style: resolveMossyLayoutSurfaceStyle(theme, toMossyBoxSurfaceProps(props)),
+    style: resolveMossyLayoutSurfaceStyle(theme, toMossyLayoutSurfaceProps(props)),
   };
 
   if (!shouldRenderLayoutSurface(display)) return null;

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
-import { toMossyBoxSurfaceProps } from './Box/types';
+import { toMossyLayoutSurfaceProps } from './surfaceProps.shared';
 import { resolveHStackAlign, resolveHStackJustify } from './HStack.shared';
 import { StackChildren } from './StackChildren';
 import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface } from './surface.shared';
@@ -32,7 +32,7 @@ export function HStack(props: MossyHStackProps) {
     <Row
       alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
       spacing={resolveMossyDimension(theme, gap)}
-      style={resolveMossyLayoutSurfaceStyle(theme, toMossyBoxSurfaceProps(props))}>
+      style={resolveMossyLayoutSurfaceStyle(theme, toMossyLayoutSurfaceProps(props))}>
       <StackChildren justify={resolveHStackJustify(props)}>{children}</StackChildren>
     </Row>
   );

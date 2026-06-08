@@ -5,4 +5,5 @@ export function Box(_props: MossyBoxProps) {
   return null;
 }
 
-export type { MossyBoxProps, MossyBoxRadiusToken } from './types';
+export type { MossyBoxProps } from './types';
+export type { MossyLayoutRadiusToken } from '../surfaceProps.shared';

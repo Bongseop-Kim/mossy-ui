@@ -1,29 +1,29 @@
 import type { ReactNode } from 'react';
 
 import type {
-  MossyBoxBackgroundProps,
-  MossyBoxBorderProps,
-  MossyBoxFlexGrow,
-  MossyBoxLength,
-  MossyBoxPadding,
-  MossyBoxPaddingProps,
-  MossyBoxProps,
-  MossyBoxShadow,
-  MossyBoxZIndex,
+  MossyLayoutBackgroundProps,
+  MossyLayoutBorderProps,
   MossyLayoutCustomizationProps,
-} from '../Box/types';
+  MossyLayoutFlexGrow,
+  MossyLayoutLength,
+  MossyLayoutPadding,
+  MossyLayoutPaddingProps,
+  MossyLayoutShadow,
+  MossyLayoutZIndex,
+} from '../surfaceProps.shared';
+import type { MossyBoxProps } from '../Box/types';
 
 export type MossyGridDisplay = 'grid' | 'none';
 export type MossyGridTrackCount = number;
 export type MossyGridAutoFlow = 'row' | 'column';
-export type MossyGridSizeConstraint = Exclude<MossyBoxLength, 'full'>;
+export type MossyGridSizeConstraint = Exclude<MossyLayoutLength, 'full'>;
 export type MossyGridItemSpan = number | 'full';
 export type MossyGridItemLine = number;
 
 export interface MossyGridProps
-  extends MossyBoxPaddingProps,
-    MossyBoxBackgroundProps,
-    MossyBoxBorderProps,
+  extends MossyLayoutPaddingProps,
+    MossyLayoutBackgroundProps,
+    MossyLayoutBorderProps,
     MossyLayoutCustomizationProps {
   /** 셀로 배치할 콘텐츠. 기본은 행 우선이며 `autoFlow="column"`이면 열 우선으로 채워진다. */
   children?: ReactNode;
@@ -39,16 +39,16 @@ export interface MossyGridProps
   /** 아이템 배치 방향. Seed `row`/`column` auto-flow를 행·열 우선 배치로 정규화한다. */
   autoFlow?: MossyGridAutoFlow;
   /** 셀 사이 간격. Seed `gap` prop과 동일하다. */
-  gap?: MossyBoxPadding;
-  flexGrow?: MossyBoxFlexGrow;
-  boxShadow?: MossyBoxShadow;
-  width?: MossyBoxLength;
-  height?: MossyBoxLength;
+  gap?: MossyLayoutPadding;
+  flexGrow?: MossyLayoutFlexGrow;
+  boxShadow?: MossyLayoutShadow;
+  width?: MossyLayoutLength;
+  height?: MossyLayoutLength;
   minWidth?: MossyGridSizeConstraint;
   maxWidth?: MossyGridSizeConstraint;
   minHeight?: MossyGridSizeConstraint;
   maxHeight?: MossyGridSizeConstraint;
-  zIndex?: MossyBoxZIndex;
+  zIndex?: MossyLayoutZIndex;
 }
 
 export interface MossyGridItemProps extends Omit<

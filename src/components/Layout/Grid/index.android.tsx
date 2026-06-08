@@ -4,11 +4,11 @@ import { weight } from '@expo/ui/jetpack-compose/modifiers';
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
 import { useMossyTheme } from '../../../theme';
 import {
-  isFullBoxLength,
-  normalizeBoxFlexGrow,
-  resolveBoxZIndex,
-  toMossyBoxSurfaceProps,
-} from '../Box/types';
+  isFullLayoutLength,
+  normalizeLayoutFlexGrow,
+  resolveLayoutZIndex,
+  toMossyLayoutSurfaceProps,
+} from '../surfaceProps.shared';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
 import { shouldRenderLayoutSurface } from '../surface.shared';
 import {
@@ -31,15 +31,15 @@ export function Grid(props: MossyGridProps) {
   return (
     <ComposeColumn
       verticalArrangement={resolvedGap != null ? { spacedBy: resolvedGap } : undefined}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
         beforeSurface: createMossyFillSizeModifiers({
-          fillWidth: isFullBoxLength(props.width),
-          fillHeight: isFullBoxLength(props.height),
+          fillWidth: isFullLayoutLength(props.width),
+          fillHeight: isFullLayoutLength(props.height),
         }),
         afterSurface: createMossyEffectModifiers({
-          grow: normalizeBoxFlexGrow(props.flexGrow),
+          grow: normalizeLayoutFlexGrow(props.flexGrow),
           shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
-          zIndexValue: resolveBoxZIndex(props.zIndex),
+          zIndexValue: resolveLayoutZIndex(props.zIndex),
         }),
       })}>
       {rows.map((cells, rowIndex) => (

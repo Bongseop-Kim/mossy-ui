@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { MossyDimensionToken } from '../../../foundation/component-tokens';
-import type { MossyBoxZIndex, MossyLayoutCustomizationProps } from '../Box/types';
+import type { MossyLayoutZIndex, MossyLayoutCustomizationProps } from '../surfaceProps.shared';
 
 export type MossyFloatPlacement =
   | 'bottom-end'
@@ -33,5 +33,5 @@ export interface MossyFloatProps extends MossyLayoutCustomizationProps {
    * @default 0
    */
   offsetY?: MossyFloatOffset;
-  zIndex?: MossyBoxZIndex;
+  zIndex?: MossyLayoutZIndex;
 }

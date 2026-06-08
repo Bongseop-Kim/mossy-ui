@@ -1,19 +1,19 @@
 import { Children, type ReactNode } from 'react';
 
 import type {
-  MossyBoxBackground,
-  MossyBoxBackgroundProps,
-  MossyBoxBorderColor,
-  MossyBoxBorderProps,
-  MossyBoxBorderWidth,
-  MossyBoxLength,
-  MossyBoxPadding,
-  MossyBoxPaddingProps,
-  MossyBoxRadiusToken,
-  MossyBoxShadow,
-  MossyBoxZIndex,
+  MossyLayoutBackground,
+  MossyLayoutBackgroundProps,
+  MossyLayoutBorderColor,
+  MossyLayoutBorderProps,
+  MossyLayoutBorderWidth,
+  MossyLayoutLength,
+  MossyLayoutPadding,
+  MossyLayoutPaddingProps,
+  MossyLayoutRadiusToken,
+  MossyLayoutShadow,
+  MossyLayoutZIndex,
   MossyLayoutCustomizationProps,
-} from './Box/types';
+} from './surfaceProps.shared';
 
 export type MossyStackDisplay = 'flex' | 'none';
 
@@ -45,7 +45,7 @@ export type MossyStackDirection =
   | 'rowReverse'
   | 'columnReverse';
 
-export interface MossyStackBaseProps extends MossyBoxPaddingProps, MossyLayoutCustomizationProps {
+export interface MossyStackBaseProps extends MossyLayoutPaddingProps, MossyLayoutCustomizationProps {
   /**
    * 렌더 여부. Seed Stack은 `flex`와 `none`만 제공한다.
    * @default 'flex'
@@ -64,30 +64,30 @@ export interface MossyStackBaseProps extends MossyBoxPaddingProps, MossyLayoutCu
   /** Seed Box `flexGrow` prop. `grow`와 같은 native grow modifier로 정규화한다. */
   flexGrow?: MossyStackGrow;
   /** 자식 사이 간격. Seed `gap` prop과 동일하다. */
-  gap?: MossyBoxPadding;
-  bg?: MossyBoxBackground;
-  background?: MossyBoxBackground;
-  borderColor?: MossyBoxBorderColor;
-  borderWidth?: MossyBoxBorderWidth;
-  borderRadius?: MossyBoxRadiusToken | 0;
-  width?: MossyBoxLength;
-  height?: MossyBoxLength;
+  gap?: MossyLayoutPadding;
+  bg?: MossyLayoutBackground;
+  background?: MossyLayoutBackground;
+  borderColor?: MossyLayoutBorderColor;
+  borderWidth?: MossyLayoutBorderWidth;
+  borderRadius?: MossyLayoutRadiusToken | 0;
+  width?: MossyLayoutLength;
+  height?: MossyLayoutLength;
 }
 
 /** width/height의 `'full'`을 제외한 Stack 크기 제약 토큰. */
-export type MossyStackSizeConstraint = Exclude<MossyBoxLength, 'full'>;
+export type MossyStackSizeConstraint = Exclude<MossyLayoutLength, 'full'>;
 
 /** HStack·VStack이 공유하는 surface 장식 prop (gradient·방향별 테두리·모서리 반경·그림자·크기 제약·zIndex). */
 export interface MossyStackSurfaceProps
-  extends MossyBoxBackgroundProps,
-    MossyBoxBorderProps,
+  extends MossyLayoutBackgroundProps,
+    MossyLayoutBorderProps,
     MossyLayoutCustomizationProps {
-  boxShadow?: MossyBoxShadow;
+  boxShadow?: MossyLayoutShadow;
   minWidth?: MossyStackSizeConstraint;
   maxWidth?: MossyStackSizeConstraint;
   minHeight?: MossyStackSizeConstraint;
   maxHeight?: MossyStackSizeConstraint;
-  zIndex?: MossyBoxZIndex;
+  zIndex?: MossyLayoutZIndex;
 }
 
 export type MossyStackAlignment = 'start' | 'center' | 'end';

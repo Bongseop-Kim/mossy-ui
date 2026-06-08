@@ -3,7 +3,7 @@ import { matchParentSize, offset, testID as testIDModifier, zIndex } from '@expo
 
 import type { MossyModifier } from '../../../foundation/modifier';
 import { useMossyTheme } from '../../../theme';
-import { resolveBoxZIndex } from '../Box/types';
+import { resolveLayoutZIndex } from '../surfaceProps.shared';
 import { floatPlacementAlignment, resolveFloatOffset } from './shared';
 import type { MossyFloatProps } from './types';
 
@@ -21,7 +21,7 @@ export function Float(props: MossyFloatProps) {
   const theme = useMossyTheme();
   const alignment = floatPlacementAlignment[placement];
   const { x, y } = resolveFloatOffset(theme, placement, offsetX, offsetY);
-  const zIndexValue = resolveBoxZIndex(zIndexProp);
+  const zIndexValue = resolveLayoutZIndex(zIndexProp);
   const modifiers: MossyModifier[] = [matchParentSize(), offset(x, y)];
 
   if (zIndexValue != null) modifiers.push(zIndex(zIndexValue));

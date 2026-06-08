@@ -5,11 +5,11 @@ import type { MossyModifier } from '../../../foundation/modifier';
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
 import { useMossyTheme } from '../../../theme';
 import {
-  isFullBoxLength,
-  normalizeBoxFlexGrow,
-  resolveBoxZIndex,
-  toMossyBoxSurfaceProps,
-} from '../Box/types';
+  isFullLayoutLength,
+  normalizeLayoutFlexGrow,
+  resolveLayoutZIndex,
+  toMossyLayoutSurfaceProps,
+} from '../surfaceProps.shared';
 import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
 import { shouldRenderLayoutSurface } from '../surface.shared';
 import {
@@ -36,15 +36,15 @@ export function Grid(props: MossyGridProps) {
       horizontalSpacing={resolvedGap}
       verticalSpacing={resolvedGap}
       testID={testID}
-      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
+      modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
         beforeSurface: createMossyFillFrameModifiers({
-          fillWidth: isFullBoxLength(props.width),
-          fillHeight: isFullBoxLength(props.height),
+          fillWidth: isFullLayoutLength(props.width),
+          fillHeight: isFullLayoutLength(props.height),
         }),
         afterSurface: createMossyEffectModifiers({
-          grow: normalizeBoxFlexGrow(props.flexGrow),
+          grow: normalizeLayoutFlexGrow(props.flexGrow),
           shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
-          zIndexValue: resolveBoxZIndex(props.zIndex),
+          zIndexValue: resolveLayoutZIndex(props.zIndex),
         }),
       })}>
       {rows.map((cells, rowIndex) => (

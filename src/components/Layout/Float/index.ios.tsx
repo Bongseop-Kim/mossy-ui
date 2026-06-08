@@ -3,7 +3,7 @@ import { frame, offset, zIndex } from '@expo/ui/swift-ui/modifiers';
 
 import type { MossyModifier } from '../../../foundation/modifier';
 import { useMossyTheme } from '../../../theme';
-import { resolveBoxZIndex } from '../Box/types';
+import { resolveLayoutZIndex } from '../surfaceProps.shared';
 import { SWIFTUI_FILL } from '../surfaceModifiers.ios';
 import { swiftUIAlignment } from '../types';
 import { floatPlacementAlignment, resolveFloatOffset } from './shared';
@@ -23,7 +23,7 @@ export function Float(props: MossyFloatProps) {
   const theme = useMossyTheme();
   const alignment = swiftUIAlignment[floatPlacementAlignment[placement]];
   const { x, y } = resolveFloatOffset(theme, placement, offsetX, offsetY);
-  const zIndexValue = resolveBoxZIndex(zIndexProp);
+  const zIndexValue = resolveLayoutZIndex(zIndexProp);
   const modifiers: MossyModifier[] = [
     frame({ maxWidth: SWIFTUI_FILL, maxHeight: SWIFTUI_FILL, alignment }),
     offset({ x, y }),
