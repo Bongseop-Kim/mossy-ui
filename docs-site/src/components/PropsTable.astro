@@ -79,19 +79,26 @@ function escapeHtml(value: string) {
     </thead>
     <tbody>
       {
-        rows.flatMap((row) => {
+        rows.map((row) => {
           const items = splitPropStatus(row.propStatus);
 
-          return items.flatMap((item) => propTableItems(row, item)).map((item) => (
-            <tr>
-              <td set:html={markdownInlineToHtml(item.prop)} />
-              <td>{item.type === '-' ? '-' : <code set:html={typeToHtml(item.type)} />}</td>
-              <td>
-                {item.status ? <StatusBadge status={item.status} /> : '-'}
-              </td>
-              <td set:html={item.note ? markdownInlineToHtml(item.note) : '-'} />
-            </tr>
-          ));
+          return (
+            <>
+              <tr class="props-table-component-row">
+                <th colspan="4" scope="rowgroup" set:html={markdownInlineToHtml(row.seed)} />
+              </tr>
+              {items.flatMap((item) => propTableItems(row, item)).map((item) => (
+                <tr>
+                  <td set:html={markdownInlineToHtml(item.prop)} />
+                  <td>{item.type === '-' ? '-' : <code set:html={typeToHtml(item.type)} />}</td>
+                  <td>
+                    {item.status ? <StatusBadge status={item.status} /> : '-'}
+                  </td>
+                  <td set:html={item.note ? markdownInlineToHtml(item.note) : '-'} />
+                </tr>
+              ))}
+            </>
+          );
         })
       }
     </tbody>

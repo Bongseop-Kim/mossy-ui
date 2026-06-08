@@ -32,8 +32,12 @@ export {
 export { Float, type MossyFloatProps } from './components/Layout/Float';
 export {
   Grid,
+  GridItem,
   type MossyGridAutoFlow,
   type MossyGridDisplay,
+  type MossyGridItemLine,
+  type MossyGridItemProps,
+  type MossyGridItemSpan,
   type MossyGridProps,
   type MossyGridSizeConstraint,
   type MossyGridTrackCount,

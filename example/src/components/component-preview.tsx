@@ -176,7 +176,9 @@ function GridPreview() {
   return (
     <Grid columns={2} gap="x2">
       <PreviewToken label="1" />
-      <PreviewToken label="2" />
+      <Grid.Item colSpan="full">
+        <PreviewToken label="2 · full" />
+      </Grid.Item>
       <PreviewToken label="3" />
       <PreviewToken label="4" />
     </Grid>

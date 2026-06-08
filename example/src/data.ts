@@ -44,7 +44,6 @@ export const showcaseComponents: ShowcaseComponent[] = [
     group: '미구현',
   },
   { name: 'Grid', slug: 'grid', group: '완료', preview: 'grid' },
-  { name: 'GridItem', slug: 'grid-item', group: '제약' },
   { name: 'HelpBubble', slug: 'help-bubble', group: '제약' },
   { name: 'Icon', slug: 'icon', group: '부분완료' },
   { name: 'IdentityPlaceholder', slug: 'identity-placeholder', group: '미구현' },

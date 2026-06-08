@@ -17,6 +17,7 @@ import {
 } from '../Box/types';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
 import { chunkCells } from './chunk';
+import { GridItem } from './Item';
 import { toMossyGridSurfaceProps } from './shared';
 import type { MossyGridProps } from './types';
 
@@ -24,7 +25,7 @@ import type { MossyGridProps } from './types';
 export function Grid(props: MossyGridProps) {
   const { columns, rows: rowCount, autoFlow, gap, children, display } = props;
   const theme = useMossyTheme();
-  const { rows, columnCount } = chunkCells(children, columns, rowCount, autoFlow);
+  const { rows } = chunkCells(children, columns, rowCount, autoFlow);
   const resolvedGap = resolveMossyDimension(theme, gap);
 
   if (display === 'none') return null;
@@ -40,10 +41,10 @@ export function Grid(props: MossyGridProps) {
         <ComposeRow
           key={rowIndex}
           horizontalArrangement={resolvedGap != null ? { spacedBy: resolvedGap } : undefined}>
-          {Array.from({ length: columnCount }, (_unused, cellIndex) => (
+          {cells.map((cell, cellIndex) => (
             // 마지막 행이 모자라도 빈 셀로 채워 열 너비를 일정하게 유지한다.
-            <ComposeBox key={cellIndex} modifiers={[weight(1)]}>
-              {cells[cellIndex] ?? null}
+            <ComposeBox key={cellIndex} modifiers={[weight(cell.colSpan)]}>
+              {cell.node}
             </ComposeBox>
           ))}
         </ComposeRow>
@@ -52,7 +53,18 @@ export function Grid(props: MossyGridProps) {
   );
 }
 
-export type { MossyGridAutoFlow, MossyGridDisplay, MossyGridProps, MossyGridSizeConstraint, MossyGridTrackCount } from './types';
+Grid.Item = GridItem;
+export { GridItem };
+export type {
+  MossyGridAutoFlow,
+  MossyGridDisplay,
+  MossyGridItemLine,
+  MossyGridItemProps,
+  MossyGridItemSpan,
+  MossyGridProps,
+  MossyGridSizeConstraint,
+  MossyGridTrackCount,
+} from './types';
 
 function createGridSizeModifiers(props: MossyGridProps): MossyModifier[] {
   const modifiers: MossyModifier[] = [];

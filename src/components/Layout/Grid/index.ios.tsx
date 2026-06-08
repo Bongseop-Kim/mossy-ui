@@ -1,5 +1,11 @@
 import { Grid as SwiftUIGrid, ZStack } from '@expo/ui/swift-ui';
-import { frame, layoutPriority, shadow, zIndex } from '@expo/ui/swift-ui/modifiers';
+import {
+  frame,
+  gridCellColumns,
+  layoutPriority,
+  shadow,
+  zIndex,
+} from '@expo/ui/swift-ui/modifiers';
 
 import type { MossyModifier } from '../../../foundation/modifier';
 import { resolveMossyDimension } from '../../../foundation/component-tokens';
@@ -11,6 +17,7 @@ import {
 } from '../Box/types';
 import { createMossyLayoutSurfaceModifiers } from '../surface.ios';
 import { chunkCells } from './chunk';
+import { GridItem } from './Item';
 import { toMossyGridSurfaceProps } from './shared';
 import type { MossyGridProps } from './types';
 
@@ -21,7 +28,7 @@ const FILL = 1_000_000;
 export function Grid(props: MossyGridProps) {
   const { columns, rows: rowCount, autoFlow, gap, children, display } = props;
   const theme = useMossyTheme();
-  const { rows, columnCount } = chunkCells(children, columns, rowCount, autoFlow);
+  const { rows } = chunkCells(children, columns, rowCount, autoFlow);
   const resolvedGap = resolveMossyDimension(theme, gap) ?? 0;
 
   if (display === 'none') return null;
@@ -37,12 +44,12 @@ export function Grid(props: MossyGridProps) {
       })}>
       {rows.map((cells, rowIndex) => (
         <SwiftUIGrid.Row key={rowIndex}>
-          {Array.from({ length: columnCount }, (_unused, cellIndex) => (
+          {cells.map((cell, cellIndex) => (
             // 부분 행도 빈 셀로 채워 열 개수·너비를 Android와 동일하게 고정한다.
             <ZStack
               key={cellIndex}
-              modifiers={[frame({ maxWidth: FILL, alignment: 'topLeading' })]}>
-              {cells[cellIndex] ?? null}
+              modifiers={createGridCellModifiers(cell.colSpan)}>
+              {cell.node}
             </ZStack>
           ))}
         </SwiftUIGrid.Row>
@@ -51,7 +58,26 @@ export function Grid(props: MossyGridProps) {
   );
 }
 
-export type { MossyGridAutoFlow, MossyGridDisplay, MossyGridProps, MossyGridSizeConstraint, MossyGridTrackCount } from './types';
+Grid.Item = GridItem;
+export { GridItem };
+export type {
+  MossyGridAutoFlow,
+  MossyGridDisplay,
+  MossyGridItemLine,
+  MossyGridItemProps,
+  MossyGridItemSpan,
+  MossyGridProps,
+  MossyGridSizeConstraint,
+  MossyGridTrackCount,
+} from './types';
+
+function createGridCellModifiers(colSpan: number): MossyModifier[] {
+  const modifiers: MossyModifier[] = [frame({ maxWidth: FILL, alignment: 'topLeading' })];
+
+  if (colSpan > 1) modifiers.push(gridCellColumns(colSpan));
+
+  return modifiers;
+}
 
 function createGridFrameModifiers(props: MossyGridProps): MossyModifier[] {
   const width = isFullBoxLength(props.width) ? FILL : undefined;
