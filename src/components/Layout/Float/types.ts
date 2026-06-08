@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { MossyDimensionToken } from '../../../foundation/component-tokens';
+import type { MossyBoxZIndex } from '../Box/types';
 
 export type MossyFloatPlacement =
   | 'bottom-end'
@@ -13,6 +14,8 @@ export type MossyFloatPlacement =
   | 'middle-end'
   | 'middle-start';
 
+export type MossyFloatOffset = number | MossyDimensionToken;
+
 export interface MossyFloatProps {
   /** 고정 위치에 띄울 콘텐츠. */
   children?: ReactNode;
@@ -23,12 +26,12 @@ export interface MossyFloatProps {
    * `start`·`middle`은 오른쪽, `end`는 왼쪽으로 이동한다.
    * @default 0
    */
-  offsetX?: 0 | MossyDimensionToken;
+  offsetX?: MossyFloatOffset;
   /**
    * 세로 오프셋.
    * `top`·`middle`은 아래쪽, `bottom`은 위쪽으로 이동한다.
    * @default 0
    */
-  offsetY?: 0 | MossyDimensionToken;
-  zIndex?: number | `${number}`;
+  offsetY?: MossyFloatOffset;
+  zIndex?: MossyBoxZIndex;
 }

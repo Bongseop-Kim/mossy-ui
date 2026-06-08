@@ -80,31 +80,25 @@ export interface MossyGridProps {
   zIndex?: MossyBoxZIndex;
 }
 
-export interface MossyGridItemProps extends MossyBoxProps {
+export interface MossyGridItemProps extends Omit<
+  MossyBoxProps,
+  'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight'
+> {
   /**
    * 아이템이 차지할 열 개수. `full`은 현재 Grid의 전체 열을 차지한다.
    * `autoFlow="row"` 배치에서만 적용된다.
    */
   colSpan?: MossyGridItemSpan;
   /**
-   * 아이템이 차지할 행 개수. SwiftUI/Compose 공통 row span contract가 없어
-   * Seed 호환 표면으로만 받고 배치에는 사용하지 않는다.
-   */
-  rowSpan?: MossyGridItemSpan;
-  /**
    * 1부터 시작하는 열 시작선. `autoFlow="row"` 배치에서만 적용된다.
    */
   colStart?: MossyGridItemLine;
   /**
-   * 1부터 시작하는 열 끝선. `colStart`와 함께 전달되면 span으로 정규화한다.
+   * 열 끝선. 양수는 1부터 시작하는 CSS Grid line, 음수는 끝에서부터 세는 line으로 정규화한다.
    */
   colEnd?: MossyGridItemLine;
-  /**
-   * 1부터 시작하는 행 시작선. SwiftUI/Compose 공통 row placement contract가 없어 배치에는 사용하지 않는다.
-   */
-  rowStart?: MossyGridItemLine;
-  /**
-   * 1부터 시작하는 행 끝선. SwiftUI/Compose 공통 row placement contract가 없어 배치에는 사용하지 않는다.
-   */
-  rowEnd?: MossyGridItemLine;
+  minWidth?: MossyGridSizeConstraint;
+  maxWidth?: MossyGridSizeConstraint;
+  minHeight?: MossyGridSizeConstraint;
+  maxHeight?: MossyGridSizeConstraint;
 }

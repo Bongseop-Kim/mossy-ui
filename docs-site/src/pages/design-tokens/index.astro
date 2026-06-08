@@ -14,6 +14,7 @@ const headings = [
   { depth: 3, slug: 'static', text: 'Static' },
   { depth: 2, slug: 'color-props', text: 'Color Props' },
   { depth: 2, slug: 'scale-tokens', text: 'Scale Tokens' },
+  { depth: 2, slug: 'native-layer-values', text: 'Native Layer Values' },
   { depth: 2, slug: 'name-conversion', text: 'Name Conversion' },
   { depth: 2, slug: 'source', text: 'Source' },
 ];
@@ -146,6 +147,12 @@ const headings = [
       </tbody>
     </table>
   </div>
+
+  <AnchorHeading level="2" id="native-layer-values">Native Layer Values</AnchorHeading>
+  <p>
+    <code>zIndex</code>는 디자인 토큰이 아니라 동일 Expo UI Host 네이티브 트리 안에서의 숫자 레이어 값이다.
+    Props 표의 <code>MossyBoxZIndex</code>는 <code>{'number | `${number}`'}</code>를 받아 iOS/Android modifier의 숫자 <code>zIndex</code>로 정규화한다.
+  </p>
 
   <AnchorHeading level="2" id="name-conversion">Name Conversion</AnchorHeading>
   <div class="props-table-wrap">

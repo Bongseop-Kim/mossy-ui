@@ -154,6 +154,16 @@ const vStackTokenMappings = [
     docs: '/design-tokens/#scale-tokens',
   },
 ];
+const floatTokenMappings = [
+  {
+    prop: '`offsetX`, `offsetY`',
+    seedType: '`0 | Dimension | (string & {})`',
+    mossyType: '`MossyFloatOffset`',
+    mapping:
+      'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens + number dp native offset; arbitrary CSS length strings are constrained in the Props table',
+    docs: '/design-tokens/#scale-tokens',
+  },
+];
 const tokenMappings =
   page.name === 'Box'
     ? [
@@ -179,6 +189,43 @@ const tokenMappings =
           ? { ...item, mossyType: '`MossyGridSizeConstraint`' }
           : item,
       )
+    : page.name === 'Float'
+    ? floatTokenMappings
+    : [];
+const tokenMappingGroups =
+  page.name === 'Grid'
+    ? [
+        {
+          component: 'Grid',
+          mappings: vStackTokenMappings.map((item) =>
+            item.prop === 'min/max size props'
+              ? { ...item, mossyType: '`MossyGridSizeConstraint`' }
+              : item,
+          ),
+        },
+        {
+          component: 'Grid.Item',
+          mappings: vStackTokenMappings
+            .filter((item) => item.prop !== '`padding*`, `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`, `gap`')
+            .map((item) =>
+              item.prop === 'min/max size props'
+                ? { ...item, mossyType: '`MossyGridSizeConstraint`' }
+                : item,
+            )
+            .concat([
+              {
+                prop: '`padding*`, `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`',
+                seedType: '`Dimension | spacingX.* | spacingY.* | 0 | (string & {})`',
+                mossyType: '`MossyBoxPadding`',
+                mapping:
+                  'Mossy `x*` / `spacingX.*` / `spacingY.*` dimension tokens; arbitrary CSS length strings and `safeArea` are constrained in the Props table',
+                docs: '/design-tokens/#scale-tokens',
+              },
+            ]),
+        },
+      ]
+    : tokenMappings.length > 0
+    ? [{ component: page.name, mappings: tokenMappings }]
     : [];
 const frontmatter = {
   title: page.name,
@@ -191,7 +238,7 @@ const frontmatter = {
   sidebar={componentSidebar}
   headings={[
     { depth: 2, slug: 'props', text: 'Props' },
-    ...(tokenMappings.length > 0
+    ...(tokenMappingGroups.length > 0
       ? [{ depth: 2 as const, slug: 'seed-mossy-token-mapping', text: 'Seed ↔ Mossy token mapping' }]
       : []),
     { depth: 2, slug: 'next-action', text: 'Next Action' },
@@ -214,37 +261,42 @@ const frontmatter = {
   <PropsTable rows={page.rows} />
 
   {
-    tokenMappings.length > 0 ? (
+    tokenMappingGroups.length > 0 ? (
       <>
         <AnchorHeading level="2" id="seed-mossy-token-mapping">
           Seed ↔ Mossy token mapping
         </AnchorHeading>
-        <div class="props-table-wrap">
-          <table class="props-table token-mapping-table">
-            <thead>
-              <tr>
-                <th>Prop</th>
-                <th>Seed type union</th>
-                <th>Mossy public type</th>
-                <th>Mossy token mapping</th>
-                <th>Token docs</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tokenMappings.map((item) => (
-                <tr>
-                  <td set:html={markdownInlineToHtml(item.prop)} />
-                  <td set:html={markdownInlineToHtml(item.seedType)} />
-                  <td set:html={markdownInlineToHtml(item.mossyType)} />
-                  <td set:html={markdownInlineToHtml(item.mapping)} />
-                  <td>
-                    <a href={item.docs}>/design-tokens/</a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {tokenMappingGroups.map((group) => (
+          <>
+            <h3>{group.component}</h3>
+            <div class="props-table-wrap">
+              <table class="props-table token-mapping-table">
+                <thead>
+                  <tr>
+                    <th>Prop</th>
+                    <th>Seed type union</th>
+                    <th>Mossy public type</th>
+                    <th>Mossy token mapping</th>
+                    <th>Token docs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.mappings.map((item) => (
+                    <tr>
+                      <td set:html={markdownInlineToHtml(item.prop)} />
+                      <td set:html={markdownInlineToHtml(item.seedType)} />
+                      <td set:html={markdownInlineToHtml(item.mossyType)} />
+                      <td set:html={markdownInlineToHtml(item.mapping)} />
+                      <td>
+                        <a href={item.docs}>/design-tokens/</a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ))}
       </>
     ) : null
   }

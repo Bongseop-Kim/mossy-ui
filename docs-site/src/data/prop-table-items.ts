@@ -105,9 +105,9 @@ const componentPropTypes: Record<string, Record<string, string>> = {
     as: 'React.ElementType<any, keyof React.JSX.IntrinsicElements> | undefined',
     placement:
       '"bottom-end" | "bottom-start" | "top-end" | "top-start" | "bottom-center" | "top-center" | "middle-center" | "middle-end" | "middle-start"',
-    offsetX: '0 | Dimension | undefined',
-    offsetY: '0 | Dimension | undefined',
-    zIndex: 'number | `${number}` | undefined',
+    offsetX: 'MossyFloatOffset | undefined',
+    offsetY: 'MossyFloatOffset | undefined',
+    zIndex: 'MossyBoxZIndex | undefined',
   },
   Grid: {
     autoFlow: 'MossyGridAutoFlow | undefined',
@@ -156,10 +156,7 @@ const componentPropTypes: Record<string, Record<string, string>> = {
     pt: 'MossyBoxPadding | undefined',
     px: 'MossyBoxPadding | undefined',
     py: 'MossyBoxPadding | undefined',
-    rowEnd: 'MossyGridItemLine | undefined',
     rows: 'MossyGridTrackCount | undefined',
-    rowSpan: 'MossyGridItemSpan | undefined',
-    rowStart: 'MossyGridItemLine | undefined',
     width: 'MossyBoxLength | undefined',
     zIndex: 'MossyBoxZIndex | undefined',
   },

@@ -22,7 +22,9 @@ function cellAt<T>(
   columnCount: number,
   isColumnFlow: boolean,
 ) {
-  const index = isColumnFlow ? columnIndex * rowCount + rowIndex : rowIndex * columnCount + columnIndex;
+  const index = isColumnFlow
+    ? columnIndex * rowCount + rowIndex
+    : rowIndex * columnCount + columnIndex;
   return cells[index];
 }
 
@@ -38,28 +40,54 @@ function gridItemProps(node: ReactNode): MossyGridItemProps | undefined {
   return isGridItemElement(node) ? node.props : undefined;
 }
 
-function normalizeLine(value: number | undefined, maxLine: number) {
+function normalizeGridLine(value: number | undefined, lineCount: number) {
   if (value == null || !Number.isFinite(value)) return undefined;
-  return Math.max(1, Math.min(maxLine, Math.floor(value)));
+
+  const line = Math.floor(value);
+  const resolvedLine = line < 0 ? lineCount + line + 1 : line;
+
+  return Math.max(1, Math.min(lineCount, resolvedLine));
 }
 
-function normalizeColumnSpan(
-  props: MossyGridItemProps | undefined,
-  columnCount: number,
-) {
-  if (props?.colStart != null && props.colEnd != null) {
-    const start = normalizeLine(props.colStart, columnCount);
-    const end = normalizeLine(props.colEnd, columnCount + 1);
+function normalizeExplicitColumnSpan(value: MossyGridItemProps['colSpan'], columnCount: number) {
+  if (value === 'full') return columnCount;
+  if (typeof value !== 'number' || !Number.isFinite(value)) return 1;
 
-    if (start != null && end != null && end > start) {
-      return Math.max(1, Math.min(columnCount, end - start));
-    }
+  return Math.max(1, Math.min(columnCount, Math.floor(value)));
+}
+
+function normalizeColumnPlacement(props: MossyGridItemProps | undefined, columnCount: number) {
+  if (props?.colSpan === 'full') {
+    return { start: 1, colSpan: columnCount };
   }
 
-  if (props?.colSpan === 'full') return columnCount;
-  if (typeof props?.colSpan !== 'number' || !Number.isFinite(props.colSpan)) return 1;
+  const lineCount = columnCount + 1;
+  const colSpan = normalizeExplicitColumnSpan(props?.colSpan, columnCount);
+  const startLine = normalizeGridLine(props?.colStart, lineCount);
+  const endLine = normalizeGridLine(props?.colEnd, lineCount);
 
-  return Math.max(1, Math.min(columnCount, Math.floor(props.colSpan)));
+  if (startLine != null && endLine != null && endLine > startLine) {
+    return {
+      start: Math.min(startLine, columnCount),
+      colSpan: Math.max(1, Math.min(columnCount, endLine - startLine)),
+    };
+  }
+
+  if (startLine != null) {
+    return {
+      start: Math.min(startLine, columnCount),
+      colSpan,
+    };
+  }
+
+  if (endLine != null) {
+    return {
+      start: Math.max(1, Math.min(columnCount, endLine - colSpan)),
+      colSpan,
+    };
+  }
+
+  return { start: undefined, colSpan };
 }
 
 function appendEmptyCells(row: MossyGridCell[], usedColumns: number, columnCount: number) {
@@ -86,9 +114,13 @@ function chunkRowFlowCells(
 
   for (const node of Children.toArray(children)) {
     const props = gridItemProps(node);
-    const start = normalizeLine(props?.colStart, columnCount);
+    const placement = normalizeColumnPlacement(props, columnCount);
+    const { start } = placement;
 
-    if ((start != null && start <= usedColumns) || (props?.colSpan === 'full' && usedColumns > 0)) {
+    if (
+      (start != null && start <= usedColumns) ||
+      (placement.colSpan === columnCount && usedColumns > 0)
+    ) {
       finishRow();
     }
 
@@ -97,7 +129,7 @@ function chunkRowFlowCells(
       usedColumns = start - 1;
     }
 
-    let colSpan = normalizeColumnSpan(props, columnCount);
+    let { colSpan } = placement;
 
     if (usedColumns > 0 && usedColumns + colSpan > columnCount) {
       finishRow();

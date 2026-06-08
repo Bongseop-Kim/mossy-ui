@@ -36,7 +36,7 @@ export function Float(props: MossyFloatProps) {
   );
 }
 
-export type { MossyFloatProps } from './types';
+export type { MossyFloatOffset, MossyFloatProps } from './types';
 
 function toMossyFloatAlignment(placement: MossyFloatPlacement) {
   switch (placement) {

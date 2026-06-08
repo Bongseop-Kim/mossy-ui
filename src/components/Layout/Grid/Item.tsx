@@ -7,11 +7,8 @@ import type { MossyGridItemProps } from './types';
  */
 export function GridItem({
   colSpan: _colSpan,
-  rowSpan: _rowSpan,
   colStart: _colStart,
   colEnd: _colEnd,
-  rowStart: _rowStart,
-  rowEnd: _rowEnd,
   ...props
 }: MossyGridItemProps) {
   return <Box {...props} />;

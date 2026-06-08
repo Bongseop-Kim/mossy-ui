@@ -29,7 +29,11 @@ export {
   type MossyFlexProps,
   type MossyFlexSizeConstraint,
 } from './components/Layout/Flex';
-export { Float, type MossyFloatProps } from './components/Layout/Float';
+export {
+  Float,
+  type MossyFloatOffset,
+  type MossyFloatProps,
+} from './components/Layout/Float';
 export {
   Grid,
   GridItem,
