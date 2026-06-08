@@ -41,7 +41,7 @@ export default function ComponentsIndexScreen() {
           backgroundColor: theme.color.bg.layerBasement,
         }}
       >
-        <VStack style={{ padding: theme.dimension.spacingX.globalGutter }}>
+        <VStack p="spacingX.globalGutter">
           <SearchField value={search} onChangeText={setSearch} />
           <ComponentList components={filteredComponents} />
         </VStack>
