@@ -7,7 +7,6 @@ interface Props {
 
 const { slug } = Astro.props;
 const deepLink = `mossyui://components/${slug}`;
-const encodedDeepLink = encodeURIComponent(deepLink);
 const matrix = toQR(deepLink);
 const matrixSize = Math.sqrt(matrix.length);
 const cellSize = 4;

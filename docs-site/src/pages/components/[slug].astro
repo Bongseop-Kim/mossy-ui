@@ -32,7 +32,8 @@ const exampleSources = import.meta.glob('../../../../example/src/examples/*.tsx'
 });
 const exampleSource =
   exampleSources[`../../../../example/src/examples/${page.slug}.tsx`] as string | undefined;
-const showDeviceQr = page.slug === 'box';
+const deviceQrSlugs = new Set(['flex']);
+const showDeviceQr = deviceQrSlugs.has(page.slug);
 const boxTokenMappings = [
   {
     prop: '`bg`, `background`',
@@ -271,8 +272,6 @@ const frontmatter = {
     <StatusBadge status={page.status} />
   </div>
 
-  {showDeviceQr ? <DeviceQR slug={page.slug} /> : null}
-
   {
     exampleSource != null ? (
       <>
@@ -281,6 +280,8 @@ const frontmatter = {
       </>
     ) : null
   }
+
+  {showDeviceQr ? <DeviceQR slug={page.slug} /> : null}
 
   <AnchorHeading level="2" id="props">Props</AnchorHeading>
   <PropsTable rows={page.rows} />
