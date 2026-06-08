@@ -12,6 +12,30 @@ dist
 /example/android/
 /example/ios/
 
+# Root Expo prebuild output; keep android/src and android/build.gradle for the library module
+/android/.gitignore
+/android/.gradle/
+/android/.kotlin/
+/android/app/
+/android/build/
+/android/gradle/
+/android/gradle.properties
+/android/gradlew
+/android/gradlew.bat
+/android/settings.gradle
+
+# Root Expo prebuild output; keep ios/*.podspec and ios/*Module.swift for the library module
+/ios/.gitignore
+/ios/.xcode.env
+/ios/.xcode.env.local
+/ios/Podfile
+/ios/Podfile.lock
+/ios/Pods/
+/ios/build/
+/ios/*.xcodeproj/
+/ios/*.xcworkspace/
+/ios/GeneratedPluginRegistrant.*
+
 .DS_Store
 npm-debug.log*
 yarn-debug.log*
