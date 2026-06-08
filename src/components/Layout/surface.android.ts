@@ -19,10 +19,11 @@ import { EMPTY_MODIFIERS, resolveMossyLayoutSurfaceStyle, type MossyLayoutSurfac
 import {
   mossyDirectionalBorder,
   mossyLinearGradientBackground,
+  mossyShadow,
   mossySizeConstraints,
   mossyUnevenCornerRadius,
 } from './surfaceModifiers.android';
-import { createMossyLinearGradientConfig } from './surfaceModifiers.shared';
+import { createMossyLinearGradientConfig, type MossyLayoutShadowValue } from './surfaceModifiers.shared';
 
 export function createMossyLayoutSurfaceModifiers(
   theme: MossyTheme,
@@ -30,6 +31,7 @@ export function createMossyLayoutSurfaceModifiers(
   options?: {
     beforeSurface?: MossyModifier[];
     afterSurface?: MossyModifier[];
+    shadowValue?: MossyLayoutShadowValue;
   },
 ): MossyModifier[] {
   const style = resolveMossyLayoutSurfaceStyle(theme, props);
@@ -56,6 +58,15 @@ export function createMossyLayoutSurfaceModifiers(
           maxWidth: style.maxWidth,
           minHeight: style.minHeight,
           maxHeight: style.maxHeight,
+        }),
+      );
+    }
+
+    if (options?.shadowValue?.elevation != null) {
+      modifiers.push(
+        mossyShadow({
+          elevation: options.shadowValue.elevation,
+          ...resolveShadowShape(style),
         }),
       );
     }
@@ -153,4 +164,15 @@ export function createMossyLayoutSurfaceModifiers(
   modifiers.push(...(props.modifiers ?? EMPTY_MODIFIERS));
 
   return modifiers;
+}
+
+function resolveShadowShape(style: NonNullable<ReturnType<typeof resolveMossyLayoutSurfaceStyle>>) {
+  const radius = style.borderRadius as number | undefined;
+
+  return {
+    topLeft: (style.borderTopLeftRadius as number | undefined) ?? radius,
+    topRight: (style.borderTopRightRadius as number | undefined) ?? radius,
+    bottomRight: (style.borderBottomRightRadius as number | undefined) ?? radius,
+    bottomLeft: (style.borderBottomLeftRadius as number | undefined) ?? radius,
+  };
 }

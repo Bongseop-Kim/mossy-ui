@@ -34,9 +34,9 @@ export function HStack(props: MossyHStackProps) {
           fillWidth: isFullLayoutLength(props.width),
           fillHeight: isFullLayoutLength(props.height),
         }),
+        shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
         afterSurface: createMossyEffectModifiers({
           grow: normalizeGrow(resolveHStackGrow(props)),
-          shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
           zIndexValue: resolveLayoutZIndex(props.zIndex),
         }),
       })}>

@@ -51,9 +51,9 @@ export function VStack(props: MossyVStackProps) {
         fillWidth: isFullLayoutLength(props.width),
         fillHeight: isFullLayoutLength(props.height),
       }),
+      shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
       afterSurface: createMossyEffectModifiers({
         grow: normalizeGrow(resolveStackGrow(props)),
-        shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
         zIndexValue: resolveLayoutZIndex(props.zIndex),
       }),
     }),

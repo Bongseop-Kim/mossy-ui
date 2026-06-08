@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -63,6 +64,20 @@ class MossyUiModule : Module() {
         )
       }
 
+      ModifierRegistry.register("mossyShadow") { map, _, _, _ ->
+        val elevation = map.dp("elevation") ?: return@register Modifier
+        Modifier.shadow(
+          elevation = elevation,
+          shape = RoundedCornerShape(
+            topStart = map.dp("topLeft") ?: 0.dp,
+            topEnd = map.dp("topRight") ?: 0.dp,
+            bottomEnd = map.dp("bottomRight") ?: 0.dp,
+            bottomStart = map.dp("bottomLeft") ?: 0.dp
+          ),
+          clip = false
+        )
+      }
+
       ModifierRegistry.register("mossyDirectionalBorder") { map, _, _, _ ->
         val color = map.color("color") ?: return@register Modifier
         Modifier.drawBehind {
@@ -101,6 +116,7 @@ class MossyUiModule : Module() {
       ModifierRegistry.unregister("mossySizeConstraints")
       ModifierRegistry.unregister("mossyLinearGradientBackground")
       ModifierRegistry.unregister("mossyUnevenCornerRadius")
+      ModifierRegistry.unregister("mossyShadow")
       ModifierRegistry.unregister("mossyDirectionalBorder")
     }
   }

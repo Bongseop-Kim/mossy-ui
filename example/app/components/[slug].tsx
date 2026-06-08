@@ -19,7 +19,7 @@ export default function ComponentDetailScreen() {
     <SafeAreaView
       style={[
         styles.safeArea,
-        { backgroundColor: theme.color.bg.layerBasement },
+        { backgroundColor: theme.color.bg.layerDefault },
       ]}
     >
       <Stack.Screen options={{ title: component.name }} />

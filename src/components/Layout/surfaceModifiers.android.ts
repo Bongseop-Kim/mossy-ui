@@ -2,7 +2,6 @@ import {
   createModifier,
   fillMaxHeight,
   fillMaxWidth,
-  shadow,
   weight,
   zIndex,
 } from '@expo/ui/jetpack-compose/modifiers';
@@ -23,19 +22,27 @@ export function createMossyFillSizeModifiers(params: {
   return modifiers;
 }
 
-/** grow·boxShadow·zIndex를 Compose 효과 모디파이어로 조립한다 (weight·shadow(elevation)·zIndex). */
+/** grow·zIndex를 Compose 효과 모디파이어로 조립한다 (weight·zIndex). */
 export function createMossyEffectModifiers(params: {
   grow?: number;
-  shadowValue?: MossyLayoutShadowValue;
   zIndexValue?: number;
 }): MossyModifier[] {
   const modifiers: MossyModifier[] = [];
 
   if (params.grow != null) modifiers.push(weight(params.grow));
-  if (params.shadowValue?.elevation != null) modifiers.push(shadow(params.shadowValue.elevation));
   if (params.zIndexValue != null) modifiers.push(zIndex(params.zIndexValue));
 
   return modifiers;
+}
+
+export function mossyShadow(params: {
+  elevation: number;
+  topLeft?: number;
+  topRight?: number;
+  bottomRight?: number;
+  bottomLeft?: number;
+}): MossyModifier {
+  return createModifier('mossyShadow', params);
 }
 
 export function mossySizeConstraints(params: {
