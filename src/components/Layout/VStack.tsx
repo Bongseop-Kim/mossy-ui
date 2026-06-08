@@ -12,6 +12,8 @@ import {
   maybeReverseChildren,
   resolveDirectedJustify,
   resolveAlignment,
+  shouldStretchCrossAxis,
+  stretchChildrenCrossAxis,
   type MossyStackBaseProps,
   type MossyStackDirection,
   type MossyStackSizeConstraint,
@@ -33,7 +35,11 @@ export function VStack(props: MossyVStackProps) {
   const theme = useMossyTheme();
   const isColumn = isColumnDirection(direction);
   const isReverse = isReverseDirection(direction);
-  const renderedChildren = maybeReverseChildren(children, isReverse);
+  const crossAlign = align ?? alignItems;
+  const stretchedChildren = shouldStretchCrossAxis(crossAlign)
+    ? stretchChildrenCrossAxis(children, isColumn ? 'width' : 'height')
+    : children;
+  const renderedChildren = maybeReverseChildren(stretchedChildren, isReverse);
   const directedJustify = resolveDirectedJustify(justify ?? justifyContent, isReverse);
   const stackChildren = <StackChildren justify={directedJustify}>{renderedChildren}</StackChildren>;
   const stackProps = {

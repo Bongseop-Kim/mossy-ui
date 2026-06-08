@@ -31,7 +31,7 @@ export function Flex({ direction = 'row', flexDirection, children, ...props }: M
   const reversedChildren = maybeReverseChildren(children, isReverseDirection(normalizedDirection));
 
   return isColumn ? (
-    <VStack {...(props as MossyVStackProps)}>{reversedChildren}</VStack>
+    <VStack {...(props as MossyVStackProps)} direction={normalizedDirection}>{children}</VStack>
   ) : (
     <HStack {...props}>{reversedChildren}</HStack>
   );

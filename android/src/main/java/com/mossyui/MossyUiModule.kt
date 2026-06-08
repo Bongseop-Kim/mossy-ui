@@ -1,6 +1,8 @@
 package com.mossyui
 
 import android.graphics.Color as AndroidColor
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
@@ -27,6 +29,10 @@ class MossyUiModule : Module() {
           maxWidth = map.dp("maxWidth") ?: androidx.compose.ui.unit.Dp.Infinity,
           maxHeight = map.dp("maxHeight") ?: androidx.compose.ui.unit.Dp.Infinity
         )
+      }
+
+      ModifierRegistry.register("mossyMaxIntrinsicHeight") { _, _, _, _ ->
+        Modifier.height(IntrinsicSize.Max)
       }
 
       ModifierRegistry.register("mossyLinearGradientBackground") { map, _, _, _ ->
@@ -114,6 +120,7 @@ class MossyUiModule : Module() {
 
     OnDestroy {
       ModifierRegistry.unregister("mossySizeConstraints")
+      ModifierRegistry.unregister("mossyMaxIntrinsicHeight")
       ModifierRegistry.unregister("mossyLinearGradientBackground")
       ModifierRegistry.unregister("mossyUnevenCornerRadius")
       ModifierRegistry.unregister("mossyShadow")

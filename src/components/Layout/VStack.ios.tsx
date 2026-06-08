@@ -18,10 +18,13 @@ import {
   isColumnDirection,
   isReverseDirection,
   maybeReverseChildren,
+  growChildrenMainAxis,
   normalizeGrow,
   resolveDirectedJustify,
   resolveAlignment,
   resolveStackGrow,
+  shouldStretchCrossAxis,
+  stretchChildrenCrossAxis,
 } from './stack';
 import type { MossyVStackProps } from './VStack';
 
@@ -41,7 +44,13 @@ export function VStack(props: MossyVStackProps) {
   const theme = useMossyTheme();
   const isColumn = isColumnDirection(direction);
   const isReverse = isReverseDirection(direction);
-  const renderedChildren = maybeReverseChildren(children, isReverse);
+  const crossAlign = align ?? alignItems;
+  const crossStretched = shouldStretchCrossAxis(crossAlign)
+    ? stretchChildrenCrossAxis(children, isColumn ? 'width' : 'height')
+    : children;
+  // grow 자식을 main axis(column이면 height, row면 width)로 채워 flex-grow처럼 균등 분배한다.
+  const stretchedChildren = growChildrenMainAxis(crossStretched, isColumn ? 'height' : 'width');
+  const renderedChildren = maybeReverseChildren(stretchedChildren, isReverse);
   const directedJustify = resolveDirectedJustify(justify ?? justifyContent, isReverse);
   const stackChildren = <StackChildren justify={directedJustify}>{renderedChildren}</StackChildren>;
   const stackProps = {

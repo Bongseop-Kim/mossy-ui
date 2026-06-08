@@ -9,6 +9,8 @@ import { StackChildren } from './StackChildren';
 import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface } from './surface.shared';
 import {
   resolveAlignment,
+  shouldStretchCrossAxis,
+  stretchChildrenCrossAxis,
   type MossyStackBaseProps,
   type MossyStackSizeConstraint,
   type MossyStackSurfaceProps,
@@ -25,15 +27,19 @@ export interface MossyHStackProps extends MossyStackBaseProps, MossyStackSurface
 export function HStack(props: MossyHStackProps) {
   const { display, gap, children } = props;
   const theme = useMossyTheme();
+  const align = resolveHStackAlign(props);
+  const stretchedChildren = shouldStretchCrossAxis(align)
+    ? stretchChildrenCrossAxis(children, 'height')
+    : children;
 
   if (!shouldRenderLayoutSurface(display)) return null;
 
   return (
     <Row
-      alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
+      alignment={resolveAlignment(align, undefined)}
       spacing={resolveMossyDimension(theme, gap)}
       style={resolveMossyLayoutSurfaceStyle(theme, toMossyLayoutSurfaceProps(props))}>
-      <StackChildren justify={resolveHStackJustify(props)}>{children}</StackChildren>
+      <StackChildren justify={resolveHStackJustify(props)}>{stretchedChildren}</StackChildren>
     </Row>
   );
 }

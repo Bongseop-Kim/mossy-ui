@@ -13,6 +13,7 @@ import { shouldRenderLayoutSurface } from './surface.shared';
 import {
   createMossyEffectModifiers,
   createMossyFillSizeModifiers,
+  mossyMaxIntrinsicHeight,
 } from './surfaceModifiers.android';
 import {
   isColumnDirection,
@@ -22,6 +23,8 @@ import {
   resolveDirectedJustify,
   resolveAlignment,
   resolveStackGrow,
+  shouldStretchCrossAxis,
+  stretchChildrenCrossAxis,
 } from './stack';
 import type { MossyVStackProps } from './VStack';
 
@@ -40,17 +43,29 @@ export function VStack(props: MossyVStackProps) {
   const theme = useMossyTheme();
   const isColumn = isColumnDirection(direction);
   const isReverse = isReverseDirection(direction);
-  const renderedChildren = maybeReverseChildren(children, isReverse);
+  const crossAlign = align ?? alignItems;
+  const stretchCrossAxis = shouldStretchCrossAxis(crossAlign);
+  const stretchedChildren = stretchCrossAxis
+    ? stretchChildrenCrossAxis(children, isColumn ? 'width' : 'height')
+    : children;
+  const renderedChildren = maybeReverseChildren(stretchedChildren, isReverse);
   const directedJustify = resolveDirectedJustify(justify ?? justifyContent, isReverse);
   const stackChildren = <StackChildren justify={directedJustify}>{renderedChildren}</StackChildren>;
   const stackProps = {
     alignment: resolveAlignment(align ?? alignItems, undefined),
     spacing: resolveMossyDimension(theme, gap),
     modifiers: createMossyLayoutSurfaceModifiers(theme, toMossyLayoutSurfaceProps(props), {
-      beforeSurface: createMossyFillSizeModifiers({
-        fillWidth: isFullLayoutLength(props.width),
-        fillHeight: isFullLayoutLength(props.height),
-      }),
+      beforeSurface: [
+        // Row로 렌더하고 높이가 wrap-content일 때만 IntrinsicSize.Max가 필요하다. 부모가 늘리는(height='full')
+        // Row면 fillMaxHeight와 충돌하므로 제외한다. Column 너비는 부모가 정해주므로 자식 fillMaxWidth로 충분하다.
+        ...(stretchCrossAxis && !isColumn && !isFullLayoutLength(props.height)
+          ? [mossyMaxIntrinsicHeight()]
+          : []),
+        ...createMossyFillSizeModifiers({
+          fillWidth: isFullLayoutLength(props.width),
+          fillHeight: isFullLayoutLength(props.height),
+        }),
+      ],
       shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
       afterSurface: createMossyEffectModifiers({
         grow: normalizeGrow(resolveStackGrow(props)),

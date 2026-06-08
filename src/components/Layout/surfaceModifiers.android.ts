@@ -22,6 +22,14 @@ export function createMossyFillSizeModifiers(params: {
   return modifiers;
 }
 
+/**
+ * Compose `Modifier.height(IntrinsicSize.Max)` — Row 자식의 `fillMaxHeight` 동일 높이 정렬에 필요하다.
+ * `@expo/ui`가 IntrinsicSize modifier를 노출하지 않아 mossy 커스텀 네이티브 modifier로 적용한다.
+ */
+export function mossyMaxIntrinsicHeight(): MossyModifier {
+  return createModifier('mossyMaxIntrinsicHeight', {});
+}
+
 /** grow·zIndex를 Compose 효과 모디파이어로 조립한다 (weight·zIndex). */
 export function createMossyEffectModifiers(params: {
   grow?: number;
