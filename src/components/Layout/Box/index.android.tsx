@@ -1,15 +1,11 @@
 import { Box as ComposeBox } from '@expo/ui/jetpack-compose';
-import {
-  fillMaxHeight,
-  fillMaxWidth,
-  shadow,
-  weight,
-  zIndex,
-} from '@expo/ui/jetpack-compose/modifiers';
 
-import type { MossyModifier } from '../../../foundation/modifier';
 import { useMossyTheme } from '../../../theme';
 import { createMossyLayoutSurfaceModifiers } from '../surface.android';
+import {
+  createMossyEffectModifiers,
+  createMossyFillSizeModifiers,
+} from '../surfaceModifiers.android';
 import {
   isFullBoxLength,
   normalizeBoxFlexGrow,
@@ -27,8 +23,15 @@ export function Box(props: MossyBoxProps) {
     <ComposeBox
       contentAlignment="topStart"
       modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyBoxSurfaceProps(props), {
-        beforeSurface: createBoxSizeModifiers(props),
-        afterSurface: createBoxEffectModifiers(theme, props),
+        beforeSurface: createMossyFillSizeModifiers({
+          fillWidth: isFullBoxLength(props.width),
+          fillHeight: isFullBoxLength(props.height),
+        }),
+        afterSurface: createMossyEffectModifiers({
+          grow: normalizeBoxFlexGrow(props.flexGrow),
+          shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
+          zIndexValue: resolveBoxZIndex(props.zIndex),
+        }),
       })}>
       {children}
     </ComposeBox>
@@ -36,25 +39,3 @@ export function Box(props: MossyBoxProps) {
 }
 
 export type { MossyBoxProps, MossyBoxRadiusToken } from './types';
-
-function createBoxSizeModifiers(props: MossyBoxProps): MossyModifier[] {
-  const modifiers: MossyModifier[] = [];
-
-  if (isFullBoxLength(props.width)) modifiers.push(fillMaxWidth());
-  if (isFullBoxLength(props.height)) modifiers.push(fillMaxHeight());
-
-  return modifiers;
-}
-
-function createBoxEffectModifiers(theme: ReturnType<typeof useMossyTheme>, props: MossyBoxProps): MossyModifier[] {
-  const modifiers: MossyModifier[] = [];
-  const flexGrow = normalizeBoxFlexGrow(props.flexGrow);
-  const shadowValue = props.boxShadow == null ? undefined : theme.shadow[props.boxShadow];
-  const zIndexValue = resolveBoxZIndex(props.zIndex);
-
-  if (flexGrow != null) modifiers.push(weight(flexGrow));
-  if (shadowValue?.elevation != null) modifiers.push(shadow(shadowValue.elevation));
-  if (zIndexValue != null) modifiers.push(zIndex(zIndexValue));
-
-  return modifiers;
-}

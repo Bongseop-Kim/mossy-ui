@@ -1,5 +1,6 @@
 import { toMossyBoxSurfaceProps } from './Box/types';
 import type { MossyHStackProps } from './HStack';
+import { resolveStackGrow } from './stack';
 
 export function resolveHStackAlign(props: MossyHStackProps) {
   return props.alignItems ?? props.align;
@@ -10,7 +11,7 @@ export function resolveHStackJustify(props: MossyHStackProps) {
 }
 
 export function resolveHStackGrow(props: MossyHStackProps) {
-  return props.flexGrow ?? props.grow;
+  return resolveStackGrow(props);
 }
 
 export function toMossyHStackSurfaceProps(props: MossyHStackProps) {

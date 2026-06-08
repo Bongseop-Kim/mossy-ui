@@ -2,11 +2,17 @@ import { Children, type ReactNode } from 'react';
 
 import type {
   MossyBoxBackground,
+  MossyBoxBackgroundProps,
   MossyBoxBorderColor,
+  MossyBoxBorderProps,
   MossyBoxBorderWidth,
   MossyBoxLength,
   MossyBoxPadding,
+  MossyBoxPaddingProps,
   MossyBoxRadiusToken,
+  MossyBoxShadow,
+  MossyBoxZIndex,
+  MossyLayoutCustomizationProps,
 } from './Box/types';
 
 export type MossyStackDisplay = 'flex' | 'none';
@@ -39,7 +45,7 @@ export type MossyStackDirection =
   | 'rowReverse'
   | 'columnReverse';
 
-export interface MossyStackBaseProps {
+export interface MossyStackBaseProps extends MossyBoxPaddingProps, MossyLayoutCustomizationProps {
   /**
    * 렌더 여부. Seed Stack은 `flex`와 `none`만 제공한다.
    * @default 'flex'
@@ -66,20 +72,22 @@ export interface MossyStackBaseProps {
   borderRadius?: MossyBoxRadiusToken | 0;
   width?: MossyBoxLength;
   height?: MossyBoxLength;
-  padding?: MossyBoxPadding;
-  p?: MossyBoxPadding;
-  paddingX?: MossyBoxPadding;
-  px?: MossyBoxPadding;
-  paddingY?: MossyBoxPadding;
-  py?: MossyBoxPadding;
-  paddingTop?: MossyBoxPadding;
-  pt?: MossyBoxPadding;
-  paddingRight?: MossyBoxPadding;
-  pr?: MossyBoxPadding;
-  paddingBottom?: MossyBoxPadding;
-  pb?: MossyBoxPadding;
-  paddingLeft?: MossyBoxPadding;
-  pl?: MossyBoxPadding;
+}
+
+/** width/height의 `'full'`을 제외한 Stack 크기 제약 토큰. */
+export type MossyStackSizeConstraint = Exclude<MossyBoxLength, 'full'>;
+
+/** HStack·VStack이 공유하는 surface 장식 prop (gradient·방향별 테두리·모서리 반경·그림자·크기 제약·zIndex). */
+export interface MossyStackSurfaceProps
+  extends MossyBoxBackgroundProps,
+    MossyBoxBorderProps,
+    MossyLayoutCustomizationProps {
+  boxShadow?: MossyBoxShadow;
+  minWidth?: MossyStackSizeConstraint;
+  maxWidth?: MossyStackSizeConstraint;
+  minHeight?: MossyStackSizeConstraint;
+  maxHeight?: MossyStackSizeConstraint;
+  zIndex?: MossyBoxZIndex;
 }
 
 export type MossyStackAlignment = 'start' | 'center' | 'end';
@@ -87,6 +95,11 @@ export type MossyStackAlignment = 'start' | 'center' | 'end';
 export function normalizeGrow(grow: MossyStackGrow | undefined) {
   if (grow === true) return 1;
   return grow;
+}
+
+/** grow shorthand 단일 해석. Seed Box `flexGrow`가 `grow`보다 우선한다 (HStack·VStack 공통). */
+export function resolveStackGrow(props: { grow?: MossyStackGrow; flexGrow?: MossyStackGrow }) {
+  return props.flexGrow ?? props.grow;
 }
 
 export function resolveAlignment(

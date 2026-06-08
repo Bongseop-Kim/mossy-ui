@@ -126,7 +126,7 @@ function resolveSurfaceColor(theme: MossyTheme, color: string | undefined) {
   return resolveMossyColor(theme, color) ?? color;
 }
 
-export function shouldRenderLayoutSurface(display: MossyLayoutSurfaceProps['display']) {
+export function shouldRenderLayoutSurface(display: string | undefined) {
   return display !== 'none';
 }
 

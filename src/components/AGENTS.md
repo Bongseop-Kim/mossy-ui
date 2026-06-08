@@ -10,13 +10,16 @@ mossy-ui 컴포넌트 작성 가이드. `src/components/`의 모든 컴포넌트
 
 ## 파일 작성 컨벤션
 
-- **단일 구현 컴포넌트** — universal 래퍼처럼 플랫폼 분기가 없으면 `{Name}.tsx` 한 파일 (예: `Layout/HStack.tsx`).
-- **OS 분기 컴포넌트** — `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`).
+컴포넌트는 universal 가용성에 따라 아래 세 패턴 중 하나를 따른다. 신규 컴포넌트는 먼저 어느 패턴인지 정한다.
+
+- **단일 구현 컴포넌트** — 플랫폼 분기가 전혀 없는 순수 래퍼/위임 컴포넌트는 `{Name}.tsx` 한 파일 (예: `Layout/Spacer.tsx`, `Layout/Flex.tsx` — `HStack`/`VStack`에 위임만 한다).
+- **OS 분기 컴포넌트(폴더형)** — universal(`@expo/ui`)에 대응 컴포넌트가 없어 swift-ui/jetpack-compose로 직접 분기하는 네이티브 전용 컴포넌트는 `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`, `Layout/Box/`(ZStack), `Layout/Float/`, `Layout/Grid/`).
   - `types.ts` — 공유 props 인터페이스 `Mossy{Name}Props`
   - `index.tsx` — 웹/기타 폴백. 렌더하지 않고(`return null`) 공개 타입 선언의 기준이 된다
   - `index.ios.tsx` — swift-ui 구현
   - `index.android.tsx` — jetpack-compose 구현
   - 플랫폼 파일은 `export * from './types'`로 타입을 재노출한다
+- **universal 베이스 + OS modifier 분기(평면형)** — universal에 컴포넌트가 있어 베이스 `{Name}.tsx`가 universal로 실제 렌더하되, 플랫폼별 surface modifier 주입을 위해 `{Name}.ios.tsx`·`{Name}.android.tsx`로 갈리는 경우 (예: `Layout/HStack`·`Layout/VStack` — universal `Row`/`Column` 래퍼). 베이스 `{Name}.tsx`가 공개 타입 기준이자 style 기반 폴백을 담당하고, 플랫폼 파일은 `export type { ... } from './{Name}'`로 타입을 재노출한다. 공유 순수 로직은 `{Name}.shared.ts`에 둔다.
 - **배럴 등록** — 모든 공개 컴포넌트는 `src/index.ts`에 named export로 등록하고(`export *` 금지) `Mossy{Name}Props` 타입을 함께 export한다. 경로 알파벳순 정렬.
 
 ## 코드 작성 컨벤션

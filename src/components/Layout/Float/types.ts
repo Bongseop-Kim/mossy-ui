@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { MossyDimensionToken } from '../../../foundation/component-tokens';
-import type { MossyBoxZIndex } from '../Box/types';
+import type { MossyBoxZIndex, MossyLayoutCustomizationProps } from '../Box/types';
 
 export type MossyFloatPlacement =
   | 'bottom-end'
@@ -16,7 +16,7 @@ export type MossyFloatPlacement =
 
 export type MossyFloatOffset = number | MossyDimensionToken;
 
-export interface MossyFloatProps {
+export interface MossyFloatProps extends MossyLayoutCustomizationProps {
   /** 고정 위치에 띄울 콘텐츠. */
   children?: ReactNode;
   /** 부모 기준 고정 위치. 크기가 정해진 `Box` 안에서 사용한다. */

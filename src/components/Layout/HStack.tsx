@@ -4,15 +4,6 @@ import type { ReactNode } from 'react';
 import { resolveMossyDimension } from '../../foundation/component-tokens';
 import { useMossyTheme } from '../../theme';
 import {
-  type MossyBoxBorderWidth,
-  type MossyBoxGradient,
-  type MossyBoxGradientDirection,
-  type MossyBoxLength,
-  type MossyBoxRadiusToken,
-  type MossyBoxShadow,
-  type MossyBoxZIndex,
-} from './Box/types';
-import {
   resolveHStackAlign,
   resolveHStackJustify,
   toMossyHStackSurfaceProps,
@@ -22,31 +13,15 @@ import { resolveMossyLayoutSurfaceStyle, shouldRenderLayoutSurface } from './sur
 import {
   resolveAlignment,
   type MossyStackBaseProps,
+  type MossyStackSizeConstraint,
+  type MossyStackSurfaceProps,
 } from './stack';
 
-export type MossyHStackSizeConstraint = Exclude<MossyBoxLength, 'full'>;
+export type MossyHStackSizeConstraint = MossyStackSizeConstraint;
 
-export interface MossyHStackProps extends MossyStackBaseProps {
+export interface MossyHStackProps extends MossyStackBaseProps, MossyStackSurfaceProps {
   /** 가로로 쌓을 콘텐츠. */
   children?: ReactNode;
-  bgGradient?: MossyBoxGradient;
-  backgroundGradient?: MossyBoxGradient;
-  bgGradientDirection?: MossyBoxGradientDirection;
-  backgroundGradientDirection?: MossyBoxGradientDirection;
-  borderTopWidth?: MossyBoxBorderWidth;
-  borderRightWidth?: MossyBoxBorderWidth;
-  borderBottomWidth?: MossyBoxBorderWidth;
-  borderLeftWidth?: MossyBoxBorderWidth;
-  borderTopLeftRadius?: MossyBoxRadiusToken | 0;
-  borderTopRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomLeftRadius?: MossyBoxRadiusToken | 0;
-  boxShadow?: MossyBoxShadow;
-  minWidth?: MossyHStackSizeConstraint;
-  maxWidth?: MossyHStackSizeConstraint;
-  minHeight?: MossyHStackSizeConstraint;
-  maxHeight?: MossyHStackSizeConstraint;
-  zIndex?: MossyBoxZIndex;
 }
 
 /** 가로로 쌓이는 레이아웃 컨테이너. universal `Row`의 래퍼. */

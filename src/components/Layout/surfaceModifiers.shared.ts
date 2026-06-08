@@ -1,5 +1,9 @@
+import type { MossyTheme } from '../../foundation/theme';
 import type { MossyGradient } from '../../foundation/types';
 import type { MossyLayoutSurfaceGradientDirection } from './surface.shared';
+
+/** 그림자 토큰이 해석된 값. iOS는 radius/offset/color, Android는 elevation 필드를 사용한다. */
+export type MossyLayoutShadowValue = MossyTheme['shadow'][keyof MossyTheme['shadow']];
 
 export interface MossyGradientPoint {
   x: number;

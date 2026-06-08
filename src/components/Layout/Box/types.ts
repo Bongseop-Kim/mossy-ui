@@ -6,24 +6,79 @@ import type {
   MossyDimensionToken,
   MossyStrokeColorToken,
 } from '../../../foundation/component-tokens';
+import type { MossyModifier } from '../../../foundation/modifier';
 import type { MossyTheme } from '../../../foundation/theme';
 import type {
+  MossyLayoutSurfaceGradientDirection,
   MossyLayoutSurfaceProps,
   MossyLayoutSurfaceRadiusToken,
 } from '../surface.shared';
 
 export type MossyBoxRadiusToken = MossyLayoutSurfaceRadiusToken;
 export type MossyBoxGradient = keyof MossyTheme['gradient'];
+export type MossyBoxGradientDirection = MossyLayoutSurfaceGradientDirection;
 export type MossyBoxBackground = MossyBackgroundColorToken | MossyBannerColorToken | (string & {});
 export type MossyBoxBorderColor = MossyStrokeColorToken | (string & {});
-export type MossyBoxLength = MossyDimensionToken | 0 | 'full';
-export type MossyBoxPadding = MossyDimensionToken | 0;
+export type MossyBoxLength = number | MossyDimensionToken | 'full';
+export type MossyBoxPadding = number | MossyDimensionToken;
 export type MossyBoxBorderWidth = 0 | 1 | number | `${number}`;
 export type MossyBoxShadow = keyof MossyTheme['shadow'];
 export type MossyBoxZIndex = number | `${number}`;
 export type MossyBoxFlexGrow = 0 | 1 | (number & {}) | true;
 
-export interface MossyBoxSurfaceInput {
+/** 모든 레이아웃 컨테이너가 공유하는 커스터마이징 통로 (E2E 식별자·플랫폼 모디파이어 패스스루). */
+export interface MossyLayoutCustomizationProps {
+  /** E2E 테스트에서 컴포넌트를 찾기 위한 식별자. iOS는 prop, Android는 modifier로 전달된다. */
+  testID?: string;
+  /** 플랫폼 모디파이어 패스스루. 내부 modifier 뒤에 적용되어 덮어쓸 수 있다. */
+  modifiers?: MossyModifier[];
+}
+
+export interface MossyBoxPaddingProps {
+  padding?: MossyBoxPadding;
+  p?: MossyBoxPadding;
+  paddingX?: MossyBoxPadding;
+  px?: MossyBoxPadding;
+  paddingY?: MossyBoxPadding;
+  py?: MossyBoxPadding;
+  paddingTop?: MossyBoxPadding;
+  pt?: MossyBoxPadding;
+  paddingRight?: MossyBoxPadding;
+  pr?: MossyBoxPadding;
+  paddingBottom?: MossyBoxPadding;
+  pb?: MossyBoxPadding;
+  paddingLeft?: MossyBoxPadding;
+  pl?: MossyBoxPadding;
+}
+
+export interface MossyBoxBackgroundProps {
+  bg?: MossyBoxBackground;
+  background?: MossyBoxBackground;
+  bgGradient?: MossyBoxGradient;
+  backgroundGradient?: MossyBoxGradient;
+  bgGradientDirection?: MossyBoxGradientDirection;
+  backgroundGradientDirection?: MossyBoxGradientDirection;
+}
+
+export interface MossyBoxBorderProps {
+  borderColor?: MossyBoxBorderColor;
+  borderWidth?: MossyBoxBorderWidth;
+  borderTopWidth?: MossyBoxBorderWidth;
+  borderRightWidth?: MossyBoxBorderWidth;
+  borderBottomWidth?: MossyBoxBorderWidth;
+  borderLeftWidth?: MossyBoxBorderWidth;
+  borderRadius?: MossyBoxRadiusToken | 0;
+  borderTopLeftRadius?: MossyBoxRadiusToken | 0;
+  borderTopRightRadius?: MossyBoxRadiusToken | 0;
+  borderBottomRightRadius?: MossyBoxRadiusToken | 0;
+  borderBottomLeftRadius?: MossyBoxRadiusToken | 0;
+}
+
+export interface MossyBoxSurfaceInput
+  extends MossyBoxPaddingProps,
+    MossyBoxBackgroundProps,
+    MossyBoxBorderProps,
+    MossyLayoutCustomizationProps {
   display?: string;
   width?: MossyBoxLength;
   height?: MossyBoxLength;
@@ -31,58 +86,14 @@ export interface MossyBoxSurfaceInput {
   maxWidth?: MossyBoxLength;
   minHeight?: MossyBoxLength;
   maxHeight?: MossyBoxLength;
-  bg?: MossyBoxBackground;
-  background?: MossyBoxBackground;
-  bgGradient?: MossyBoxGradient;
-  backgroundGradient?: MossyBoxGradient;
-  bgGradientDirection?: MossyBoxGradientDirection;
-  backgroundGradientDirection?: MossyBoxGradientDirection;
-  borderColor?: MossyBoxBorderColor;
-  borderWidth?: MossyBoxBorderWidth;
-  borderTopWidth?: MossyBoxBorderWidth;
-  borderRightWidth?: MossyBoxBorderWidth;
-  borderBottomWidth?: MossyBoxBorderWidth;
-  borderLeftWidth?: MossyBoxBorderWidth;
-  borderRadius?: MossyBoxRadiusToken | 0;
-  borderTopLeftRadius?: MossyBoxRadiusToken | 0;
-  borderTopRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomLeftRadius?: MossyBoxRadiusToken | 0;
-  padding?: MossyBoxPadding;
-  p?: MossyBoxPadding;
-  paddingX?: MossyBoxPadding;
-  px?: MossyBoxPadding;
-  paddingY?: MossyBoxPadding;
-  py?: MossyBoxPadding;
-  paddingTop?: MossyBoxPadding;
-  pt?: MossyBoxPadding;
-  paddingRight?: MossyBoxPadding;
-  pr?: MossyBoxPadding;
-  paddingBottom?: MossyBoxPadding;
-  pb?: MossyBoxPadding;
-  paddingLeft?: MossyBoxPadding;
-  pl?: MossyBoxPadding;
 }
 
-export interface MossyBoxProps {
+export interface MossyBoxProps
+  extends MossyBoxPaddingProps,
+    MossyBoxBackgroundProps,
+    MossyBoxBorderProps,
+    MossyLayoutCustomizationProps {
   children?: ReactNode;
-  bg?: MossyBoxBackground;
-  background?: MossyBoxBackground;
-  bgGradient?: MossyBoxGradient;
-  backgroundGradient?: MossyBoxGradient;
-  bgGradientDirection?: MossyBoxGradientDirection;
-  backgroundGradientDirection?: MossyBoxGradientDirection;
-  borderColor?: MossyBoxBorderColor;
-  borderWidth?: MossyBoxBorderWidth;
-  borderTopWidth?: MossyBoxBorderWidth;
-  borderRightWidth?: MossyBoxBorderWidth;
-  borderBottomWidth?: MossyBoxBorderWidth;
-  borderLeftWidth?: MossyBoxBorderWidth;
-  borderRadius?: MossyBoxRadiusToken | 0;
-  borderTopLeftRadius?: MossyBoxRadiusToken | 0;
-  borderTopRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomRightRadius?: MossyBoxRadiusToken | 0;
-  borderBottomLeftRadius?: MossyBoxRadiusToken | 0;
   boxShadow?: MossyBoxShadow;
   width?: MossyBoxLength;
   height?: MossyBoxLength;
@@ -90,34 +101,9 @@ export interface MossyBoxProps {
   maxWidth?: MossyBoxLength;
   minHeight?: MossyBoxLength;
   maxHeight?: MossyBoxLength;
-  padding?: MossyBoxPadding;
-  p?: MossyBoxPadding;
-  paddingX?: MossyBoxPadding;
-  px?: MossyBoxPadding;
-  paddingY?: MossyBoxPadding;
-  py?: MossyBoxPadding;
-  paddingTop?: MossyBoxPadding;
-  pt?: MossyBoxPadding;
-  paddingRight?: MossyBoxPadding;
-  pr?: MossyBoxPadding;
-  paddingBottom?: MossyBoxPadding;
-  pb?: MossyBoxPadding;
-  paddingLeft?: MossyBoxPadding;
-  pl?: MossyBoxPadding;
   flexGrow?: MossyBoxFlexGrow;
   zIndex?: MossyBoxZIndex;
 }
-
-export type MossyBoxGradientDirection =
-  | 'to right'
-  | 'to left'
-  | 'to top'
-  | 'to bottom'
-  | 'to top right'
-  | 'to top left'
-  | 'to bottom right'
-  | 'to bottom left'
-  | `${number}deg`;
 
 export function isFullBoxLength(value: MossyBoxLength | undefined) {
   return value === 'full';
@@ -154,6 +140,8 @@ export function toMossyBoxSurfaceProps(props: MossyBoxSurfaceInput): MossyLayout
     topEndRadius: props.borderTopRightRadius,
     bottomEndRadius: props.borderBottomRightRadius,
     bottomStartRadius: props.borderBottomLeftRadius,
+    testID: props.testID,
+    modifiers: props.modifiers,
   };
 }
 

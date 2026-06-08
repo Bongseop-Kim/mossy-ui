@@ -1,13 +1,8 @@
 import { Row } from '@expo/ui';
-import { frame, layoutPriority, shadow, zIndex } from '@expo/ui/swift-ui/modifiers';
 
 import { resolveMossyDimension } from '../../foundation/component-tokens';
-import type { MossyModifier } from '../../foundation/modifier';
 import { useMossyTheme } from '../../theme';
-import {
-  isFullBoxLength,
-  resolveBoxZIndex,
-} from './Box/types';
+import { isFullBoxLength, resolveBoxZIndex } from './Box/types';
 import {
   resolveHStackAlign,
   resolveHStackGrow,
@@ -18,18 +13,16 @@ import { StackChildren } from './StackChildren';
 import { createMossyLayoutSurfaceModifiers } from './surface.ios';
 import { shouldRenderLayoutSurface } from './surface.shared';
 import {
-  normalizeGrow,
-  resolveAlignment,
-} from './stack';
+  createMossyEffectModifiers,
+  createMossyFillFrameModifiers,
+} from './surfaceModifiers.ios';
+import { normalizeGrow, resolveAlignment } from './stack';
 import type { MossyHStackProps } from './HStack';
-
-const FILL = 1_000_000;
 
 /** 가로로 쌓이는 레이아웃 컨테이너. iOS universal `Row`의 래퍼. */
 export function HStack(props: MossyHStackProps) {
-  const { display, gap, children } = props;
+  const { display, gap, testID, children } = props;
   const theme = useMossyTheme();
-  const resolvedGrow = normalizeGrow(resolveHStackGrow(props));
 
   if (!shouldRenderLayoutSurface(display)) return null;
 
@@ -37,9 +30,17 @@ export function HStack(props: MossyHStackProps) {
     <Row
       alignment={resolveAlignment(resolveHStackAlign(props), undefined)}
       spacing={resolveMossyDimension(theme, gap)}
+      testID={testID}
       modifiers={createMossyLayoutSurfaceModifiers(theme, toMossyHStackSurfaceProps(props), {
-        beforeSurface: createHStackFrameModifiers(props),
-        afterSurface: createHStackEffectModifiers(theme, props, resolvedGrow),
+        beforeSurface: createMossyFillFrameModifiers({
+          fillWidth: isFullBoxLength(props.width),
+          fillHeight: isFullBoxLength(props.height),
+        }),
+        afterSurface: createMossyEffectModifiers({
+          grow: normalizeGrow(resolveHStackGrow(props)),
+          shadowValue: props.boxShadow == null ? undefined : theme.shadow[props.boxShadow],
+          zIndexValue: resolveBoxZIndex(props.zIndex),
+        }),
       })}>
       <StackChildren justify={resolveHStackJustify(props)}>{children}</StackChildren>
     </Row>
@@ -47,37 +48,3 @@ export function HStack(props: MossyHStackProps) {
 }
 
 export type { MossyHStackProps } from './HStack';
-
-function createHStackFrameModifiers(props: MossyHStackProps): MossyModifier[] {
-  const width = isFullBoxLength(props.width) ? FILL : undefined;
-  const height = isFullBoxLength(props.height) ? FILL : undefined;
-
-  return width == null && height == null ? [] : [frame({ maxWidth: width, maxHeight: height })];
-}
-
-function createHStackEffectModifiers(
-  theme: ReturnType<typeof useMossyTheme>,
-  props: MossyHStackProps,
-  resolvedGrow: ReturnType<typeof normalizeGrow>,
-): MossyModifier[] {
-  const modifiers: MossyModifier[] = [];
-  const shadowValue = props.boxShadow == null ? undefined : theme.shadow[props.boxShadow];
-  const zIndexValue = resolveBoxZIndex(props.zIndex);
-
-  if (resolvedGrow != null) modifiers.push(layoutPriority(resolvedGrow));
-
-  if (shadowValue != null) {
-    modifiers.push(
-      shadow({
-        radius: shadowValue.shadowRadius ?? 0,
-        x: shadowValue.shadowOffset?.width,
-        y: shadowValue.shadowOffset?.height,
-        color: shadowValue.shadowColor,
-      }),
-    );
-  }
-
-  if (zIndexValue != null) modifiers.push(zIndex(zIndexValue));
-
-  return modifiers;
-}

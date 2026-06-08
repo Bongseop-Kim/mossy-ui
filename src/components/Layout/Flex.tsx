@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react';
-
 import { HStack, type MossyHStackProps, type MossyHStackSizeConstraint } from './HStack';
 import {
   isColumnDirection,
