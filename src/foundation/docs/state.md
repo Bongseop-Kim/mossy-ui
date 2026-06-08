@@ -33,15 +33,17 @@
 
 ## 구현 방식
 
-universal 컴포넌트는 `disabled` prop으로 비활성화한다. disabled 스타일은 컴포넌트가 자체 처리하므로 토큰을 직접 적용하지 않는다.
+RN 컴포넌트는 `disabled` 또는 `accessibilityState={{ disabled: true }}`와 이벤트 차단으로 비활성화한다. Expo UI universal 컴포넌트는 `disabled` prop으로 비활성화한다. 네이티브 컨트롤이 disabled 스타일을 자체 처리하는 경우 토큰을 직접 적용하지 않는다.
 
 ```tsx
-import { Button } from "@expo/ui";
+import { Pressable, Text } from "react-native";
 
-<Button label="Submit" disabled />;
+<Pressable disabled accessibilityState={{ disabled: true }}>
+  <Text>Submit</Text>
+</Pressable>;
 ```
 
-universal에 없어 swift-ui로 구현하는 컴포넌트는 `disabled` modifier를 사용한다.
+Expo UI universal에 없어 swift-ui로 구현하는 컴포넌트는 `disabled` modifier를 사용한다.
 
 ```tsx
 import { Button } from "@expo/ui/swift-ui";

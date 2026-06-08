@@ -36,9 +36,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BackdropProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BackdropProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Positioner`",
@@ -46,9 +46,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Content`",
@@ -56,9 +56,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Header`",
@@ -66,9 +66,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HeaderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HeaderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Root`",
@@ -76,9 +76,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Title`",
@@ -86,9 +86,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Description`",
@@ -96,9 +96,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`DescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`DescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Trigger`",
@@ -106,9 +106,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.List`",
@@ -116,9 +116,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ListProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ListProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.Item`",
@@ -126,9 +126,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ActionSheet.CloseButton`",
@@ -136,9 +136,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`CloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`CloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Article`",
@@ -246,9 +246,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BackdropProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BackdropProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Body`",
@@ -256,9 +256,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BodyProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BodyProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Content`",
@@ -266,9 +266,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Description`",
@@ -276,9 +276,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`DescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`DescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Footer`",
@@ -286,9 +286,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`FooterProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`FooterProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Header`",
@@ -296,9 +296,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HeaderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HeaderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Positioner`",
@@ -306,9 +306,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Root`",
@@ -316,9 +316,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Title`",
@@ -326,9 +326,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Trigger`",
@@ -336,9 +336,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.CloseButton`",
@@ -346,9 +346,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`CloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`CloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`BottomSheet.Handle`",
@@ -356,9 +356,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HandleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HandleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Box`",
@@ -366,7 +366,7 @@
       "mossy": "`Box`",
       "mossyProps": "`Box`: `children?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, `borderColor?`, `borderWidth?`, `borderTopWidth?`, `borderRightWidth?`, `borderBottomWidth?`, `borderLeftWidth?`, `borderRadius?`, `borderTopLeftRadius?`, `borderTopRightRadius?`, `borderBottomRightRadius?`, `borderBottomLeftRadius?`, `boxShadow?`, `width?`, `height?`, `minWidth?`, `maxWidth?`, `minHeight?`, `maxHeight?`, `padding?`, `p?`, `paddingX?`, `px?`, `paddingY?`, `py?`, `paddingTop?`, `pt?`, `paddingRight?`, `pr?`, `paddingBottom?`, `pb?`, `paddingLeft?`, `pl?`, `flexGrow?`, `zIndex?`",
       "status": "완료",
-      "propStatus": "`as?`: 제약 — Seed는 `as`로 DOM element type을 교체하지만 RN/Expo UI Host 내부 네이티브 트리는 동일 web element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 — Mossy gradient 토큰과 방향 prop을 Expo UI 커스텀 네이티브 modifier로 SwiftUI `LinearGradient`/Compose `Brush.linearGradient`에 매핑한다. / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN/Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `StyleProps.width/height`: 완료 / `StyleProps.min/max size`: 완료 / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `StyleProps.zIndex`: 완료 / `StyleProps.flexGrow`: 완료 / `StyleProps.inset`: 제약 — Seed inset은 CSS positioned offset contract라 RN/Expo UI Box에 동일하게 노출하지 않는다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin/as-padding contract라 RN/Expo UI Box에 동일하게 노출하지 않는다. / `StyleProps.display`: 제약 — Mossy Box는 일반 children을 세로 flow로 배치하는 native surface이며 CSS display mode 전환을 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `Box position='relative'` + `Float position='absolute'` 패턴은 Mossy에서 `ZStack` + `Float`으로 분리한다. / `StyleProps.overflowX/overflowY`: 제약 — scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리한다. / `StyleProps.flexShrink/flexDirection/flexWrap/justifyContent/justifySelf/alignItems/alignContent/alignSelf`: 제약 — 축 배치는 Flex/HStack/VStack에서 처리한다. / `StyleProps.gap`: 제약 — Box는 gap을 공개하지 않고 Stack 계열에서 처리한다. / `StyleProps.grid*`: 제약 — Grid 계열에서 처리한다. / `StyleProps.unstable_transform`: 제약 — SwiftUI/Compose transform modifier와 CSS transform string contract가 다르다. / `StyleProps._active`: 제약 — Expo UI modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `div attrs`: 제약 — RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
+      "propStatus": "`as?`: 제약 — Seed는 `as`로 DOM element type을 교체하지만 RN 또는 선택한 Expo UI Host 내부 네이티브 트리는 동일 web element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 — Mossy gradient 토큰과 방향 prop을 Expo UI 커스텀 네이티브 modifier로 SwiftUI `LinearGradient`/Compose `Brush.linearGradient`에 매핑한다. / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `StyleProps.width/height`: 완료 / `StyleProps.min/max size`: 완료 / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `StyleProps.zIndex`: 완료 / `StyleProps.flexGrow`: 완료 / `StyleProps.inset`: 제약 — Seed inset은 CSS positioned offset contract라 RN 또는 선택한 Expo UI Box에 동일하게 노출하지 않는다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin/as-padding contract라 RN 또는 선택한 Expo UI Box에 동일하게 노출하지 않는다. / `StyleProps.display`: 제약 — Mossy Box는 일반 children을 세로 flow로 배치하는 native surface이며 CSS display mode 전환을 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `Box position='relative'` + `Float position='absolute'` 패턴은 Mossy에서 `ZStack` + `Float`으로 분리한다. / `StyleProps.overflowX/overflowY`: 제약 — scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리한다. / `StyleProps.flexShrink/flexDirection/flexWrap/justifyContent/justifySelf/alignItems/alignContent/alignSelf`: 제약 — 축 배치는 Flex/HStack/VStack에서 처리한다. / `StyleProps.gap`: 제약 — Box는 gap을 공개하지 않고 Stack 계열에서 처리한다. / `StyleProps.grid*`: 제약 — Grid 계열에서 처리한다. / `StyleProps.unstable_transform`: 제약 — SwiftUI/Compose transform modifier와 CSS transform string contract가 다르다. / `StyleProps._active`: 제약 — Expo UI modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `div attrs`: 제약 — RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
       "next": "Box는 일반 surface/flow primitive로 유지하고, 겹침 레이아웃과 Float 부모 역할은 Mossy `ZStack`으로 분리한다.",
       "note": "Seed `Box`는 web style-prop primitive지만 Mossy `Box`는 일반 children을 세로 flow로 배치하는 native surface다. Seed의 `Box position='relative'` + `Float` 패턴은 Mossy에서 `ZStack` + `Float` 조합으로 대체한다."
     },
@@ -376,7 +376,7 @@
       "mossy": "`ZStack`",
       "mossyProps": "`ZStack`: `children?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, `borderColor?`, `borderWidth?`, `borderTopWidth?`, `borderRightWidth?`, `borderBottomWidth?`, `borderLeftWidth?`, `borderRadius?`, `borderTopLeftRadius?`, `borderTopRightRadius?`, `borderBottomRightRadius?`, `borderBottomLeftRadius?`, `boxShadow?`, `width?`, `height?`, `minWidth?`, `maxWidth?`, `minHeight?`, `maxHeight?`, `padding?`, `p?`, `paddingX?`, `px?`, `paddingY?`, `py?`, `paddingTop?`, `pt?`, `paddingRight?`, `pr?`, `paddingBottom?`, `pb?`, `paddingLeft?`, `pl?`, `flexGrow?`, `zIndex?`",
       "status": "Mossy only",
-      "propStatus": "`MossyZStackProps`: Mossy only — RN/Expo UI에서 children 겹침과 `Float` 부모 scope를 명시하기 위해 제공한다.",
+      "propStatus": "`MossyZStackProps`: Mossy only — RN 또는 선택한 Expo UI에서 children 겹침과 `Float` 부모 scope를 명시하기 위해 제공한다.",
       "next": "Seed web의 `Box position='relative'` 패턴을 Mossy 문서에서는 `ZStack` + `Float` 조합으로 안내한다.",
       "note": "iOS는 SwiftUI `ZStack`, Android는 Compose `Box`로 렌더된다."
     },
@@ -496,9 +496,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
     },
     {
       "seed": "`Checkbox.Indicator`",
@@ -676,8 +676,8 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`children`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `PrimitiveProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `span attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
+      "propStatus": "`children`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `PrimitiveProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `span attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
       "note": "웹 텍스트 측정/hidden span 기반 유틸 성격이다."
     },
     {
@@ -756,9 +756,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BackdropProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BackdropProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Positioner`",
@@ -766,9 +766,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Content`",
@@ -776,9 +776,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Description`",
@@ -786,9 +786,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`DescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`DescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Footer`",
@@ -796,9 +796,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`FooterProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`FooterProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Header`",
@@ -806,9 +806,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HeaderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HeaderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Root`",
@@ -816,9 +816,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Title`",
@@ -826,9 +826,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Trigger`",
@@ -836,9 +836,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Dialog.Action`",
@@ -846,9 +846,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ActionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ActionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Divider`",
@@ -856,7 +856,7 @@
       "mossy": "`Divider`",
       "mossyProps": "`Divider`: `orientation?`, `thickness?`, `color?`, `inset?`, `testID?`, `modifiers?`",
       "status": "부분완료",
-      "propStatus": "`as?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `color?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `thickness?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `orientation?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `inset?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `hr attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `testID?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `modifiers?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
+      "propStatus": "`as?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `color?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `thickness?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `orientation?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `inset?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `hr attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `testID?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `modifiers?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
       "next": "Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.",
       "note": "Mossy는 `orientation`, `thickness`, `color`, `inset` 토큰/값 중심이다. DOM `as`는 제공하지 않는다."
     },
@@ -876,9 +876,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BackdropProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BackdropProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Positioner`",
@@ -886,9 +886,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Content`",
@@ -896,9 +896,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Footer`",
@@ -906,9 +906,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`FooterProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`FooterProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Header`",
@@ -916,9 +916,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HeaderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HeaderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Root`",
@@ -926,9 +926,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Title`",
@@ -936,9 +936,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Trigger`",
@@ -946,9 +946,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.List`",
@@ -956,9 +956,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ListProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ListProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Group`",
@@ -966,9 +966,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`GroupProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`GroupProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.Item`",
@@ -976,9 +976,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedActionSheet.CloseButton`",
@@ -986,9 +986,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`CloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`CloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`ExtendedFab`",
@@ -1196,9 +1196,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`FieldButton.IndicatorText`",
@@ -1396,9 +1396,9 @@
       "mossy": "`Flex`",
       "mossyProps": "`children?`, `display?`, `direction?`, `flexDirection?`, `align?`, `alignItems?`, `justify?`, `justifyContent?`, `grow?`, `flexGrow?`, `gap?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, `borderColor?`, `borderWidth?`, directional border widths, radius props, `boxShadow?`, size props, padding aliases, `zIndex?`",
       "status": "완료",
-      "propStatus": "`display?`: 완료 / `direction?`: 완료 / `wrap?`: 제약 — Seed `wrap`은 `flexWrap`으로 CSS flex line wrapping을 만들지만 Expo UI universal Row/Column과 SwiftUI Stack은 줄바꿈 배치 contract를 제공하지 않는다. / `align?`: 제약 — Seed `align`은 `alignItems`로 전달되어 `stretch`를 CSS cross-axis stretch로 적용하지만 Expo UI Row/Column alignment는 start/center/end 계열만 제공해 direct-child stretch 의미를 보존할 수 없다. / `justify?`: 완료 / `grow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 `flexShrink`로 CSS flex-shrink 우선순위를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `children?`: 완료 / `as?`: 제약 — Seed Box `as`는 DOM element type을 교체하지만 RN/Expo UI Host 내부 네이티브 트리는 DOM element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed Box `asChild`는 Radix Slot으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN/Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `flexDirection?`: 완료 / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS flex line wrapping을 만들지만 Expo UI universal Row/Column과 SwiftUI Stack은 줄바꿈 배치 contract를 제공하지 않는다. / `justifyContent?`: 완료 / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI Row/Column alignment는 start/center/end 계열만 제공해 direct-child stretch 의미를 보존할 수 없다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `Flex` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `StyleProps.gap`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI Row/Column spacing은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `div attrs`: 제약 — Seed Flex는 Box 기반 HTML div attrs를 전달하지만 RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다.",
+      "propStatus": "`display?`: 완료 / `direction?`: 완료 / `wrap?`: 제약 — Seed `wrap`은 `flexWrap`으로 CSS flex line wrapping을 만들지만 Expo UI universal Row/Column과 SwiftUI Stack은 줄바꿈 배치 contract를 제공하지 않는다. / `align?`: 제약 — Seed `align`은 `alignItems`로 전달되어 `stretch`를 CSS cross-axis stretch로 적용하지만 Expo UI Row/Column alignment는 start/center/end 계열만 제공해 direct-child stretch 의미를 보존할 수 없다. / `justify?`: 완료 / `grow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 `flexShrink`로 CSS flex-shrink 우선순위를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `children?`: 완료 / `as?`: 제약 — Seed Box `as`는 DOM element type을 교체하지만 RN 또는 선택한 Expo UI Host 내부 네이티브 트리는 DOM element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed Box `asChild`는 Radix Slot으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `flexDirection?`: 완료 / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS flex line wrapping을 만들지만 Expo UI universal Row/Column과 SwiftUI Stack은 줄바꿈 배치 contract를 제공하지 않는다. / `justifyContent?`: 완료 / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI Row/Column alignment는 start/center/end 계열만 제공해 direct-child stretch 의미를 보존할 수 없다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `Flex` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `StyleProps.gap`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI Row/Column spacing은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `div attrs`: 제약 — Seed Flex는 Box 기반 HTML div attrs를 전달하지만 RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다.",
       "next": "지원 가능한 Seed props는 Mossy token type과 native Row/Column modifier에 연결했고, CSS/DOM 전용 props는 공개 타입에 추가하지 않고 제약으로 유지한다.",
-      "note": "제약: `wrap?`/`flexWrap?`은 CSS flex line wrapping 전용이고, `shrink?`/`flexShrink?`는 CSS flex-shrink 우선순위 전용이며, `align?`/`alignItems?`의 `stretch` 값과 `alignContent?`/`alignSelf?`/`justifySelf?`는 Expo UI Row/Column direct-child alignment contract로 동일 구현할 수 없어 제외한다. `color?`는 DOM text color 상속 전용이라 RN/Expo UI 자식 Text에 상속되지 않는다. raw CSS length/radius/shadow string, padding `safeArea`, bleed, inset/position/overflow/grid/transform/`_active`, `as`/`asChild`, DOM attrs는 RN/Expo UI 네이티브 트리에서 동일 contract를 제공하지 않는다."
+      "note": "제약: `wrap?`/`flexWrap?`은 CSS flex line wrapping 전용이고, `shrink?`/`flexShrink?`는 CSS flex-shrink 우선순위 전용이며, `align?`/`alignItems?`의 `stretch` 값과 `alignContent?`/`alignSelf?`/`justifySelf?`는 Expo UI Row/Column direct-child alignment contract로 동일 구현할 수 없어 제외한다. `color?`는 DOM text color 상속 전용이라 RN 또는 선택한 Expo UI 자식 Text에 상속되지 않는다. raw CSS length/radius/shadow string, padding `safeArea`, bleed, inset/position/overflow/grid/transform/`_active`, `as`/`asChild`, DOM attrs는 RN 또는 선택한 Expo UI 네이티브 트리에서 동일 contract를 제공하지 않는다."
     },
     {
       "seed": "`Float`",
@@ -1406,9 +1406,9 @@
       "mossy": "`Float`",
       "mossyProps": "`children?`, `placement`, `offsetX?`, `offsetY?`, `zIndex?`",
       "status": "완료",
-      "propStatus": "`as?`: 제약 — Seed Float는 `as`를 Box에 전달해 DOM element를 교체하지만 Expo UI는 SwiftUI/Compose native node를 렌더해 동일 element replacement contract가 없다. / `placement`: 완료 / `offsetX?`: 완료 / `offsetY?`: 완료 / `offsetX?/offsetY? raw CSS length`: 제약 — Seed `handleDimension`은 임의 CSS length 문자열을 CSS 위치값으로 보존하지만 Expo UI native offset modifier는 숫자 dp만 받는다. / `zIndex?`: 완료 / `zIndex? raw CSS string`: 제약 — Seed는 임의 CSS z-index 문자열을 Box style로 전달하지만 Expo UI zIndex modifier는 숫자 레이어 값만 받는다. / `div attrs`: 제약 — Seed는 React DOM `HTMLAttributes<HTMLDivElement>`를 상속하지만 RN/Expo UI native tree에는 동일 DOM attrs contract가 없다. / `children?`: 완료",
+      "propStatus": "`as?`: 제약 — Seed Float는 `as`를 Box에 전달해 DOM element를 교체하지만 Expo UI는 SwiftUI/Compose native node를 렌더해 동일 element replacement contract가 없다. / `placement`: 완료 / `offsetX?`: 완료 / `offsetY?`: 완료 / `offsetX?/offsetY? raw CSS length`: 제약 — Seed `handleDimension`은 임의 CSS length 문자열을 CSS 위치값으로 보존하지만 Expo UI native offset modifier는 숫자 dp만 받는다. / `zIndex?`: 완료 / `zIndex? raw CSS string`: 제약 — Seed는 임의 CSS z-index 문자열을 Box style로 전달하지만 Expo UI zIndex modifier는 숫자 레이어 값만 받는다. / `div attrs`: 제약 — Seed는 React DOM `HTMLAttributes<HTMLDivElement>`를 상속하지만 RN 또는 선택한 Expo UI native tree에는 동일 DOM attrs contract가 없다. / `children?`: 완료",
       "next": "부분완료 없음. DOM/CSS 전용 union 분기는 제약으로 유지하고, 지원 prop은 native alignment/offset/zIndex modifier에 반영한다.",
-      "note": "`Float`는 Mossy `ZStack` 안에서 사용한다. Seed web의 `Box position='relative'` 부모 패턴은 Mossy에서 `ZStack` 부모로 분리한다. `as?`, `div attrs`, raw CSS length, raw CSS z-index string은 RN/Expo UI native tree에서 동일 의미를 제공하지 않는다."
+      "note": "`Float`는 Mossy `ZStack` 안에서 사용한다. Seed web의 `Box position='relative'` 부모 패턴은 Mossy에서 `ZStack` 부모로 분리한다. `as?`, `div attrs`, raw CSS length, raw CSS z-index string은 RN 또는 선택한 Expo UI native tree에서 동일 의미를 제공하지 않는다."
     },
     {
       "seed": "`FloatingActionButton`",
@@ -1426,7 +1426,7 @@
       "mossy": "`Grid`",
       "mossyProps": "`children?`, `display?`, `columns?`, `rows?`, `autoFlow?`, `gap?`, `flexGrow?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, border/radius aliases, `boxShadow?`, size aliases, padding aliases, `zIndex?`; compound `Grid.Item`",
       "status": "완료",
-      "propStatus": "`display?`: 완료 / `align?`: 제약 — Seed Grid는 `align`을 CSS `align-items`로 연결해 각 grid item의 block-axis alignment/stretch를 처리하지만 Expo UI SwiftUI Grid와 Android Row/Column fallback은 동일한 CSS Grid item alignment contract를 공통으로 제공하지 않는다. / `justify?`: 제약 — Seed Grid는 `justify`를 CSS `justify-content`로 연결해 grid content 전체의 inline-axis 분배를 처리하지만 Expo UI 네이티브 Grid/fallback은 CSS Grid content distribution contract를 제공하지 않는다. / `justifyItems?`: 제약 — Seed Grid는 `justifyItems`를 CSS grid item inline-axis alignment 변수로 적용하지만 Expo UI Android fallback에는 대응 grid item alignment API가 없고 iOS SwiftUI cell anchor와 의미가 다르다. / `columns?`: 완료 / `columns? string`: 제약 — Seed string 값은 raw CSS `grid-template-columns`이지만 SwiftUI Grid는 column template string API를 제공하지 않고 Android에는 공통 CSS Grid template API가 없다. / `rows?`: 완료 / `rows? string`: 제약 — Seed string 값은 raw CSS `grid-template-rows`이지만 SwiftUI Grid와 Android Row/Column fallback은 row template string을 해석하는 공통 API를 제공하지 않는다. / `autoFlow?`: 완료 / `autoFlow? dense values`: 제약 — Seed `row dense`/`column dense`는 CSS Grid dense auto-placement로 빈 칸을 재배치하지만 Mossy `Grid.Item`은 선언 순서 기반 column span/line placement만 처리하고 hole 재패킹 contract를 제공하지 않는다. / `autoColumns?`: 제약 — Seed `autoColumns`는 CSS `grid-auto-columns` 문자열을 적용하지만 Expo UI 네이티브 Grid/fallback은 암시적 열 크기 문자열 contract를 제공하지 않는다. / `autoRows?`: 제약 — Seed `autoRows`는 CSS `grid-auto-rows` 문자열을 적용하지만 Expo UI 네이티브 Grid/fallback은 암시적 행 크기 문자열 contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.bgGradientDirection raw CSS string`: 제약 — Seed는 임의 CSS gradient direction string을 허용하지만 Mossy는 native gradient start/end point로 변환 가능한 CSS 방향 키워드와 `${number}deg`만 공개한다. / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN/Expo UI Grid는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed `top`/`right`/`bottom`/`left`는 CSS positioned inset이지만 Mossy Grid는 native layout container라 동일 positioned inset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Grid surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Mossy Grid는 RN/Expo UI 네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Mossy Grid의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `StyleProps.flexGrow`: 완료 / `StyleProps.flexShrink/flexDirection/flexWrap/justifyContent/justifySelf/alignItems/alignContent/alignSelf`: 제약 — Seed flex/grid alignment props는 CSS layout contract지만 Mossy Grid는 고정 native Grid/Row/Column 행렬로 배치해 동일 flex/grid item contract를 제공하지 않는다. / `StyleProps.gap`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI Grid spacing은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Mossy Grid 루트는 native Grid container라 자신을 부모 CSS Grid 안에 배치하는 item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Grid modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed는 `as`로 DOM element type을 교체하지만 RN/Expo UI Host 내부 네이티브 트리는 동일 web element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed Grid는 HTML div attrs를 전달하지만 RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
+      "propStatus": "`display?`: 완료 / `align?`: 제약 — Seed Grid는 `align`을 CSS `align-items`로 연결해 각 grid item의 block-axis alignment/stretch를 처리하지만 Expo UI SwiftUI Grid와 Android Row/Column fallback은 동일한 CSS Grid item alignment contract를 공통으로 제공하지 않는다. / `justify?`: 제약 — Seed Grid는 `justify`를 CSS `justify-content`로 연결해 grid content 전체의 inline-axis 분배를 처리하지만 Expo UI 네이티브 Grid/fallback은 CSS Grid content distribution contract를 제공하지 않는다. / `justifyItems?`: 제약 — Seed Grid는 `justifyItems`를 CSS grid item inline-axis alignment 변수로 적용하지만 Expo UI Android fallback에는 대응 grid item alignment API가 없고 iOS SwiftUI cell anchor와 의미가 다르다. / `columns?`: 완료 / `columns? string`: 제약 — Seed string 값은 raw CSS `grid-template-columns`이지만 SwiftUI Grid는 column template string API를 제공하지 않고 Android에는 공통 CSS Grid template API가 없다. / `rows?`: 완료 / `rows? string`: 제약 — Seed string 값은 raw CSS `grid-template-rows`이지만 SwiftUI Grid와 Android Row/Column fallback은 row template string을 해석하는 공통 API를 제공하지 않는다. / `autoFlow?`: 완료 / `autoFlow? dense values`: 제약 — Seed `row dense`/`column dense`는 CSS Grid dense auto-placement로 빈 칸을 재배치하지만 Mossy `Grid.Item`은 선언 순서 기반 column span/line placement만 처리하고 hole 재패킹 contract를 제공하지 않는다. / `autoColumns?`: 제약 — Seed `autoColumns`는 CSS `grid-auto-columns` 문자열을 적용하지만 Expo UI 네이티브 Grid/fallback은 암시적 열 크기 문자열 contract를 제공하지 않는다. / `autoRows?`: 제약 — Seed `autoRows`는 CSS `grid-auto-rows` 문자열을 적용하지만 Expo UI 네이티브 Grid/fallback은 암시적 행 크기 문자열 contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.bgGradientDirection raw CSS string`: 제약 — Seed는 임의 CSS gradient direction string을 허용하지만 Mossy는 native gradient start/end point로 변환 가능한 CSS 방향 키워드와 `${number}deg`만 공개한다. / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI Grid는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed `top`/`right`/`bottom`/`left`는 CSS positioned inset이지만 Mossy Grid는 native layout container라 동일 positioned inset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Grid surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Mossy Grid는 RN 또는 선택한 Expo UI 네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Mossy Grid의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `StyleProps.flexGrow`: 완료 / `StyleProps.flexShrink/flexDirection/flexWrap/justifyContent/justifySelf/alignItems/alignContent/alignSelf`: 제약 — Seed flex/grid alignment props는 CSS layout contract지만 Mossy Grid는 고정 native Grid/Row/Column 행렬로 배치해 동일 flex/grid item contract를 제공하지 않는다. / `StyleProps.gap`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI Grid spacing은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Mossy Grid 루트는 native Grid container라 자신을 부모 CSS Grid 안에 배치하는 item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Grid modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed는 `as`로 DOM element type을 교체하지만 RN 또는 선택한 Expo UI Host 내부 네이티브 트리는 동일 web element 교체 contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed Grid는 HTML div attrs를 전달하지만 RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
       "next": "부분완료 항목 없음. Grid number track count, `autoFlow=\"row\" | \"column\"`, token surface와 `Grid.Item` compound 열 span/line placement를 구현했고 CSS Grid template string·dense placement·DOM 전용 props는 제약으로 유지한다.",
       "note": "문서-코드 차이: Seed 문서는 Grid 페이지의 하위 섹션으로 `GridItem`을 설명하고 예제도 named export `GridItem`을 import하며, Seed React 코드도 `Grid`/`GridItem`을 별도 export하고 `Grid.Item` compound 바인딩은 없다. Mossy는 대상 요구에 맞춰 `Grid.Item` compound와 `GridItem` named export alias를 함께 제공한다."
     },
@@ -1436,7 +1436,7 @@
       "mossy": "`Grid.Item` (`GridItem` named export alias)",
       "mossyProps": "`children?`, `colSpan?`, `colStart?`, `colEnd?`; 상속 Mossy Box surface props(`bg?`, `background?`, gradient aliases, border/radius aliases, `boxShadow?`, size aliases, padding aliases, `flexGrow?`, `zIndex?`)",
       "status": "완료",
-      "propStatus": "`asChild?`: 제약 — Seed GridItem은 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 Grid 셀은 같은 Slot composition contract를 제공하지 않는다. / `colSpan?`: 완료 / `rowSpan?`: 제약 — Seed GridItem은 `rowSpan`을 CSS `grid-row` span/full로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 한 셀을 여러 row sibling에 걸쳐 병합하는 공통 contract를 제공하지 않아 공개 API에서 제외한다. / `colStart?`: 완료 / `colEnd?`: 완료 / `rowStart?`: 제약 — Seed GridItem은 `rowStart`를 CSS grid row line placement로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 공통 row line placement contract를 제공하지 않아 공개 API에서 제외한다. / `rowEnd?`: 제약 — Seed GridItem은 `rowEnd`를 CSS grid row line placement로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 공통 row line placement contract를 제공하지 않아 공개 API에서 제외한다. / `display?`: 제약 — Seed Box `display`는 DOM display mode와 flex formatting context를 바꾸지만 Mossy `Grid.Item`은 Expo UI native Grid 셀 안의 Box surface라 동일 DOM display contract를 제공하지 않는다. / `flexDirection?`: 제약 — Seed `flexDirection`은 CSS flex container 축을 바꾸지만 Mossy `Grid.Item` Box surface는 native grid cell wrapper라 flex container contract를 제공하지 않는다. / `alignItems?`: 제약 — Seed `alignItems`는 CSS flex/grid child alignment를 적용하지만 Mossy `Grid.Item` Box surface는 Expo UI native grid cell wrapper라 동일 direct-child alignment contract를 제공하지 않는다. / `justifyContent?`: 제약 — Seed `justifyContent`는 CSS flex/grid content distribution을 적용하지만 Mossy `Grid.Item` Box surface는 Expo UI native grid cell wrapper라 동일 content distribution contract를 제공하지 않는다. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS flex line wrapping을 만들지만 Mossy `Grid.Item` Box surface는 wrapping flex container contract를 제공하지 않는다. / `StyleProps.flexGrow`: 완료 / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS flex-shrink 우선순위지만 SwiftUI/Compose Grid cell wrapper는 동일 축소 contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.bgGradientDirection raw CSS string`: 제약 — Seed는 임의 CSS gradient direction string을 허용하지만 Mossy는 native gradient start/end point로 변환 가능한 CSS 방향 키워드와 `${number}deg`만 공개한다. / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN/Expo UI Grid cell은 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed `top`/`right`/`bottom`/`left`는 CSS positioned inset이지만 Mossy `Grid.Item`은 native grid cell wrapper라 동일 positioned inset contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Grid cell surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Mossy `Grid.Item`은 native grid cell wrapper라 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Mossy `Grid.Item` clipping/scroll은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS grid item inline-axis self-alignment지만 Mossy `Grid.Item`은 parent Grid의 native cell wrapper로 렌더되어 같은 self-alignment contract를 제공하지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 CSS wrap/grid multi-line alignment지만 Mossy `Grid.Item` Box surface는 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Expo UI Grid cell wrapper는 동일 self-alignment modifier contract를 공통 제공하지 않는다. / `StyleProps.gap`: 제약 — Seed `gap`은 CSS flex/grid container gap이지만 Mossy `Grid.Item` Box surface는 child layout container gap contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Grid cell modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed Box `as`는 DOM element type을 교체하지만 RN/Expo UI Host 내부 네이티브 트리는 DOM element 교체 contract를 제공하지 않는다. / `div attrs`: 제약 — Seed GridItem은 Box 기반 HTML div attrs를 전달하지만 RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
+      "propStatus": "`asChild?`: 제약 — Seed GridItem은 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 Grid 셀은 같은 Slot composition contract를 제공하지 않는다. / `colSpan?`: 완료 / `rowSpan?`: 제약 — Seed GridItem은 `rowSpan`을 CSS `grid-row` span/full로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 한 셀을 여러 row sibling에 걸쳐 병합하는 공통 contract를 제공하지 않아 공개 API에서 제외한다. / `colStart?`: 완료 / `colEnd?`: 완료 / `rowStart?`: 제약 — Seed GridItem은 `rowStart`를 CSS grid row line placement로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 공통 row line placement contract를 제공하지 않아 공개 API에서 제외한다. / `rowEnd?`: 제약 — Seed GridItem은 `rowEnd`를 CSS grid row line placement로 변환하지만 SwiftUI Grid와 Android Row/Column fallback은 공통 row line placement contract를 제공하지 않아 공개 API에서 제외한다. / `display?`: 제약 — Seed Box `display`는 DOM display mode와 flex formatting context를 바꾸지만 Mossy `Grid.Item`은 Expo UI native Grid 셀 안의 Box surface라 동일 DOM display contract를 제공하지 않는다. / `flexDirection?`: 제약 — Seed `flexDirection`은 CSS flex container 축을 바꾸지만 Mossy `Grid.Item` Box surface는 native grid cell wrapper라 flex container contract를 제공하지 않는다. / `alignItems?`: 제약 — Seed `alignItems`는 CSS flex/grid child alignment를 적용하지만 Mossy `Grid.Item` Box surface는 Expo UI native grid cell wrapper라 동일 direct-child alignment contract를 제공하지 않는다. / `justifyContent?`: 제약 — Seed `justifyContent`는 CSS flex/grid content distribution을 적용하지만 Mossy `Grid.Item` Box surface는 Expo UI native grid cell wrapper라 동일 content distribution contract를 제공하지 않는다. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS flex line wrapping을 만들지만 Mossy `Grid.Item` Box surface는 wrapping flex container contract를 제공하지 않는다. / `StyleProps.flexGrow`: 완료 / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS flex-shrink 우선순위지만 SwiftUI/Compose Grid cell wrapper는 동일 축소 contract를 제공하지 않는다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.bgGradientDirection raw CSS string`: 제약 — Seed는 임의 CSS gradient direction string을 허용하지만 Mossy는 native gradient start/end point로 변환 가능한 CSS 방향 키워드와 `${number}deg`만 공개한다. / `StyleProps.color`: 제약 — Seed Box `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI Grid cell은 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.cornerRadius*`: 완료 / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed `top`/`right`/`bottom`/`left`는 CSS positioned inset이지만 Mossy `Grid.Item`은 native grid cell wrapper라 동일 positioned inset contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Grid cell surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Mossy `Grid.Item`은 native grid cell wrapper라 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Mossy `Grid.Item` clipping/scroll은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS grid item inline-axis self-alignment지만 Mossy `Grid.Item`은 parent Grid의 native cell wrapper로 렌더되어 같은 self-alignment contract를 제공하지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 CSS wrap/grid multi-line alignment지만 Mossy `Grid.Item` Box surface는 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Expo UI Grid cell wrapper는 동일 self-alignment modifier contract를 공통 제공하지 않는다. / `StyleProps.gap`: 제약 — Seed `gap`은 CSS flex/grid container gap이지만 Mossy `Grid.Item` Box surface는 child layout container gap contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Grid cell modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed Box `as`는 DOM element type을 교체하지만 RN 또는 선택한 Expo UI Host 내부 네이티브 트리는 DOM element 교체 contract를 제공하지 않는다. / `div attrs`: 제약 — Seed GridItem은 Box 기반 HTML div attrs를 전달하지만 RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
       "next": "부분완료 항목 없음. `colSpan`, `colStart`, `colEnd`는 row auto-flow column placement로 구현했고, row span/row line placement와 DOM Slot/attrs·CSS-only style props는 공개 API에서 제외하거나 제약으로 문서화한다.",
       "note": "문서-코드 차이: Seed 문서와 React 코드는 `GridItem` named component를 노출하고 `Grid.Item` compound 바인딩은 없다. Mossy는 대상 요구에 맞춰 `Grid.Item` compound와 `GridItem` named export alias를 함께 제공한다."
     },
@@ -1456,9 +1456,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`AnchorProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`AnchorProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Arrow`",
@@ -1466,9 +1466,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ArrowProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ArrowProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.ArrowTip`",
@@ -1476,9 +1476,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ArrowTipProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ArrowTipProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Body`",
@@ -1486,9 +1486,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BodyProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BodyProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.CloseButton`",
@@ -1496,9 +1496,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`CloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`CloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Content`",
@@ -1506,9 +1506,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Description`",
@@ -1516,9 +1516,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`DescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`DescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Positioner`",
@@ -1526,9 +1526,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.PositionerPortal`",
@@ -1536,9 +1536,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerPortalProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerPortalProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Root`",
@@ -1546,9 +1546,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Title`",
@@ -1556,9 +1556,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HelpBubble.Trigger`",
@@ -1566,9 +1566,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Icon`",
@@ -1616,8 +1616,8 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`rounded?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `src`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `alt`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `fallback?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `loading?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `decoding?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `crossOrigin?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `referrerPolicy?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `sizes?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `srcSet?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `onLoad?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `onError?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Floater`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Badge`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Icon`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Indicator`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `ReactionButton`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
+      "propStatus": "`rounded?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `src`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `alt`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `fallback?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `loading?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `decoding?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `crossOrigin?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `referrerPolicy?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `sizes?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `srcSet?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `onLoad?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `onError?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Floater`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Badge`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Icon`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `Indicator`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `ReactionButton`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
       "note": "Web image attributes와 responsive image props가 RN Image API와 다르다."
     },
     {
@@ -1796,7 +1796,7 @@
       "mossy": "`LoadingIndicator`",
       "mossyProps": "`LoadingIndicator`: 상속 `Omit<MossyProgressCircleProps, 'value'>`",
       "status": "부분완료",
-      "propStatus": "`indicator`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `span attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "propStatus": "`indicator`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `span attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
       "next": "Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.",
       "note": "Mossy는 `ProgressCircle` 기반 indeterminate 래퍼다."
     },
@@ -1836,9 +1836,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`BackdropProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`BackdropProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Positioner`",
@@ -1846,9 +1846,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PositionerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PositionerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Content`",
@@ -1856,9 +1856,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Footer`",
@@ -1866,9 +1866,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`FooterProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`FooterProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Header`",
@@ -1876,9 +1876,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HeaderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HeaderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Root`",
@@ -1886,9 +1886,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Title`",
@@ -1896,9 +1896,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TitleProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TitleProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Description`",
@@ -1906,9 +1906,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`DescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`DescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Trigger`",
@@ -1916,9 +1916,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`TriggerProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`TriggerProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.List`",
@@ -1926,9 +1926,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ListProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ListProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Group`",
@@ -1936,9 +1936,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`GroupProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`GroupProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.Item`",
@@ -1946,9 +1946,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.ItemContent`",
@@ -1956,9 +1956,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.ItemLabel`",
@@ -1966,9 +1966,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemLabelProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemLabelProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.ItemDescription`",
@@ -1976,9 +1976,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemDescriptionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ItemDescriptionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`MenuSheet.CloseButton`",
@@ -1986,9 +1986,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`CloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`CloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`NotificationBadge`",
@@ -2086,8 +2086,8 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`@seed-design/react-portal`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
+      "propStatus": "`@seed-design/react-portal`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
       "note": "Web portal API다. Expo UI Host/네이티브 modal 계층과 동일하게 제공하지 않는다."
     },
     {
@@ -2236,7 +2236,7 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemHiddenInputProps`: 제약 — RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
+      "propStatus": "`ItemHiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
       "next": "구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 Mossy API를 설계한다.",
       "note": "Mossy 공개 API에 대응 part가 없다."
     },
@@ -2356,7 +2356,7 @@
       "mossy": "`ScrollFog`",
       "mossyProps": "`ScrollFog`: `children?`, `placement?`, `size?`, `sizes?`, 상속 `ViewProps`",
       "status": "부분완료",
-      "propStatus": "`placement?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `size?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `sizes?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `ScrollFogVariantProps`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `div attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
+      "propStatus": "`placement?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `size?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `sizes?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `ScrollFogVariantProps`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `div attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
       "next": "Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.",
       "note": "Mossy는 RN `ViewProps`와 토큰 size를 사용한다."
     },
@@ -2406,7 +2406,7 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ItemHiddenInputProps`: 제약 — RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
+      "propStatus": "`ItemHiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
       "next": "구현 필요성과 `@expo/ui` 대응 가능성을 확인한 뒤 Mossy API를 설계한다.",
       "note": "Mossy 공개 API에 대응 part가 없다."
     },
@@ -2496,9 +2496,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`SelectBox.CheckSelectBox.Label`",
@@ -2596,9 +2596,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`SelectBox.RadioSelectBox.Item`",
@@ -2706,9 +2706,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
     },
     {
       "seed": "`Slider.Tick`",
@@ -2796,9 +2796,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ActionButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ActionButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.AvoidOverlap`",
@@ -2806,9 +2806,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`AvoidOverlapProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`AvoidOverlapProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.HiddenCloseButton`",
@@ -2816,9 +2816,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenCloseButtonProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`HiddenCloseButtonProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.Message`",
@@ -2826,9 +2826,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`MessageProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`MessageProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.Content`",
@@ -2836,9 +2836,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`ContentProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`ContentProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.PrefixIcon`",
@@ -2846,9 +2846,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PrefixIconProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`PrefixIconProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.Region`",
@@ -2856,9 +2856,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RegionProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RegionProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.Renderer`",
@@ -2866,9 +2866,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RendererProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RendererProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.Root`",
@@ -2876,9 +2876,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`Snackbar.RootProvider`",
@@ -2886,9 +2886,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`RootProviderProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
+      "propStatus": "`RootProviderProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다."
     },
     {
       "seed": "`HStack`",
@@ -2896,9 +2896,9 @@
       "mossy": "`HStack`",
       "mossyProps": "`children?`, `display?`, `align?`, `alignItems?`, `justify?`, `justifyContent?`, `grow?`, `flexGrow?`, `gap?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, `borderColor?`, `borderWidth?`, directional border widths, radius props, `boxShadow?`, size props, padding aliases, `zIndex?`",
       "status": "완료",
-      "propStatus": "`display?`: 완료 / `direction?`: 제약 — Seed HStack 문서에는 `direction` shorthand가 노출되지만 실제 Seed 코드가 `Flex`에 고정 `flexDirection=\"row\"`를 뒤에서 전달해 caller `direction`이 레이아웃을 바꾸지 못하므로 Mossy 공개 API에서는 무시되는 prop을 제공하지 않는다. / `wrap?`: 제약 — Seed `wrap`은 CSS `flex-wrap`으로 줄바꿈을 만들지만 Expo UI SwiftUI/Compose 공통 `Row` contract는 줄바꿈 배치를 제공하지 않는다. / `align?`: 제약 — Seed `align` union에는 `stretch`가 포함되지만 Expo UI `Row` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI `Row` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `justify?`: 완료 / `justifyContent?`: 완료 / `grow?`: 완료 / `flexGrow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 CSS `flex-shrink`를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `gap?`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI `Row.spacing`은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `bgGradientDirection/backgroundGradientDirection arbitrary CSS string`: 제약 — Seed gradient direction props accept arbitrary CSS `(string & {})`, but Mossy native gradient conversion supports fixed CSS direction keywords and `${number}deg` only because SwiftUI/Compose gradient points cannot apply arbitrary CSS gradient syntax. / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN/Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `zIndex raw CSS string`: 제약 — Seed `zIndex` accepts arbitrary CSS strings, but Expo UI z-index/elevation modifiers require numeric ordering so Mossy public type accepts number or numeric string only. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS 줄바꿈 배치를 만들지만 Expo UI Stack은 동일 줄바꿈 contract를 제공하지 않는다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `HStack` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed `as`는 DOM element type을 바꾸지만 RN/Expo UI 네이티브 트리는 DOM element type contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed `Box` 기반 `HStack`은 HTML div attrs를 전달하지만 RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
-      "next": "부분완료 없음. Seed `HStackProps` 중 RN/Expo UI Row에서 실제 구현 가능한 token/layout props는 Mossy 공개 API와 modifier/style 경로에 연결했다. Seed raw CSS string, min/max `full`, DOM 전용 union 값은 RN/Expo UI 동일 contract가 없어 공개 API에서 제외하고 별도 제약 row로 분리했다.",
-      "note": "제약: `direction?`은 Seed HStack 실제 코드에서도 고정 `flexDirection=\"row\"` 때문에 레이아웃을 바꾸지 못해 Mossy에서 무시되는 공개 prop으로 제공하지 않는다. `align?`/`alignItems?`의 `stretch` 값은 Expo UI `Row`가 direct-child semantics를 유지한 cross-axis stretch contract를 제공하지 않아 제외한다. `gap`, size, min/max size, padding, borderWidth, radius, shadow의 Seed `(string & {})` CSS 문자열 값, min/max `full`, padding `safeArea`는 native number dp/token 또는 shadow/elevation contract로 동일 적용할 수 없어 제외한다. `wrap?`/`shrink?`/position·overflow·bleed·grid·transform·`_active`·`as`·`asChild`·DOM attrs는 CSS/DOM contract라 RN/Expo UI Stack에서 동일 의미를 제공하지 않는다. `color?`는 DOM text color 상속 전용이라 RN/Expo UI 자식 Text에 상속되지 않는다. `bgGradientDirection?`/`backgroundGradientDirection?`의 임의 CSS 문자열과 `zIndex?`의 임의 CSS 문자열은 SwiftUI/Compose native modifier가 숫자·고정 방향 contract만 제공해 제외한다."
+      "propStatus": "`display?`: 완료 / `direction?`: 제약 — Seed HStack 문서에는 `direction` shorthand가 노출되지만 실제 Seed 코드가 `Flex`에 고정 `flexDirection=\"row\"`를 뒤에서 전달해 caller `direction`이 레이아웃을 바꾸지 못하므로 Mossy 공개 API에서는 무시되는 prop을 제공하지 않는다. / `wrap?`: 제약 — Seed `wrap`은 CSS `flex-wrap`으로 줄바꿈을 만들지만 Expo UI SwiftUI/Compose 공통 `Row` contract는 줄바꿈 배치를 제공하지 않는다. / `align?`: 제약 — Seed `align` union에는 `stretch`가 포함되지만 Expo UI `Row` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI `Row` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `justify?`: 완료 / `justifyContent?`: 완료 / `grow?`: 완료 / `flexGrow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 CSS `flex-shrink`를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `gap?`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI `Row.spacing`은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `bgGradientDirection/backgroundGradientDirection arbitrary CSS string`: 제약 — Seed gradient direction props accept arbitrary CSS `(string & {})`, but Mossy native gradient conversion supports fixed CSS direction keywords and `${number}deg` only because SwiftUI/Compose gradient points cannot apply arbitrary CSS gradient syntax. / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `zIndex raw CSS string`: 제약 — Seed `zIndex` accepts arbitrary CSS strings, but Expo UI z-index/elevation modifiers require numeric ordering so Mossy public type accepts number or numeric string only. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS 줄바꿈 배치를 만들지만 Expo UI Stack은 동일 줄바꿈 contract를 제공하지 않는다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `HStack` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed `as`는 DOM element type을 바꾸지만 RN 또는 선택한 Expo UI 네이티브 트리는 DOM element type contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed `Box` 기반 `HStack`은 HTML div attrs를 전달하지만 RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
+      "next": "부분완료 없음. Seed `HStackProps` 중 RN 또는 선택한 Expo UI Row에서 실제 구현 가능한 token/layout props는 Mossy 공개 API와 modifier/style 경로에 연결했다. Seed raw CSS string, min/max `full`, DOM 전용 union 값은 RN 또는 선택한 Expo UI 동일 contract가 없어 공개 API에서 제외하고 별도 제약 row로 분리했다.",
+      "note": "제약: `direction?`은 Seed HStack 실제 코드에서도 고정 `flexDirection=\"row\"` 때문에 레이아웃을 바꾸지 못해 Mossy에서 무시되는 공개 prop으로 제공하지 않는다. `align?`/`alignItems?`의 `stretch` 값은 Expo UI `Row`가 direct-child semantics를 유지한 cross-axis stretch contract를 제공하지 않아 제외한다. `gap`, size, min/max size, padding, borderWidth, radius, shadow의 Seed `(string & {})` CSS 문자열 값, min/max `full`, padding `safeArea`는 native number dp/token 또는 shadow/elevation contract로 동일 적용할 수 없어 제외한다. `wrap?`/`shrink?`/position·overflow·bleed·grid·transform·`_active`·`as`·`asChild`·DOM attrs는 CSS/DOM contract라 RN 또는 선택한 Expo UI Stack에서 동일 의미를 제공하지 않는다. `color?`는 DOM text color 상속 전용이라 RN 또는 선택한 Expo UI 자식 Text에 상속되지 않는다. `bgGradientDirection?`/`backgroundGradientDirection?`의 임의 CSS 문자열과 `zIndex?`의 임의 CSS 문자열은 SwiftUI/Compose native modifier가 숫자·고정 방향 contract만 제공해 제외한다."
     },
     {
       "seed": "`VStack`",
@@ -2906,9 +2906,9 @@
       "mossy": "`VStack`",
       "mossyProps": "`children?`, `display?`, `direction?`, `align?`, `alignItems?`, `justify?`, `justifyContent?`, `grow?`, `flexGrow?`, `gap?`, `bg?`, `background?`, `bgGradient?`, `backgroundGradient?`, `bgGradientDirection?`, `backgroundGradientDirection?`, `borderColor?`, `borderWidth?`, directional border widths, radius props, `boxShadow?`, size props, padding aliases, `zIndex?`",
       "status": "완료",
-      "propStatus": "`display?`: 완료 / `direction?`: 완료 / `wrap?`: 제약 — Seed `wrap`은 CSS `flex-wrap`으로 줄바꿈을 만들지만 Expo UI SwiftUI/Compose 공통 Stack contract는 줄바꿈 배치를 제공하지 않는다. / `align?`: 제약 — Seed `align` union에는 `stretch`가 포함되지만 Expo UI `Column` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI `Column` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `justify?`: 완료 / `justifyContent?`: 완료 / `grow?`: 완료 / `flexGrow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 CSS `flex-shrink`를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `gap?`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI `Column.spacing`은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN/Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `flexDirection?`: 제약 — Seed `VStackProps`는 `Omit<FlexProps, \"flexDirection\">`라 문서/공개 타입에서 제외되므로 Mossy도 공개 prop으로 제공하지 않는다. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS 줄바꿈 배치를 만들지만 Expo UI Stack은 동일 줄바꿈 contract를 제공하지 않는다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `VStack` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed `as`는 DOM element type을 바꾸지만 RN/Expo UI 네이티브 트리는 DOM element type contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed `Box` 기반 `VStack`은 HTML div attrs를 전달하지만 RN/Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
-      "next": "부분완료 없음. Seed `VStackProps` 중 RN/Expo UI Stack에서 실제 구현 가능한 token/layout props는 Mossy 공개 API와 modifier/style 경로에 연결했다. Seed raw CSS string, min/max `full`, DOM 전용 union 값은 RN/Expo UI 동일 contract가 없어 공개 API에서 제외하고 별도 제약 row로 분리했다.",
-      "note": "제약: `align?`/`alignItems?`의 `stretch` 값은 Expo UI `Column`이 direct-child semantics를 유지한 cross-axis stretch contract를 제공하지 않아 제외한다. `gap`, size, min/max size, padding, borderWidth, radius, shadow의 Seed `(string & {})` CSS 문자열 값, min/max `full`, padding `safeArea`는 native number dp/token 또는 shadow/elevation contract로 동일 적용할 수 없어 제외한다. `wrap?`/`shrink?`/position·overflow·bleed·grid·transform·`_active`·`as`·`asChild`·DOM attrs는 CSS/DOM contract라 RN/Expo UI Stack에서 동일 의미를 제공하지 않는다. `color?`는 DOM text color 상속 전용이라 RN/Expo UI 자식 Text에 상속되지 않는다. `Flex`는 현행 shared Stack surface를 유지하고, 이번 작업은 `VStack` 단일 컴포넌트의 Seed props 전수 처리로 한정한다."
+      "propStatus": "`display?`: 완료 / `direction?`: 완료 / `wrap?`: 제약 — Seed `wrap`은 CSS `flex-wrap`으로 줄바꿈을 만들지만 Expo UI SwiftUI/Compose 공통 Stack contract는 줄바꿈 배치를 제공하지 않는다. / `align?`: 제약 — Seed `align` union에는 `stretch`가 포함되지만 Expo UI `Column` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `alignItems?`: 제약 — Seed `alignItems` union에는 `stretch`가 포함되지만 Expo UI `Column` alignment는 `start|center|end`만 제공해 direct-child semantics를 보존한 stretch를 구현할 수 없으므로 Mossy 공개 타입에서는 `stretch`를 제외한다. / `justify?`: 완료 / `justifyContent?`: 완료 / `grow?`: 완료 / `flexGrow?`: 완료 / `shrink?`: 제약 — Seed `shrink`는 CSS `flex-shrink`를 설정하지만 SwiftUI/Compose Stack은 동일한 축소 우선순위 contract를 제공하지 않는다. / `gap?`: 완료 / `gap raw CSS length`: 제약 — Seed `gap`의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI `Column.spacing`은 number dp contract라 Mossy 공개 타입에서는 token/0만 제공한다. / `StyleProps.bg/background`: 완료 / `StyleProps.bgGradient/backgroundGradient`: 완료 / `StyleProps.bgGradientDirection/backgroundGradientDirection`: 완료 / `StyleProps.color`: 제약 — Seed `color`는 DOM text color 상속을 설정하지만 RN 또는 선택한 Expo UI 네이티브 트리는 자식 Text 색상 상속 contract를 제공하지 않는다. / `StyleProps.borderColor/borderWidth`: 완료 / `borderWidth raw CSS length`: 제약 — Seed border width의 `(string & {})`는 CSS border-width 문자열을 그대로 적용하지만 Expo UI border modifier는 number dp width contract라 Mossy 공개 타입에서는 number/0/1/숫자 문자열만 제공한다. / `StyleProps.directionalBorderWidth`: 완료 / `StyleProps.borderRadius`: 완료 / `StyleProps.cornerRadius*`: 완료 / `borderRadius raw CSS radius`: 제약 — Seed radius props의 `(string & {})`는 CSS border-radius 문자열을 그대로 적용하지만 Expo UI radius modifier는 number dp/radius token contract라 Mossy 공개 타입에서는 `MossyBoxRadiusToken | 0`만 제공한다. / `StyleProps.boxShadow`: 완료 / `boxShadow raw CSS shadow`: 제약 — Seed `boxShadow`의 `(string & {})`는 CSS box-shadow 문자열을 그대로 적용하지만 SwiftUI/Compose shadow/elevation modifier는 token화된 native shadow contract라 Mossy 공개 타입에서는 `MossyBoxShadow`만 제공한다. / `StyleProps.width/height`: 완료 / `width/height raw CSS length`: 제약 — Seed size props의 `(string & {})`는 CSS length 문자열을 그대로 적용하지만 Expo UI frame/size modifiers는 number dp와 `full` fill contract만 제공하므로 Mossy 공개 타입에서는 dimension token/0/`full`만 제공한다. / `StyleProps.min/max size`: 완료 / `min/max raw CSS length/full`: 제약 — Seed min/max size의 `(string & {})`와 `\"full\"`은 CSS min/max length 문자열과 percentage fill contract지만 Mossy native size constraint modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.inset`: 제약 — Seed inset props는 CSS positioned inset이지만 Expo UI Stack은 positioned offset 배치 contract를 제공하지 않는다. / `StyleProps.padding`: 완료 / `StyleProps.paddingX/paddingY`: 완료 / `StyleProps.paddingLeft/paddingRight`: 완료 / `StyleProps.paddingTop/paddingBottom`: 완료 / `padding raw CSS length/safeArea`: 제약 — Seed padding props의 `(string & {})`와 `safeArea`는 CSS length/safe-area variable contract지만 Expo UI padding modifier는 number dp contract라 Mossy 공개 타입에서는 dimension token/0만 제공한다. / `StyleProps.bleed*`: 제약 — Seed bleed는 CSS negative margin과 `asPadding` 변수를 적용하지만 Expo UI Stack surface는 negative margin/as-padding bleed modifier를 제공하지 않는다. / `StyleProps.position`: 제약 — Seed `position`은 CSS positioning mode를 바꾸지만 Expo UI Stack은 RN/네이티브 배치 트리에서 동일 positioned contract를 제공하지 않는다. / `StyleProps.overflowX/overflowY`: 제약 — Seed overflow는 DOM clipping/scroll CSS이지만 Expo UI Stack의 scroll/clipping은 ScrollView·clip 계열 네이티브 컴포넌트와 분리된다. / `StyleProps.zIndex`: 완료 / `flexDirection?`: 제약 — Seed `VStackProps`는 `Omit<FlexProps, \"flexDirection\">`라 문서/공개 타입에서 제외되므로 Mossy도 공개 prop으로 제공하지 않는다. / `flexWrap?`: 제약 — Seed `flexWrap`은 CSS 줄바꿈 배치를 만들지만 Expo UI Stack은 동일 줄바꿈 contract를 제공하지 않는다. / `flexShrink?`: 제약 — Seed `flexShrink`는 CSS 축소 우선순위지만 SwiftUI/Compose Stack은 동일 축소 contract를 제공하지 않는다. / `justifySelf?`: 제약 — Seed `justifySelf`는 CSS item alignment지만 Expo UI Stack 자식 item self-alignment contract와 대응되지 않는다. / `alignContent?`: 제약 — Seed `alignContent`는 wrap/grid multi-line alignment지만 Expo UI Stack은 multi-line content alignment contract를 제공하지 않는다. / `alignSelf?`: 제약 — Seed `alignSelf`는 CSS item self-alignment지만 Mossy `VStack` 컨테이너 공개 API에서는 자식별 self-alignment를 설정할 수 없다. / `StyleProps.grid*`: 제약 — Seed `gridColumn`/`gridRow`는 CSS grid item placement지만 Expo UI Stack은 CSS grid item placement contract를 제공하지 않는다. / `StyleProps.unstable_transform`: 제약 — Seed는 CSS transform string을 그대로 적용하지만 SwiftUI/Compose transform modifiers는 분해된 숫자 파라미터 contract라 동일 string prop을 제공하지 않는다. / `StyleProps._active`: 제약 — Seed `_active`는 `:active`/`data-active` CSS background를 적용하지만 Expo UI Stack modifier만으로 같은 선언형 active state style prop을 제공하지 않는다. / `as?`: 제약 — Seed `as`는 DOM element type을 바꾸지만 RN 또는 선택한 Expo UI 네이티브 트리는 DOM element type contract를 제공하지 않는다. / `asChild?`: 제약 — Seed는 Radix `Slot`으로 DOM props/ref를 자식에게 합성하지만 Expo UI 네이티브 트리는 같은 Slot composition contract를 제공하지 않는다. / `div attrs`: 제약 — Seed `Box` 기반 `VStack`은 HTML div attrs를 전달하지만 RN 또는 선택한 Expo UI 레이어는 동일 DOM attrs contract를 제공하지 않는다. / `children?`: 완료",
+      "next": "부분완료 없음. Seed `VStackProps` 중 RN 또는 선택한 Expo UI Stack에서 실제 구현 가능한 token/layout props는 Mossy 공개 API와 modifier/style 경로에 연결했다. Seed raw CSS string, min/max `full`, DOM 전용 union 값은 RN 또는 선택한 Expo UI 동일 contract가 없어 공개 API에서 제외하고 별도 제약 row로 분리했다.",
+      "note": "제약: `align?`/`alignItems?`의 `stretch` 값은 Expo UI `Column`이 direct-child semantics를 유지한 cross-axis stretch contract를 제공하지 않아 제외한다. `gap`, size, min/max size, padding, borderWidth, radius, shadow의 Seed `(string & {})` CSS 문자열 값, min/max `full`, padding `safeArea`는 native number dp/token 또는 shadow/elevation contract로 동일 적용할 수 없어 제외한다. `wrap?`/`shrink?`/position·overflow·bleed·grid·transform·`_active`·`as`·`asChild`·DOM attrs는 CSS/DOM contract라 RN 또는 선택한 Expo UI Stack에서 동일 의미를 제공하지 않는다. `color?`는 DOM text color 상속 전용이라 RN 또는 선택한 Expo UI 자식 Text에 상속되지 않는다. `Flex`는 현행 shared Stack surface를 유지하고, 이번 작업은 `VStack` 단일 컴포넌트의 Seed props 전수 처리로 한정한다."
     },
     {
       "seed": "`Switch`",
@@ -2936,9 +2936,9 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`HiddenInputProps`: 제약 — RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
-      "note": "RN/Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
+      "propStatus": "`HiddenInputProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
+      "note": "RN 또는 선택한 Expo UI 레이어에서 DOM hidden input contract를 제공하지 않는다."
     },
     {
       "seed": "`Switch.Label`",
@@ -3096,7 +3096,7 @@
       "mossy": "`Text`",
       "mossyProps": "`Text`: `textStyle?`, `color?`, `fontSize?`, `lineHeight?`, `fontWeight?`, `align?`, `fontFamily?`, `letterSpacing?`, 상속 `Omit<ComponentProps<typeof ExpoText>, 'textStyle'>`",
       "status": "부분완료",
-      "propStatus": "`as?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `color?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `fontSize?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `lineHeight?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `fontWeight?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `maxLines?`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `align?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `userSelect?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `whiteSpace?`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `TextVariantProps`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `span attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `textStyle?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `fontFamily?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `letterSpacing?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
+      "propStatus": "`as?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `color?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `fontSize?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `lineHeight?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `fontWeight?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `maxLines?`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `align?`: 완료 — Mossy 공개 props에서 동일 이름으로 제공한다. / `userSelect?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `whiteSpace?`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `TextVariantProps`: 미구현 — Mossy 공개 API에 대응 prop/part가 없다. / `span attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `textStyle?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `fontFamily?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다. / `letterSpacing?`: Mossy only — Mossy 토큰화 또는 Expo UI 조합을 위해 별도 제공한다.",
       "next": "Seed props/parts와 Mossy API 차이를 확인하고 필요한 토큰 prop·닫힌 데이터 prop을 보강한다.",
       "note": "Mossy는 `textStyle`, tokenized color/typography props를 제공한다. DOM `as`, `userSelect`, `whiteSpace`는 제공하지 않는다."
     },
@@ -3116,7 +3116,7 @@
       "mossy": "`TextField.Root`, `TextFieldRoot`",
       "mossyProps": "`children?`, `value?`, `defaultValue?`, `onValueChange?`, `disabled?`, `invalid?`, `readOnly?`, `textStyle?`, `color?`, `placeholderColor?`, `backgroundColor?`, `borderColor?`, `height?`, `paddingHorizontal?`, `paddingVertical?`, `radius?`, `borderWidth?`, `spacing?`, `alignment?`, `testID?`, `modifiers?`",
       "status": "부분완료",
-      "propStatus": "`value?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `defaultValue?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `onValueChange?`: 완료 — Mossy Root context에서 `onChangeText`로 주입한다. / `disabled?`: 완료 — Mossy Root context와 HStack disabled로 주입한다. / `invalid?`: 완료 — Mossy Root context와 기본 borderColor 결정에 사용한다. / `readOnly?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `TextInputVariantProps`: 부분완료 — Seed CSS recipe variant를 Mossy 토큰 props(`textStyle`, `color`, `backgroundColor`, `borderColor`, spacing 계열)로 재해석한다. / `div attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: Mossy only — compound children 배치를 위해 제공한다. / `textStyle?`: Mossy only — Mossy typography token을 Root context로 주입한다. / `color?`: Mossy only — 입력·affix 기본 색상 토큰을 Root context로 주입한다. / `placeholderColor?`: Mossy only — placeholder 색상 토큰을 Root context로 주입한다. / `backgroundColor?`: Mossy only — HStack 배경 토큰을 제공한다. / `borderColor?`: Mossy only — HStack border 토큰을 제공한다. / `height?`: Mossy only — HStack 높이 토큰/값을 제공한다. / `paddingHorizontal?`: Mossy only — HStack 가로 padding 토큰/값을 제공한다. / `paddingVertical?`: Mossy only — HStack 세로 padding 토큰/값을 제공한다. / `radius?`: Mossy only — HStack radius 토큰/값을 제공한다. / `borderWidth?`: Mossy only — HStack border width 토큰/값을 제공한다. / `spacing?`: Mossy only — affix와 input 간격 토큰/값을 제공한다. / `alignment?`: Mossy only — HStack 정렬을 제공한다./ `testID?`: Mossy only — RN 테스트 식별자다. / `modifiers?`: Mossy only — Expo UI modifier escape hatch다.",
+      "propStatus": "`value?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `defaultValue?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `onValueChange?`: 완료 — Mossy Root context에서 `onChangeText`로 주입한다. / `disabled?`: 완료 — Mossy Root context와 HStack disabled로 주입한다. / `invalid?`: 완료 — Mossy Root context와 기본 borderColor 결정에 사용한다. / `readOnly?`: 완료 — Mossy Root context에서 Input/Textarea로 주입한다. / `TextInputVariantProps`: 부분완료 — Seed CSS recipe variant를 Mossy 토큰 props(`textStyle`, `color`, `backgroundColor`, `borderColor`, spacing 계열)로 재해석한다. / `div attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `children?`: Mossy only — compound children 배치를 위해 제공한다. / `textStyle?`: Mossy only — Mossy typography token을 Root context로 주입한다. / `color?`: Mossy only — 입력·affix 기본 색상 토큰을 Root context로 주입한다. / `placeholderColor?`: Mossy only — placeholder 색상 토큰을 Root context로 주입한다. / `backgroundColor?`: Mossy only — HStack 배경 토큰을 제공한다. / `borderColor?`: Mossy only — HStack border 토큰을 제공한다. / `height?`: Mossy only — HStack 높이 토큰/값을 제공한다. / `paddingHorizontal?`: Mossy only — HStack 가로 padding 토큰/값을 제공한다. / `paddingVertical?`: Mossy only — HStack 세로 padding 토큰/값을 제공한다. / `radius?`: Mossy only — HStack radius 토큰/값을 제공한다. / `borderWidth?`: Mossy only — HStack border width 토큰/값을 제공한다. / `spacing?`: Mossy only — affix와 input 간격 토큰/값을 제공한다. / `alignment?`: Mossy only — HStack 정렬을 제공한다./ `testID?`: Mossy only — RN 테스트 식별자다. / `modifiers?`: Mossy only — Expo UI modifier escape hatch다.",
       "next": "Seed CSS variant와 DOM attrs를 그대로 복제하지 않고 Mossy token props를 기준으로 유지한다.",
       "note": "Seed Root는 CSS recipe provider와 web TextField state provider다. Mossy Root는 HStack 컨테이너와 RN input state context다."
     },
@@ -3126,7 +3126,7 @@
       "mossy": "`TextField.Input`, `TextFieldInput`",
       "mossyProps": "`MossyTextFieldInputProps`: 상속 `Omit<ComponentProps<typeof TextInput>, 'placeholderTextColor', 'style', 'textStyle'>`; `textStyle?`, `color?`, `placeholderColor?`, `style?`",
       "status": "부분완료",
-      "propStatus": "`TextField.InputProps`: 부분완료 — value/defaultValue/onValueChange/disabled/readOnly는 Mossy Root context에서 `TextInput`으로 주입한다. / `input attrs`: 제약 — RN/Expo UI 레이어에서 동일 DOM input attrs contract를 제공하지 않는다. / `className?`: 제약 — Expo UI TextInput modifier/style contract로 대체한다. / `ref`: 제약 — React 19 일반 ref prop과 Expo UI component contract를 따른다. / `TextInput props`: 부분완료 — Expo UI universal `TextInput` props를 기반으로 전달한다. / `textStyle?`: Mossy only — Mossy typography token을 `textStyle`로 해석한다. / `color?`: Mossy only — Mossy color token 또는 원시 색상을 입력 텍스트 색으로 해석한다. / `placeholderColor?`: Mossy only — Mossy color token 또는 원시 색상을 `placeholderTextColor`로 해석한다. / `style?`: Mossy only — 기본 transparent input style 뒤에 병합한다.",
+      "propStatus": "`TextField.InputProps`: 부분완료 — value/defaultValue/onValueChange/disabled/readOnly는 Mossy Root context에서 `TextInput`으로 주입한다. / `input attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 DOM input attrs contract를 제공하지 않는다. / `className?`: 제약 — Expo UI TextInput modifier/style contract로 대체한다. / `ref`: 제약 — React 19 일반 ref prop과 Expo UI component contract를 따른다. / `TextInput props`: 부분완료 — Expo UI universal `TextInput` props를 기반으로 전달한다. / `textStyle?`: Mossy only — Mossy typography token을 `textStyle`로 해석한다. / `color?`: Mossy only — Mossy color token 또는 원시 색상을 입력 텍스트 색으로 해석한다. / `placeholderColor?`: Mossy only — Mossy color token 또는 원시 색상을 `placeholderTextColor`로 해석한다. / `style?`: Mossy only — 기본 transparent input style 뒤에 병합한다.",
       "next": "Seed input attrs 전체 parity 대신 Expo UI TextInput props와 토큰 props를 기준으로 관리한다.",
       "note": "Root context가 있으면 value/defaultValue/onValueChange/disabled/readOnly/text token을 주입한다. Seed의 Field context ARIA/name 병합은 RN에서 동일 contract가 없다."
     },
@@ -3136,7 +3136,7 @@
       "mossy": "`TextField.Textarea`, `TextFieldTextarea`",
       "mossyProps": "`MossyTextFieldTextareaProps`: `MossyTextFieldInputProps`에서 `multiline` 제외; `autoresize?`",
       "status": "부분완료",
-      "propStatus": "`TextField.TextareaProps`: 부분완료 — value/defaultValue/onValueChange/disabled/readOnly는 Mossy Root context에서 multiline `TextInput`으로 주입한다. / `textarea attrs`: 제약 — RN/Expo UI 레이어에서 동일 DOM textarea attrs contract를 제공하지 않는다. / `autoresize?`: 부분완료 — Seed는 DOM scrollHeight를 측정해 height를 갱신하고, Mossy는 native multiline 자연 크기 또는 고정 줄 수 예약으로 대응한다. / `className?`: 제약 — Expo UI TextInput modifier/style contract로 대체한다. / `ref`: 제약 — React 19 일반 ref prop과 Expo UI component contract를 따른다. / `MossyTextFieldInputProps`: 부분완료 — Input 행의 Expo UI TextInput props와 token props를 공유한다.",
+      "propStatus": "`TextField.TextareaProps`: 부분완료 — value/defaultValue/onValueChange/disabled/readOnly는 Mossy Root context에서 multiline `TextInput`으로 주입한다. / `textarea attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 DOM textarea attrs contract를 제공하지 않는다. / `autoresize?`: 부분완료 — Seed는 DOM scrollHeight를 측정해 height를 갱신하고, Mossy는 native multiline 자연 크기 또는 고정 줄 수 예약으로 대응한다. / `className?`: 제약 — Expo UI TextInput modifier/style contract로 대체한다. / `ref`: 제약 — React 19 일반 ref prop과 Expo UI component contract를 따른다. / `MossyTextFieldInputProps`: 부분완료 — Input 행의 Expo UI TextInput props와 token props를 공유한다.",
       "next": "RN multiline 동작 기준으로 autoresize 의미를 유지하고, DOM textarea props는 복제하지 않는다.",
       "note": "`autoresize=false`일 때 `numberOfLines` 또는 `rows` 값으로 고정 줄 수를 예약한다."
     },
@@ -3146,7 +3146,7 @@
       "mossy": "`TextField.PrefixIcon`, `TextFieldPrefixIcon`",
       "mossyProps": "`MossyIconProps`",
       "status": "부분완료",
-      "propStatus": "`InternalIconProps.svg`: 제약 — Seed는 SVG ReactNode slot을 받고, Mossy는 Expo UI `Icon` props/source contract를 따른다. / `svg slot attrs`: 제약 — RN/Expo UI 레이어에서 동일 SVG DOM attrs contract를 제공하지 않는다. / `MossyIconProps`: 부분완료 — `size?`, `color?`를 Mossy 토큰/값으로 제공하고 나머지는 Expo UI Icon props를 따른다.",
+      "propStatus": "`InternalIconProps.svg`: 제약 — Seed는 SVG ReactNode slot을 받고, Mossy는 Expo UI `Icon` props/source contract를 따른다. / `svg slot attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 SVG DOM attrs contract를 제공하지 않는다. / `MossyIconProps`: 부분완료 — `size?`, `color?`를 Mossy 토큰/값으로 제공하고 나머지는 Expo UI Icon props를 따른다.",
       "next": "Seed svg slot parity 대신 Expo UI Icon 기반 토큰 API를 유지한다.",
       "note": "Root context가 있으면 기본 size `x5`, disabled/invalid 상태 기반 기본 color를 주입한다."
     },
@@ -3156,7 +3156,7 @@
       "mossy": "`TextField.PrefixText`, `TextFieldPrefixText`",
       "mossyProps": "`MossyTextProps`",
       "status": "부분완료",
-      "propStatus": "`PrimitiveProps`: 제약 — RN/Expo UI 레이어에서 동일 web primitive contract를 제공하지 않는다. / `span attrs`: 제약 — RN/Expo UI 레이어에서 동일 DOM span attrs contract를 제공하지 않는다. / `MossyTextProps`: 부분완료 — Text 행의 tokenized typography/color props와 Expo UI Text props를 따른다.",
+      "propStatus": "`PrimitiveProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web primitive contract를 제공하지 않는다. / `span attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 DOM span attrs contract를 제공하지 않는다. / `MossyTextProps`: 부분완료 — Text 행의 tokenized typography/color props와 Expo UI Text props를 따른다.",
       "next": "Seed span attrs parity 대신 Mossy Text 기반 토큰 API를 유지한다.",
       "note": "Root context가 있으면 textStyle과 disabled/invalid 상태 기반 기본 color를 주입한다."
     },
@@ -3166,7 +3166,7 @@
       "mossy": "`TextField.SuffixIcon`, `TextFieldSuffixIcon`",
       "mossyProps": "`MossyIconProps`",
       "status": "부분완료",
-      "propStatus": "`InternalIconProps.svg`: 제약 — Seed는 SVG ReactNode slot을 받고, Mossy는 Expo UI `Icon` props/source contract를 따른다. / `svg slot attrs`: 제약 — RN/Expo UI 레이어에서 동일 SVG DOM attrs contract를 제공하지 않는다. / `MossyIconProps`: 부분완료 — `size?`, `color?`를 Mossy 토큰/값으로 제공하고 나머지는 Expo UI Icon props를 따른다.",
+      "propStatus": "`InternalIconProps.svg`: 제약 — Seed는 SVG ReactNode slot을 받고, Mossy는 Expo UI `Icon` props/source contract를 따른다. / `svg slot attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 SVG DOM attrs contract를 제공하지 않는다. / `MossyIconProps`: 부분완료 — `size?`, `color?`를 Mossy 토큰/값으로 제공하고 나머지는 Expo UI Icon props를 따른다.",
       "next": "Seed svg slot parity 대신 Expo UI Icon 기반 토큰 API를 유지한다.",
       "note": "Root context가 있으면 기본 size `x5`, disabled/invalid 상태 기반 기본 color를 주입한다."
     },
@@ -3176,7 +3176,7 @@
       "mossy": "`TextField.SuffixText`, `TextFieldSuffixText`",
       "mossyProps": "`MossyTextProps`",
       "status": "부분완료",
-      "propStatus": "`PrimitiveProps`: 제약 — RN/Expo UI 레이어에서 동일 web primitive contract를 제공하지 않는다. / `span attrs`: 제약 — RN/Expo UI 레이어에서 동일 DOM span attrs contract를 제공하지 않는다. / `MossyTextProps`: 부분완료 — Text 행의 tokenized typography/color props와 Expo UI Text props를 따른다.",
+      "propStatus": "`PrimitiveProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web primitive contract를 제공하지 않는다. / `span attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 DOM span attrs contract를 제공하지 않는다. / `MossyTextProps`: 부분완료 — Text 행의 tokenized typography/color props와 Expo UI Text props를 따른다.",
       "next": "Seed span attrs parity 대신 Mossy Text 기반 토큰 API를 유지한다.",
       "note": "Root context가 있으면 textStyle과 disabled/invalid 상태 기반 기본 color를 주입한다."
     },
@@ -3196,8 +3196,8 @@
       "mossy": "-",
       "mossyProps": "-",
       "status": "제약",
-      "propStatus": "`PrimitiveProps`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `div attrs`: 제약 — RN/Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
-      "next": "Seed API를 그대로 구현하지 않고 RN/Expo UI 대체 패턴을 문서화한다.",
+      "propStatus": "`PrimitiveProps`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다. / `div attrs`: 제약 — RN 또는 선택한 Expo UI 레이어에서 동일 web contract를 제공하지 않는다.",
+      "next": "Seed API를 그대로 구현하지 않고 RN 또는 선택한 Expo UI 대체 패턴을 문서화한다.",
       "note": "Web accessibility utility다. RN 접근성 props로 별도 처리한다."
     }
   ],
@@ -3217,7 +3217,7 @@
     {
       "component": "`ZStack`",
       "props": "`children?`, surface props, size props, padding props, `boxShadow?`, `flexGrow?`, `zIndex?`",
-      "reason": "Seed Design 참고 구현에는 직접 대응 컴포넌트가 없다. Mossy는 RN/Expo UI에서 겹침 레이아웃과 Float 부모 scope를 명시하기 위해 제공한다.",
+      "reason": "Seed Design 참고 구현에는 직접 대응 컴포넌트가 없다. Mossy는 RN 또는 선택한 Expo UI에서 겹침 레이아웃과 Float 부모 scope를 명시하기 위해 제공한다.",
       "status": "Mossy only"
     }
   ]

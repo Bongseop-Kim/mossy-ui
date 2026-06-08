@@ -47,8 +47,8 @@ docs는 사람보다 **AI Agent가 읽기 적합함이 최우선**이다. 모든
 
 ## 외부 문서 번안
 
-웹 디자인 시스템(seed-design 등) 문서를 참고할 때는 React Native + Expo UI 기준으로 재작성한다.
+웹 디자인 시스템(seed-design 등) 문서를 참고할 때는 React Native 기준으로 재작성하고, Expo UI를 선택한 컴포넌트는 Expo UI 네이티브 트리 제약을 함께 반영한다.
 
 - **HTML/CSS 개념 치환** — 태그, media query, hover 등은 RN 대응 개념으로 치환한다. 대응 개념이 없는 항목은 문서에서 제외한다.
-- **네이티브 경계 명시** — Expo UI 컴포넌트(SwiftUI / Jetpack Compose)는 내부 파츠가 JS에 존재하지 않는다. 이 제약이 패턴 적용 가능 여부를 바꾸면 반드시 기술한다.
+- **네이티브 경계 명시** — React Native와 Expo UI(SwiftUI / Jetpack Compose)는 DOM/CSS와 다른 네이티브 트리 제약을 가진다. 이 제약이 패턴 적용 가능 여부를 바꾸면 반드시 기술한다.
 - **토큰 치환** — 참조 문서의 팔레트(carrot 등)를 Mossy 팔레트로 치환하고 실제 값과 대조한다.

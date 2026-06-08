@@ -15,7 +15,7 @@ Seed Design 참고 구현 대비 mossy-ui 구현 진행 상태를 점검하기 �
 
 | 상태 | 의미 |
 | --- | --- |
-| 완료 | Seed 대응 범위를 Mossy RN/Expo UI API로 구현 완료했다. |
+| 완료 | Seed 대응 범위를 Mossy React Native API와 필요한 경우 선택한 Expo UI API로 구현 완료했다. |
 | 부분완료 | Mossy 대응 컴포넌트는 있으나 Seed props·파트·variant 대비 누락 범위가 남아 있다. |
 | 미구현 | Seed 컴포넌트를 확인했지만 mossy-ui 공개 API에 대응 컴포넌트가 없다. |
 | 제약 | DOM/HTML, Ark web primitive, web portal, web-only CSS layout, Expo UI native slot 제약 때문에 Seed API 형태를 그대로 제공하지 않는다. |

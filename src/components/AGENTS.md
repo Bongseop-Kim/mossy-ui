@@ -1,34 +1,34 @@
 # src/components
 
-mossy-ui 컴포넌트 작성 가이드. `src/components/`의 모든 컴포넌트에 적용된다. 루트 [AGENTS.md](../../AGENTS.md)의 전역 규칙(네임스페이스 우선순위, React 19/Compiler, Expo UI Host 규칙)을 전제로 하며 여기서는 반복하지 않는다.
+mossy-ui 컴포넌트 작성 가이드. `src/components/`의 모든 컴포넌트에 적용된다. 루트 [AGENTS.md](../../AGENTS.md)의 전역 규칙(구현 기술 선택, React 19/Compiler, Expo UI 선택 시 Host 규칙)을 전제로 하며 여기서는 반복하지 않는다.
 
 ## 디렉토리 개요
 
 - `src/foundation/` — 순수 토큰 시스템(빌더·테마·해석 함수). 컴포넌트를 두지 않는다.
-- `src/components/` — 모든 컴포넌트. 기초 프리미티브는 `Layout/`·`Typography/`·`Iconography/` 그룹 폴더에, 키트 컴포넌트(Switch 등)는 평면에 둔다. Host-free·조합 가능해야 한다.
+- `src/components/` — 모든 컴포넌트. 기초 프리미티브는 `Layout/`·`Typography/`·`Iconography/` 그룹 폴더에, 키트 컴포넌트(Switch 등)는 평면에 둔다. Expo UI를 쓰는 컴포넌트도 자체 `Host` 없이 조합 가능해야 한다.
 - 토큰 해석은 [`src/foundation/component-tokens.ts`](../foundation/component-tokens.ts), 공유 모디파이어 타입은 [`src/foundation/modifier.ts`](../foundation/modifier.ts), 테마 구독은 [`src/theme.tsx`](../theme.tsx)를 사용한다.
 
 ## 파일 작성 컨벤션
 
-컴포넌트는 universal 가용성에 따라 아래 세 패턴 중 하나를 따른다. 신규 컴포넌트는 먼저 어느 패턴인지 정한다.
+컴포넌트는 구현 기술에 따라 아래 패턴 중 하나를 따른다. 신규 컴포넌트는 RN primitive로 충분한지, Expo UI 네이티브 컨트롤이 필요한지 먼저 정한다.
 
-- **단일 구현 컴포넌트** — 플랫폼 분기가 전혀 없는 순수 래퍼/위임 컴포넌트는 `{Name}.tsx` 한 파일 (예: `Layout/Spacer.tsx`, `Layout/Flex.tsx` — `HStack`/`VStack`에 위임만 한다).
-- **OS 분기 컴포넌트(폴더형)** — universal(`@expo/ui`)에 대응 컴포넌트가 없어 swift-ui/jetpack-compose로 직접 분기하는 네이티브 전용 컴포넌트는 `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`, `Layout/ZStack/`, `Layout/Float/`, `Layout/Grid/`).
+- **단일 구현 컴포넌트** — 플랫폼 분기가 없는 RN primitive 기반 컴포넌트 또는 순수 래퍼/위임 컴포넌트는 `{Name}.tsx` 한 파일 (예: `Layout/Spacer.tsx`, `Layout/Flex.tsx` — `HStack`/`VStack`에 위임만 한다).
+- **OS 분기 컴포넌트(폴더형)** — 플랫폼별 네이티브 구현이 필요하고 universal(`@expo/ui`)로 충분하지 않은 컴포넌트는 `{Name}/` 디렉토리에 4파일 고정 (예: `Layout/Divider/`, `Layout/ZStack/`, `Layout/Float/`, `Layout/Grid/`).
   - `types.ts` — 공유 props 인터페이스 `Mossy{Name}Props`
   - `index.tsx` — 웹/기타 폴백. 렌더하지 않고(`return null`) 공개 타입 선언의 기준이 된다
   - `index.ios.tsx` — swift-ui 구현
   - `index.android.tsx` — jetpack-compose 구현
   - 플랫폼 파일은 `export * from './types'`로 타입을 재노출한다
-- **universal 베이스 + OS modifier 분기(평면형)** — universal에 컴포넌트가 있어 베이스 `{Name}.tsx`가 universal로 실제 렌더하되, 플랫폼별 surface modifier 주입을 위해 `{Name}.ios.tsx`·`{Name}.android.tsx`로 갈리는 경우 (예: `Layout/HStack`·`Layout/VStack` — universal `Row`/`Column` 래퍼). 베이스 `{Name}.tsx`가 공개 타입 기준이자 style 기반 폴백을 담당하고, 플랫폼 파일은 `export type { ... } from './{Name}'`로 타입을 재노출한다. 공유 순수 로직은 `{Name}.shared.ts`에 둔다.
+- **Expo UI universal 베이스 + OS modifier 분기(평면형)** — Expo UI universal을 사용하고 플랫폼별 surface modifier 주입이 필요한 경우 `{Name}.tsx`를 공개 타입 기준과 style 기반 폴백으로 두고, `{Name}.ios.tsx`·`{Name}.android.tsx`에서 플랫폼 modifier를 주입한다. 플랫폼 파일은 `export type { ... } from './{Name}'`로 타입을 재노출한다. 공유 순수 로직은 `{Name}.shared.ts`에 둔다.
 - **배럴 등록** — 모든 공개 컴포넌트는 `src/index.ts`에 named export로 등록하고(`export *` 금지) `Mossy{Name}Props` 타입을 함께 export한다. 경로 알파벳순 정렬.
 
 ## 코드 작성 컨벤션
 
-- **닫힌 pass-through 래퍼** — universal 컴포넌트는 `ComponentProps<typeof ExpoX>` 기반으로 전달한다. 토큰 prop으로 대체할 prop만 `Omit`으로 교체하고, 교체로 잃는 expo-ui 기능(예: Text의 `fontFamily`·`letterSpacing`)은 동등 prop으로 복원한다.
+- **닫힌 pass-through 래퍼** — Expo UI 래퍼는 `ComponentProps<typeof ExpoX>` 기반으로 전달한다. 토큰 prop으로 대체할 prop만 `Omit`으로 교체하고, 교체로 잃는 expo-ui 기능(예: Text의 `fontFamily`·`letterSpacing`)은 동등 prop으로 복원한다.
 - **토큰 해석** — 토큰 prop은 `useMossyTheme()` + `resolveMossy*`로 해석한다. 색상은 `resolveMossyColor(theme, value) ?? value` 원시값 폴백 패턴을 유지한다. 간격·크기는 `number | MossyDimensionToken` 유니언으로 받는다.
 - **테마 기본값 주입** — 기본값은 디자인 가이드 문서(`src/foundation/docs/*`)에 근거를 둔다 (예: Icon 기본 크기 `'x6'` ← iconography.md).
-- **testID** — OS 분기 컴포넌트는 `testID?: string`을 받는다. iOS는 prop으로(swift-ui `CommonViewModifierProps`), Android는 `testID` modifier로 전달한다.
-- **modifiers 패스스루** — 커스터마이징 escape hatch. 내부 생성 modifier 뒤에 사용자 `...modifiers`를 spread해 사용자가 덮어쓸 수 있게 한다.
+- **testID** — OS 분기 컴포넌트는 `testID?: string`을 받는다. Expo UI swift-ui 구현은 prop으로(`CommonViewModifierProps`), jetpack-compose 구현은 `testID` modifier로 전달한다.
+- **modifiers 패스스루** — Expo UI 래퍼의 커스터마이징 escape hatch. 내부 생성 modifier 뒤에 사용자 `...modifiers`를 spread해 사용자가 덮어쓸 수 있게 한다.
 - **슬롯·확장 API 선택 기준** — 슬롯이나 확장이 필요하면 경우에 따라 아래 방식 중 하나로 구현한다.
   1. **children 중첩** — 독립 블록(목록 행, 섹션 헤더 등)을 형제 단위로 추가할 때. 컨텍스트 없이 단독 렌더 가능한 컴포넌트를 자식으로 배치한다 (예: `List` 안의 `ListHeader`)
   2. **데이터 선언형 마커** — 네이티브 컴포넌트의 정해진 슬롯에 커스텀 노드를 배치할 때 (예: expo-ui `Picker.Item`, `ListItem.Leading`). expo-ui가 정의한 마커만 재노출하며 자체 마커를 새로 만들지 않는다 (슬롯 추출이 element type 레퍼런스 비교라 인식되지 않음)

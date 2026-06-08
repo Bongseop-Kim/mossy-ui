@@ -6,11 +6,11 @@
 
 - **공용 스케일 사용** — 아이콘 전용 토큰은 없다. 크기·여백은 공용 `$dimension` 스케일을 사용한다.
 - **시맨틱 색상** — 아이콘 색상은 텍스트와 동일한 `$color.fg.*` 시맨틱 토큰을 따른다.
-- **아이콘 소스** — universal `Icon` 컴포넌트의 `name` prop으로 지정한다. iOS는 SF Symbol, Android는 `@expo/material-symbols` XML 드로어블을 사용한다.
+- **아이콘 소스** — Expo UI Icon을 사용할 때는 `name` prop으로 지정한다. iOS는 SF Symbol, Android는 `@expo/material-symbols` XML 드로어블을 사용한다. RN 기반 아이콘 컴포넌트를 선택한 경우에도 동일한 Mossy size/color 토큰 규칙을 적용한다.
 
 ## 지정 방식
 
-플랫폼별 아이콘은 `Icon.select`로 지정한다. plain `{ ios, android }` 객체는 양쪽 에셋이 모두 번들되므로 `Icon.select`를 사용한다.
+Expo UI의 플랫폼별 아이콘은 `Icon.select`로 지정한다. plain `{ ios, android }` 객체는 양쪽 에셋이 모두 번들되므로 `Icon.select`를 사용한다.
 
 ```tsx
 import { Icon } from "@expo/ui";

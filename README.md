@@ -1,21 +1,17 @@
 # Mossy UI
 
-Expo UI 기반의 React Native 디자인 시스템.
-iOS는 SwiftUI, Android는 Jetpack Compose로 네이티브 컴포넌트를 렌더링하고,
-그 위에 SEED Design System의 Foundation과 설계 원칙을 Expo 환경에 맞게
-적용합니다.
+React Native 기반 디자인 시스템.
+React Native primitive와 Expo UI를 컴포넌트 요구사항에 맞게 선택하고,
+SEED Design System의 Foundation과 설계 원칙을 Expo 환경에 맞게 적용합니다.
 
 ## 소개
 
 Mossy UI는 [Seed Design System](https://github.com/daangn/seed-design)의
-디자인 시스템 구조와 Foundation 원칙을 [Expo UI](https://docs.expo.dev/versions/latest/sdk/ui/)(`@expo/ui`)
-위에 적용하는 React Native 디자인 시스템입니다.
+디자인 시스템 구조와 Foundation 원칙을 React Native 앱 환경에 적용하는 디자인 시스템입니다.
 
-원본 SEED는 웹/CSS 기반이지만, Mossy UI는 Expo UI의 universal component와
-iOS SwiftUI, Android Jetpack Compose 렌더링 모델을 기준으로 동작합니다.
+원본 SEED는 웹/CSS 기반이지만, Mossy UI는 iOS/Android React Native 렌더링 모델을 기준으로 동작합니다.
 따라서 Foundation 토큰은 React Native style 값으로 변환하고, 컴포넌트는
-Expo UI의 네이티브 primitive 위에서 SEED 원칙을 따르도록 구현하는 것을
-목표로 합니다. SEED는 API와 설계 구조를 잡기 위한 참고 자료이며, Mossy UI의
+React Native primitive와 필요한 경우 Expo UI 네이티브 컴포넌트 위에서 SEED 원칙을 따르도록 구현하는 것을 목표로 합니다. SEED는 API와 설계 구조를 잡기 위한 참고 자료이며, Mossy UI의
 토큰 값은 사용자가 본인의 브랜드와 제품에 맞게 바꿀 수 있어야 합니다.
 
 현재 구현 범위는 Foundation입니다. 초기 세팅용 컴포넌트 래퍼는 제거했고,
@@ -26,8 +22,8 @@ Mossy 컴포넌트 레이어는 이 Foundation 위에 다시 쌓습니다.
 
 ## 특징
 
-- **Expo UI 기반** - `@expo/ui`의 universal component를 중심으로 iOS는
-  SwiftUI, Android는 Jetpack Compose 네이티브 렌더링을 사용합니다.
+- **React Native 기반** - RN primitive로 충분한 컴포넌트는 RN으로 구현하고,
+  네이티브 컨트롤·Host 트리·modifier 이점이 필요한 컴포넌트는 Expo UI를 사용합니다.
 - **Mossy Foundation 기본값** - 빠른 시작을 위해 color, dimension, radius,
   typography, motion, gradient, shadow 초기값을 제공합니다.
 - **Mossy brand palette** - 기본 brand color scale은 `mossy` 네임스페이스를
@@ -46,51 +42,51 @@ Mossy 컴포넌트 레이어는 이 Foundation 위에 다시 쌓습니다.
 
 - Expo SDK 56 이상
 - React Native 0.85 이상
-- `@expo/ui` 56 이상
+- `@expo/ui` 56 이상 (Expo UI 컴포넌트 사용 시)
 
 ## 설치
 
 ```bash
 npm install mossy-ui
+# Expo UI 컴포넌트를 사용하는 경우
 npx expo install @expo/ui
 ```
 
 ## Foundation 사용 예시
 
 ```tsx
-import { Button, Host } from '@expo/ui';
-import { StyleSheet, Text } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { mossyThemes } from 'mossy-ui';
 
 const theme = mossyThemes.light;
 
 export function Example() {
   return (
-    <Host
-      colorScheme="light"
-      style={[
-        styles.host,
-        { backgroundColor: theme.color.bg.layerBasement },
-      ]}
-    >
+    <View style={[styles.screen, { backgroundColor: theme.color.bg.layerBasement }]}>
       <Text style={[theme.typography.textStyleT6Bold, { color: theme.color.fg.neutral }]}>
-        Mossy Foundation on Expo UI
+        Mossy Foundation
       </Text>
-      <Button
-        label="시작하기"
+      <Pressable
         style={{
           backgroundColor: theme.color.bg.brandSolid,
           borderRadius: theme.radius.r2,
+          paddingHorizontal: theme.dimension.spacingX.globalGutter,
+          paddingVertical: theme.dimension.x3,
         }}
-      />
-    </Host>
+      >
+        <Text style={[theme.typography.textStyleT4Bold, { color: theme.color.fg.staticWhite }]}>
+          시작하기
+        </Text>
+      </Pressable>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  host: {
+  screen: {
     flex: 1,
     padding: mossyThemes.light.dimension.spacingX.globalGutter,
+    gap: mossyThemes.light.dimension.x4,
   },
 });
 ```

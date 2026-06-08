@@ -4,7 +4,8 @@
 
 ## 원칙
 
-- **pass-through 래퍼** — Mossy 컴포넌트는 `@expo/ui` 컴포넌트의 래퍼다. props를 `ComponentProps<typeof ExpoX>` 형태로 그대로 전달하고, 테마 기본값만 내부에서 주입한다.
+- **구현 기술 선택** — Mossy 컴포넌트는 React Native primitive와 Expo UI를 요구사항에 맞게 선택한다. RN primitive로 충분하면 RN 레이어에서 조합하고, 네이티브 컨트롤·Host 트리·modifier가 필요하면 Expo UI를 사용한다.
+- **pass-through 래퍼** — Expo UI 래퍼를 만들 때는 props를 `ComponentProps<typeof ExpoX>` 형태로 전달하고, 테마 기본값만 내부에서 주입한다.
 - **children 중첩** — 합성의 기본 수단이다. 네이티브 레이아웃 컴포넌트 안에 자식을 배치하여 UI를 구성한다.
 
 ```tsx
@@ -21,7 +22,7 @@ import { Host, VStack, Text, Button } from "@expo/ui/swift-ui";
 ## 시맨틱
 
 - **React Native 레이어** — 시맨틱이 필요하면 `role`, `accessibilityLabel` 등 접근성 props를 사용한다.
-- **Expo UI 네이티브** — SwiftUI / Compose가 접근성 시맨틱을 기본으로 처리한다.
+- **Expo UI 네이티브** — Expo UI를 선택한 컴포넌트는 SwiftUI / Compose가 접근성 시맨틱을 기본으로 처리한다.
 
 ```tsx
 import { Text as RNText } from "react-native";
@@ -96,7 +97,7 @@ Mossy UI는 React 19 이상을 요구하므로 `forwardRef`를 사용하지 않�
 
 ## Expo UI 네이티브 트리 합성
 
-Expo UI 컴포넌트는 `Host` 경계 안에서 네이티브(SwiftUI / Compose) 트리로 렌더링된다. 합성 시 다음을 지킨다.
+Expo UI를 선택한 컴포넌트는 `Host` 경계 안에서 네이티브(SwiftUI / Compose) 트리로 렌더링된다. 합성 시 다음을 지킨다.
 
 - **Host 경계** — 네이티브 트리는 `Host`에서 시작하고, `Host` 내부에는 Expo UI 컴포넌트만 중첩한다.
 - **레이어 분리** — 두 레이어를 섞을 때는 별도의 `Host`로 분리하고 React Native 레이아웃으로 배치한다.
