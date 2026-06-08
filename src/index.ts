@@ -24,7 +24,11 @@ export { Checkbox, type MossyCheckboxProps } from './components/Checkbox';
 export { Icon, type MossyIconProps } from './components/Iconography/Icon';
 export { Box, type MossyBoxProps } from './components/Layout/Box';
 export { Divider, type MossyDividerProps } from './components/Layout/Divider';
-export { Flex, type MossyFlexProps } from './components/Layout/Flex';
+export {
+  Flex,
+  type MossyFlexProps,
+  type MossyFlexSizeConstraint,
+} from './components/Layout/Flex';
 export { Float, type MossyFloatProps } from './components/Layout/Float';
 export {
   Grid,

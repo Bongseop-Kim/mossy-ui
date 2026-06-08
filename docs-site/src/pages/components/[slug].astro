@@ -167,6 +167,12 @@ const tokenMappings =
           ? { ...item, mossyType: '`MossyHStackSizeConstraint`' }
           : item,
       )
+    : page.name === 'Flex'
+    ? vStackTokenMappings.map((item) =>
+        item.prop === 'min/max size props'
+          ? { ...item, mossyType: '`MossyFlexSizeConstraint`' }
+          : item,
+      )
     : page.name === 'Grid'
     ? vStackTokenMappings.map((item) =>
         item.prop === 'min/max size props'
